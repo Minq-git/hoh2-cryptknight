@@ -1,0 +1,130 @@
+<loader>ActorBuffStackDef::LoadMultiple</loader>
+<array>
+	<dict>
+		<string name="id">essence</string>
+		<string name="name">.stacks.cryptknight.essence.name</string>
+		<string name="description">.stacks.cryptknight.essence.desc</string>
+		<int name="max">10</int>
+		<bool name="refresh-on-max">true</bool>
+		<bool name="fx-player-facing">true</bool>
+		<bool name="display-timer-radius">true</bool>
+
+		<array name="gain-effects">
+			<dict>
+				<string name="class">PlaySound</string>
+				<string name="sound">event:/sfx/player/classes/warlock/drain_essence/essence_gain</string>
+			</dict>
+		</array>
+		
+		<dict name="timer">
+			<int name="time">6000</int>
+			<int name="add-stack">-1</int>
+			
+			<bool name="gain-set">true</bool>
+			<bool name="lose-set">true</bool>
+			<bool name="add-set">true</bool>
+			<bool name="sub-set">true</bool>
+
+			<bool name="gain-reset">true</bool>
+			<bool name="lose-reset">true</bool>
+			<bool name="add-reset">true</bool>
+			<bool name="sub-reset">true</bool>
+		</dict>
+
+<!-- 		<array name="add-effects">
+			<dict>
+				<string name="class">DebugLog</string>
+				<string name="text">test_essence_heal</string>
+			</dict>
+			<dict>
+				<string name="class">HPBasedHeal</string>
+				<float name="heal">0.2</float>
+				<string name="heal-bind">heal-amount</string>
+				<bool name="curr-hp">false</bool>
+			</dict>
+		</array> -->
+
+		<dict name="buff">
+			<bool name="debuff">false</bool>
+			<string name="fx">players/cryptknight/effects/essence_stackable.effect</string>
+
+			<array name="hud">
+				<string>players/icons_skills.png</string>
+				<int>100</int><vec4>240 238 14 14</vec4>
+			</array>
+
+			<array name="modifiers">
+				<dict>
+					<string name="class">Modifiers::DummyModifier</string>
+				</dict>
+<!-- 				<dict>
+					<string name="class">Modifiers::SpeedAdd</string>
+					<vec2 name="move-speed">0.01 0.2</vec2>
+				</dict> -->
+			</array>
+		</dict>
+	</dict>
+
+
+
+	<dict>
+		<string name="id">soul_vortex</string>
+		<int name="max">1</int>
+		<bool name="hide-hud-text">true</bool>
+		<bool name="refresh-on-max">true</bool>
+		<bool name="fx-player-facing">true</bool>
+		
+		<dict name="timer">
+			<int name="time">8000</int>
+			<int name="add-stack">-1</int>
+			
+			<bool name="gain-set">true</bool>
+			<bool name="lose-set">true</bool>
+			<bool name="add-set">true</bool>
+			<bool name="sub-set">true</bool>
+
+			<bool name="gain-reset">true</bool>
+			<bool name="lose-reset">true</bool>
+			<bool name="add-reset">true</bool>
+			<bool name="sub-reset">true</bool>
+		</dict>
+
+		<dict name="buff">
+			<array name="tags">
+				<string>soul_vortex</string>
+			</array>
+
+			<bool name="debuff">false</bool>
+			<!-- <string name="fx">players/cryptknight/effects/orb_of_souls_stackable.effect</string> -->
+			<string name="fx">players/cryptknight/effects/soul_vortex.effect</string>
+			<string name="sound">event:/sfx/player/classes/warlock/soul_vortex/soul_vortex_loop</string>
+
+			<array name="hud">
+				<string>players/cryptknight/icons_skills.png</string>
+				<int>100</int><vec4>192 0 14 14</vec4>
+			</array>
+
+			<array name="modifiers">
+				<dict>
+					<string name="class">Modifiers::DummyModifier</string>
+				</dict>
+
+				<dict>
+					<string name="class">Modifiers::TimedTriggerEffect</string>
+					<float name="chance">1</float>
+					<int name="freq">500</int>
+					
+					<array name="effects">
+						<dict>
+							<string name="class">ShootRandomEnemy</string>
+							<int name="range">120</int>
+							<bool name="ignore-target">false</bool>
+							<string name="projectile">players/cryptknight/projectiles/soul_projectile.unit</string>
+						</dict>
+					</array>
+				</dict>
+			</array>
+		</dict>
+	</dict>
+
+</array>

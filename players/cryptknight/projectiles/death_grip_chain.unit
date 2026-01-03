@@ -1,0 +1,3 @@
+%define DEFAULT
+%include "players/cryptknight/projectiles/death_grip_chain.inc"
+

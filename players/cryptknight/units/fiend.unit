@@ -1,0 +1,32 @@
+%define DEFAULT
+
+%defblock Colorize
+<array name="colorize">
+		<!-- red -->
+		<i>0</i><a><s>#20100cff</s><s>#613228ff</s><s>#b26656ff</s></a> <!-- skin -->
+		<i>1</i><a><s>#491210ff</s><s>#7d1e1cff</s><s>#b03b38ff</s></a> <!-- mouth -->
+		<i>2</i><a><s>#9e7151ff</s><s>#caa074ff</s><s>#e5c3a3ff</s></a> <!-- theeth -->
+		<i>3</i><a><s>#644c41ff</s><s>#7c695cff</s><s>#aa9682ff</s></a> <!-- claws -->
+		<i>4</i><a><s>#000000ff</s><s>#006e82ff</s><s>#00d7feff</s></a> <!-- eyes -->
+		<!-- blue -->
+		%//<i>0</i><a><s>#0E171Aff</s><s>#33515Bff</s><s>#6C9CACff</s></a>  <!-- skin -->
+		%//<i>1</i><a><s>#602220ff</s><s>#943331ff</s><s>#C75754ff</s></a>  <!-- mouth -->
+		%//<i>2</i><a><s>#9E7151ff</s><s>#CAA075ff</s><s>#E5C3A3ff</s></a>  <!-- theeth -->
+		%//<i>3</i><a><s>#644C41ff</s><s>#7D695Cff</s><s>#AA9682ff</s></a>  <!-- claws -->
+		%//<i>4</i><a><s>#000000ff</s><s>#820000ff</s><s>#ff0000ff</s></a>  <!-- eyes -->
+		<!-- green -->
+		%//<i>0</i><a><s>#06241dff</s><s>#3c6526ff</s><s>#79ba55ff</s></a> <!-- skin -->
+		%//<i>1</i><a><s>#3c152fff</s><s>#6f2857ff</s><s>#a34b85ff</s></a>  <!-- mouth -->
+		%//<i>2</i><a><s>#9E7151ff</s><s>#CAA075ff</s><s>#E5C3A3ff</s></a>  <!-- theeth -->
+		%//<i>3</i><a><s>#66523fff</s><s>#7d6e5aff</s><s>#ac9d7eff</s></a>  <!-- claws -->
+		%//<i>4</i><a><s>#000000ff</s><s>#780600ff</s><s>#ca4024ff</s></a> <!-- eyes -->
+		<!-- "purple" -->
+		%//<i>0</i><a><s>#1d0b2dff</s><s>#622351ff</s><s>#bb4c7eff</s></a>  <!-- skin -->
+		%//<i>1</i><a><s>#491210ff</s><s>#7c1d1bff</s><s>#b03b38ff</s></a>  <!-- mouth -->
+		%//<i>2</i><a><s>#9e7051ff</s><s>#caa074ff</s><s>#e5c3a3ff</s></a>  <!-- theeth -->
+		%//<i>3</i><a><s>#644c41ff</s><s>#7b695cff</s><s>#aa9682ff</s></a>  <!-- claws -->
+		%//<i>4</i><a><s>#000000ff</s><s>#006e82ff</s><s>#00d6feff</s></a>  <!-- eyes -->
+</array>
+%endblock
+
+%include "players/cryptknight/units/fiend.inc"

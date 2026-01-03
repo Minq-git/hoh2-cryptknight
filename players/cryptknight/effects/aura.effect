@@ -1,0 +1,98 @@
+<effect looping="true">
+	<param name="radius" default="50" />
+	%//smoke
+	
+	
+	
+	
+	<sprite origin="72 73" looping="true" texture="effects/spritesheets/effects.png" material="effects/effects.mats:add"
+	num-sprites="2"
+	pos-x="0"
+	pos-y="0"
+	
+	color-r="0.4"
+	color-g="0.8"
+	color-b="1"
+	color-a="0.004"
+	
+	scale-x="radius*0.015"
+	scale-y="radius*0.015"
+	
+	angle="(t+l)*(1-2*saturate(i))"
+	> 
+				<frame time="1000"> 1 364 147 147</frame> 
+	</sprite>
+
+	<particle_spawner
+		layer="0"
+		spawn-rate="64"
+		length="1000"
+		looping="true"
+		ttl="rpick(250,500)"
+		angle="rpick(-pi,pi)"
+		rot-speed="rpick(-0.3,0.3)"
+		force-damping="2"
+		color="0 255 200 44;0 200 255 44"
+		color-mul="1;1;1;0.125"
+		pos="
+		0;
+		0;
+		0"
+		curl-speed="1"
+		curl-scale="1"
+	>
+		<behaviors>
+			<spread_range radius="rpick(radius*0.9,radius)"/>
+			<force_dir dir="0; rpick(-0.1,-0.2); 0"/>
+			<force_toward pos="0;0; 0" mul="0.002"/>
+			<fade_to a="0" r="0.2" g="0.9" b="0.5" />
+		</behaviors>
+		<particle src="effects/subeffects/particles_speckles.unit:single_white_bright-simple"/>
+	</particle_spawner> 
+	<particle_spawner
+		layer="1"
+		spawn-rate="64"
+		length="1000"
+		looping="true"
+		ttl="500"
+		angle="rpick(-pi,pi)"
+		rot-speed="rpick(-0.3,0.3)"
+		force-damping="0"
+		pos="
+		0;
+		0;
+		0"
+		color-mul="1;1;1;0.5"
+	>
+		<behaviors>
+			<spread_range radius="rpick(radius*0.9,radius)"/>
+			<force_dir dir="0; rpick(-0.1,-0.5); 0"/>
+			<force_toward pos="0;0; 0" mul="0.002"/>
+			
+			<fade_to a="0"/>
+		</behaviors>
+		<particle src="effects/subeffects/particles_misc.unit:wispy_dissolve_orb_of_souls_010"/>
+		<particle src="effects/subeffects/particles_misc.unit:wispy_dissolve_orb_of_souls_025"/>
+		<particle src="effects/subeffects/particles_misc.unit:wispy_dissolve_orb_of_souls_025"/>
+		<particle src="effects/subeffects/particles_misc.unit:wispy_dissolve_orb_of_souls_050"/>
+	</particle_spawner>
+	
+	<light origin="0 0" pos-x="0" pos-y="0">
+			<sprite texture="effects/lights/light3_L.png">
+			<frame>0 0 128 128</frame>
+			</sprite>
+			<looping value="true" />
+			<length value="1000" />
+			
+			<size value="radius*2.25" />
+			<angle value="0" />
+
+			<color-r value="0.02*(1-sin(t*pi)*0.1)" />
+			<color-g value="0.04*(1-sin(t*pi)*0.1)" />
+			<color-b value="0.08*(1-sin(t*pi)*0.1)" />
+			<color-a="0.1" />
+			
+			<shadow-cast-pos-x value="0" />
+			<shadow-cast-pos-y value="0" />
+	</light>
+</effect>

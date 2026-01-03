@@ -1,0 +1,33 @@
+<unit layer="0">
+	<behavior class="DangerAreaBehaviorP">
+		<int name="freq">250</int>
+		<string name="ttl-bind">rift-ttl</string>
+		<string name="sound-loop">event:/sfx/player/classes/warlock/chaos_rift/chaos_rift_loop</string>
+		
+		<array name="effects">
+			<dict>
+				<string name="class">Damage</string>
+				<string name="physical-bind">rift-dmg</string>
+				<string name="lightning-bind">rift-dmg</string>
+				<bool name="true-strike">true</bool>
+			</dict>
+			<dict>
+				<string name="class">PlaySound</string>
+				<string name="sound">event:/sfx/player/classes/warlock/chaos_rift/chaos_rift_hit</string>
+			</dict>
+		</array>
+
+		<dict name="effect-params">
+		</dict>
+	</behavior>
+	
+	<scenes>
+		<scene>
+			<collision static="true">
+				<circle sensor="true" aim-through="true" radius="6" />
+			</collision>
+
+			<effect ulayer="1" pos="0 0" src="players/warlock/effects/chaos_rift.effect"/>
+		</scene>
+	</scenes>
+</unit>

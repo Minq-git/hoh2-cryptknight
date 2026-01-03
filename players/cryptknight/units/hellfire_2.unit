@@ -1,0 +1,2 @@
+%replace FIRE_DMG 80
+%include "players/warlock/units/hellfire.inc"

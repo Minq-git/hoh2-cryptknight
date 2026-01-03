@@ -1,0 +1,31 @@
+%include "players/skills_cost.inc"
+<dict>
+	<string name="name">Unwaivering Oath</string>
+	<string name="type-name">.skills.type.passive</string>
+	<string name="description">Upon taking lethal damage, transform into a zombie.</string>
+
+	<array name="icon">
+		<string>players/icons_skills.png</string>
+		<int>100</int><vec4>120 168 24 24</vec4>
+	</array>
+
+	<string name="id">unwaivering_oath</string>
+	<string name="type">passive</string>
+	<array name="tags"><s>passive</s></array>
+	<int name="starting-level">1</int>
+
+	<dict name="skill">
+		<int name="skill-cost">SKILLCOSTLEVEL_1</int>
+		<string name="class">Skills::PlayerSkill</string>
+		
+		<array name="modifiers">
+			<dict>
+				<string name="class">Modifiers::CheatDeath</string>
+				<float name="chance">1.0</float>
+				<float name="hp">1.0</float>
+				<string name="trigger-on-death-effect">players/cryptknight/buffs/zombie_transformation.sval</string>
+			</dict>
+		</array>
+	</dict>
+</dict>
+

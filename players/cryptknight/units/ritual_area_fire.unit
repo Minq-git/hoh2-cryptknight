@@ -1,0 +1,2 @@
+%define FIRE
+%include "players/warlock/units/ritual_area.inc"

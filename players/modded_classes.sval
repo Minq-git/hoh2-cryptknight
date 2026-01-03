@@ -1,0 +1,6 @@
+<loader order="1">PlayerClass::LoadMultiple</loader>
+%include "players/cryptknight.inc"
+<array>
+	%block cryptknight
+</array>
+

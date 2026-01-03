@@ -1,0 +1,29 @@
+<unit layer="0">
+	<scenes default="default">
+		<scene name="speck_small">
+			<sprite origin="2 2" looping="false" texture="../effects/orb_of_souls_particles.png" material="system/default.mats:bright-glow">
+				<frame time="100">0 0 3 3</frame>
+			</sprite>
+		</scene>
+		
+		<scene name="speck_big">
+			<sprite origin="3 3" looping="false" texture="../effects/orb_of_souls_particles.png" material="system/default.mats:bright-glow">
+				<frame time="100">2 0 5 5</frame>
+			</sprite>
+		</scene>
+		
+		<scene name="smoke_big">
+			<sprite origin="17 18" looping="false" texture="../effects/orb_of_souls_smoke.png" material="system/default.mats:bright-glow">
+				<frame time="60">0 0 35 37</frame>
+				<frame time="60">35 0 35 37</frame>
+				<frame time="60">70 0 35 37</frame>
+				<frame time="60">0 37 35 37</frame>
+				<frame time="60">35 37 35 37</frame>
+				<frame time="60">70 37 35 37</frame>
+				<frame time="60">0 74 35 37</frame>
+				<frame time="60">35 74 35 37</frame>
+				<frame time="60">70 74 35 37</frame>
+			</sprite>
+		</scene>
+	</scenes>
+</unit>

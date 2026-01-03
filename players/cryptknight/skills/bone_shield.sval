@@ -1,0 +1,80 @@
+%include "players/skills_cost.inc"
+<dict>
+	<string name="name">Bone Shield</string>
+	<string name="type-name">.skills.type.spell</string>
+	<string name="description">Absorbs damage.</string>
+
+	<array name="description-params">
+		<array><s>shield</s><s>Shield Amount</s><s>45</s><s>60</s><s>75</s><s>90</s><s>105</s></array>
+		<array><s>cooldown</s><b>t</b><s>.skills.desc.params.cooldown</s><s>45s</s><s>40s</s><s>35s</s><s>30s</s><s>25s</s></array>
+	</array>
+
+	<array name="icon">
+		<string>players/icons_skills.png</string>
+		<int>100</int><vec4>24 168 24 24</vec4>
+	</array>
+
+	<string name="id">bone_shield</string>
+	<string name="type">spell</string>
+	<array name="tags"><s>spell</s><s>defense</s></array>
+	<int name="starting-level">1</int>
+
+	<dict name="skill">
+		<int name="skill-cost">SKILLCOSTLEVEL_1</int>
+		<string name="class">Skills::PlayerSkill</string>
+		<string name="anim">cast</string>
+		<int name="anim-length">300</int>
+		
+		<int name="cooldown">45000</int>
+		<int name="castpoint">0</int>
+		<bool name="must-hold">false</bool>
+		
+		<int name="mana-cost">40</int>
+		
+		<dict name="binds">
+			<int name="shield-amount">45</int>
+		</dict>
+
+		<dict name="actions">
+			<array name="cast">
+				<dict>
+					<string name="class">ApplyBuff</string>
+					<string name="buff">players/cryptknight/buffs/bone_shield_buff.sval</string>
+					<bool name="target-self">true</bool>
+				</dict>
+			</array>
+		</dict>
+	</dict>
+
+	<array name="upgrades">
+		<dict>
+			<int name="skill-cost">SKILLCOSTLEVEL_2</int>
+			<int name="cooldown">40000</int>
+			<dict name="binds">
+				<int name="shield-amount">60</int>
+			</dict>
+		</dict>
+		<dict>
+			<int name="skill-cost">SKILLCOSTLEVEL_3</int>
+			<int name="cooldown">35000</int>
+			<dict name="binds">
+				<int name="shield-amount">75</int>
+			</dict>
+		</dict>
+		<dict>
+			<int name="skill-cost">SKILLCOSTLEVEL_4</int>
+			<int name="cooldown">30000</int>
+			<dict name="binds">
+				<int name="shield-amount">90</int>
+			</dict>
+		</dict>
+		<dict>
+			<int name="skill-cost">SKILLCOSTLEVEL_5</int>
+			<int name="cooldown">25000</int>
+			<dict name="binds">
+				<int name="shield-amount">105</int>
+			</dict>
+		</dict>
+	</array>
+</dict>
+

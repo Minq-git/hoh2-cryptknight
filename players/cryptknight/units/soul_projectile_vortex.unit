@@ -1,0 +1,22 @@
+<unit>
+	<scenes>
+		<scene name="soul_projectile_vortex_inner">
+			<effect src="../effects/soul_projectile_vortex_inner.effect"/>
+		</scene>
+	</scenes>
+	<scenes>
+		<scene name="soul_projectile_vortex">
+			<effect src="../effects/soul_projectile_vortex.effect"/>
+		</scene>
+	</scenes>
+	<scenes>
+		<scene name="soul_projectile_vortex_outer">
+			<effect src="../effects/soul_projectile_vortex_outer.effect"/>
+		</scene>
+	</scenes>
+	<scenes>
+		<scene name="soul_projectile_orb">
+			<effect src="../effects/soul_projectile_orb.effect"/>
+		</scene>
+	</scenes>
+</unit>

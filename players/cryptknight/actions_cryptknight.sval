@@ -1,0 +1,43 @@
+<loader>FloatingAction::LoadMultiple</loader>
+<array>
+
+%defblock SpreadingSickness LVL DMG REPEAT
+<dict>
+	<string name="id">spreading_sickness_%%LVL%%</string>
+	<array name="actions">
+		<dict>
+			<string name="class">ChainAction</string>
+			<array name="links">
+				<dict>
+					<string name="class">ChainActionAreaCircleLink</string>
+					<int name="radius">60</int>
+					<int name="repeat">%%REPEAT%%</int>
+					<int name="max-hits">1</int>
+					<bool name="shoot-from-owner">false</bool>
+					<bool name="only-hit-targets-once">true</bool>
+
+					<string name="shoot-fx">effects/generic/raycast/hitscan_magic_1.effect</string>
+					<string name="hit-fx">effects/generic/impacts/poison_impact_1.effect</string>
+
+					<array name="effects">
+						<dict>
+							<string name="class">DebugLog</string>
+							<string name="text">test_hit</string>
+						</dict>
+						<dict>
+							<string name="class">Damage</string>
+							<int name="poison">%%DMG%%</int>
+						</dict>
+					</array>
+				</dict>
+			</array>
+		</dict>
+	</array>
+</dict>
+%endblock
+
+%block SpreadingSickness 1 20 2
+%block SpreadingSickness 2 30 3
+%block SpreadingSickness 3 40 4
+
+</array>

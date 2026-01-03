@@ -1,0 +1,30 @@
+%include "players/skills_cost.inc"
+<dict>
+	<string name="name">Sickly</string>
+	<string name="type-name">.skills.type.passive</string>
+	<string name="description">Attacks apply a stacking plague poison.</string>
+
+	<array name="icon">
+		<string>players/icons_skills.png</string>
+		<int>100</int><vec4>144 168 24 24</vec4>
+	</array>
+
+	<string name="id">sickly</string>
+	<string name="type">passive</string>
+	<array name="tags"><s>passive</s><s>poison</s></array>
+	<int name="starting-level">1</int>
+
+	<dict name="skill">
+		<int name="skill-cost">SKILLCOSTLEVEL_1</int>
+		<string name="class">Skills::PlayerSkill</string>
+		
+		<array name="modifiers">
+			<dict>
+				<string name="class">Modifiers::BuffOnHit</string>
+				<string name="buff">players/cryptknight/buffs/skills_buffs.sval:sickly_plague</string>
+				<float name="chance">1.0</float>
+			</dict>
+		</array>
+	</dict>
+</dict>
+

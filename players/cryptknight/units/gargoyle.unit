@@ -1,0 +1,487 @@
+<unit netsync="position">
+	<behavior class="PlayerOwnedActor">
+		<string name="team">player</string>
+		<string name="hp-bind">gargoyle-hp</string>
+		<int name="armor">30</int>
+		<int name="res-fire">30</int>
+		<int name="res-ice">30</int>
+		<int name="res-lightning">30</int>
+		<int name="res-poison">30</int>
+		<string name="gore">wolf</string>
+		<bool name="hide-health">false</bool>
+		<float name="hp-regen-time">0.25</float>
+		<float name="ngp-scale">0.5</float>
+
+		<bool name="collide-with-team">false</bool>
+		<bool name="must-see-target">true</bool>
+		<int name="aggro-range">160</int>
+		<int name="max-range">500</int>
+		<int name="aggro-leash">250</int>
+		<int name="teleport-leash">400</int>
+		<float name="target-find-cooldown-mul">0.5</float>
+		<int name="unit-height">28</int>
+
+		<string name="hurt-snd">event:/sfx/player/classes/warlock/summon_gargoyle/gargoyle_hurt</string>
+		<string name="death-snd">event:/sfx/player/classes/warlock/summon_gargoyle/gargoyle_death</string>
+		
+		<array name="buffs-immune-tags">
+			<string>silence</string>
+		</array>
+
+		<dict name="movement">
+			<string name="class">RangedFollowerMovement</string>
+			<string name="anim-idle">idle 8</string>
+			<string name="anim-walk">idle 8</string>
+
+			<float name="speed">4</float>
+			<int name="dist">80</int>
+			<int name="min-dist">20</int>
+			<int name="run-back-distance">180</int>
+			<float name="run-back-speed">6</float>
+			<float name="roaming">0.2</float>
+			<int name="roaming-distance">50</int>
+		</dict>
+
+		<array name="skills">
+			<dict>
+				<string name="class">CompositeActorSkill</string>
+				<string name="anim">attack 8</string>
+				<string name="snd">event:/sfx/player/classes/warlock/summon_gargoyle/gargoyle_melee</string>
+
+				<string name="fail-chance-bind">claws-fail</string>
+				<!-- <string name="charges-bind">claws-charges</string> -->
+				<int name="cooldown">250</int>
+				<int name="castpoint">400</int>
+				<int name="range">50</int>
+				<bool name="is-attack">true</bool>
+				
+				<array name="movements">
+					<i2>200 400</i2><v2>0 5.5</v2><b>t</b>
+				</array>
+
+				<array name="actions">
+					<dict>
+						<string name="class">MeleeSwing</string>
+						<int name="dist">40</int>
+						<int name="rays">7</int>
+						<float name="angledelta">15</float>
+						<float name="angleoffset">-45</float>
+						<int name="interval">10</int>
+						<int name="delay">0</int>
+
+						<array name="effects">
+							<dict>
+								<string name="class">Damage</string>
+								<string name="physical-bind">gargoyle-dmg</string>
+							</dict>
+							<dict>
+								<string name="class">PlaySound</string>
+								<string name="sound">event:/sfx/player/classes/warlock/summon_gargoyle/gargoyle_melee_hit</string>
+							</dict>
+						</array>
+					</dict>
+					<dict>
+						<string name="class">SpawnEffect</string>
+						<string name="effect">effects/generic/attacks/slash_attack_1_cc.effect?slash_range=45&slash_arc=120&slash_speed=5</string>
+						<bool name="send-angle">true</bool>
+					</dict>
+				</array>
+			</dict>
+
+			<!-- FLAMING STRIKE -->
+			<dict>
+				<string name="class">CompositeActorSkill</string>
+				<string name="anim">attack 8</string>
+				<string name="snd">event:/sfx/player/classes/warlock/summon_gargoyle/gargoyle_melee_fire</string>
+
+				<string name="fail-chance-bind">claws-flaming-fail</string>
+				<!-- <string name="charges-bind">claws-flaming-charges</string> -->
+				<int name="cooldown">250</int>
+				<int name="castpoint">400</int>
+				<int name="range">50</int>
+				<bool name="is-attack">true</bool>
+				
+				<array name="movements">
+					<i2>200 400</i2><v2>0 5.5</v2><b>t</b>
+				</array>
+
+				<array name="actions">
+					<dict>
+						<string name="class">MeleeSwing</string>
+						<int name="dist">40</int>
+						<int name="rays">7</int>
+						<float name="angledelta">15</float>
+						<float name="angleoffset">-45</float>
+						<int name="interval">10</int>
+						<int name="delay">0</int>
+
+						<array name="effects">
+							<dict>
+								<string name="class">Damage</string>
+								<string name="physical-bind">gargoyle-dmg</string>
+							</dict>
+							<dict>
+								<string name="intensity-mul-bind">fire-dmg-mul</string>
+							</dict>
+							<dict>
+								<string name="class">Damage</string>
+								<string name="fire-bind">gargoyle-dmg</string>
+							</dict>
+							<dict>
+								<string name="class">PlaySound</string>
+								<string name="sound">event:/sfx/player/classes/warlock/summon_gargoyle/gargoyle_melee_fire_hit</string>
+							</dict>
+						</array>
+					</dict>
+					<dict>
+						<string name="class">SpawnEffect</string>
+						<string name="effect">players/warlock/effects/gargoyle_flame_strike.effect</string>
+						<bool name="attach-to-owner">true</bool>
+						<bool name="send-angle">true</bool>
+					</dict>
+				</array>
+			</dict>
+
+			<dict>
+				<string name="class">CompositeActorSkill</string>
+				<string name="anim">ranged 8</string>
+				<string name="offset">shoot-pos</string>
+				<string name="snd">event:/sfx/player/classes/warlock/summon_gargoyle/gargoyle_trident_cast</string>
+
+				<int name="cooldown">1000</int>
+				<int name="castpoint">400</int>
+				<int name="min-range">40</int>
+				<int name="range">150</int>
+				<float name="aim-interception">12</float>
+				
+				<array name="actions">
+					<dict>
+						<string name="class">ShootProjectile</string>
+						<string name="projectile-bind">trident-unit</string>
+					</dict>
+				</array>
+			</dict>
+		</array>
+		
+		<bool name="hold-angle-on-cast">true</bool>
+		<dict name="effect-params" />
+	</behavior>
+
+	<scenes start="idle-0 idle-7 idle-6 idle-5 idle-4 idle-3 idle-2 idle-1">
+		<scene name="shared">
+			<collision static="false">
+				<circle radius="6" aim-through="true" />
+				<circle radius="6" offset="0 -10" sensor="true" shoot-through="false" aim-through="true" />
+			</collision>
+
+			<scene src="special/shadow.unit:18"/>
+			<scene src="special/minimap.unit:npc_normal"/>
+			
+			<effect src="players/warlock/effects/gargoyle_light.effect"/>
+		</scene>
+
+		<scene name="idle-0">
+			<scene src="shared" />
+			<sprite origin="24 36" looping="true" texture="./gargoyle.png" material="system/default.mats:default">
+				<frame time="100">0 0 48 48</frame>
+				<frame time="100">0 48 48 48</frame>
+				<frame time="100">0 96 48 48</frame>
+				<frame time="100">0 144 48 48</frame>
+				<frame time="100">0 192 48 48</frame>
+			</sprite>
+		</scene>
+
+		<scene name="idle-7">
+			<scene src="shared" />
+			<sprite origin="24 36" looping="true" texture="./gargoyle.png" material="system/default.mats:default">
+				<frame time="100">48 0 48 48</frame>
+				<frame time="100">48 48 48 48</frame>
+				<frame time="100">48 96 48 48</frame>
+				<frame time="100">48 144 48 48</frame>
+				<frame time="100">48 192 48 48</frame>
+			</sprite>
+		</scene>
+
+		<scene name="idle-6">
+			<scene src="shared" />
+			<sprite origin="24 36" looping="true" texture="./gargoyle.png" material="system/default.mats:default">
+				<frame time="100">96 0 48 48</frame>
+				<frame time="100">96 48 48 48</frame>
+				<frame time="100">96 96 48 48</frame>
+				<frame time="100">96 144 48 48</frame>
+				<frame time="100">96 192 48 48</frame>
+			</sprite>
+		</scene>
+
+		<scene name="idle-5">
+			<scene src="shared" />
+			<sprite origin="24 36" looping="true" texture="./gargoyle.png" material="system/default.mats:default">
+				<frame time="100">144 0 48 48</frame>
+				<frame time="100">144 48 48 48</frame>
+				<frame time="100">144 96 48 48</frame>
+				<frame time="100">144 144 48 48</frame>
+				<frame time="100">144 192 48 48</frame>
+			</sprite>
+		</scene>
+
+		<scene name="idle-4">
+			<scene src="shared" />
+			<sprite origin="24 36" looping="true" texture="./gargoyle.png" material="system/default.mats:default">
+				<frame time="100">192 0 48 48</frame>
+				<frame time="100">192 48 48 48</frame>
+				<frame time="100">192 96 48 48</frame>
+				<frame time="100">192 144 48 48</frame>
+				<frame time="100">192 192 48 48</frame>
+			</sprite>
+		</scene>
+
+		<scene name="idle-3">
+			<scene src="shared" />
+			<sprite origin="24 36" looping="true" texture="./gargoyle.png" material="system/default.mats:default">
+				<frame time="100">240 0 48 48</frame>
+				<frame time="100">240 48 48 48</frame>
+				<frame time="100">240 96 48 48</frame>
+				<frame time="100">240 144 48 48</frame>
+				<frame time="100">240 192 48 48</frame>
+			</sprite>
+		</scene>
+
+		<scene name="idle-2">
+			<scene src="shared" />
+			<sprite origin="24 36" looping="true" texture="./gargoyle.png" material="system/default.mats:default">
+				<frame time="100">288 0 48 48</frame>
+				<frame time="100">288 48 48 48</frame>
+				<frame time="100">288 96 48 48</frame>
+				<frame time="100">288 144 48 48</frame>
+				<frame time="100">288 192 48 48</frame>
+			</sprite>
+		</scene>
+
+		<scene name="idle-1">
+			<scene src="shared" />
+			<sprite origin="24 36" looping="true" texture="./gargoyle.png" material="system/default.mats:default">
+				<frame time="100">336 0 48 48</frame>
+				<frame time="100">336 48 48 48</frame>
+				<frame time="100">336 96 48 48</frame>
+				<frame time="100">336 144 48 48</frame>
+				<frame time="100">336 192 48 48</frame>
+			</sprite>
+		</scene>	
+		
+		<scene name="attack-0">
+			<scene src="shared" />
+			<sprite origin="24 36" looping="false" texture="./gargoyle.png" material="system/default.mats:default">
+				<frame time="400">0 240 48 48</frame>
+				<frame time="100">0 288 48 48</frame>
+				<frame time="100">0 336 48 48</frame>
+				<frame time="100">0 384 48 48</frame>
+				<frame time="100">0 432 48 48</frame>
+			</sprite>
+		</scene>
+
+		<scene name="attack-7">
+			<scene src="shared" />
+			<sprite origin="24 36" looping="false" texture="./gargoyle.png" material="system/default.mats:default">
+				<frame time="400">48 240 48 48</frame>
+				<frame time="100">48 288 48 48</frame>
+				<frame time="100">48 336 48 48</frame>
+				<frame time="100">48 384 48 48</frame>
+				<frame time="100">48 432 48 48</frame>
+			</sprite>
+		</scene>
+
+		<scene name="attack-6">
+			<scene src="shared" />
+			<sprite origin="24 36" looping="false" texture="./gargoyle.png" material="system/default.mats:default">
+				<frame time="400">96 240 48 48</frame>
+				<frame time="100">96 288 48 48</frame>
+				<frame time="100">96 336 48 48</frame>
+				<frame time="100">96 384 48 48</frame>
+				<frame time="100">96 432 48 48</frame>
+			</sprite>
+		</scene>
+
+		<scene name="attack-5">
+			<scene src="shared" />
+			<sprite origin="24 36" looping="false" texture="./gargoyle.png" material="system/default.mats:default">
+				<frame time="400">144 240 48 48</frame>
+				<frame time="100">144 288 48 48</frame>
+				<frame time="100">144 336 48 48</frame>
+				<frame time="100">144 384 48 48</frame>
+				<frame time="100">144 432 48 48</frame>
+			</sprite>
+		</scene>
+
+		<scene name="attack-4">
+			<scene src="shared" />
+			<sprite origin="24 36" looping="false" texture="./gargoyle.png" material="system/default.mats:default">
+				<frame time="400">192 240 48 48</frame>
+				<frame time="100">192 288 48 48</frame>
+				<frame time="100">192 336 48 48</frame>
+				<frame time="100">192 384 48 48</frame>
+				<frame time="100">192 432 48 48</frame>
+			</sprite>
+		</scene>
+
+		<scene name="attack-3">
+			<scene src="shared" />
+			<sprite origin="24 36" looping="false" texture="./gargoyle.png" material="system/default.mats:default">
+				<frame time="400">240 240 48 48</frame>
+				<frame time="100">240 288 48 48</frame>
+				<frame time="100">240 336 48 48</frame>
+				<frame time="100">240 384 48 48</frame>
+				<frame time="100">240 432 48 48</frame>
+			</sprite>
+		</scene>
+
+		<scene name="attack-2">
+			<scene src="shared" />
+			<sprite origin="24 36" looping="false" texture="./gargoyle.png" material="system/default.mats:default">
+				<frame time="400">288 240 48 48</frame>
+				<frame time="100">288 288 48 48</frame>
+				<frame time="100">288 336 48 48</frame>
+				<frame time="100">288 384 48 48</frame>
+				<frame time="100">288 432 48 48</frame>
+			</sprite>
+		</scene>
+
+		<scene name="attack-1">
+			<scene src="shared" />			
+			<sprite origin="24 36" looping="false" texture="./gargoyle.png" material="system/default.mats:default">
+				<frame time="400">336 240 48 48</frame>
+				<frame time="100">336 288 48 48</frame>
+				<frame time="100">336 336 48 48</frame>
+				<frame time="100">336 384 48 48</frame>
+				<frame time="100">336 432 48 48</frame>
+			</sprite>
+		</scene>
+
+		<scene name="ranged-0">
+			<scene src="shared" />
+			<locator name="shoot-pos" pos="10 0"/>
+			<sprite ulayer="1" origin="24 36" looping="false" texture="./gargoyle.png" material="system/default.mats:default">
+				<frame time="400">0 480 48 32</frame>
+				<frame time="50">0 0 0 0</frame>
+			</sprite>
+			<sprite origin="24 36" looping="false" texture="./gargoyle.png" material="system/default.mats:default">
+				<frame time="400">0 240 48 48</frame>
+				<frame time="100">0 288 48 48</frame>
+				<frame time="100">0 336 48 48</frame>
+				<frame time="100">0 384 48 48</frame>
+				<frame time="100">0 432 48 48</frame>
+			</sprite>
+		</scene>
+
+		<scene name="ranged-7">
+			<scene src="shared" />
+			<locator name="shoot-pos" pos="13 -13"/>
+			<sprite ulayer="1" origin="24 36" looping="false" texture="./gargoyle.png" material="system/default.mats:default">
+				<frame time="400">48 480 48 32</frame>
+				<frame time="50">0 0 0 0</frame>
+			</sprite>
+			<sprite origin="24 36" looping="false" texture="./gargoyle.png" material="system/default.mats:default">
+				<frame time="400">48 240 48 48</frame>
+				<frame time="100">48 288 48 48</frame>
+				<frame time="100">48 336 48 48</frame>
+				<frame time="100">48 384 48 48</frame>
+				<frame time="100">48 432 48 48</frame>
+			</sprite>
+		</scene>
+
+		<scene name="ranged-6">
+			<scene src="shared" />
+			<locator name="shoot-pos" pos="8 -25"/>
+			<sprite ulayer="1" origin="24 36" looping="false" texture="./gargoyle.png" material="system/default.mats:default">
+				<frame time="400">96 480 48 32</frame>
+				<frame time="50">0 0 0 0</frame>
+			</sprite>
+			<sprite origin="24 36" looping="false" texture="./gargoyle.png" material="system/default.mats:default">
+				<frame time="400">96 240 48 48</frame>
+				<frame time="100">96 288 48 48</frame>
+				<frame time="100">96 336 48 48</frame>
+				<frame time="100">96 384 48 48</frame>
+				<frame time="100">96 432 48 48</frame>
+			</sprite>
+		</scene>
+
+		<scene name="ranged-5">
+			<scene src="shared" />
+			<locator name="shoot-pos" pos="-4 -25"/>
+			<sprite ulayer="1" origin="24 36" looping="false" texture="./gargoyle.png" material="system/default.mats:default">
+				<frame time="400">144 480 48 32</frame>
+				<frame time="50">0 0 0 0</frame>
+			</sprite>
+			<sprite origin="24 36" looping="false" texture="./gargoyle.png" material="system/default.mats:default">
+				<frame time="400">144 240 48 48</frame>
+				<frame time="100">144 288 48 48</frame>
+				<frame time="100">144 336 48 48</frame>
+				<frame time="100">144 384 48 48</frame>
+				<frame time="100">144 432 48 48</frame>
+			</sprite>
+		</scene>
+
+		<scene name="ranged-4">
+			<scene src="shared" />
+			<locator name="shoot-pos" pos="-18 -18"/>
+			<sprite ulayer="1" origin="24 36" looping="false" texture="./gargoyle.png" material="system/default.mats:default">
+				<frame time="400">192 480 48 32</frame>
+				<frame time="50">0 0 0 0</frame>
+			</sprite>
+			<sprite origin="24 36" looping="false" texture="./gargoyle.png" material="system/default.mats:default">
+				<frame time="400">192 240 48 48</frame>
+				<frame time="100">192 288 48 48</frame>
+				<frame time="100">192 336 48 48</frame>
+				<frame time="100">192 384 48 48</frame>
+				<frame time="100">192 432 48 48</frame>
+			</sprite>
+		</scene>
+
+		<scene name="ranged-3">
+			<scene src="shared" />
+			<locator name="shoot-pos" pos="-17 -5"/>
+			<sprite ulayer="1" origin="24 36" looping="false" texture="./gargoyle.png" material="system/default.mats:default">
+				<frame time="400">240 480 48 32</frame>
+				<frame time="50">0 0 0 0</frame>
+			</sprite>
+			<sprite origin="24 36" looping="false" texture="./gargoyle.png" material="system/default.mats:default">
+				<frame time="400">240 240 48 48</frame>
+				<frame time="100">240 288 48 48</frame>
+				<frame time="100">240 336 48 48</frame>
+				<frame time="100">240 384 48 48</frame>
+				<frame time="100">240 432 48 48</frame>
+			</sprite>
+		</scene>
+
+		<scene name="ranged-2">
+			<scene src="shared" />
+			<locator name="shoot-pos" pos="-8 17"/>
+			<sprite ulayer="1" origin="24 36" looping="false" texture="./gargoyle.png" material="system/default.mats:default">
+				<frame time="400">288 480 48 32</frame>
+				<frame time="50">0 0 0 0</frame>
+			</sprite>
+			<sprite origin="24 36" looping="false" texture="./gargoyle.png" material="system/default.mats:default">
+				<frame time="400">288 240 48 48</frame>
+				<frame time="100">288 288 48 48</frame>
+				<frame time="100">288 336 48 48</frame>
+				<frame time="100">288 384 48 48</frame>
+				<frame time="100">288 432 48 48</frame>
+			</sprite>
+		</scene>
+
+		<scene name="ranged-1">
+			<scene src="shared" />	
+			<locator name="shoot-pos" pos="11 11"/>
+			<sprite ulayer="1" origin="24 36" looping="false" texture="./gargoyle.png" material="system/default.mats:default">
+				<frame time="400">336 480 48 32</frame>
+				<frame time="50">0 0 0 0</frame>
+			</sprite>		
+			<sprite origin="24 36" looping="false" texture="./gargoyle.png" material="system/default.mats:default">
+				<frame time="400">336 240 48 48</frame>
+				<frame time="100">336 288 48 48</frame>
+				<frame time="100">336 336 48 48</frame>
+				<frame time="100">336 384 48 48</frame>
+				<frame time="100">336 432 48 48</frame>
+			</sprite>
+		</scene>
+	</scenes>
+</unit>

@@ -1,0 +1,41 @@
+%include "players/skills_cost.inc"
+<dict>
+	<string name="name">Void Funnel</string>
+	<string name="type-name">.skills.type.spell</string>
+	<string name="description">Shoot a frontal cone of void magic.</string>
+
+	<array name="icon">
+		<string>players/icons_skills.png</string>
+		<int>100</int><vec4>96 168 24 24</vec4>
+	</array>
+
+	<string name="id">void_funnel</string>
+	<string name="type">spell</string>
+	<array name="tags"><s>spell</s><s>void</s></array>
+	<int name="starting-level">1</int>
+
+	<dict name="skill">
+		<int name="skill-cost">SKILLCOSTLEVEL_1</int>
+		<string name="class">Skills::PlayerSkillDirectional</string>
+		<string name="anim">cast</string>
+		<int name="anim-length">400</int>
+		
+		<int name="cooldown">5000</int>
+		<int name="castpoint">200</int>
+		
+		<int name="mana-cost">30</int>
+
+		<dict name="actions">
+			<array name="cast">
+				<dict>
+					<string name="class">ShootProjectile</string>
+					<string name="projectile">players/warlock/projectiles/chaos_blade_projectile.unit</string>
+					<int name="dist">10</int>
+					<int name="spread">30</int>
+					<int name="projectiles">5</int>
+				</dict>
+			</array>
+		</dict>
+	</dict>
+</dict>
+

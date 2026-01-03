@@ -1,0 +1,2 @@
+%define BLOOD
+%include "players/warlock/units/ritual_area.inc"

@@ -1,0 +1,54 @@
+<unit>
+	<behavior class="BoltShooter">
+		<string name="ttl-bind">rift-ttl</string>
+		<int name="interval">5000</int>
+		<int name="link-interval">250</int>
+		<int name="height">0</int>
+		<int name="spread">4</int>
+		<int name="range">0</int>
+		<int name="link-range">120</int>
+		
+		<!-- <string name="fx">effects/generic/raycast/lightning_beam_2.effect</string> -->
+		<string name="fx">players/warlock/effects/chaos_rift_ray.effect</string>
+		
+		<!-- <string name="loop-fx"></string> -->
+		<int name="loop-fx-interval">2000</int>
+		<vec2 name="loop-fx-radius">0 0</vec2>
+		
+		<array name="link-effects">
+<!-- 			<dict>
+				<string name="intensity-mul-bind">lightning-dmg-mul</string>
+			</dict> -->
+			<dict>
+				<string name="class">Damage</string>
+				<string name="physical-bind">rift-dmg</string>
+				<string name="lightning-bind">rift-dmg</string>
+			</dict>
+			<dict>
+				<string name="class">PlaySound</string>
+				<string name="sound">event:/sfx/player/classes/warlock/chaos_rift/chaos_rift_shooter_hit</string>
+			</dict>
+		</array>
+		
+<!-- 		<array name="effects">
+			<dict>
+				<string name="intensity-mul-bind">lightning-dmg-mul</string>
+			</dict>
+			<dict>
+				<string name="class">Damage</string>
+				<string name="lightning-bind">rift-dmg</string>
+			</dict>
+		</array> -->
+		
+		<dict name="effect-params">
+		</dict>
+	</behavior>
+	
+	<scenes>
+		<scene>
+			<!-- <effect src="players/warlock/effects/chaos_rift_ray.effect"/> -->
+			<!-- <effect ulayer="0" pos="0 0" src="actors/bosses/boss_judges/effects/dark_orb_spawn.effect"/> -->
+			<!-- <effect delay="900" ulayer="1" pos="0 0" src="actors/bosses/boss_judges/effects/dark_orb_activated.effect"/> -->
+		</scene>
+	</scenes>
+</unit>

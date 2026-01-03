@@ -1,0 +1,149 @@
+<effect looping="true">
+	<param name="angle" default="0" />
+	
+	
+	<!-- light-->
+	<light origin="-140 -140">
+		<sprite texture="./orb_of_souls_light.png">
+			<frame time="100">0 0 512 512</frame>
+		</sprite>
+
+		<angle value="angle"/>
+
+		<looping value="true" />
+		<length value="100" />
+
+		<cast-shadows value="false" />
+
+		<shadow-cast-pos-x value="0" />
+		<shadow-cast-pos-y value="0" />
+
+		<shadow-cast-pos-jitter value="0 0 0 0" />
+
+		<size value="280" />
+
+		<color-r value="0.2+(sin(t*pi*2)*0.05)" />
+		<color-g value="0.4+(sin(t*pi*2)*0.1)"/>
+		<color-b value="0.4+(sin(t*pi*2)*0.1)" />
+		<color-a value="0"/>
+	</light>
+	%//smoke
+	<particle_spawner
+		layer="1"
+		spawn-rate="50"
+		length="300"
+		looping="true"
+		ttl="500"
+		angle="rpick(-pi,pi)"
+		rot-speed="rpick(-0.3,0.3)"
+		force-damping="0"
+		pos="cos(angle)*(74+(((1+sin(t*pi*8)/2))*22));-8+sin(angle)*(74+(((1+sin(t*pi*12)/2))*8));0"
+	>
+		<behaviors>
+			<spread_range radius="rpick(0,12)"/>
+			<force_toward pos="cos(angle); -8+sin(angle); 0" mul="0.035"/>
+			
+			%//<fade_to a="0" r="0.5" g="0.7" b="0.8" />
+		</behaviors>
+		<particle src="effects/subeffects/particles_misc.unit:wispy_dissolve_orb_of_souls"/>
+	</particle_spawner>
+	
+	<particle_spawner
+		layer="1"
+		spawn-rate="8+8*t"
+		length="300"
+		looping="true"
+		ttl="rpick(250,500)"
+		angle="rpick(-pi,pi)"
+		rot-speed="rpick(-0.3,0.3)"
+		force-damping="2"
+		color="0 255 200 90"
+		pos="-4+cos(angle)*96;-6+sin(angle)*96;0"
+		curl-speed="6-t*5"
+		curl-scale="1"
+	>
+		<behaviors>
+			<spread_range radius="rpick(0,24)"/>
+			<force_toward pos="cos(angle); -8+sin(angle); 0" mul="0.020+0.05*t"/>
+			<fade_to a="0" r="0" g="0.9" b="1.0" />
+		</behaviors>
+		<particle src="effects/subeffects/particles_speckles.unit:single_white_add"/>
+		<particle src="effects/subeffects/particles_speckles.unit:single_white_add"/>
+		<particle src="effects/subeffects/particles_speckles.unit:single_white_add"/>
+		<particle src="effects/subeffects/particles_speckles.unit:long_vertical_add"/>
+	</particle_spawner>
+	 <!-- light sprite -->
+
+	<sprite origin="256 256" looping="true" texture="./orb_of_souls_light_sprite.png" material="system/default.mats:default-noxray"
+		scale-x="0.3+sin(t*pi+pi/2)*0.3"
+		scale-y="(0.3+sin(t*pi+pi/2)*0.3)*0.5"
+		angle="angle"
+		pos-y="-8"
+		color-r="0.28*sin(t*pi)"
+		color-g="0.42*sin(t*pi)"
+		color-b="0.4*sin(t*pi)"
+		color-a="(0.5*sin(t*pi))+0.3"
+		
+	>
+		<frame time="2000">0 0 512 512</frame>
+	</sprite> 
+	
+	<sprite origin="256 256" looping="true" texture="./orb_of_souls_light_sprite.png" material="system/default.mats:default-noxray"
+		scale-x="0.3+sin(t*pi)*0.3"
+		scale-y="(0.3+sin(t*pi)*0.3)*0.5"
+		angle="angle"
+		pos-y="-8"
+		color-r="0.2"
+		color-g="0.35"
+		color-b="0.4"
+		color-a="(0.5*sin(t*pi*2+pi))+0.3"
+		
+	>
+		<frame time="1500">0 0 512 -512</frame>
+	</sprite>
+	%//souls
+	<particle_spawner
+		layer="1"
+		spawn-rate="8+8*t"
+		length="300"
+		looping="true"
+		ttl="rpick(250,500)"
+		angle="rpick(-pi,pi)"
+		rot-speed="rpick(-0.3,0.3)"
+		force-damping="2"
+		color="0 255 200 90"
+		pos="cos(angle)*96;-8+sin(angle)*96;0"
+		curl-speed="6-t*5"
+		curl-scale="1"
+	>
+		<behaviors>
+			<spread_range radius="rpick(0,24)"/>
+			<force_toward pos="0; -8; 0" mul="0.020+0.05*t"/>
+			<fade_to a="0" r="0" g="0.9" b="1.0" />
+		</behaviors>
+		<particle src="players/warlock/units/soul_projectile_vortex.unit:soul_projectile_orb"/>
+	</particle_spawner>
+	<!-- smoke -->
+	<particle_spawner
+		spawn-rate="60"
+		ttl="rpick(200,600)"
+		wind-speed="0"
+		curl-speed="0"
+		curl-scale="0"
+		force-damping="-1.8"
+		pos="cos(angle)*100 ; -8+sin(angle)*100 ; 0"
+		color="#0e091e80"
+		rot-speed="rpick(-0.4,0.4)"
+		rot-damping="0.2"
+		angle="rpick(0,360)"
+	>
+		<behaviors>
+			<spread_range radius="rpick(7,14)"/>
+			<force_toward pos="0; -8; 0" mul="0.02"/>
+			<force_dir dir="0; 0; 0"/>
+			<fade_to a="0" />
+		</behaviors>
+
+		<particle src="players/warlock/effects/skill_particles.unit:smoke_big"/>
+	</particle_spawner> 
+</effect>

@@ -1,0 +1,44 @@
+%include "players/skills_cost.inc"
+<dict>
+	<string name="name">Pestilence</string>
+	<string name="type-name">.skills.type.spell</string>
+	<string name="description">Turn into a fast-moving plague cloud.</string>
+
+	<array name="icon">
+		<string>players/icons_skills.png</string>
+		<int>100</int><vec4>72 168 24 24</vec4>
+	</array>
+
+	<string name="id">pestilence</string>
+	<string name="type">spell</string>
+	<array name="tags"><s>spell</s><s>mobility</s></array>
+	<int name="starting-level">1</int>
+
+	<dict name="skill">
+		<int name="skill-cost">SKILLCOSTLEVEL_1</int>
+		<string name="class">Skills::PlayerSkillDirectional</string>
+		
+		<int name="cooldown">8000</int>
+		<int name="mana-cost">40</int>
+
+		<!-- Dash implementation -->
+		<string name="anim">dash</string>
+		<int name="anim-length">500</int>
+		
+		<dict name="actions">
+			<array name="cast">
+				<dict>
+					<string name="class">Dash</string>
+					<int name="duration">500</int>
+					<float name="speed">2.5</float>
+				</dict>
+				<dict>
+					<string name="class">ApplyBuff</string>
+					<string name="buff">players/cryptknight/buffs/pestilence_buff.sval</string>
+					<bool name="target-self">true</bool>
+				</dict>
+			</array>
+		</dict>
+	</dict>
+</dict>
+

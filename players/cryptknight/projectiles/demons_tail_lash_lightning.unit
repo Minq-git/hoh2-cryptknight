@@ -1,0 +1,33 @@
+<unit netsync="none">
+	<behavior class="RayProjectile">
+		<string name="anim">default</string>
+		<float name="speed">6</float>
+		<int name="ttl">900</int>
+		<int name="penetration">999</int>
+		<!-- <int name="bounces">999</int> -->
+
+		<array name="effects">
+			<dict>
+				<string name="class">Damage</string>
+				<string name="lightning-bind">lightning-dmg</string>
+				<bool name="shield-blockable">true</bool>
+			</dict>
+<!-- 			<dict>
+				<string name="class">SpawnEffect</string>
+				<string name="effect">effects/generic/impacts/impact_lightning_1.effect</string>
+			</dict> -->
+		</array>
+
+		<dict name="effect-params">
+		</dict>
+	</behavior>
+
+	<scenes start="default">
+		<scene name="default">
+			<collision static="false">
+				<circle radius="4" projectile="true" />
+			</collision>
+			<effect src="effects/generic/projectiles/lightning_spit_1.effect" />
+		</scene>
+	</scenes>
+</unit>

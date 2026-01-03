@@ -1,0 +1,460 @@
+%include "players/skills_cost.inc"
+<dict>
+	<string name="name">.skills.warlock.passive_1.name</string>
+	<string name="type-name">.skills.type.passive</string>
+	<string name="description">.skills.warlock.passive_1.desc</string>
+
+	<array name="description-params">
+		<array><s>stacks-health</s><s>.skills.desc.params.health_prc_per_stack</s><s>+2%</s><s>+2.5%</s><s>+3%</s><s>+3.5%</s><s>4%</s></array>
+		<array><s>stacks-mana</s><s>.skills.desc.params.mana_prc_per_stack</s><s>+2%</s><s>+2.5%</s><s>+3%</s><s>+3.5%</s><s>4%</s></array>
+		<array><s>stacks-max</s><s>.skills.desc.params.stacks.max</s><s>10</s></array>
+		<array><s>stacks-duration</s><s>.skills.desc.params.stacks.duration</s><s>6s</s></array>
+		<array><s>effectcd</s><s>.skills.desc.params.cooldown.effect</s><s>0.25s</s></array>
+	</array>
+
+	<array name="icon">
+		<string>players/icons_skills.png</string>
+		<int>100</int><vec4>24 168 24 24</vec4>
+	</array>
+
+	<string name="id">drain_essence</string>
+	<array name="tags"><s>passive</s></array>
+	<int name="starting-level">1</int>
+
+	<dict name="skill">
+		<int name="skill-cost">SKILLCOSTLEVEL_1</int>
+		<string name="class">Skills::PassiveSkill</string>
+
+		<dict name="binds">
+			<vec2 name="essence-mul">0.02 0.2</vec2>
+			<float name="drain-life-amount">0</float>
+			<float name="drain-energy-amount">0</float>
+			<int name="bleeding-stacks">0</int>
+			<float name="bleeding-chance">0</float>
+		</dict>
+
+		<array name="modifiers">
+			<array>
+				<dict>
+					<string name="class">Modifiers::SkillTriggerEffect</string>
+					<array name="skill-tags"><s>melee</s></array>
+					<string name="trigger">hit</string>
+					<bool name="target-self">false</bool>
+					<float name="chance">1</float>
+					<int name="timeout">250</int>
+
+					<array name="effects">
+						<dict>
+							<string name="class">AddStacks</string>
+							<string name="buff">tweak/buffs/stacks_actors.sval:bleeding</string>
+							<string name="stacks-bind">bleeding-stacks</string>
+							<string name="chance-bind">bleeding-chance</string>
+							<bool name="target-self">false</bool>
+						</dict>
+						<dict>
+							<string name="class">PlaySound</string>
+							<string name="sound">event:/sfx/player/classes/warlock/drain_essence/drain_essence</string>
+						</dict>
+						<dict>
+							<bool name="target-self">true</bool>
+						</dict>
+						<dict>
+							<string name="class">AddStacks</string>
+							<string name="buff">players/cryptknight/stacks_warlock.sval:essence</string>
+							<int name="stacks">1</int>
+							<bool name="target-self">true</bool>
+						</dict>
+						<dict>
+							<string name="class">SpawnEffect</string>
+							<string name="effect">players/cryptknight/effects/gain_essence.effect</string>
+							<bool name="attach-to-owner">true</bool>
+						</dict>
+						<dict>
+							<string name="class">HPBasedHeal</string>
+							<string name="heal-bind">drain-life-amount</string>
+							<bool name="curr-hp">false</bool>
+						</dict>
+
+						<dict>
+							<string name="class">GivePercentageMana</string>
+							<string name="mana-bind">drain-energy-amount</string>
+							<bool name="curr-mana">false</bool>
+						</dict>
+					</array>
+				</dict>
+				<dict>
+					<string name="class">Modifiers::SkillTriggerEffect</string>
+					<array name="skill-tags"><s>melee</s></array>
+					<string name="trigger">spellhit</string>
+					<bool name="target-self">false</bool>
+					<float name="chance">1</float>
+					<int name="timeout">250</int>
+
+					<array name="effects">
+						<dict>
+							<string name="class">AddStacks</string>
+							<string name="buff">tweak/buffs/stacks_actors.sval:bleeding</string>
+							<string name="stacks-bind">bleeding-stacks</string>
+							<string name="chance-bind">bleeding-chance</string>
+							<bool name="target-self">false</bool>
+						</dict>
+						<dict>
+							<string name="class">PlaySound</string>
+							<string name="sound">event:/sfx/player/classes/warlock/drain_essence/drain_essence</string>
+						</dict>
+						<dict>
+							<bool name="target-self">true</bool>
+						</dict>
+						<dict>
+							<string name="class">AddStacks</string>
+							<string name="buff">players/cryptknight/stacks_warlock.sval:essence</string>
+							<int name="stacks">1</int>
+							<bool name="target-self">true</bool>
+						</dict>
+
+						<dict>
+							<string name="class">HPBasedHeal</string>
+							<string name="heal-bind">drain-life-amount</string>
+							<bool name="curr-hp">false</bool>
+						</dict>
+
+						<dict>
+							<string name="class">GivePercentageMana</string>
+							<string name="mana-bind">drain-energy-amount</string>
+							<bool name="curr-mana">false</bool>
+						</dict>
+					</array>
+				</dict>
+
+				<dict>
+					<string name="class">Modifiers::InjectModifiersIntoStack</string>
+					<string name="buff">players/cryptknight/stacks_warlock.sval:essence</string>
+
+					<array name="modifiers">
+						<dict>
+							<string name="class">Modifiers::ConvertStat</string>
+							<bool name="add">true</bool>
+							<string name="mul-bind">essence-mul</string>
+							<string name="from">health</string>
+							<string name="to">health</string>
+						</dict>
+						<dict>
+							<string name="class">Modifiers::ConvertStat</string>
+							<bool name="add">true</bool>
+							<string name="mul-bind">essence-mul</string>
+							<string name="from">mana</string>
+							<string name="to">mana</string>
+						</dict>
+					</array>
+				</dict>
+			</array>
+		</array>
+	</dict>
+
+	<array name="upgrades">
+		<dict>
+			<int name="skill-cost">SKILLCOSTLEVEL_2</int>
+			<dict name="binds">
+				<vec2 name="essence-mul">0.025 0.25</vec2>
+			</dict>
+		</dict>
+		<dict>
+			<int name="skill-cost">SKILLCOSTLEVEL_3</int>
+			<dict name="binds">
+				<vec2 name="essence-mul">0.03 0.3</vec2>
+			</dict>
+		</dict>
+		<dict>
+			<int name="skill-cost">SKILLCOSTLEVEL_4</int>
+			<dict name="binds">
+				<vec2 name="essence-mul">0.035 0.35</vec2>
+			</dict>
+		</dict>
+		<dict>
+			<int name="skill-cost">SKILLCOSTLEVEL_5</int>
+			<dict name="binds">
+				<vec2 name="essence-mul">0.04 0.4</vec2>
+			</dict>
+		</dict>
+	</array>
+
+	<array name="modifier-skills">
+		<dict>
+			<string name="name">.skills.warlock.passive_1.up1.name</string>
+			<string name="description">.skills.warlock.passive_1.up1.desc</string>
+
+			<array name="description-params">
+				<array><s>heal</s><s>.skills.desc.params.heal</s><s>2%</s><s>2.5%</s><s>3%</s></array>
+			</array>
+
+			<array name="icon">
+				<string>players/icons_skills.png</string>
+				<int>100</int><vec4>24 168 24 24</vec4>
+			</array>
+
+			<string name="id">drain_essence_life</string>
+
+			<dict name="skill">
+				<dict name="binds">
+					<float name="drain-life-amount">0.02</float>
+				</dict>
+			</dict>
+
+			<array name="upgrades">
+				<dict>
+					<string name="quality">uncommon</string>
+					<dict name="binds">
+						<float name="drain-life-amount">0.025</float>
+					</dict>
+				</dict>
+				<dict>
+					<string name="quality">rare</string>
+					<dict name="binds">
+						<float name="drain-life-amount">0.03</float>
+					</dict>
+				</dict>
+			</array>
+		</dict>
+
+		<dict>
+			<string name="name">.skills.warlock.passive_1.up2.name</string>
+			<string name="description">.skills.warlock.passive_1.up2.desc</string>
+
+			<array name="description-params">
+				<array><s>mana</s><s>.skills.desc.params.mana</s><s>3%</s><s>5%</s><s>7%</s></array>
+			</array>
+
+			<array name="icon">
+				<string>players/icons_skills.png</string>
+				<int>100</int><vec4>24 168 24 24</vec4>
+			</array>
+
+			<string name="id">drain_essence_mana</string>
+
+			<dict name="skill">
+				<dict name="binds">
+					<float name="drain-energy-amount">0.03</float>
+				</dict>
+			</dict>
+
+			<array name="upgrades">
+				<dict>
+					<string name="quality">uncommon</string>
+					<dict name="binds">
+						<float name="drain-energy-amount">0.05</float>
+					</dict>
+				</dict>
+				<dict>
+					<string name="quality">rare</string>
+					<dict name="binds">
+						<float name="drain-energy-amount">0.07</float>
+					</dict>
+				</dict>
+			</array>
+		</dict>
+
+		<dict>
+			<string name="name">.skills.warlock.passive_1.up3.name</string>
+			<string name="description">.skills.warlock.passive_1.up3.desc</string>
+			<array name="shown-icons"><s>bleeding</s></array>
+
+			<array name="description-params">
+				<array><s>amount</s><s>.skills.desc.params.amount</s><s>1</s><s>2</s></array>
+			</array>
+
+			<array name="icon">
+				<string>players/icons_skills.png</string>
+				<int>100</int><vec4>24 168 24 24</vec4>
+			</array>
+
+			<string name="id">drain_essence_blood</string>
+
+			<dict name="skill">
+				<dict name="binds">
+					<int name="bleeding-stacks">1</int>
+					<float name="bleeding-chance">1</float>
+				</dict>
+			</dict>
+
+			<array name="upgrades">
+				<dict>
+					<string name="quality">uncommon</string>
+					<dict name="binds">
+						<int name="bleeding-stacks">2</int>
+					</dict>
+				</dict>
+			</array>
+		</dict>
+
+
+		<dict>
+			<string name="name">.skills.warlock.passive_1.up4.name</string>
+			<string name="description">.skills.warlock.passive_1.up4.desc</string>
+
+			<array name="description-params">
+				<array><s>chance</s><s>.skills.desc.params.chance</s><s>10%</s><s>20%</s><s>30%</s></array>
+			</array>
+
+			<array name="icon">
+				<string>players/icons_skills.png</string>
+				<int>100</int><vec4>24 168 24 24</vec4>
+			</array>
+
+			<string name="id">drain_essence_harvester</string>
+			<string name="quality">uncommon</string>
+
+			<dict name="skill">
+				<dict name="binds">
+					<float name="kill-chance">0.1</float>
+				</dict>
+
+				<array name="modifiers">
+					<array>
+						<null />
+					</array>
+					<array>
+						<dict>
+							<string name="class">Modifiers::TriggerEffect</string>
+							<!-- <array name="skill-tags"><s>spell</s></array> -->
+							<string name="trigger">kill</string>
+							<bool name="target-self">true</bool>
+							<string name="chance-bind">kill-chance</string>
+							<int name="timeout">0</int>
+
+							<array name="effects">
+								<dict>
+									<string name="class">DebugLog</string>
+									<string name="text">essence_harvester_kill</string>
+								</dict>
+								<dict>
+									<string name="class">AddStacks</string>
+									<string name="buff">players/cryptknight/stacks_warlock.sval:essence</string>
+									<int name="stacks">1</int>
+									<bool name="target-self">true</bool>
+								</dict>
+								<dict>
+									<string name="class">HPBasedHeal</string>
+									<string name="heal-bind">drain-life-amount</string>
+									<bool name="curr-hp">false</bool>
+								</dict>
+								<dict>
+									<string name="class">GivePercentageMana</string>
+									<string name="mana-bind">drain-energy-amount</string>
+									<bool name="curr-mana">false</bool>
+								</dict>
+							</array>
+						</dict>
+					</array>
+				</array>
+			</dict>
+
+			<array name="upgrades">
+				<dict>
+					<string name="quality">uncommon</string>
+					<dict name="binds">
+						<float name="kill-chance">0.2</float>
+					</dict>
+				</dict>
+				<dict>
+					<string name="quality">rare</string>
+					<dict name="binds">
+						<float name="kill-chance">0.3</float>
+					</dict>
+				</dict>
+			</array>
+		</dict>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- 		<dict>
+			<string name="name">Drain Essence - Spell damage</string>
+			<string name="type-name">.skills.type.passive.upgrade</string>
+			<string name="description">You deal more damage with Spells, but casting Spells expend stacks of Essence.</string>
+
+			<array name="description-params">
+				<array><s>damage</s><s>.skills.desc.params.damage</s><s>+15%</s><s>+30%</s><s>+50%</s></array>
+			</array>
+
+			<array name="icon">
+				<string>players/icons_skills.png</string>
+				<int>100</int><vec4>24 168 24 24</vec4>
+			</array>
+
+			<string name="id">drain_essence_spell</string>
+
+			<dict name="skill">
+				<dict name="binds">
+					<float name="spell-dmg-mul">1.15</float>
+				</dict>
+
+				<array name="modifiers">
+					<array>
+						<null />
+					</array>
+					<array>
+						<dict>
+							<string name="class">Modifiers::SkillTriggerEffect</string>
+							<array name="skill-tags"><s>spell</s></array>
+							<string name="trigger">castspell</string>
+							<bool name="target-self">true</bool>
+							<float name="chance">1</float>
+							<int name="timeout">0</int>
+
+							<array name="effects">
+								<dict>
+									<string name="class">AddStacks</string>
+									<string name="buff">players/cryptknight/stacks_warlock.sval:essence</string>
+									<int name="stacks">-1</int>
+									<bool name="target-self">true</bool>
+								</dict>
+							</array>
+						</dict>
+
+						<dict>
+							<string name="class">Modifiers::InjectModifiersIntoStack</string>
+							<string name="buff">players/cryptknight/stacks_warlock.sval:essence</string>
+
+							<array name="modifiers">
+								<dict>
+									<string name="class">Modifiers::Damage</string>
+									<string name="spell-mul-bind">spell-dmg-mul</string>
+								</dict>
+							</array>
+						</dict>
+					</array>
+				</array>
+			</dict>
+
+			<array name="upgrades">
+				<dict>
+					<string name="quality">uncommon</string>
+					<dict name="binds">
+						<float name="spell-dmg-mul">1.3</float>
+					</dict>
+				</dict>
+				<dict>
+					<string name="quality">rare</string>
+					<dict name="binds">
+						<float name="spell-dmg-mul">1.5</float>
+					</dict>
+				</dict>
+			</array>
+		</dict> -->
+
+
+
+
+
+
+	</array>
+</dict>

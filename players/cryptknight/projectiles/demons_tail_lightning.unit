@@ -1,0 +1,2 @@
+%define LIGHTNING
+%include "players/warlock/projectiles/demons_tail.inc"

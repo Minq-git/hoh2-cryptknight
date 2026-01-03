@@ -1,0 +1,24 @@
+<effect looping="true">
+	<param name="lightning" default="1" />
+	<light pos-x="0" pos-y="0">
+		<sprite texture="effects/lights/light2_L.png">
+			<frame time="100">0 0 128 128</frame>
+		</sprite>
+
+		<looping value="true" />
+		<length value="100" />
+		<cast-shadows value="false" />
+
+		<shadow-cast-pos-x value="0" />
+		<shadow-cast-pos-y value="0" />
+
+		<shadow-cast-pos-jitter value="0 0 0 0" />
+
+		<size value="(saturate((t+l)*4)*96)*(1-(sin(((t+l)*0.2)*pi*2)*0.05)*lightning)" />
+
+		<color-r value="(saturate(l+t*5)*(0.7-0.3*lightning))*0.5" />
+		<color-g value="(saturate(l+t*5)*(0.8+0.2*lightning))*0.5" />
+		<color-b value="(saturate(l+t*5)*(1.1+lightning*0.5))*0.5" />
+		<color-a value="0"/>
+	</light>
+</effect>

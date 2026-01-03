@@ -1,0 +1,73 @@
+%include "players/skills_cost.inc"
+<dict>
+	<string name="name">Cursed</string>
+	<string name="type-name">.skills.type.passive</string>
+	<string name="description">Gain Strength and Vitality based on your Shadow Curse stacks.</string>
+
+	<array name="description-params">
+		<array><s>stat-gain</s><s>Multiplier</s><s>0.5</s><s>1.0</s><s>1.5</s><s>2.0</s><s>2.5</s></array>
+	</array>
+
+	<array name="icon">
+		<string>players/icons_skills.png</string>
+		<int>100</int><vec4>168 168 24 24</vec4>
+	</array>
+
+	<string name="id">cursed</string>
+	<string name="type">passive</string>
+	<array name="tags"><s>passive</s></array>
+	<int name="starting-level">1</int>
+
+	<dict name="skill">
+		<int name="skill-cost">SKILLCOSTLEVEL_1</int>
+		<string name="class">Skills::PlayerSkill</string>
+		
+		<array name="modifiers">
+			<dict>
+				<string name="class">Modifiers::ConvertStat</string>
+				<string name="from">shadowcurses</string>
+				<string name="to">str</string>
+				<bool name="add">true</bool>
+				<string name="mul-bind">stat-mul</string>
+			</dict>
+			<dict>
+				<string name="class">Modifiers::ConvertStat</string>
+				<string name="from">shadowcurses</string>
+				<string name="to">vit</string>
+				<bool name="add">true</bool>
+				<string name="mul-bind">stat-mul</string>
+			</dict>
+		</array>
+		
+		<dict name="binds">
+			<float name="stat-mul">0.5</float>
+		</dict>
+	</dict>
+
+	<array name="upgrades">
+		<dict>
+			<int name="skill-cost">SKILLCOSTLEVEL_2</int>
+			<dict name="binds">
+				<float name="stat-mul">1.0</float>
+			</dict>
+		</dict>
+		<dict>
+			<int name="skill-cost">SKILLCOSTLEVEL_3</int>
+			<dict name="binds">
+				<float name="stat-mul">1.5</float>
+			</dict>
+		</dict>
+		<dict>
+			<int name="skill-cost">SKILLCOSTLEVEL_4</int>
+			<dict name="binds">
+				<float name="stat-mul">2.0</float>
+			</dict>
+		</dict>
+		<dict>
+			<int name="skill-cost">SKILLCOSTLEVEL_5</int>
+			<dict name="binds">
+				<float name="stat-mul">2.5</float>
+			</dict>
+		</dict>
+	</array>
+</dict>

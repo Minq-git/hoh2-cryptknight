@@ -1,0 +1,58 @@
+%include "players/skills_cost.inc"
+<dict>
+	<string name="name">Raise Dead</string>
+	<string name="type-name">.skills.type.spell</string>
+	<string name="description">Raises a basic undead minion to fight for you.</string>
+
+	<array name="description-params">
+		<array><s>mana-cost</s><s>.skills.desc.params.mana_cost</s><s>50</s></array>
+		<array><s>cooldown</s><b>t</b><s>.skills.desc.params.cooldown</s><s>5s</s></array>
+	</array>
+
+	<array name="icon">
+		<string>players/icons_skills.png</string>
+		<int>100</int><vec4>48 168 24 24</vec4>
+	</array>
+
+	<string name="id">raise_dead</string>
+	<string name="type">spell</string>
+	<array name="tags"><s>spell</s><s>summon</s></array>
+	<int name="starting-level">1</int>
+
+	<dict name="skill">
+		<int name="skill-cost">SKILLCOSTLEVEL_1</int>
+		<string name="class">Skills::PlayerSkill</string>
+		<string name="anim">cast</string>
+		<int name="anim-length">400</int>
+		
+		<int name="cooldown">5000</int>
+		<int name="castpoint">200</int>
+		
+		<int name="mana-cost">50</int>
+		
+		<dict name="binds">
+			<string name="unit">players/cryptknight/units/fiend.unit</string>
+			<int name="max-count">2</int>
+		</dict>
+
+		<dict name="actions">
+			<array name="cast">
+				<dict>
+					<string name="class">SpawnUnit</string>
+					<string name="unit-bind">unit</string>
+					<bool name="safe-spawn">true</bool>
+					<int name="dist">40</int>
+				</dict>
+			</array>
+		</dict>
+		
+		<array name="modifiers">
+			<dict>
+				<string name="class">Modifiers::ModifySummons</string>
+				<string name="unit-bind">unit</string>
+				<string name="add-max-num-bind">max-count</string>
+			</dict>
+		</array>
+	</dict>
+</dict>
+

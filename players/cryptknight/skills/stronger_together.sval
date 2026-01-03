@@ -1,0 +1,32 @@
+%include "players/skills_cost.inc"
+<dict>
+	<string name="name">Stronger Together</string>
+	<string name="type-name">.skills.type.passive</string>
+	<string name="description">Increases max summons and strengthens them.</string>
+
+	<array name="icon">
+		<string>players/icons_skills.png</string>
+		<int>100</int><vec4>144 168 24 24</vec4>
+	</array>
+
+	<string name="id">stronger_together</string>
+	<string name="type">passive</string>
+	<array name="tags"><s>passive</s><s>summon</s></array>
+	<int name="starting-level">1</int>
+
+	<dict name="skill">
+		<int name="skill-cost">SKILLCOSTLEVEL_1</int>
+		<string name="class">Skills::PlayerSkill</string>
+		
+		<array name="modifiers">
+			<dict>
+				<string name="class">Modifiers::ModifySummons</string>
+				<string name="unit">players/cryptknight/units/fiend.unit</string>
+				<int name="add-max-num">3</int>
+				<float name="hp-mul">1.5</float>
+				<float name="dmg-mul">1.5</float>
+			</dict>
+		</array>
+	</dict>
+</dict>
+

@@ -1,0 +1,51 @@
+<effect looping="false" wpos-track="15">
+	<variation>
+		<trail texture="./soul_projectile.png" material="system/default.mats:bright-glow">
+			<pos-x value="(15-cos(1.33)*i)+sin(((t+l)+(1/15)*i)*pi*6)*1" />
+			<pos-y value="(-sin(1.33)*i)+sin(((t+l)+(1/15)*i)*pi*3)*1" />
+			
+			<length value="1500" />
+			<looping value="false" />
+			
+			<segments value="15" />
+			<size value="6" />
+			
+			
+			<uv-l-x value="45 * (15 - i) / 15" />
+			<uv-l-y value="10 + mod(l,5) * 22" />
+			
+			<uv-r-x value="45 * (15 - i) / 15" />
+			<uv-r-y value="32 + mod(l,5) * 22" />
+		
+			
+			<color-r value="1" />
+			<color-g value="1" />
+			<color-b value="1" />
+			<color-a value="(0.5*saturate(t+l))*(1-pow(t,5))" />
+		</trail> 
+		<sprite origin="-32 5" looping="false" texture="./soul_projectile.png" material="system/default.mats:bright-glow"
+		angle="0"
+		scale-x="0.4"
+		scale-y="0.4"
+		
+		color-r="0.2"
+		color-g="1"
+		color-b="0.6"
+		color-a="(0.4*saturate(t+l))*(1-pow(t,5))"
+		>
+			<frame time="1500">0 0 10 10</frame>
+		</sprite>
+		<sprite origin="-20 128" looping="false" texture="effects/lights/lens_flash_L.png" material="system/default.mats:add"
+		angle="0"
+		scale-x="0.1"
+		scale-y="0.1"
+		
+		color-r="0.2"
+		color-g="1"
+		color-b="0.6"
+		color-a="(1.5*saturate(t+l))*(1-pow(t,5))"
+		>
+		<frame time="1500">0 0 256 256</frame>
+		</sprite>
+	</variation>
+</effect>

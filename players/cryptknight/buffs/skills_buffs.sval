@@ -1,0 +1,84 @@
+<loader>ActorBuffDef::LoadMultiple</loader>
+<array>
+	<dict>
+		<string name="id">pull_effect</string>
+		<bool name="debuff">true</bool>
+		<int name="duration">500</int>
+		
+		<array name="modifiers">
+			<dict>
+				<string name="class">Modifiers::SpeedMul</string>
+				<float name="mul">0</float>
+			</dict>
+		</array>
+	</dict>
+
+	<dict>
+		<string name="id">pestilence_buff</string>
+		<bool name="debuff">false</bool>
+		<int name="duration">3000</int>
+		<string name="icon">players/icons_skills.png</string>
+		<int>100</int><vec4>72 168 24 24</vec4>
+		
+		<array name="modifiers">
+			<dict>
+				<string name="class">Modifiers::SpeedMul</string>
+				<float name="mul">1.5</float>
+			</dict>
+			<dict>
+				<string name="class">Modifiers::Aura</string>
+				<int name="radius">50</int>
+				<int name="freq">250</int>
+				<dict name="effect">
+					<string name="class">Damage</string>
+					<int name="poison">5</int>
+				</dict>
+			</dict>
+		</array>
+	</dict>
+	
+	<dict>
+		<string name="id">sickly_plague</string>
+		<bool name="debuff">true</bool>
+		<int name="duration">5000</int>
+		<int name="max-stacks">5</int>
+		<string name="icon">players/icons_skills.png</string>
+		<int>100</int><vec4>144 168 24 24</vec4>
+		
+		<dict name="tick">
+			<int name="freq">1000</int>
+			<dict name="effect">
+				<string name="class">Damage</string>
+				<int name="poison">10</int>
+			</dict>
+		</dict>
+	</dict>
+
+	<dict>
+		<string name="id">zombie_transformation</string>
+		<bool name="debuff">false</bool>
+		<!-- Lasts 10 seconds then death -->
+		<int name="duration">10000</int>
+		
+		<array name="modifiers">
+			<dict>
+				<string name="class">Modifiers::BuffImmune</string>
+				<string name="tag">debuff</string>
+			</dict>
+			<!-- Transformation visual placeholder -->
+			<!-- Note: Actual shape shifting might require Modifiers::ShapeShift or similar if available in engine -->
+		</array>
+		
+		<!-- Kill player on expire -->
+		<dict name="tick">
+			<bool name="kill-on-expire">true</bool>
+		</dict>
+		
+		<array name="effects">
+			<dict>
+				<string name="class">SpawnEffect</string>
+				<string name="effect">effects/generic/impacts/gib_blood.effect</string>
+			</dict>
+		</array>
+	</dict>
+</array>

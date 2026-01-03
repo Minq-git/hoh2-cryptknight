@@ -1,0 +1,88 @@
+<effect looping="false">
+
+	<param name="angle" default="0" />
+	<param name="height" default="0" />
+	<param name="length" default="100" />
+	<param name="size" default="1.2" />
+	<param name="fire" default="0" />
+	<param name="lightning" default="0" />
+	
+	%//tail
+	<sprite looping="false" origin="5 3" texture="./demon_tail.png" material="system/default.mats:bright-glow"
+		pos-x="((cos(angle)*length)-(cos(angle)*i*(4-saturate(t*8)/4)))-(sin(t*i/4*pi)*(0.1-pow(t,2)*0.1)"
+		pos-y="((sin(angle)*length)-(sin(angle)*i*(4-saturate(t*8)/4)))-(sin(t*i/5*pi)*(0.1-pow(t,2)*0.1)"
+		scale-x="1-t"
+		scale-y="size+sin(t*pi)/4*1-pow(t,3)"
+		angle="-pi+angle"
+		color-b="1"
+		num-sprites="(length/4)-1"
+		%//color-r="10"
+		color-r="3-(2*lightning)"
+		color-g="1"
+		color-b="0+(2*lightning)"
+		color-a="clamp(i/10,0,1)*1-t"
+		>
+		<frame time="500" x="(32*lightning)" y="26" w="5" h="6" />
+	</sprite>
+	%//head
+	<sprite looping="false" origin="4 3" texture="./demon_tail.png" material="system/default.mats:bright-glow"
+		pos-x="((cos(angle)*length)-(cos(angle)*i*(4-saturate(t*8)/4)))-(sin(t*i/4*pi)*(1.1-pow(t,2)*1.1)"
+		pos-y="((sin(angle)*length)-(sin(angle)*i*(4-saturate(t*8)/4)))-(sin(t*i/5*pi)*(1.1-pow(t,2)*1.1)"
+		scale-x="(1+sin(t*pi)/4*1-pow(t,3))+t"
+		scale-y="(size+sin(t*pi)/4*1-pow(t,3))+t"
+		angle="(-pi+angle)"
+		color-r="clamp(i/10,0,1)*1-t"
+		color-g="clamp(i/10,0,1)*1-t"
+		color-b="clamp(i/10,0,1)*1-t"
+		color-a="(saturate(i-((length/4)-2)))*1-t"
+		num-sprites="(length/4)"
+		%//color-r="10"
+		>
+<!-- 		<frame time="100" x="(lightning*32)" y="17" w="13" h="9" />
+		<frame time="100" x="13+(lightning*32)" y="17" w="13" h="9" />
+		<frame time="220" x="13+(lightning*32)" y="8" w="13" h="9" /> -->
+		<frame time="100" x="0" y="17" w="13" h="9" />
+		<frame time="100" x="13" y="17" w="13" h="9" />
+		<frame time="220" x="13" y="8" w="13" h="9" />
+	</sprite>
+	
+	%//tail scales
+	<sprite looping="false" origin="4 3" texture="./demon_tail.png" material="system/default.mats:default-noxray"
+		scale-x="1-pow(t,5)"
+		scale-y="size-size*pow(t,5)"
+		angle="(angle)+((rand(i)-0.5)*pi)*pow(t,3)"
+		
+		pos-x="((cos(angle)*length)-(cos(angle)*i*(4-saturate(t*8)/4)))+(cos((rand(i))-0.5)*15*t)*(rand(i+2)-0.5)"
+		pos-y="((sin(angle)*length)-(sin(angle)*i*(4-saturate(t*8)/4)))+(cos((rand(i*u)-0.5))*15*t)*(rand(i-2)-0.5)"
+		
+		color-r="1-saturate(pow(t,i))"
+		color-g="1-saturate(pow(t,i))"
+		color-b="1-saturate(pow(t,i))"
+		color-a="1-saturate(pow(t,i))"
+		num-sprites="length/4-3"
+		>
+		<frame time="300" x="0" y="10" w="5" h="6" />
+	</sprite>
+	
+	%//fiery particles
+	<particle_spawner
+		layer="0"
+		spawn-rate="180"
+		num-particles="50"
+		length="200"
+		looping="false"
+		ttl="500"
+		pos="0;0;0"
+		color="255 200 (255*lightning) 255; 255 255 255 100"
+		curl-speed="2"
+		curl-scale="3"
+	>
+	<behaviors>
+		<spread_range radius="rpick(0,2)"/>
+		<spread_line offset="cos(angle)*length+(sin(t*i/4*pi)*6-pow(t,2)*16 ; sin(angle)*length+(sin(t*i/4*pi)*6-pow(t,2)*16 ; 0"/> 
+		<fade_to a="0" r="4-lightning*3" g="lightning*2" b="lightning*4" />
+		<force_dir dir="0; rpick(0,-0.2); 0"/>
+	</behaviors>
+	<particle src="effects/subeffects/particles_speckles.unit:single_white_add"/>
+	</particle_spawner>
+</effect>

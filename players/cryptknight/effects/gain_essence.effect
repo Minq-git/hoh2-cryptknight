@@ -1,0 +1,112 @@
+<effect looping="false">
+	<sprite origin="0 0" looping="true" texture="effects/spritesheets/effects.png" material="system/default.mats:bright-glow"
+	num-sprites="0"
+	> 
+				<frame time="1000"> 0 640 0 0</frame> 
+	</sprite>
+	%//smoke
+	<sprite origin="0 0" looping="false" texture="effects/spritesheets/effects.png" material="system/default.mats:bright-glow"
+	num-sprites="3"
+	pos-x="(-4+1*i+rand(u+i)*2)*(3-t*3)			+(-1+floor(rand(u)+0.5)*2)*cos((t-0.1*i)*pi)*4"
+	pos-y="-(24+rand(u+i)*4)+(t*(1+rand(i)))*16	+sin((t-0.1*i)*pi)*(3+i)"
+	
+	color-r="0.4"
+	color-g="0.8"
+	color-b="1"
+	color-a="0.25*(1-t)"
+	> 
+				<frame time="500"> 0 640 1 1</frame> 
+	</sprite>
+	
+	<particle_spawner
+		layer="0"
+		spawn-rate="12"
+		length="500"
+		looping="false"
+		ttl="rpick(250,500)"
+		angle="rpick(-pi,pi)"
+		rot-speed="rpick(-0.3,0.3)"
+		force-damping="2"
+		color="0 255 200 44;0 200 255 44"
+		pos="
+		0;
+		0;
+		24-16*t"
+		curl-speed="1"
+		curl-scale="1"
+	>
+		<behaviors>
+			<spread_range radius="rpick(0,6)"/>
+			<force_dir dir="0; rpick(0.1,0.2); 0"/>
+			<fade_to a="0" r="0.2" g="0.9" b="0.5" />
+		</behaviors>
+		<particle src="effects/subeffects/particles_speckles.unit:single_white_bright-simple"/>
+	</particle_spawner> 
+	<particle_spawner
+		layer="1"
+		spawn-rate="12"
+		length="500"
+		looping="false"
+		ttl="500"
+		angle="rpick(-pi,pi)"
+		rot-speed="rpick(-0.3,0.3)"
+		force-damping="0"
+		pos="
+		0;
+		0;
+		24-16*t"
+		color-mul="1;1;1;4"
+	>
+		<behaviors>
+			<spread_range radius="rpick(0,4)"/>
+			<force_dir dir="0; rpick(-0.1,-0.5); 0"/>
+			%//<force_toward pos="0;0; 0" mul="0.035"/>
+			
+			%//<fade_to a="0" r="0.5" g="0.7" b="0.8" />
+		</behaviors>
+		<particle src="effects/subeffects/particles_misc.unit:wispy_dissolve_orb_of_souls_025"/>
+	</particle_spawner>
+	
+	
+	<light origin="0 0"
+	pos-x="(-4+1*i+rand(u+i)*2)*(3-t*3)			+(-1+floor(rand(u)+0.5)*2)*cos((t-0.1*i)*pi)*4"
+	pos-y="-(24+rand(u+i)*4)+(t*(1+rand(i)))*16	+sin((t-0.1*i)*pi)*(3+i)"
+	>
+			<sprite texture="effects/lights/lens_flash_L.png">
+			<frame>0 0 256 256</frame>
+			</sprite>
+			<looping value="false" />
+			<length value="500" />
+			
+			<size value="sin(t*pi)*64" />
+			<angle value="(-1+(floor(rand(u)+0.5)*2))*t*2" />
+
+			<color-r value="0.2*(1-sin(t*pi)*0.1)" />
+			<color-g value="0.4*(1-sin(t*pi)*0.1)" />
+			<color-b value="0.8*(1-sin(t*pi)*0.1)" />
+			<color-a value="0.25" />
+			
+			<shadow-cast-pos-x value="0" />
+			<shadow-cast-pos-y value="0" />
+	</light>
+	<light origin="0 0"
+	pos-x="(-4+1*i+rand(u+i)*2)*(3-t*3)			+(-1+floor(rand(u)+0.5)*2)*cos((t-0.1*i)*pi)*4"
+	pos-y="-(24+rand(u+i)*4)+(t*(1+rand(i)))*16	+sin((t-0.1*i)*pi)*(3+i)"
+	>
+			<sprite texture="effects/lights/light2_L.png">
+			<frame>0 0 128 128</frame>
+			</sprite>
+			<looping value="false" />
+			<length value="500" />
+			
+			<size value="sin(t*pi)*96" />
+			<angle value="0" />
+
+			<color-r value="0.2*(1-sin(t*pi)*0.1)" />
+			<color-g value="0.4*(1-sin(t*pi)*0.1)" />
+			<color-b value="0.8*(1-sin(t*pi)*0.1)" />
+			
+			<shadow-cast-pos-x value="0" />
+			<shadow-cast-pos-y value="0" />
+	</light>
+</effect>

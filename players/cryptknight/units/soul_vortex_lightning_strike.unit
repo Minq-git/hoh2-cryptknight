@@ -1,0 +1,35 @@
+<unit layer="0" netsync="position">
+	<behavior class="BombBehavior">
+		<int name="delay">100</int>
+		<int name="delay-random">100</int>
+		<string name="spawn-sound">event:/sfx/player/classes/warlock/soul_vortex/soul_vortex_lightning_spawn</string>
+		<string name="explode-sound">event:/sfx/player/classes/warlock/soul_vortex/soul_vortex_lightning_explode</string>
+
+		<array name="actions">
+			<dict>
+				<string name="class">Explode</string>
+				<string name="fx">players/warlock/effects/lightning_strike.effect</string>
+				<int name="radius">24</int>
+				<int name="min-radius">8</int>
+				<float name="dist-scaling">1000</float>
+
+				<array name="effects">
+					<dict>
+						<string name="intensity-mul-bind">lightning-dmg-mul</string>
+					</dict>
+					<dict>
+						<string name="class">Damage</string>
+						<!-- <int name="lightning">20</int> -->
+						<string name="lightning-bind">vortex-dmg</string>
+					</dict>
+				</array>
+			</dict>
+		</array>
+	</behavior>
+
+	<scenes default="default">
+		<scene name="default">
+			<!-- <effect src="actors/bosses/boss_judges/effects/lightning_strike_hint.effect?radius=24" /> -->
+		</scene>
+	</scenes>
+</unit>

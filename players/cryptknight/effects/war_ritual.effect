@@ -1,0 +1,517 @@
+<effect layer="-1" looping="false">
+<param name="conflagration" default="1"/> 
+<param name="radius" default="80"/>
+	%//base
+	<sprite layer="-1" origin="80 80 " looping="false" texture="./war_ritual.png" material="system/default.mats:bright-noxray"
+		color-r="4-(saturate(t*16)*3.5)"
+		color-g="0.0"
+		color-b="0.1"
+		pos-y="-2+saturate(t*16)*2"
+		color-a="saturate(t*12)"
+		angle="i*((pi*2)/4)"
+		scale-x="1"
+		scale-y="1"
+		num-sprites="4"
+	>
+		<frame time="3000" x="420" y="80" w="80" h="80" />
+	</sprite>
+	<!-- INNER CIRCLE -->
+	%//yellow
+	<sprite layer="-1" origin="0 80 " looping="false" texture="./war_ritual.png" material="system/default.mats:bright-glow"
+		color-r="15"
+		color-g="3.0"
+		color-b="0.0"
+		angle="i*((pi*2)/4)"
+		scale-x="0.82"
+		scale-y="0.82"
+		num-sprites="4"
+	>
+		<frame time="3000" x="500" y="80" w="-80" h="clamp(6.3*t-1.1,0,1)*80" />
+	</sprite>
+	%//red
+	<sprite layer="-1" origin="0 80 " looping="false" texture="./war_ritual.png" material="system/default.mats:bright-glow"
+		color-r="10"
+		color-g="0"
+		color-b="0.4"
+		angle="i*((pi*2)/4)"
+		scale-x="0.82"
+		scale-y="0.82"
+		num-sprites="4"
+	>
+		<frame time="3000" x="500" y="80" w="-80" h="clamp(6.5*t-1.1,0,1)*80" />
+	</sprite>
+	%//base
+	<sprite layer="-1" origin="0 80 " looping="false" texture="./war_ritual.png" material="system/default.mats:bright-noxray"
+		color-r="0.5"
+		color-g="0.0"
+		color-b="0.1"
+		angle="i*((pi*2)/4)"
+		scale-x="0.82"
+		scale-y="0.82"
+		num-sprites="4"
+	>
+		<frame time="3000" x="500" y="80" w="-80" h="clamp(6*t-1.1,0,1)*80" />
+	</sprite>
+	<!-- GLYPH -->
+	<sprite layer="-1" origin="30 40" looping="false" texture="../effects/war_ritual.png" material="system/default.mats:bright-noxray"
+	color-r="10.8"
+	color-g="0.01"
+	color-b="0.03"
+	color-a="0.9"
+	>
+		<frame time="1300">0 0 0 0</frame>
+		<frame time="30">0   0 60 77</frame>
+		<frame time="30">60  0 60 77</frame>
+		<frame time="30">120 0 60 77</frame>
+		<frame time="30">180 0 60 77</frame>
+		<frame time="40">240 0 60 77</frame>
+		<frame time="40">300 0 60 77</frame>
+		<frame time="40">0   77 60 77</frame>
+		<frame time="60">60  77 60 77</frame>
+		<frame time="60">120 77 60 77</frame>
+		<frame time="60">180 77 60 77</frame>
+		<frame time="60">240 77 60 77</frame>
+		<frame time="80">300 77 60 77</frame>
+		<frame time="80">0   154 60 77</frame>
+		<frame time="80">60  154 60 77</frame>
+		<frame time="80">120 154 60 77</frame>
+		<frame time="80">180 154 60 77</frame>
+		<frame time="100">240 154 60 77</frame>
+		<frame time="100">300 154 60 77</frame>
+		<frame time="540">300 154 60 77</frame>
+	</sprite>
+	<sprite layer="-1" origin="30 40" looping="false" texture="../effects/war_ritual.png" material="system/default.mats:bright-noxray"
+	color-r="10.3"
+	color-g="0.4"
+	color-b="0.06"
+	color-a="1"
+	>
+		<frame time="1300">0 0 0 0</frame>
+		<frame time="60">0 0 0 0</frame>
+		<frame time="30">0   0 60 77</frame>
+		<frame time="30">60  0 60 77</frame>
+		<frame time="30">120 0 60 77</frame>
+		<frame time="30">180 0 60 77</frame>
+		<frame time="40">240 0 60 77</frame>
+		<frame time="40">300 0 60 77</frame>
+		<frame time="40">0   77 60 77</frame>
+		<frame time="60">60  77 60 77</frame>
+		<frame time="60">120 77 60 77</frame>
+		<frame time="60">180 77 60 77</frame>
+		<frame time="60">240 77 60 77</frame>
+		<frame time="80">300 77 60 77</frame>
+		<frame time="80">0   154 60 77</frame>
+		<frame time="80">60  154 60 77</frame>
+		<frame time="80">120 154 60 77</frame>
+		<frame time="80">180 154 60 77</frame>
+		<frame time="100">240 154 60 77</frame>
+		<frame time="540">300 154 60 77</frame>
+		<frame time="120">300 154 60 77</frame>
+	</sprite>
+	<sprite layer="-1" origin="30 40" looping="false" texture="../effects/war_ritual.png" material="system/default.mats:bright-noxray"
+	color-r="0.15+0.3-pow(t,3)*saturate(t*2)*0.3"
+	color-g="0.0"
+	color-b="0.03"
+	color-a="1"
+	>
+		<frame time="1300">0 0 0 0</frame>
+		<frame time="100">0 0 0 0</frame>
+		<frame time="30">0   0 60 77</frame>
+		<frame time="30">60  0 60 77</frame>
+		<frame time="30">120 0 60 77</frame>
+		<frame time="30">180 0 60 77</frame>
+		<frame time="40">240 0 60 77</frame>
+		<frame time="40">300 0 60 77</frame>
+		<frame time="40">0   77 60 77</frame>
+		<frame time="60">60  77 60 77</frame>
+		<frame time="60">120 77 60 77</frame>
+		<frame time="60">180 77 60 77</frame>
+		<frame time="60">240 77 60 77</frame>
+		<frame time="80">300 77 60 77</frame>
+		<frame time="80">0   154 60 77</frame>
+		<frame time="80">60  154 60 77</frame>
+		<frame time="80">120 154 60 77</frame>
+		<frame time="80">180 154 60 77</frame>
+		<frame time="100">240 154 60 77</frame>
+		<frame time="100">300 154 60 77</frame>
+		<frame time="520">300 154 60 77</frame>
+	</sprite>
+	
+		<!-- EYE BOTTOM -->
+	<sprite layer="-1" origin="6 -3" looping="false" texture="../effects/war_ritual.png" material="system/default.mats:bright-noxray"
+	color-r="0.15+0.3-pow(t,3)*saturate(t*2)*0.3"
+	color-g="0.0"
+	color-b="0.03"
+	color-a="1"
+	>
+		<frame time="1300">0 0 0 0</frame>
+		<frame time="30">0 0 0 0</frame>
+		<frame time="30">360 0 12 8</frame>
+		<frame time="30">372 0 12 8</frame>
+		<frame time="30">384 0 12 8</frame> 
+		<frame time="30">396 0 12 8</frame>
+		<frame time="40">408 0 12 8</frame>
+		<frame time="80">360 8 12 8</frame>
+		<frame time="60">372 8 12 8</frame>
+		<frame time="60">384 8 12 8</frame>
+		<frame time="60">396 8 12 8</frame>
+		<frame time="60">408 8 12 8</frame>
+		<frame time="1190">360 16 12 8</frame>
+	</sprite>
+		<!-- EYE TOP -->
+	<sprite layer="-1" origin="1 22" loopback="false" texture="../effects/war_ritual.png" material="system/default.mats:bright-noxray"
+	color-r="0.15+0.3-pow(t,3)*saturate(t*2)*0.3"
+	color-g="0.0"
+	color-b="0.03"
+	color-a="1"
+	>
+		<frame time="1300">0 0 0 0</frame>
+		<frame time="30">0 0 0 0</frame>
+		<frame time="30">372 16 2 5</frame>
+		<frame time="30">374 16 2 5</frame>
+		<frame time="30">376 16 2 5</frame>
+		<frame time="30">378 16 2 5</frame>
+		<frame time="40">380 16 2 5</frame>
+		<frame time="1510">382 16 2 5</frame>
+	</sprite>
+	
+		<!-- RUNES -->
+	<sprite layer="-1" origin="79 79" looping="false" texture="../effects/war_ritual.png" material="system/default.mats:bright-noxray"
+	angle="i*((pi*2)/4)"
+	color-r="0.1"
+	color-g="0"
+	color-b="0.03"
+	color-a="saturate(t*12)"
+	num-sprites="4"
+	>
+		<frame time="3000">420 0 80 80</frame>
+	</sprite>
+	<sprite layer="-1" origin="79 79" looping="false" texture="../effects/war_ritual.png" material="system/default.mats:default-noxray"
+	angle="i*((pi*2)/4)"
+	color-r="0.05+(saturate(pow(t,5)*sin((t+0.1)*pi)))*5"
+	color-g="0.01+(saturate(pow(t,5)*sin((t+0.1)*pi)))*2"
+	color-b="0.025+(saturate(pow(t,5)*sin((t+0.1)*pi)))*2"
+	color-a="1*saturate(-0.1+pow(t,7)*100)"
+	num-sprites="4"
+	>
+		<frame time="3000">420 0 80 80</frame>
+	</sprite>
+	
+	<!-- bars  -->
+	<sprite layer="-1" origin="79 79" looping="false" texture="../effects/war_ritual.png" material="system/default.mats:default"
+	angle="i*((pi*2)/4)"
+	color-r="0.8"
+	color-g="0.01"
+	color-b="0.03"
+	color-a="0.9"
+	num-sprites="4"
+	>
+		<frame time="800">0 0 0 0</frame>
+		<frame time="40">0 231 80 80</frame>
+		<frame time="40">80 231 80 80</frame>
+		<frame time="40">160 231 80 80</frame>
+		<frame time="40">0 311 80 80</frame>
+		<frame time="40">80 311 80 80</frame>
+		<frame time="40">160 311 80 80</frame>
+		<frame time="1960">0 391 80 80</frame>
+	</sprite>
+	<sprite layer="-1" origin="79 79" looping="false" texture="../effects/war_ritual.png" material="system/default.mats:bright-noxray"
+	angle="i*((pi*2)/4)"
+	color-r="0.1"
+	color-g="0"
+	color-b="0.03"
+	color-a="1"
+	num-sprites="4"
+	>
+		<frame time="800">0 0 0 0</frame>
+		<frame time="80">0 0 0 0</frame>
+		<frame time="40">0 231 80 80</frame>
+		<frame time="40">80 231 80 80</frame>
+		<frame time="40">160 231 80 80</frame>
+		<frame time="40">0 311 80 80</frame>
+		<frame time="40">80 311 80 80</frame>
+		<frame time="40">160 311 80 80</frame>
+		<frame time="1960">0 391 80 80</frame>
+	</sprite>
+
+	%//RING PARTICLES INNER
+	<particle_spawner
+		spawn-rate="80"
+		length="500"
+		looping="false"
+		ttl="500"
+		pos="cos(((t-0.5)*1.05)*(-pi))*65;-sin(((t-0.5)*1.05)*(-pi))*65;0"
+		wind-speed="0.0"
+		color="255 255 120 255; 255 180 0 200"
+		curl-speed="1"
+		curl-scale="1"
+		start="480"
+	>
+	<behaviors>
+		<spread_range radius="rpick(0,2)"/>
+		<fade_to a="0" r="0.8" g="0" b="0.1" />
+	</behaviors>
+	<particle src="effects/subeffects/particles_speckles.unit:single_white_add"/>
+	</particle_spawner>
+	
+	<particle_spawner
+		spawn-rate="80"
+		length="500"
+		looping="false"
+		ttl="500"
+		pos="sin(((t-0.5)*1.05)*(-pi))*65;cos(((t-0.5)*1.05)*(-pi))*65;0"
+		wind-speed="0.0"
+		color="255 255 120 255; 255 180 0 200"
+		curl-speed="1"
+		curl-scale="1"
+		start="480"
+	>
+	<behaviors>
+		<spread_range radius="rpick(0,2)"/>
+		<fade_to a="0" r="0.8" g="0" b="0.1" />
+	</behaviors>
+	<particle src="effects/subeffects/particles_speckles.unit:single_white_add"/>
+	</particle_spawner>
+	
+	<particle_spawner
+		spawn-rate="80"
+		length="500"
+		looping="false"
+		ttl="500"
+		pos="sin(((t-0.5)*1.05)*(pi))*65;-cos(((t-0.5)*1.05)*(pi))*65;0"
+		wind-speed="0.0"
+		color="255 255 120 255; 255 180 0 200"
+		curl-speed="1"
+		curl-scale="1"
+		start="480"
+	>
+	<behaviors>
+		<spread_range radius="rpick(0,2)"/>
+		<fade_to a="0" r="0.8" g="0" b="0.1" />
+	</behaviors>
+	<particle src="effects/subeffects/particles_speckles.unit:single_white_add"/>
+	</particle_spawner>
+	
+	<particle_spawner
+		spawn-rate="80"
+		length="500"
+		looping="false"
+		ttl="500"
+		pos="-65*cos((t-0.5)*-pi);65*sin((t-0.5)*-pi);0"
+		wind-speed="0.0"
+		color="255 255 120 255; 255 180 0 200"
+		curl-speed="1"
+		curl-scale="1"
+		start="480"
+	>
+	<behaviors>
+		<spread_range radius="rpick(0,2)"/>
+		<fade_to a="0" r="0.8" g="0" b="0.1" />
+	</behaviors>
+	<particle src="effects/subeffects/particles_speckles.unit:single_white_add"/>
+	</particle_spawner>
+
+		%//RING PARTICLES OUTER
+	<particle_spawner
+		start="50"
+		num-particles="120"
+		length="1000"
+		looping="false"
+		ttl="500"
+		pos="0;0;0"
+		wind-speed="0.0"
+		color="255 255 120 255; 255 180 0 200"
+		curl-speed="1"
+		curl-scale="1"
+	>
+	<behaviors>
+		<spread_range radius="78"/>
+		<fade_to a="0" r="0.8" g="0" b="0.1" />
+	</behaviors>
+	<particle src="effects/subeffects/particles_speckles.unit:single_white_add"/>
+	</particle_spawner>
+	%//baselight1
+	<light>
+		<sprite texture="effects/lights/sewer_L.png">
+			<frame time="550">0 0 512 512</frame>
+		</sprite>
+		<looping value="true" />
+		<length value="3000" />
+		<cast-shadows value="false" />
+		<shadow-cast-pos-x value="0" />
+		<shadow-cast-pos-y value="0" />
+		<shadow-cast-pos-jitter value="0 0 0 0" />
+		<size value="350" />
+		<color-r value="(1.4*saturate(t*4))+sin(t*pi*6)*0.4"/>
+		<color-g value="(0.2*saturate(t*4))+sin(t*pi*6)*0.015"/>
+		<color-b value="(0.3*saturate(t*4))+sin(t*pi*6)*0.02"/>
+		<color-a value="0"/>
+	</light>
+	%//baselight2
+	<light>
+		<sprite texture="effects/lights/light_L.png">
+			<frame time="550">0 0 128 128</frame>
+		</sprite>
+		<looping value="true" />
+		<length value="3000" />
+		<cast-shadows value="false" />
+		<shadow-cast-pos-x value="0" />
+		<shadow-cast-pos-y value="0" />
+		<shadow-cast-pos-jitter value="0 0 0 0" />
+		<size value="400" />
+		<color-r value="(1.4*saturate(t*4))+sin(t*pi*3)*0.2"/>
+		<color-g value="(0.2*saturate(t*4))+sin(t*pi*3)*0.01"/>
+		<color-b value="(0.3*saturate(t*4))+sin(t*pi*3)*0.01"/>
+		<color-a value="0"/>
+	</light>
+	<light origin="0 0">
+		<sprite texture="system/default_L.png">
+			<frame time="550">0 0 256 256</frame>
+		</sprite>
+		<looping value="false" />
+		<length value="800" />
+		<cast-shadows value="false" />
+		<shadow-cast-pos-x value="0" />
+		<shadow-cast-pos-y value="0" />
+		<shadow-cast-pos-jitter value="0 0 0 0" />
+		<angle value="pi/4-sin(t*pi)*1.8" />
+		<size value="160" />
+		<color-r value="1.4"/>
+		<color-g value="0.2"/>
+		<color-b value="0.3"/>
+		<color-a value="0"/>
+	</light>
+	<light pos-x="rpick(-20,20)" pos-y="rpick(-20,20)">
+		<sprite texture="system/default_L.png">
+			<frame time="550">0 0 128 128</frame>
+		</sprite>
+		<looping value="false" />
+		<length value="3000" />
+		<cast-shadows value="false" />
+		<shadow-cast-pos-x value="0" />
+		<shadow-cast-pos-y value="0" />
+		<shadow-cast-pos-jitter value="0 0 0 0" />
+		<size value="40" />
+		<color-g value="2.4*clamp(sin((t+0.2)*pi*3),0,1)*pow(t,6)"/>
+		<color-r value="0"/>
+		<color-b value="0"/>
+		<color-a value="0"/>
+	</light>
+	
+	
+	
+	
+	
+	%//conflagration
+	<particle_spawner
+		layer="-15"
+		spawn-rate="16*conflagration"
+		length="3000"
+		looping="true"
+		ttl="rpick(1000,2000)"
+		angle="rpick(-pi,pi)"
+		pos="0;0;0"
+		>
+		<behaviors>
+			<spread_range radius="rpick(0,radius)" />
+			<fade_to a="0" r="0" g="0" b="0" />
+		</behaviors>
+		<particle src="effects/subeffects/particles_fire.unit:ground_embers"/> 
+		<particle src="effects/subeffects/particles_fire.unit:ground_embers"/> 
+		<particle src="effects/subeffects/particles_speckles.unit:ember_blinking"/> 
+	</particle_spawner>
+	groundglow big
+	<particle_spawner
+		layer="-15"
+		spawn-rate="8*conflagration"
+		length="3000"
+		looping="true"
+		ttl="rpick(1000,2000)"
+		angle="rpick(-pi,pi)"
+		pos="0;0;0"
+		>
+		<behaviors>
+			<spread_range radius="rpick(0,70)" />
+			<fade_to a="0" r="0" g="0" b="0" />
+		</behaviors>
+		<particle src="effects/subeffects/particles_fire.unit:ground_embers_big"/>
+	</particle_spawner>
+	%//medium flames
+	<particle_spawner
+		layer="-1"
+		spawn-rate="25*conflagration"
+		length="3000"
+		looping="false"
+		ttl="rpick(500,1000)"
+		pos="0 ; 0; 0"
+		color-mul="1;0.4;1;1"
+		>
+		<behaviors>
+			<spread_range radius="rpick(0,radius)" />
+		</behaviors>
+		<particle src="effects/subeffects/particles_fire.unit:flame_1"/>
+	</particle_spawner>
+	flying embers
+	<particle_spawner
+		layer="0"
+		wind-speed="1.2"
+		force-damping="rpick(0,6)"
+		spawn-rate="(radius/2)*conflagration"
+		length="3000"
+		looping="false"
+		ttl="rpick(200,2000)"
+		curl-speed="3"
+		curl-scale="1"
+		>
+		<behaviors>
+			<spread_range radius="rpick(0,radius*0.9)" />
+			<force_dir dir="0; rpick(-0.8,-1.5); 0"/>
+			<fade_to a="0" r="2" g="0" b="0" />
+		</behaviors>
+		<particle src="effects/subeffects/particles_speckles.unit:ember_blinking"/> 
+	</particle_spawner>
+
+	%//smoke
+	<particle_spawner
+		layer="2"
+		wind-speed="1.2"
+		spawn-rate="(radius/2)*conflagration"
+		length="3000"
+		start="160"
+		looping="false"
+		ttl="1000"
+		pos="0 ; 0; 0"
+		%//angle="rpick(1,2)"
+		%//curl-speed="1"
+		color="#656d78;#99a2c4"
+		%//curl-scale="1" use for flames?
+		>
+		<behaviors>
+			<spread_range radius="rpick(0,radius)" />
+			<force_dir dir="0; -0.1; 0"/>
+			%//<fade_to a="0.0" r="0" g="0" b="0" />
+		</behaviors>
+		<particle src="effects/subeffects/particles_grayscale.unit:smoke_hard_2_medium"/> 
+	</particle_spawner>
+	
+	<particle_spawner
+		spawn-rate="radius*0.25*conflagration"
+		length="3000"
+		looping="true" 
+		ttl="rpick(500,1000)"
+		force-damping="1"
+		angle="0"
+		color="255 80 0 255; 240 150 0 255"
+		color-mul="1;1;1;1"
+	>
+		<behaviors>
+			<spread_range radius="rpick(0,radius)" />
+			<fade_to a="0" />
+		</behaviors>
+		
+		<particle src="effects/subeffects/particles_grayscale.unit:groundflame_tiny"/>
+		<particle src="effects/subeffects/particles_grayscale.unit:groundflame_small"/>
+		<particle src="effects/subeffects/particles_grayscale.unit:groundflame_medium"/>
+		<particle src="effects/subeffects/particles_grayscale.unit:groundflame_medium"/>
+	</particle_spawner>
+</effect>

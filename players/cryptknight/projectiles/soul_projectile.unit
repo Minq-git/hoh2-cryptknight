@@ -1,0 +1,84 @@
+<unit netsync="none">
+	<behavior class="NewProjectile">
+		<string name="anim">default</string>
+		<float name="speed">5</float>
+		<int name="ttl">1300</int>
+		<string name="penetration-bind">proj-bounce</string>
+		<bool name="bounce-on-collide">false</bool>
+		<int name="bounces">0</int>
+
+		<array name="modifiers">
+			<dict>
+				<string name="class">Projectile::DirectionSteering</string>
+				<string name="dir">sin(t*pi*2)*0.2</string>
+			</dict>
+			<dict>
+				<string name="class">Projectile::Speed</string>
+				<float name="hit-intensity-mul">0.9</float>
+			</dict>
+			<dict>
+				<string name="class">Projectile::Retargeter</string>
+				<int name="target-range">120</int>
+				<float name="interception">0</float>
+				<bool name="destroy-on-fail">true</bool>
+			</dict>
+			<dict>
+				<string name="class">Projectile::SeekingAng</string>
+				<float name="turn-speed">90</float>
+			</dict>
+			<dict>
+				<string name="class">Projectile::TimeToLive</string>
+				<float name="hit-ttl-mul">1.5</float>
+				<int name="hit-ttl-add">0</int>
+				<float name="hit-intensity-mul">1</float>
+				
+				<float name="bounce-ttl-mul">1</float>
+				<int name="bounce-ttl-add">0</int>
+				<float name="bounce-intensity-mul">1</float>
+			</dict>
+			<dict>
+				<string name="class">Projectile::AttachedLoopingSound</string>
+				<string name="sound">event:/sfx/player/classes/warlock/soul_vortex/soul_vortex_projectile</string>
+			</dict>
+		</array>
+
+		<array name="hit-effects">
+<!-- 			<dict>
+				<string name="class">Damage</string>
+				<string name="physical-bind">proj-dmg</string>
+				<string name="poison-bind">proj-dmg</string>
+				<bool name="shield-blockable">true</bool>
+			</dict> -->
+			<dict>
+				<string name="class">PlayerDamage</string>
+				<!-- <float name="mul">0.25</float> -->
+				<string name="mul-bind">proj-dmg-mul</string>
+				<bool name="off-hand">false</bool>
+				<bool name="shield-blockable">true</bool>
+			</dict>
+			<dict>
+				<string name="class">SpawnEffect</string>
+				<string name="effect">effects/generic/impacts/soul_projectile_impact.effect</string>
+			</dict>
+			<dict>
+				<string name="class">PlaySound</string>
+				<string name="sound">event:/sfx/player/classes/warlock/soul_vortex/soul_vortex_projectile_impact</string>
+			</dict>
+		</array>
+
+<!-- 		<array name="destroyed-effects">
+		</array> -->
+
+		<dict name="effect-params">
+		</dict>
+	</behavior>
+	
+	<scenes>
+		<scene name="default">
+			<collision static="false">
+				<circle radius="5" projectile="true" />
+			</collision>
+			<effect src="effects/generic/projectiles/soul_projectile.effect"/>
+		</scene>
+	</scenes>
+</unit>

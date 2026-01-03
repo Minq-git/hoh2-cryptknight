@@ -1,0 +1,177 @@
+<effect looping="false" layer="20">
+	
+	<param name="radius" default="0" />
+	<param name="angle" default="0" />
+	<variation>
+		<sprite origin="11 8" looping="false" texture="./chaos_blade_hit.png" material="system/default.mats:bright-noxray"
+		angle="rand(u+i)*pi*2"
+		pos-x="cos(angle)*2"
+		pos-y="-4+sin(angle)*2"
+		color-a="sin(t*pi)*0.5"
+		>
+			<frame time="30">0 0 32 23</frame>
+			<frame time="30">32 0 32 23</frame>
+			<frame time="90">64 0 32 23</frame>
+			<frame time="60">96 0 32 23</frame>
+		</sprite>
+		<sprite origin="11 8" looping="false" texture="./chaos_blade_hit.png" material="system/default.mats:bright-noxray"
+		angle="rand(u+i)*pi*2"
+		pos-x="cos(angle)*2"
+		pos-y="-4+sin(angle)*2"
+		color-a="sin(t*pi)*0.5"
+		>
+			<frame time="90">0 0 0 0</frame>
+			<frame time="30">0 23 32 23</frame>
+			<frame time="30">32 23 32 23</frame>
+			<frame time="90">64 23 32 23</frame>
+			<frame time="30">96 23 32 23</frame>
+		</sprite>
+		%//white glow
+		<sprite origin="11 8" looping="false" texture="./chaos_blade_hit.png" material="system/default.mats:bright-glow"
+		angle="rand(u+i)*pi*2"
+		pos-x="cos(angle)*2"
+		pos-y="-4+sin(angle)*2"
+		>
+			<frame time="60">0 47 32 23</frame>
+			<frame time="60">32 47 32 23</frame>
+			<frame time="30">64 47 32 23</frame>
+			<frame time="30">96 47 32 23</frame>
+		</sprite>
+		<sprite origin="11 8" looping="false" texture="./chaos_blade_hit.png" material="system/default.mats:bright-glow"
+		angle="rand(u+i)*pi*2"
+		pos-x="cos(angle)*2"
+		pos-y="-4+sin(angle)*2"
+		>
+			<frame time="90">0 0 0 0</frame>
+			<frame time="60">0 70 32 23</frame>
+			<frame time="60">32 70 32 23</frame>
+			<frame time="30">64 70 32 23</frame>
+			<frame time="30">96 70 32 23</frame>
+		</sprite>
+	</variation>
+	
+	<variation>
+		<sprite origin="11 8" looping="false" texture="./chaos_blade_hit.png" material="system/default.mats:bright-noxray"
+		angle="rand(u+i)*pi*2"
+		pos-x="cos(angle)*2"
+		pos-y="-4+sin(angle)*2"
+		color-a="sin(t*pi)*0.5"
+		>
+			<frame time="90">0 0 0 0</frame>
+			<frame time="60">0 0 32 23</frame>
+			<frame time="30">32 0 32 23</frame>
+			<frame time="90">64 0 32 23</frame>
+			<frame time="60">96 0 32 23</frame>
+		</sprite>
+		<sprite origin="11 8" looping="false" texture="./chaos_blade_hit.png" material="system/default.mats:bright-noxray"
+		angle="rand(u+i)*pi*2"
+		pos-x="cos(angle)*2"
+		pos-y="-4+sin(angle)*2"
+		color-a="sin(t*pi)*0.5"
+		>
+			<frame time="60">0 23 32 23</frame>
+			<frame time="60">32 23 32 23</frame>
+			<frame time="90">64 23 32 23</frame>
+			<frame time="60">96 23 32 23</frame>
+		</sprite>
+		%//white glow
+		<sprite origin="11 8" looping="false" texture="./chaos_blade_hit.png" material="system/default.mats:bright-glow"
+		angle="rand(u+i)*pi*2"
+		pos-x="cos(angle)*2"
+		pos-y="-4+sin(angle)*2"
+		>
+			<frame time="90">0 0 0 0</frame>
+			<frame time="60">0 47 32 23</frame>
+			<frame time="60">32 47 32 23</frame>
+			<frame time="30">64 47 32 23</frame>
+			<frame time="30">96 47 32 23</frame>
+		</sprite>
+		<sprite origin="11 8" looping="false" texture="./chaos_blade_hit.png" material="system/default.mats:bright-glow"
+		angle="rand(u+i)*pi*2"
+		pos-x="cos(angle)*2"
+		pos-y="-4+sin(angle)*2"
+		>
+			<frame time="30">0 70 32 23</frame>
+			<frame time="60">32 70 32 23</frame>
+			<frame time="60">64 70 32 23</frame>
+			<frame time="30">96 70 32 23</frame>
+		</sprite>
+	</variation>
+
+
+	<particle_spawner
+		layer="10"
+		spawn-rate="12"
+		length="250"
+		looping="false"
+		ttl="1500"
+		angle="0"
+		pos="0;0;0"
+		color-mul="1;0.25;1;1"
+		force-damping="5"
+		rot-speed="rpick(-1,1)"
+		>
+		<behaviors>
+			<spread_range radius="4"/>
+			<force_dir dir="cos(angle-pi)*rpick(0,1);sin(angle-pi)*rpick(0,1); 0"/>
+			%//<force_toward pos="0; 0; 0" mul="-rpick(2.5,2.8)"/>
+			<fade_to b="1" />
+		</behaviors>
+		<particle src="effects/subeffects/particles_misc.unit:wispy_dissolve_teal"/>
+		</particle_spawner>
+		<light>
+			<sprite texture="effects/lights/light2_L.png">
+				<frame time="500">0 0 128 128</frame>
+			</sprite>
+			<looping value="false" />
+			<length value="250" />
+			<cast-shadows value="false" />
+			<shadow-cast-pos-x value="0" />
+			<shadow-cast-pos-y value="0" />
+			<shadow-cast-pos-jitter value="0 0 0 0" />
+			<size value="45+45*t" />
+			<color-r value="1.1*(1-t)" />
+			<color-g value="0.2*(1-t)" />
+			<color-b value="1.6*(1-t)" />
+			<color-a value="0"/>
+		</light>
+		<light>
+			<sprite texture="effects/lights/radial_jagged_ring_L.png">
+				<frame time="500">0 0 256 256</frame>
+			</sprite>
+			<looping value="false" />
+			<length value="150" />
+			<cast-shadows value="false" />
+			<shadow-cast-pos-x value="0" />
+			<shadow-cast-pos-y value="0" />
+			<shadow-cast-pos-jitter value="0 0 0 0" />
+			<size value="(45+sin(t*pi*6)*15)+t*16" />
+			<color-r value="1.1*(1-t)" />
+			<color-g value="0" />
+			<color-b value="2.6*(1-t)" />
+			<color-a value="0"/>
+		</light>
+		<light>
+			<sprite texture="effects/lights/lens_flash_L.png">
+				<frame time="500">0 0 256 256</frame>
+			</sprite>
+			<looping value="false" />
+			<length value="120" />
+			<cast-shadows value="false" />
+			<shadow-cast-pos-x value="0" />
+			<shadow-cast-pos-y value="0" />
+			<shadow-cast-pos-jitter value="0 0 0 0" />
+			<size value="60+t*22" />
+			<color-r value="1" />
+			<color-g value="0.1" />
+			<color-b value="0.9" />
+			<color-a value="0.5"/>
+		</light>
+		
+		
+		
+		
+</effect>
+
+
+

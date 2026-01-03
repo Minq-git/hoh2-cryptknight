@@ -1,0 +1,105 @@
+<effect layer="10" looping="true" wpos-track="8">
+	<param name="angle" default="0" />
+	<param name="height" default="0" />
+	<param name="length" default="32" />
+	<param name="scale_x" default="1" />
+	<param name="scale_y" default="2" />
+	<param name="wave" default="5" />
+	<param name="castfx" default="0" />
+	
+	<param name="cR" default="0.8" />
+	<param name="cG" default="1" />
+	<param name="cB" default="0.2" />
+	
+%defblock BeamColor
+			<color-r value="1+rand(i)*0.5" />
+			<color-g value="0.25-rand(i)*0.25" />
+			<color-b value="1" />
+%endblock
+ 	<trail texture="effects/spritesheets/trail_4.png" material="system/default.mats:bright">
+			<pos-x value="
+			cos(angle)*(-4+(length/5)*i)+sin(angle+1.57+rand(i+l+7)*0.6+((t+l)+0.15*i)*pi*2)*2" />
+			<pos-y value="
+			sin(angle)*(-4+(length/5)*i)+cos(angle+1.57+rand(i+l+7)*0.6+((t+l)+0.15*i)*pi*2)*2" />
+			
+			<length value="250" />
+			<looping value="true" />
+			
+			<segments value="8" />
+			<size value="3" />
+			
+			<uv-l-x value="((length/32)*i)+(t+l)*96" />
+			<uv-l-y value="0" />
+			
+			<uv-r-x value="((length/32)*i)+(t+l)*96" />
+			<uv-r-y value="13" /> 
+			
+			<color-r value="0.1" />
+			<color-g value="0" />
+			<color-b value="0.2" />
+			<color-a value="saturate(i)*rand(i+u)*0.75*(1-saturate(i-5))" /> 
+	</trail>
+ 	<trail texture="effects/spritesheets/beam_3.png" material="system/default.mats:bright">
+			<pos-x value="
+			cos(angle)*(-4+(length/5)*i)+sin(angle+1.57+rand(i+l+u)*0.6+((t+l)+0.2*i)*pi*3)*2" />
+			<pos-y value="
+			sin(angle)*(-4+(length/5)*i)+cos(angle+1.57+rand(i+l+u)*0.6+((t+l)+0.2*i)*pi*3)*2" />
+			
+			<length value="250" />
+			<looping value="true" />
+			
+			<segments value="8" />
+			<size value="2" />
+			
+			<uv-l-x value="((length/32)*i)+(t+l)*96" />
+			<uv-l-y value="122" />
+			
+			<uv-r-x value="((length/32)*i)+(t+l)*96" />
+			<uv-r-y value="139" /> 
+			
+			%block BeamColor
+			<color-a value="saturate(i)*rand(i+u)*2*(1-saturate(i-5))" /> 
+	</trail>
+
+ 	<particle_spawner
+		layer="-1"
+		spawn-rate="sin(t*pi)*25"
+		
+		
+		length="300"
+		looping="true"
+		ttl="rpick(250,400)"
+		angle="rpick(-pi,pi)"
+		color-mul="2;0.1;2+floor(rand(t)+0.4);0.25" 
+		pos="0;
+		0;
+		0"
+		curl-speed="1"
+		curl-scale="2"
+		>
+		<behaviors>
+			<spread_line offset="cos(angle)*(length+12); sin(angle)*(length+12); 0"/>
+			<fade_to a="0" r="1" g="0" b="1" />
+			<force_dir dir="cos(angle)*-1; sin(angle)*-1; 0"/>
+		</behaviors>
+		<particle src="effects/subeffects/particles_speckles.unit:single_white_add"/>
+		<particle src="effects/subeffects/particles_speckles.unit:long_diagonal_add"/>
+		<particle src="effects/subeffects/particles_speckles.unit:long_diagonal_add"/>
+	</particle_spawner>
+
+	<light pos-x="cos(angle)*16" pos-y="sin(angle)*16">
+		<sprite texture="effects/lights/long_soft_L.png">
+			<frame>0 0 256 256</frame>
+		</sprite>
+		<looping value="true" />
+		<length value="250" />
+		<cast-shadows value="false" />
+		<shadow-cast-pos-jitter value="0 0 0 0" />
+		<size value="48" />
+		<angle value="angle+1.57" />
+		<color-r value="1"/> 
+		<color-g value="0.125" /> 
+		<color-b value="0.8" />
+		<color-a value="0"/>
+	</light>
+</effect>
