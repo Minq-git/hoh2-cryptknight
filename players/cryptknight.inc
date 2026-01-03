@@ -70,9 +70,6 @@
 		<string>players/cryptknight/skills/death_grip.sval</string>
 		<string>players/cryptknight/skills/bone_shield.sval</string>
 		
-		<string>players/cryptknight/skills/drain_essence.sval</string>
-		<string>players/cryptknight/skills/aura.sval</string>
-
 		<string>players/cryptknight/skills/raise_dead.sval</string>
 	</array>
 
@@ -92,9 +89,6 @@
 		
 		<string>players/cryptknight/skills/pestilence.sval</string>
 		<string>players/cryptknight/skills/bone_shield.sval</string>
-		
-		<string>players/cryptknight/skills/drain_essence.sval</string>
-		<string>players/cryptknight/skills/aura.sval</string>
 		
 		<string>players/cryptknight/skills/raise_dead.sval</string>
 		<string>players/cryptknight/skills/sickly.sval</string>
@@ -117,9 +111,6 @@
 		<string>players/cryptknight/skills/void_funnel.sval</string>
 		<string>players/cryptknight/skills/bone_shield.sval</string>
 		
-		<string>players/cryptknight/skills/drain_essence.sval</string>
-		<string>players/cryptknight/skills/aura.sval</string>
-		
 		<string>players/cryptknight/skills/raise_dead.sval</string>
 		<string>players/cryptknight/skills/cursed.sval</string>
 	</array>
@@ -140,9 +131,6 @@
 		
 		<string>players/cryptknight/skills/death_grip.sval</string>
 		<string>players/cryptknight/skills/bone_shield.sval</string>
-		
-		<string>players/cryptknight/skills/drain_essence.sval</string>
-		<string>players/cryptknight/skills/aura.sval</string>
 		
 		<string>players/cryptknight/skills/raise_dead.sval</string>
 		<string>players/cryptknight/skills/stronger_together.sval</string>

@@ -1,2 +1,0 @@
-%define DEFAULT
-%include "players/warlock/units/gargoyle_trident.inc"
