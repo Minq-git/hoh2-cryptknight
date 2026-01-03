@@ -47,8 +47,8 @@
 	</array>
 
 	<array name="starting-equipment">
-		<string>chest_plate_t1</string>
-		<string>feet_plate_t1</string>
+		<string>chest_str_t1a</string>
+		<string>feet_str_t1a</string>
 		<string>twohanded_maul_01</string>
 	</array>
 %endblock
@@ -58,6 +58,7 @@
 	<string name="id">cryptknight</string>
 	<string name="name">Crypt Knight</string>
 	<string name="description">An undead knight raised to serve again.</string>
+	<string name="unit">players/cryptknight/cryptknight.unit</string>
 
 	<array name="icon">
 		<string>players/class_showcase.png</string>
