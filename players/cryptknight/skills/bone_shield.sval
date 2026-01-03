@@ -2,10 +2,11 @@
 <dict>
 	<string name="name">Bone Shield</string>
 	<string name="type-name">.skills.type.spell</string>
-	<string name="description">Absorbs damage.</string>
+	<string name="description">Reduces damage taken by consuming stacks.</string>
 
 	<array name="description-params">
-		<array><s>shield</s><s>Shield Amount</s><s>45</s><s>60</s><s>75</s><s>90</s><s>105</s></array>
+		<array><s>reduction</s><s>Damage Reduction</s><s>-30%</s><s>-35%</s><s>-40%</s><s>-45%</s><s>-50%</s></array>
+		<array><s>stacks</s><s>Max Stacks</s><s>3</s><s>3</s><s>5</s><s>5</s><s>7</s></array>
 		<array><s>cooldown</s><b>t</b><s>.skills.desc.params.cooldown</s><s>45s</s><s>40s</s><s>35s</s><s>30s</s><s>25s</s></array>
 	</array>
 
@@ -20,31 +21,65 @@
 	<int name="starting-level">1</int>
 
 	<dict name="skill">
-		<int name="skill-cost">SKILLCOSTLEVEL_1</int>
+		<int name="skill-cost">3</int>
 		<string name="class">Skills::PlayerSkillDirectional</string>
 		<string name="anim">cast</string>
 		<int name="anim-length">300</int>
 		
-		<int name="cooldown">45000</int>
+		<!-- TODO: For Testing Only. Reset cooldown to 45000 -->
+		<int name="cooldown">2000</int>
 		<int name="castpoint">0</int>
 		<bool name="must-hold">false</bool>
 		
 		<int name="mana-cost">20</int>
 		
 		<dict name="binds">
-			<int name="shield-amount">45</int>
+			<int name="max-stacks">3</int>
+			<float name="dmg-taken">0.7</float> <!-- 30% reduction = 0.7 multiplier -->
 		</dict>
 
 		<dict name="actions">
 			<array name="cast">
+				<!-- First, remove existing stacks to "refresh" to max -->
+				<!-- Actually, AddStacks with a large number and clamping is handled by 'max' in stack def, 
+				     but AddStacks adds TO current. If we want to Set to Max:
+				     We can remove the buff first, then add Max. 
+				     Or we can check if we can 'set' stacks. 
+				     Wizard Barrier adds 1 stack over time.
+				     Here we want to refill completely. 
+				     We can use RemoveBuff then AddStacks.
+				-->
 				<dict>
-					<string name="class">ApplyBuff</string>
-					<string name="buff">players/cryptknight/buffs/bone_shield_buff.sval:bone_shield_buff</string>
+					<string name="class">RemoveBuff</string>
+					<string name="buff">players/cryptknight/stacks_cryptknight_boneshield.sval:bone_shield</string>
+				</dict>
+				<dict>
+					<string name="class">AddStacks</string>
+					<string name="buff">players/cryptknight/stacks_cryptknight_boneshield.sval:bone_shield</string>
+					<string name="stacks-bind">max-stacks</string>
 					<bool name="target-self">true</bool>
 				</dict>
 			</array>
 		</dict>
 
+		<array name="modifiers">
+			<dict>
+				<string name="class">Modifiers::InjectModifiersIntoStack</string>
+				<string name="buff">players/cryptknight/stacks_cryptknight_boneshield.sval:bone_shield</string>
+				<array name="modifiers">
+					<dict>
+						<string name="class">Modifiers::Armor</string>
+						<string name="dmg-taken-mul-bind">dmg-taken</string>
+					</dict>
+					<dict>
+						<string name="class">Modifiers::ModifyStack</string>
+						<string name="buff">players/cryptknight/stacks_cryptknight_boneshield.sval:bone_shield</string>
+						<string name="max-bind">max-stacks</string>
+					</dict>
+				</array>
+			</dict>
+		</array>
+		
 		<array name="timeline">
 			<i>0</i><s>cast</s>
 		</array>
@@ -52,31 +87,35 @@
 
 	<array name="upgrades">
 		<dict>
-			<int name="skill-cost">SKILLCOSTLEVEL_2</int>
+			<int name="skill-cost">3</int>
 			<int name="cooldown">40000</int>
 			<dict name="binds">
-				<int name="shield-amount">60</int>
+				<int name="max-stacks">3</int>
+				<float name="dmg-taken">0.65</float>
 			</dict>
 		</dict>
 		<dict>
-			<int name="skill-cost">SKILLCOSTLEVEL_3</int>
+			<int name="skill-cost">5</int>
 			<int name="cooldown">35000</int>
 			<dict name="binds">
-				<int name="shield-amount">75</int>
+				<int name="max-stacks">5</int>
+				<float name="dmg-taken">0.6</float>
 			</dict>
 		</dict>
 		<dict>
-			<int name="skill-cost">SKILLCOSTLEVEL_4</int>
+			<int name="skill-cost">5</int>
 			<int name="cooldown">30000</int>
 			<dict name="binds">
-				<int name="shield-amount">90</int>
+				<int name="max-stacks">5</int>
+				<float name="dmg-taken">0.55</float>
 			</dict>
 		</dict>
 		<dict>
-			<int name="skill-cost">SKILLCOSTLEVEL_5</int>
+			<int name="skill-cost">7</int>
 			<int name="cooldown">25000</int>
 			<dict name="binds">
-				<int name="shield-amount">105</int>
+				<int name="max-stacks">7</int>
+				<float name="dmg-taken">0.5</float>
 			</dict>
 		</dict>
 	</array>

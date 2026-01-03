@@ -1,0 +1,73 @@
+<loader>ActorBuffStackDef::LoadMultiple</loader>
+<array>
+	<dict>
+		<string name="id">bone_shield</string>
+		<string name="name">Bone Shield</string>
+		<string name="description">Reduces damage taken.</string>
+		<int name="max">7</int> <!-- Max 5 stacks at level 5, refreshed by skill -->
+		<bool name="refresh-on-max">true</bool>
+		
+		<dict name="buff">
+			<bool name="debuff">false</bool>
+			<string name="fx">players/cryptknight/effects/bone_shield.effect</string>
+			
+			<bool name="icon-show-duration">false</bool>
+			<!-- <int name="duration">30000</int> Infinite duration until used -->
+
+			<array name="hud">
+				<string>players/icons_skills.png</string>
+				<int>100</int><vec4>48 168 15 15</vec4>
+			</array>
+			
+			<array name="modifiers">
+				<!-- Dummy modifier to ensure buff exists, Armor modifier injected by skill -->
+				<!-- <dict><string name="class">Modifiers::DummyModifier</string></dict> -->
+				
+				<dict>
+					<string name="class">Modifiers::TriggerEffect</string>
+					<string name="trigger">hurt</string>
+					<bool name="target-self">true</bool>
+					<int name="timeout">0</int>
+
+					<array name="effects">
+						<dict>
+							<string name="class">PlaySound</string>
+							<string name="sound">event:/sfx/player/classes/wizard/barrier/barrier_impact</string>
+						</dict>
+						<dict>
+							<string name="class">AddStacks</string>
+							<bool name="target-self">true</bool>
+							<!-- Reference the ID 'bone_shield' in THIS file -->
+							<string name="buff">players/cryptknight/stacks_cryptknight_boneshield.sval:bone_shield</string>
+							<int name="stacks">-1</int>
+						</dict>
+					</array>
+				</dict>
+			</array>
+		</dict>
+		
+		<!-- Explosion when losing the last stack -->
+		<array name="lose-effects">
+			<!-- Check if we have 0 stacks left? 
+			     'lose-effects' usually triggers when the entire buff is removed (stacks reach 0).
+			-->
+			<dict>
+				<string name="class">Explode</string>
+				<int name="radius">48</int>
+				<float name="dist-scaling">5</float> <!-- 5 damage per distance unit? or scaling factor -->
+				<!-- Simple explosion logic -->
+				<int name="min-radius">48</int>
+				<array name="effects">
+					<dict>
+						<string name="class">Damage</string>
+						<int name="physical">50</int> <!-- Flat damage for now, maybe scale? -->
+					</dict>
+					<dict>
+						<string name="class">PlaySound</string>
+						<string name="sound">event:/sfx/player/classes/wizard/barrier/barrier_lose</string>
+					</dict>
+				</array>
+			</dict>
+		</array>
+	</dict>
+</array>
