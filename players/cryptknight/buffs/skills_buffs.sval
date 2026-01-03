@@ -1,6 +1,5 @@
-<loader>ActorBuffDef::LoadMultiple</loader>
-<array>
-	<dict>
+<svals>
+	<dict name="pull_effect">
 		<string name="id">pull_effect</string>
 		<bool name="debuff">true</bool>
 		<int name="duration">500</int>
@@ -13,7 +12,7 @@
 		</array>
 	</dict>
 
-	<dict>
+	<dict name="pestilence_buff">
 		<string name="id">pestilence_buff</string>
 		<bool name="debuff">false</bool>
 		<int name="duration">3000</int>
@@ -46,7 +45,7 @@
 	
 	<!-- Zombie Transformation Definitions -->
 	%defblock ZombieTransform ID DUR
-	<dict>
+	<dict name="%%ID%%">
 		<string name="id">%%ID%%</string>
 		<bool name="debuff">false</bool>
 		<string name="name">Zombie Form</string>
@@ -119,4 +118,4 @@
 	%block ZombieTransform zombie_transformation_4 45000
 	%block ZombieTransform zombie_transformation_5 50000
 
-</array>
+</svals>

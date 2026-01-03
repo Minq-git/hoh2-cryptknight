@@ -22,7 +22,7 @@
 	<dict name="skill">
 		<int name="skill-cost">SKILLCOSTLEVEL_1</int>
 		<string name="class">Skills::PlayerSkillDirectional</string>
-		<string name="anim">cast</string>
+		<string name="anim">cast-long</string>
 		<!-- Level 1: 1 second channel, 2 waves -->
 		<int name="anim-length">1000</int> 
 		

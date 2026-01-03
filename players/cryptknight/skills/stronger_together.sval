@@ -21,7 +21,7 @@
 
 	<dict name="skill">
 		<int name="skill-cost">SKILLCOSTLEVEL_1</int>
-		<string name="class">Skills::PlayerSkill</string>
+		<string name="class">Skills::PassiveSkill</string>
 		
 		<dict name="binds">
 			<int name="max-bonus">1</int>

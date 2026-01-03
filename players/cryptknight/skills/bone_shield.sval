@@ -21,7 +21,7 @@
 
 	<dict name="skill">
 		<int name="skill-cost">SKILLCOSTLEVEL_1</int>
-		<string name="class">Skills::PlayerSkill</string>
+		<string name="class">Skills::PlayerSkillDirectional</string>
 		<string name="anim">cast</string>
 		<int name="anim-length">300</int>
 		
@@ -39,11 +39,15 @@
 			<array name="cast">
 				<dict>
 					<string name="class">ApplyBuff</string>
-					<string name="buff">players/cryptknight/buffs/bone_shield_buff.sval</string>
+					<string name="buff">players/cryptknight/buffs/bone_shield_buff.sval:bone_shield_buff</string>
 					<bool name="target-self">true</bool>
 				</dict>
 			</array>
 		</dict>
+
+		<array name="timeline">
+			<i>0</i><s>cast</s>
+		</array>
 	</dict>
 
 	<array name="upgrades">
@@ -77,4 +81,3 @@
 		</dict>
 	</array>
 </dict>
-

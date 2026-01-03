@@ -15,22 +15,24 @@
 	<int name="starting-level">1</int>
 
 	<dict name="skill">
-		<string name="class">Skills::MeleeSwing</string>
+		<string name="class">Skills::PlayerSkillDirectional</string>
 		<string name="anim">attack</string>
 		<int name="anim-length">300</int>
 		
 		<int name="cooldown">0</int>
 		<int name="castpoint">0</int>
 		
-		<dict name="damage">
-			<float name="weapon">0.5</float> <!-- 50% Weapon Damage -->
-		</dict>
-		
-		<bool name="cleave">true</bool> <!-- Frontal Cleave -->
-		<float name="arc">120</float>
-		
 		<dict name="actions">
-			<array name="pre">
+			<array name="cast">
+				<dict>
+					<string name="class">MeleeSwing</string>
+					<dict name="damage">
+						<float name="weapon">0.5</float> <!-- 50% Weapon Damage -->
+					</dict>
+					<bool name="cleave">true</bool> <!-- Frontal Cleave -->
+					<float name="arc">120</float>
+					<int name="dist">20</int>
+				</dict>
 				<dict>
 					<string name="class">PlaySound</string>
 					<string name="sound">event:/sfx/player/classes/warrior/sword_swing</string> <!-- Placeholder Sound -->

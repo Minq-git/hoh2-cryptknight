@@ -31,7 +31,14 @@
 				<string name="class">Modifiers::CheatDeath</string>
 				<float name="chance">1.0</float>
 				<float name="hp">1.0</float> <!-- Heal to full? Or 1 HP? Usually cheat death keeps you alive. Let's say 100% HP to fight as zombie. -->
-				<string name="trigger-on-death-effect-bind">transform-buff</string>
+				
+				<array name="effects">
+					<dict>
+						<string name="class">ApplyBuff</string>
+						<string name="buff-bind">transform-buff</string>
+						<bool name="target-self">true</bool>
+					</dict>
+				</array>
 			</dict>
 		</array>
 	</dict>

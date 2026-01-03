@@ -21,7 +21,7 @@
 
 	<dict name="skill">
 		<int name="skill-cost">SKILLCOSTLEVEL_1</int>
-		<string name="class">Skills::PlayerSkill</string>
+		<string name="class">Skills::PlayerSkillDirectional</string>
 		<string name="anim">cast</string>
 		<int name="anim-length">400</int>
 		
@@ -46,6 +46,10 @@
 				</dict>
 			</array>
 		</dict>
+		
+		<array name="timeline">
+			<i>200</i><s>cast</s>
+		</array>
 		
 		<array name="modifiers">
 			<!-- Limit each minion type to 1 by default -->
