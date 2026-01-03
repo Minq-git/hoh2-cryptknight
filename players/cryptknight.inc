@@ -62,7 +62,7 @@
 
 	<array name="icon">
 		<string>players/class_showcase.png</string>
-		<int>100</int><vec4>0 32 32 32</vec4>
+		<int>100</int><vec4>96 32 32 32</vec4>
 	</array>
 
 	<array name="skills">

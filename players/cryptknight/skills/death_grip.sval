@@ -7,7 +7,7 @@
 	<array name="description-params">
 		<array><s>damage</s><s>.skills.desc.params.damage</s><s>100</s><s>125</s><s>150</s><s>175</s><s>200</s></array>
 		<array><s>mana-cost</s><s>.skills.desc.params.mana_cost</s><s>30</s><s>35</s><s>40</s><s>45</s><s>50</s></array>
-		<array><s>cooldown</s><b>t</b><s>.skills.desc.params.cooldown</s><s>10s</s></array>
+		<array><s>cooldown</s><b>t</b><s>.skills.desc.params.cooldown</s><s>8s</s></array>
 	</array>
 
 	<array name="icon">
@@ -26,10 +26,10 @@
 		<string name="anim">cast</string>
 		<int name="anim-length">500</int>
 		
-		<int name="cooldown">10000</int>
+		<int name="cooldown">8000</int>
 		<int name="castpoint">200</int>
 		
-		<int name="mana-cost">30</int>
+		<int name="mana-cost">15</int>
 		
 		<dict name="binds">
 			<int name="chains-dmg">100</int>

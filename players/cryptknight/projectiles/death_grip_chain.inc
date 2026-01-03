@@ -46,12 +46,26 @@
 			<dict>
 				<string name="class">Knockback</string>
 				<int name="strength">-300</int> 
-				<int name="duration">300</int>
+				<!-- <int name="duration">300</int> -->
 			</dict>
 		</array>
 		
 		<array name="destroyed-effects">
-			<!-- Removed spikes logic for now -->
+			<dict>
+				<string name="class">Explode</string>
+				<int name="radius">24</int>
+				<float name="dist-scaling">1000</float>
+				<array name="effects">
+					<dict>
+						<string name="class">ApplyBuff</string>
+						<string name="buff">players/cryptknight/buffs/skills_buffs.sval:pull_effect</string>
+					</dict>
+					<dict>
+						<string name="class">Knockback</string>
+						<int name="strength">-300</int>
+					</dict>
+				</array>
+			</dict>
 		</array>
 
 		<dict name="effect-params">

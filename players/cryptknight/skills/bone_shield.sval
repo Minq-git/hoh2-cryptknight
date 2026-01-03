@@ -29,7 +29,7 @@
 		<int name="castpoint">0</int>
 		<bool name="must-hold">false</bool>
 		
-		<int name="mana-cost">40</int>
+		<int name="mana-cost">20</int>
 		
 		<dict name="binds">
 			<int name="shield-amount">45</int>
