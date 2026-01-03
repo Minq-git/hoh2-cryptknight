@@ -3,7 +3,7 @@
 	<param name="angle" default="0" />
 	<param name="height" default="0" />
 	%//chain
-	<sprite looping="true" origin="1 2" texture="unpacked_assets_135/players/warrior/effects/chain.png" material="system/default.mats:default"
+	<sprite looping="true" origin="1 2" texture="players/cryptknight/effects/chain.png" material="system/default.mats:default"
 		scale-x="1"
 		scale-y="1"
 		angle="angle"
@@ -15,7 +15,7 @@
 		<frame time="2000">0 0 7 4</frame>
 	</sprite>
 	%//shadow
- 	<sprite looping="true" origin="1 2" texture="unpacked_assets_135/players/warrior/effects/chain.png" material="system/default.mats:shadow"
+ 	<sprite looping="true" origin="1 2" texture="players/cryptknight/effects/chain.png" material="system/default.mats:shadow"
 		scale-x="1"
 		scale-y="1"
 		angle="angle"
@@ -28,7 +28,7 @@
 	</sprite> 
 	
 	%//head
-	<sprite looping="true" origin="1 4" texture="unpacked_assets_135/players/warrior/effects/chain.png" material="system/default.mats:default"
+	<sprite looping="true" origin="1 4" texture="players/cryptknight/effects/chain.png" material="system/default.mats:default"
 		scale-x="0.8"
 		scale-y="0.8"
 		angle="angle"
@@ -40,7 +40,7 @@
 		<frame time="2000">0 7 15 9</frame>
 	</sprite>
 	%//hook shadow
-	<sprite looping="true" origin="1 4" texture="unpacked_assets_135/players/warrior/effects/chain.png" material="system/default.mats:shadow"
+	<sprite looping="true" origin="1 4" texture="players/cryptknight/effects/chain.png" material="system/default.mats:shadow"
 		scale-x="0.8"
 		scale-y="0.8"
 		angle="angle"
@@ -53,7 +53,7 @@
 	
  	
 	<light scale="1; 1+t*4"pos-x="cos(angle)*(-16-160*t)" pos-y="sin(angle)*(-16-160*t)">
-		<sprite texture="effects/lights/long_soft_L.png">
+		<sprite texture="players/cryptknight/effects/long_soft_L.png">
 		<frame>0 0 256 256</frame>
 		</sprite>
 

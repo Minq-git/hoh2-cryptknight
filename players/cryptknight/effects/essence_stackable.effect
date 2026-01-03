@@ -18,7 +18,7 @@
 		<frame time="50">192 192 64 64</frame>
 	</sprite>
 	<light pos-x="0" pos-y="0">
-		<sprite texture="system/light_L.png">
+		<sprite texture="players/cryptknight/effects/light_L.png">
 			<frame time="500">0 0 128 128</frame>
 		</sprite>
 		<length value="50"/>
