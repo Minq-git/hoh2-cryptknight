@@ -1,0 +1,32 @@
+<effect looping="true">
+	<param name="radius" default="16" />
+	
+	<!-- Main Cloud Body -->
+	<sprite looping="true" origin="16 16" texture="mods/CryptKnight/players/cryptknight/effects/orb_of_souls_smoke.png" material="system/default.mats:default"
+		color-r="0.7" color-g="1.0" color-b="0.2" color-a="0.8"
+		scale-x="1 + sin(t*pi)*0.1" scale-y="1 + cos(t*pi)*0.1"
+		angle="t*pi*0.5"
+	>
+		<frame time="100">0 0 32 32</frame>
+	</sprite>
+	
+	<!-- Glow -->
+	<sprite looping="true" origin="16 16" texture="mods/CryptKnight/players/cryptknight/effects/orb_of_souls_light.png" material="system/default.mats:bright"
+		color-r="0.5" color-g="1.0" color-b="0.0" color-a="0.5"
+		scale-x="1.2" scale-y="1.2"
+	>
+		<frame time="100">0 0 32 32</frame>
+	</sprite>
+
+	<!-- Particles -->
+	<sprite looping="true" origin="8 8" texture="mods/CryptKnight/players/cryptknight/effects/orb_of_souls_particles.png" material="system/default.mats:default"
+		num-sprites="5"
+		pos-x="rand(u+i)*20 - 10"
+		pos-y="rand(u+i+1)*20 - 10"
+		color-r="0.8" color-g="1.0" color-b="0.2"
+		scale-x="0.5" scale-y="0.5"
+	>
+		<frame time="100">0 0 16 16</frame>
+	</sprite>
+</effect>
+

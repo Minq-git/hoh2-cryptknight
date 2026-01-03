@@ -1,0 +1,12 @@
+<effect looping="true">
+	<param name="angle" default="0" />
+	
+	<!-- Simple Purple Tint Overlay -->
+	<sprite looping="true" origin="16 16" texture="players/cryptknight/effects/orb_of_souls_light.png" material="system/default.mats:glow"
+		scale-x="1.5" scale-y="1.5"
+		color-r="0.5" color-g="0.0" color-b="1.0" color-a="0.3"
+	>
+		<frame time="100">0 0 32 32</frame>
+	</sprite>
+</effect>
+

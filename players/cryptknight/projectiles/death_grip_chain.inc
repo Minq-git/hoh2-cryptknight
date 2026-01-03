@@ -6,7 +6,7 @@
 		<int name="penetration">999</int>
 		<int name="bounces">0</int>
 		<bool name="bounce-on-collide">false</bool>
-		<string name="destroyed-fx">players/warrior/effects/tyrant_chain_back.effect</string>
+		<string name="destroyed-fx">players/cryptknight/effects/death_grip_chain_back.effect</string>
 
 		<array name="modifiers">
 			<dict>
@@ -68,4 +68,3 @@
 		</scene>
 	</scenes>
 </unit>
-

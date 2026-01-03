@@ -1,0 +1,52 @@
+<unit>
+	<behavior class="BombBehavior">
+		<int name="delay">0</int>
+		
+		<array name="actions">
+			<!-- Random Spawn Logic -->
+			<!-- We want roughly equal chance. Since BombBehavior executes all actions, we rely on independent probabilities. -->
+			<!-- 20% Chance for each. This allows for 0, 1, or multiple spawns in rare cases, which fits the chaotic nature or engine limits. -->
+			
+			<dict>
+				<string name="class">SpawnUnit</string>
+				<string name="unit">actors/undead/guard/guard_defender.unit</string>
+				<float name="chance">0.2</float>
+				<bool name="safe-spawn">true</bool>
+			</dict>
+			
+			<dict>
+				<string name="class">SpawnUnit</string>
+				<string name="unit">actors/undead/guard/guard_sentry.unit</string>
+				<float name="chance">0.2</float>
+				<bool name="safe-spawn">true</bool>
+			</dict>
+			
+			<dict>
+				<string name="class">SpawnUnit</string>
+				<string name="unit">actors/undead/guard/guard_footman.unit</string>
+				<float name="chance">0.2</float>
+				<bool name="safe-spawn">true</bool>
+			</dict>
+			
+			<dict>
+				<string name="class">SpawnUnit</string>
+				<string name="unit">actors/undead/guard/guard_mage.unit</string>
+				<float name="chance">0.2</float>
+				<bool name="safe-spawn">true</bool>
+			</dict>
+			
+			<dict>
+				<string name="class">SpawnUnit</string>
+				<string name="unit">actors/undead/guard/guard_knight.unit</string>
+				<float name="chance">0.2</float>
+				<bool name="safe-spawn">true</bool>
+			</dict>
+		</array>
+	</behavior>
+
+	<scenes default="default">
+		<scene name="default">
+			<effect src="effects/generic/actor/overlord_actor_buff.effect"/>
+		</scene>
+	</scenes>
+</unit>

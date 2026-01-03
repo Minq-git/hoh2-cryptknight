@@ -1,0 +1,48 @@
+%include "players/skills_cost.inc"
+<dict>
+	<string name="name">Bite</string>
+	<string name="type-name">.skills.type.melee</string>
+	<string name="description">Bite the target, applying Vulnerability.</string>
+
+	<array name="icon">
+		<string>players/icons_skills.png</string>
+		<int>100</int><vec4>24 0 24 24</vec4> <!-- Placeholder Icon -->
+	</array>
+
+	<string name="id">zombie_bite</string>
+	<string name="type">melee</string>
+	<array name="tags"><s>melee</s><s>secondary</s></array>
+	<int name="starting-level">1</int>
+
+	<dict name="skill">
+		<string name="class">Skills::MeleeSwing</string>
+		<string name="anim">attack</string> <!-- Reuse attack anim -->
+		<int name="anim-length">400</int>
+		
+		<int name="cooldown">10000</int> <!-- 10s Cooldown -->
+		<int name="castpoint">0</int>
+		
+		<dict name="damage">
+			<float name="weapon">1.0</float>
+		</dict>
+		
+		<array name="modifiers">
+			<dict>
+				<string name="class">Modifiers::BuffOnHit</string>
+				<string name="buff">tweak/buffs/status_effects.sval:vulnerability</string>
+				<int name="duration">7500</int> <!-- 7.5s -->
+				<float name="chance">1.0</float>
+			</dict>
+		</array>
+
+		<dict name="actions">
+			<array name="pre">
+				<dict>
+					<string name="class">PlaySound</string>
+					<string name="sound">event:/sfx/player/classes/warrior/sword_swing</string> <!-- Placeholder Sound -->
+				</dict>
+			</array>
+		</dict>
+	</dict>
+</dict>
+

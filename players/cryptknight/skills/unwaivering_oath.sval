@@ -2,7 +2,11 @@
 <dict>
 	<string name="name">Unwaivering Oath</string>
 	<string name="type-name">.skills.type.passive</string>
-	<string name="description">Upon taking lethal damage, transform into a zombie.</string>
+	<string name="description">Upon taking lethal damage, transform into a zombie for a short time before dying.</string>
+
+	<array name="description-params">
+		<array><s>duration</s><s>Duration</s><s>30s</s><s>35s</s><s>40s</s><s>45s</s><s>50s</s></array>
+	</array>
 
 	<array name="icon">
 		<string>players/icons_skills.png</string>
@@ -16,16 +20,46 @@
 
 	<dict name="skill">
 		<int name="skill-cost">SKILLCOSTLEVEL_1</int>
-		<string name="class">Skills::PlayerSkill</string>
+		<string name="class">Skills::PassiveSkill</string>
 		
+		<dict name="binds">
+			<string name="transform-buff">players/cryptknight/buffs/skills_buffs.sval:zombie_transformation_1</string>
+		</dict>
+
 		<array name="modifiers">
 			<dict>
 				<string name="class">Modifiers::CheatDeath</string>
 				<float name="chance">1.0</float>
-				<float name="hp">1.0</float>
-				<string name="trigger-on-death-effect">players/cryptknight/buffs/zombie_transformation.sval</string>
+				<float name="hp">1.0</float> <!-- Heal to full? Or 1 HP? Usually cheat death keeps you alive. Let's say 100% HP to fight as zombie. -->
+				<string name="trigger-on-death-effect-bind">transform-buff</string>
 			</dict>
 		</array>
 	</dict>
-</dict>
 
+	<array name="upgrades">
+		<dict>
+			<int name="skill-cost">SKILLCOSTLEVEL_2</int>
+			<dict name="binds">
+				<string name="transform-buff">players/cryptknight/buffs/skills_buffs.sval:zombie_transformation_2</string>
+			</dict>
+		</dict>
+		<dict>
+			<int name="skill-cost">SKILLCOSTLEVEL_3</int>
+			<dict name="binds">
+				<string name="transform-buff">players/cryptknight/buffs/skills_buffs.sval:zombie_transformation_3</string>
+			</dict>
+		</dict>
+		<dict>
+			<int name="skill-cost">SKILLCOSTLEVEL_4</int>
+			<dict name="binds">
+				<string name="transform-buff">players/cryptknight/buffs/skills_buffs.sval:zombie_transformation_4</string>
+			</dict>
+		</dict>
+		<dict>
+			<int name="skill-cost">SKILLCOSTLEVEL_5</int>
+			<dict name="binds">
+				<string name="transform-buff">players/cryptknight/buffs/skills_buffs.sval:zombie_transformation_5</string>
+			</dict>
+		</dict>
+	</array>
+</dict>

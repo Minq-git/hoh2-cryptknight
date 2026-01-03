@@ -2,7 +2,12 @@
 <dict>
 	<string name="name">Stronger Together</string>
 	<string name="type-name">.skills.type.passive</string>
-	<string name="description">Increases max summons and strengthens them.</string>
+	<string name="description">Increases max summons and strengthens them with Elite stats.</string>
+
+	<array name="description-params">
+		<array><s>max-summons</s><s>Max Summons</s><s>+1</s><s>+2</s><s>+3</s><s>+4</s><s>+4</s></array>
+		<array><s>stats</s><s>Stats</s><s>+50%</s></array>
+	</array>
 
 	<array name="icon">
 		<string>players/icons_skills.png</string>
@@ -18,15 +23,76 @@
 		<int name="skill-cost">SKILLCOSTLEVEL_1</int>
 		<string name="class">Skills::PlayerSkill</string>
 		
+		<dict name="binds">
+			<int name="max-bonus">1</int>
+			<float name="stat-mul">1.5</float>
+		</dict>
+
 		<array name="modifiers">
+			<!-- Boost all 5 potential guard types -->
 			<dict>
 				<string name="class">Modifiers::ModifySummons</string>
-				<string name="unit">players/cryptknight/units/fiend.unit</string>
-				<int name="add-max-num">3</int>
-				<float name="hp-mul">1.5</float>
-				<float name="dmg-mul">1.5</float>
+				<string name="unit">actors/undead/guard/guard_defender.unit</string>
+				<string name="add-max-num-bind">max-bonus</string>
+				<string name="hp-mul-bind">stat-mul</string>
+				<string name="dmg-mul-bind">stat-mul</string>
+			</dict>
+			<dict>
+				<string name="class">Modifiers::ModifySummons</string>
+				<string name="unit">actors/undead/guard/guard_sentry.unit</string>
+				<string name="add-max-num-bind">max-bonus</string>
+				<string name="hp-mul-bind">stat-mul</string>
+				<string name="dmg-mul-bind">stat-mul</string>
+			</dict>
+			<dict>
+				<string name="class">Modifiers::ModifySummons</string>
+				<string name="unit">actors/undead/guard/guard_footman.unit</string>
+				<string name="add-max-num-bind">max-bonus</string>
+				<string name="hp-mul-bind">stat-mul</string>
+				<string name="dmg-mul-bind">stat-mul</string>
+			</dict>
+			<dict>
+				<string name="class">Modifiers::ModifySummons</string>
+				<string name="unit">actors/undead/guard/guard_mage.unit</string>
+				<string name="add-max-num-bind">max-bonus</string>
+				<string name="hp-mul-bind">stat-mul</string>
+				<string name="dmg-mul-bind">stat-mul</string>
+			</dict>
+			<dict>
+				<string name="class">Modifiers::ModifySummons</string>
+				<string name="unit">actors/undead/guard/guard_knight.unit</string>
+				<string name="add-max-num-bind">max-bonus</string>
+				<string name="hp-mul-bind">stat-mul</string>
+				<string name="dmg-mul-bind">stat-mul</string>
 			</dict>
 		</array>
 	</dict>
-</dict>
 
+	<array name="upgrades">
+		<dict>
+			<int name="skill-cost">SKILLCOSTLEVEL_2</int>
+			<dict name="binds">
+				<int name="max-bonus">2</int>
+			</dict>
+		</dict>
+		<dict>
+			<int name="skill-cost">SKILLCOSTLEVEL_3</int>
+			<dict name="binds">
+				<int name="max-bonus">3</int>
+			</dict>
+		</dict>
+		<dict>
+			<int name="skill-cost">SKILLCOSTLEVEL_4</int>
+			<dict name="binds">
+				<int name="max-bonus">4</int>
+			</dict>
+		</dict>
+		<dict>
+			<int name="skill-cost">SKILLCOSTLEVEL_5</int>
+			<dict name="binds">
+				<int name="max-bonus">4</int>
+				<float name="stat-mul">1.6</float> <!-- Slight stat boost at max level -->
+			</dict>
+		</dict>
+	</array>
+</dict>

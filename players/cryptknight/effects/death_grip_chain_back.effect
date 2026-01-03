@@ -1,0 +1,78 @@
+<effect looping="false">
+
+	<param name="angle" default="0" />
+	<param name="height" default="6" />
+	<param name="length" default="100" />
+	<sprite looping="false" origin="1 2" texture="unpacked_assets_135/players/warrior/effects/chain.png" material="system/default.mats:default"
+		scale-x="1"
+		scale-y="1"
+		angle="-pi+angle"
+		
+		pos-x="(cos(angle)*length)-((cos(angle)*(6+i*6))*(1-pow(t,1.2)))+(sin(t*i/4*pi)*6-pow(t,2)*6"
+		pos-y="-height+(sin(angle)*length)-((sin(angle)*(6+i*6))*(1-pow(t,1.2)))+(sin(t*i/4*pi)*6-pow(t,2)*6"
+		num-sprites="(length/7)"
+		color-r="0.8" color-g="0.4" color-b="1.0" color-a="1-pow(t,2)"
+		> 
+		<frame time="250">0 0 7 4</frame>
+	</sprite>
+	%//shadow
+	<sprite looping="true" origin="1 2" texture="unpacked_assets_135/players/warrior/effects/chain.png" material="system/default.mats:shadow"
+		scale-x="1"
+		scale-y="1"
+		angle="-pi+angle"
+		
+		pos-x="(cos(angle)*length)-((cos(angle)*(6+i*6))*(1-pow(t,1.2)))+(sin(t*i/4*pi)*6-pow(t,2)*6"
+		pos-y="(sin(angle)*length)-((sin(angle)*(6+i*6))*(1-pow(t,1.2)))+(sin(t*i/4*pi)*6-pow(t,2)*6"
+		num-sprites="(length/7)"
+		color-a="1-pow(t,2)"
+		> 
+		<frame time="250">0 0 7 4</frame>
+	</sprite>
+	
+	
+	
+	<sprite looping="false" origin="1 2" texture="unpacked_assets_135/players/warrior/effects/chain.png" material="system/default.mats:default"
+		scale-x="1"
+		scale-y="1"
+		angle="-pi+angle"
+		
+		pos-x="(cos(angle)*length)-((cos(angle)*(6+i*6))*(1-pow(t,1.2)))+(sin(t*i/4*pi)*6-pow(t,2)*6"
+		pos-y="-height+(sin(angle)*length)-((sin(angle)*(6+i*6))*(1-pow(t,1.2)))+(sin(t*i/4*pi)*6-pow(t,2)*6"
+		num-sprites="(length/7)"
+		color-r="0.8" color-g="0.4" color-b="1.0" color-a="(saturate(i-((length/7)-1)))*(1-pow(t,2))"
+		> 
+		<frame time="250">0 7 15 9</frame>
+	</sprite>
+	%//shadow
+	<sprite looping="true" origin="1 2" texture="unpacked_assets_135/players/warrior/effects/chain.png" material="system/default.mats:shadow"
+		scale-x="1"
+		scale-y="1"
+		angle="-pi+angle"
+		
+		pos-x="(cos(angle)*length)-((cos(angle)*(6+i*6))*(1-pow(t,1.2)))+(sin(t*i/4*pi)*6-pow(t,2)*6"
+		pos-y="(sin(angle)*length)-((sin(angle)*(6+i*6))*(1-pow(t,1.2)))+(sin(t*i/4*pi)*6-pow(t,2)*6"
+		num-sprites="(length/7)"
+		color-a="(saturate(i-((length/7)-1)))*(1-pow(t,2))"
+		> 
+		<frame time="250">0 7 15 8</frame>
+	</sprite>
+	
+	<light scale="1; 1"pos-x="cos(angle)*68" pos-y="sin(angle)*68">
+		<sprite texture="effects/lights/long_soft_L.png">
+		<frame>0 0 256 256</frame>
+		</sprite>
+
+		<overbright value="10" />
+		<length value="250" />
+		<looping value="true" />
+
+		<size value="128" />
+		<angle value="angle+1.57" />
+
+		<color-r value="0.8*(0.8*(1-saturate(t*2))" />
+		<color-g value="0.2*(0.5*(1-saturate(t*2))" />
+		<color-b value="1.0*(0.4*(1-saturate(t*2))" />
+		<color-a value="0.001" />
+	</light>
+</effect>
+

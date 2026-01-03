@@ -2,7 +2,7 @@
 <dict>
 	<string name="name">Raise Dead</string>
 	<string name="type-name">.skills.type.spell</string>
-	<string name="description">Raises a basic undead minion to fight for you.</string>
+	<string name="description">Raises a random undead minion to fight for you.</string>
 
 	<array name="description-params">
 		<array><s>mana-cost</s><s>.skills.desc.params.mana_cost</s><s>50</s></array>
@@ -31,8 +31,9 @@
 		<int name="mana-cost">50</int>
 		
 		<dict name="binds">
-			<string name="unit">players/cryptknight/units/fiend.unit</string>
-			<int name="max-count">2</int>
+			<string name="unit">players/cryptknight/units/raise_dead_spawner.unit</string>
+			<!-- Spawner count doesn't matter much as it dies -->
+			<!-- <int name="max-count">1</int> -->
 		</dict>
 
 		<dict name="actions">
@@ -47,12 +48,32 @@
 		</dict>
 		
 		<array name="modifiers">
+			<!-- Limit each minion type to 1 by default -->
 			<dict>
 				<string name="class">Modifiers::ModifySummons</string>
-				<string name="unit-bind">unit</string>
-				<string name="add-max-num-bind">max-count</string>
+				<string name="unit">actors/undead/guard/guard_defender.unit</string>
+				<int name="max-num">1</int>
+			</dict>
+			<dict>
+				<string name="class">Modifiers::ModifySummons</string>
+				<string name="unit">actors/undead/guard/guard_sentry.unit</string>
+				<int name="max-num">1</int>
+			</dict>
+			<dict>
+				<string name="class">Modifiers::ModifySummons</string>
+				<string name="unit">actors/undead/guard/guard_footman.unit</string>
+				<int name="max-num">1</int>
+			</dict>
+			<dict>
+				<string name="class">Modifiers::ModifySummons</string>
+				<string name="unit">actors/undead/guard/guard_mage.unit</string>
+				<int name="max-num">1</int>
+			</dict>
+			<dict>
+				<string name="class">Modifiers::ModifySummons</string>
+				<string name="unit">actors/undead/guard/guard_knight.unit</string>
+				<int name="max-num">1</int>
 			</dict>
 		</array>
 	</dict>
 </dict>
-

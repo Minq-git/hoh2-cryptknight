@@ -8,6 +8,8 @@
 		<string name="icon">players/icons_skills.png</string>
 		<int>100</int><vec4>24 168 24 24</vec4>
 		
+		<string name="fx">players/cryptknight/effects/bone_shield.effect</string>
+		
 		<!-- Infinite duration until broken -->
 		<!-- <int name="duration">30000</int> -->
 		
@@ -20,4 +22,3 @@
 		</array>
 	</dict>
 </array>
-

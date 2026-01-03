@@ -2,7 +2,11 @@
 <dict>
 	<string name="name">Sickly</string>
 	<string name="type-name">.skills.type.passive</string>
-	<string name="description">Attacks apply a stacking plague poison.</string>
+	<string name="description">Attacks apply a stacking disease on the target. Scales with Strength and Skill Level.</string>
+
+	<array name="description-params">
+		<array><s>damage</s><s>.skills.desc.params.damage</s><s>15</s><s>20</s><s>25</s><s>30</s><s>35</s></array>
+	</array>
 
 	<array name="icon">
 		<string>players/icons_skills.png</string>
@@ -20,11 +24,51 @@
 		
 		<array name="modifiers">
 			<dict>
-				<string name="class">Modifiers::BuffOnHit</string>
-				<string name="buff">players/cryptknight/buffs/skills_buffs.sval:sickly_plague</string>
+				<string name="class">Modifiers::SkillTriggerEffect</string>
+				<string name="trigger">hit</string>
+				<!-- <array name="skill-tags"><s>melee</s></array> -->
+				<bool name="target-self">false</bool>
 				<float name="chance">1.0</float>
+				
+				<array name="effects">
+					<dict>
+						<string name="class">AddStacks</string>
+						<string name="buff-bind">plague-buff</string>
+						<int name="stacks">1</int>
+					</dict>
+				</array>
 			</dict>
 		</array>
+		
+		<dict name="binds">
+			<string name="plague-buff">players/cryptknight/stacks_cryptknight.sval:sickly_plague_1</string>
+		</dict>
 	</dict>
-</dict>
 
+	<array name="upgrades">
+		<dict>
+			<int name="skill-cost">SKILLCOSTLEVEL_2</int>
+			<dict name="binds">
+				<string name="plague-buff">players/cryptknight/stacks_cryptknight.sval:sickly_plague_2</string>
+			</dict>
+		</dict>
+		<dict>
+			<int name="skill-cost">SKILLCOSTLEVEL_3</int>
+			<dict name="binds">
+				<string name="plague-buff">players/cryptknight/stacks_cryptknight.sval:sickly_plague_3</string>
+			</dict>
+		</dict>
+		<dict>
+			<int name="skill-cost">SKILLCOSTLEVEL_4</int>
+			<dict name="binds">
+				<string name="plague-buff">players/cryptknight/stacks_cryptknight.sval:sickly_plague_4</string>
+			</dict>
+		</dict>
+		<dict>
+			<int name="skill-cost">SKILLCOSTLEVEL_5</int>
+			<dict name="binds">
+				<string name="plague-buff">players/cryptknight/stacks_cryptknight.sval:sickly_plague_5</string>
+			</dict>
+		</dict>
+	</array>
+</dict>

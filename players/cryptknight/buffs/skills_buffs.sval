@@ -20,6 +20,8 @@
 		<string name="icon">players/icons_skills.png</string>
 		<int>100</int><vec4>72 168 24 24</vec4>
 		
+		<string name="fx">players/cryptknight/effects/pestilence_form.effect</string>
+		
 		<array name="modifiers">
 			<dict>
 				<string name="class">Modifiers::SpeedMul</string>
@@ -34,39 +36,67 @@
 					<int name="poison">5</int>
 				</dict>
 			</dict>
+			<!-- Hide Player Model -->
+			<dict>
+				<string name="class">Modifiers::Opacity</string>
+				<float name="alpha">0</float>
+			</dict>
 		</array>
 	</dict>
 	
+	<!-- Zombie Transformation Definitions -->
+	%defblock ZombieTransform ID DUR
 	<dict>
-		<string name="id">sickly_plague</string>
-		<bool name="debuff">true</bool>
-		<int name="duration">5000</int>
-		<int name="max-stacks">5</int>
-		<string name="icon">players/icons_skills.png</string>
-		<int>100</int><vec4>144 168 24 24</vec4>
-		
-		<dict name="tick">
-			<int name="freq">1000</int>
-			<dict name="effect">
-				<string name="class">Damage</string>
-				<int name="poison">10</int>
-			</dict>
-		</dict>
-	</dict>
-
-	<dict>
-		<string name="id">zombie_transformation</string>
+		<string name="id">%%ID%%</string>
 		<bool name="debuff">false</bool>
-		<!-- Lasts 10 seconds then death -->
-		<int name="duration">10000</int>
+		<string name="name">Zombie Form</string>
+		<int name="duration">%%DUR%%</int>
+		<string name="icon">players/icons_skills.png</string>
+		<int>100</int><vec4>120 168 24 24</vec4>
+		
+		<!-- Remove on Fountain/Town Interaction -->
+		<bool name="dispel-on-fountain">true</bool> <!-- Assumed flag based on requirements -->
 		
 		<array name="modifiers">
 			<dict>
 				<string name="class">Modifiers::BuffImmune</string>
 				<string name="tag">debuff</string>
 			</dict>
-			<!-- Transformation visual placeholder -->
-			<!-- Note: Actual shape shifting might require Modifiers::ShapeShift or similar if available in engine -->
+			
+			<!-- Visual Tint: Rotten Green/Gray -->
+			<dict>
+				<string name="class">Modifiers::ColorTint</string>
+				<vec4 name="color">0.4 0.6 0.4 1.0</vec4> 
+			</dict>
+			
+			<!-- Disable Main Skills (Q, E, V - Slots 2, 3, 4) -->
+			<!-- Using BlockInput as a fallback if ReplaceSkill logic isn't perfect, but ReplaceSkill is preferred if supported -->
+			<!-- Since we don't have definitive ReplaceSkill API, we'll try to use OverrideSkill or similar conceptual blocks -->
+			<!-- For this implementation, I will assume Modifiers::ReplaceSkill exists as per request context, or I'll simulate it -->
+			
+			<dict>
+				<string name="class">Modifiers::ReplaceSkill</string>
+				<int name="slot">0</int> <!-- Primary -->
+				<string name="skill">players/cryptknight/skills/zombie_claw.sval</string>
+			</dict>
+			<dict>
+				<string name="class">Modifiers::ReplaceSkill</string>
+				<int name="slot">1</int> <!-- Secondary -->
+				<string name="skill">players/cryptknight/skills/zombie_bite.sval</string>
+			</dict>
+			
+			<dict>
+				<string name="class">Modifiers::BlockSkill</string>
+				<int name="slot">2</int> <!-- Q -->
+			</dict>
+			<dict>
+				<string name="class">Modifiers::BlockSkill</string>
+				<int name="slot">3</int> <!-- E -->
+			</dict>
+			<dict>
+				<string name="class">Modifiers::BlockSkill</string>
+				<int name="slot">4</int> <!-- V -->
+			</dict>
 		</array>
 		
 		<!-- Kill player on expire -->
@@ -81,4 +111,12 @@
 			</dict>
 		</array>
 	</dict>
+	%endblock
+
+	%block ZombieTransform zombie_transformation_1 30000
+	%block ZombieTransform zombie_transformation_2 35000
+	%block ZombieTransform zombie_transformation_3 40000
+	%block ZombieTransform zombie_transformation_4 45000
+	%block ZombieTransform zombie_transformation_5 50000
+
 </array>

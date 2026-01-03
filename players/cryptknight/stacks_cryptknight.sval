@@ -31,19 +31,6 @@
 			<bool name="sub-reset">true</bool>
 		</dict>
 
-<!-- 		<array name="add-effects">
-			<dict>
-				<string name="class">DebugLog</string>
-				<string name="text">test_essence_heal</string>
-			</dict>
-			<dict>
-				<string name="class">HPBasedHeal</string>
-				<float name="heal">0.2</float>
-				<string name="heal-bind">heal-amount</string>
-				<bool name="curr-hp">false</bool>
-			</dict>
-		</array> -->
-
 		<dict name="buff">
 			<bool name="debuff">false</bool>
 			<string name="fx">players/cryptknight/effects/essence_stackable.effect</string>
@@ -57,10 +44,6 @@
 				<dict>
 					<string name="class">Modifiers::DummyModifier</string>
 				</dict>
-<!-- 				<dict>
-					<string name="class">Modifiers::SpeedAdd</string>
-					<vec2 name="move-speed">0.01 0.2</vec2>
-				</dict> -->
 			</array>
 		</dict>
 	</dict>
@@ -95,7 +78,6 @@
 			</array>
 
 			<bool name="debuff">false</bool>
-			<!-- <string name="fx">players/cryptknight/effects/orb_of_souls_stackable.effect</string> -->
 			<string name="fx">players/cryptknight/effects/soul_vortex.effect</string>
 			<string name="sound">event:/sfx/player/classes/warlock/soul_vortex/soul_vortex_loop</string>
 
@@ -122,6 +104,94 @@
 							<string name="projectile">players/cryptknight/projectiles/soul_projectile.unit</string>
 						</dict>
 					</array>
+				</dict>
+			</array>
+		</dict>
+	</dict>
+
+	<!-- Sickly Plague Definitions -->
+	%defblock SicklyPlague ID DMG
+	<dict>
+		<string name="id">%%ID%%</string>
+		<int name="max">10</int>
+		<bool name="extrapolate-intensity">true</bool>
+		<bool name="refresh-on-max">true</bool>
+		
+		<dict name="timer">
+			<int name="time">5000</int>
+			<int name="add-stack">-999</int>
+			
+			<bool name="gain-set">true</bool>
+			<bool name="add-set">true</bool>
+			<bool name="sub-set">true</bool>
+
+			<bool name="gain-reset">true</bool>
+			<bool name="add-reset">true</bool>
+		</dict>
+
+		<dict name="buff">
+			<bool name="debuff">true</bool>
+			<string name="name">Sickly Plague</string>
+
+			<array name="tags">
+				<string>debuff</string>
+				<string>poison</string>
+			</array>
+
+			<string name="icon">players/icons_skills.png</string>
+			<int>100</int><vec4>144 168 24 24</vec4>
+			
+			<!-- Green Tint Effect -->
+			<string name="fx">effects/generic/actor/poison_actor_affliction_1.effect</string>
+			
+			<dict name="tick">
+				<int name="freq">1000</int>
+
+				<array name="effects">
+					<dict>
+						<string name="class">Damage</string>
+						<int name="poison">%%DMG%%</int>
+						<bool name="true-strike">true</bool>
+						<bool name="dot">true</bool>
+					</dict>
+				</array>
+			</dict>
+		</dict>
+	</dict>
+	%endblock
+
+	%block SicklyPlague sickly_plague_1 15
+	%block SicklyPlague sickly_plague_2 20
+	%block SicklyPlague sickly_plague_3 25
+	%block SicklyPlague sickly_plague_4 30
+	%block SicklyPlague sickly_plague_5 35
+	
+	<!-- Shadow Curse Stack -->
+	<dict>
+		<string name="id">shadowcurses</string>
+		<string name="name">Shadow Curse</string>
+		<int name="max">10</int>
+		<bool name="refresh-on-max">true</bool>
+		
+		<dict name="timer">
+			<int name="time">10000</int>
+			<int name="add-stack">-1</int>
+			<bool name="gain-set">true</bool>
+			<bool name="lose-set">true</bool>
+		</dict>
+		
+		<dict name="buff">
+			<bool name="debuff">false</bool>
+			<string name="icon">players/icons_skills.png</string>
+			<int>100</int><vec4>168 168 24 24</vec4>
+			
+			<!-- Purple Tint Effect on Player -->
+			<string name="fx">players/cryptknight/effects/shadow_curse_tint.effect</string>
+			
+			<array name="modifiers">
+				<!-- Actual stat bonuses are handled by the 'Cursed' skill reading this stack count -->
+				<dict>
+					<string name="class">Modifiers::DummyModifier</string>
 				</dict>
 			</array>
 		</dict>
