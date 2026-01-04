@@ -68,41 +68,12 @@
 				<vec4 name="color">0.4 0.6 0.4 1.0</vec4> 
 			</dict>
 			
-			<!-- Disable Main Skills (Q, E, V - Slots 2, 3, 4) -->
-			<!-- Using BlockInput as a fallback if ReplaceSkill logic isn't perfect, but ReplaceSkill is preferred if supported -->
-			<!-- Since we don't have definitive ReplaceSkill API, we'll try to use OverrideSkill or similar conceptual blocks -->
-			<!-- For this implementation, I will assume Modifiers::ReplaceSkill exists as per request context, or I'll simulate it -->
-			
-			<dict>
-				<string name="class">Modifiers::ReplaceSkill</string>
-				<int name="slot">0</int> <!-- Primary -->
-				<string name="skill">players/cryptknight/skills/zombie_claw.sval</string>
-			</dict>
-			<dict>
-				<string name="class">Modifiers::ReplaceSkill</string>
-				<int name="slot">1</int> <!-- Secondary -->
-				<string name="skill">players/cryptknight/skills/zombie_bite.sval</string>
-			</dict>
-			
-			<dict>
-				<string name="class">Modifiers::BlockSkill</string>
-				<int name="slot">2</int> <!-- Q -->
-			</dict>
-			<dict>
-				<string name="class">Modifiers::BlockSkill</string>
-				<int name="slot">3</int> <!-- E -->
-			</dict>
-			<dict>
-				<string name="class">Modifiers::BlockSkill</string>
-				<int name="slot">4</int> <!-- V -->
-			</dict>
+			<!-- Note: Skill replacement and blocking will be handled by a custom modifier script -->
+			<!-- For now, we'll use visual effects to indicate zombie form -->
+			<!-- The actual skill replacement needs to be implemented via hooks or custom modifier -->
 		</array>
 		
-		<!-- Kill player on expire -->
-		<dict name="tick">
-			<bool name="kill-on-expire">true</bool>
-		</dict>
-		
+		<!-- Kill player on expire - handled by custom modifier -->
 		<array name="effects">
 			<dict>
 				<string name="class">SpawnEffect</string>

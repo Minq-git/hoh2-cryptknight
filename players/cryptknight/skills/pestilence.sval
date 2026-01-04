@@ -5,8 +5,8 @@
 	<string name="description">Turn into a fast-moving plague cloud.</string>
 
 	<array name="icon">
-		<string>players/icons_skills.png</string>
-		<int>100</int><vec4>72 168 24 24</vec4>
+		<string>players/cryptknight/icons_skills.png</string>
+		<int>100</int><vec4>0 0 24 24</vec4>
 	</array>
 
 	<string name="id">pestilence</string>

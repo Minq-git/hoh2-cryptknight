@@ -5,8 +5,8 @@
 	<string name="description">Bite the target, applying Vulnerability.</string>
 
 	<array name="icon">
-		<string>players/icons_skills.png</string>
-		<int>100</int><vec4>24 0 24 24</vec4> <!-- Placeholder Icon -->
+		<string>players/cryptknight/icons_skills.png</string>
+		<int>100</int><vec4>121 36 24 24</vec4>
 	</array>
 
 	<string name="id">zombie_bite</string>

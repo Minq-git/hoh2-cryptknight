@@ -5,8 +5,8 @@
 	<string name="description">A vicious claw attack that cleaves enemies.</string>
 
 	<array name="icon">
-		<string>players/icons_skills.png</string>
-		<int>100</int><vec4>0 0 24 24</vec4> <!-- Placeholder Icon -->
+		<string>players/cryptknight/icons_skills.png</string>
+		<int>100</int><vec4>121 0 24 24</vec4>
 	</array>
 
 	<string name="id">zombie_claw</string>
