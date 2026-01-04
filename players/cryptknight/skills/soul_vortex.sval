@@ -5,7 +5,7 @@
 	<string name="description">Channel a frontal cone of void magic. Duration increases with skill level.</string>
 
 	<array name="description-params">
-		<array><s>damage</s><s>.skills.desc.params.damage</s><s>100%</s></array>
+		<array><s>damage</s><s>.skills.desc.params.damage</s><s>10%</s><s>25%</s><s>50%</s><s>65%</s><s>80%</s></array>
 		<array><s>duration</s><s>.skills.desc.params.duration</s><s>1s</s><s>2s</s><s>3s</s><s>4s</s><s>5s</s></array>
 	</array>
 
@@ -33,7 +33,7 @@
 		<int name="mana-cost">30</int>
 
 		<dict name="binds">
-			<float name="dmg">1.0</float>
+			<float name="dmg-mul">0.1</float>
 		</dict>
 
 		<dict name="actions">
@@ -42,9 +42,8 @@
 					<string name="class">ShootProjectileFan</string>
 					<string name="projectile">players/cryptknight/projectiles/soul_vortex_projectile.unit</string>
 					<int name="dist">10</int>
-					<int name="spread">45</int>
+					<int name="spread">30</int>
 					<int name="projectiles">5</int>
-					<string name="damage-mul-bind">dmg</string>
 				</dict>
 				<dict>
 					<string name="class">PlaySound</string>
@@ -65,6 +64,9 @@
 		<dict>
 			<int name="skill-cost">SKILLCOSTLEVEL_2</int>
 			<int name="anim-length">2000</int>
+			<dict name="binds">
+				<float name="dmg-mul">0.25</float>
+			</dict>
 			<array name="timeline">
 				<i>0</i><s>wave</s>
 				<i>500</i><s>wave</s>
@@ -76,6 +78,9 @@
 		<dict>
 			<int name="skill-cost">SKILLCOSTLEVEL_3</int>
 			<int name="anim-length">3000</int>
+			<dict name="binds">
+				<float name="dmg-mul">0.5</float>
+			</dict>
 			<array name="timeline">
 				<i>0</i><s>wave</s>
 				<i>500</i><s>wave</s>
@@ -89,6 +94,9 @@
 		<dict>
 			<int name="skill-cost">SKILLCOSTLEVEL_4</int>
 			<int name="anim-length">4000</int>
+			<dict name="binds">
+				<float name="dmg-mul">0.65</float>
+			</dict>
 			<array name="timeline">
 				<i>0</i><s>wave</s>
 				<i>500</i><s>wave</s>
@@ -104,6 +112,9 @@
 		<dict>
 			<int name="skill-cost">SKILLCOSTLEVEL_5</int>
 			<int name="anim-length">5000</int>
+			<dict name="binds">
+				<float name="dmg-mul">0.8</float>
+			</dict>
 			<array name="timeline">
 				<i>0</i><s>wave</s>
 				<i>500</i><s>wave</s>

@@ -1,15 +1,17 @@
 <unit netsync="none">
 	<behavior class="NewProjectile">
 		<string name="anim">default</string>
-		<int name="ttl">1200</int>
+		<int name="ttl">600</int>
 		<float name="speed">8</float>
 		<int name="penetration">1</int>
 		<string name="destroyed-fx">effects/generic/impacts/magic_impact_1.effect</string>
 
 		<array name="hit-effects">
 			<dict>
-				<string name="class">Damage</string>
-				<string name="physical-bind">dmg</string>
+				<string name="class">PlayerDamage</string>
+				<string name="mul-bind">dmg-mul</string>
+				<bool name="off-hand">false</bool>
+				<bool name="shield-blockable">true</bool>
 			</dict>
 			<!-- Could add some void effect here -->
 		</array>
