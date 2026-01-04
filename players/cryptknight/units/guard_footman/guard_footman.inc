@@ -29,49 +29,49 @@
 
 		<scene name="idle-0" editor-bounds="-9 -24 18 32">
 			<scene src="shared" />
-			<sprite origin="24 30" texture="./guard_footman/guard_footman.tif" material="system/default.mats:enemy">		
+			<sprite origin="24 30" texture="actors/undead/guard/guard_footman/guard_footman.tif" material="system/default.mats:enemy">		
 				<frame time="160">0 0 48 48</frame>
 			</sprite>
 		</scene>
 		<scene name="idle-1" editor-bounds="-9 -24 18 32">
 			<scene src="shared" />
-			<sprite origin="24 30" texture="./guard_footman/guard_footman.tif" material="system/default.mats:enemy">		
+			<sprite origin="24 30" texture="actors/undead/guard/guard_footman/guard_footman.tif" material="system/default.mats:enemy">		
 				<frame time="160">48 0 48 48</frame>
 			</sprite>
 		</scene>
 		<scene name="idle-2" editor-bounds="-9 -24 18 32">
 			<scene src="shared" />
-			<sprite origin="24 30" texture="./guard_footman/guard_footman.tif" material="system/default.mats:enemy">		
+			<sprite origin="24 30" texture="actors/undead/guard/guard_footman/guard_footman.tif" material="system/default.mats:enemy">		
 				<frame time="160">96 0 48 48</frame>
 			</sprite>
 		</scene>
 		<scene name="idle-3" editor-bounds="-9 -24 18 32">
 			<scene src="shared" />
-			<sprite origin="24 30" texture="./guard_footman/guard_footman.tif" material="system/default.mats:enemy">		
+			<sprite origin="24 30" texture="actors/undead/guard/guard_footman/guard_footman.tif" material="system/default.mats:enemy">		
 				<frame time="160">144 0 48 48</frame>
 			</sprite>
 		</scene>
 		<scene name="idle-4" editor-bounds="-9 -24 18 32">
 			<scene src="shared" />
-			<sprite origin="24 30" texture="./guard_footman/guard_footman.tif" material="system/default.mats:enemy">		
+			<sprite origin="24 30" texture="actors/undead/guard/guard_footman/guard_footman.tif" material="system/default.mats:enemy">		
 				<frame time="160">192 0 48 48</frame>
 			</sprite>
 		</scene>
 		<scene name="idle-5" editor-bounds="-9 -24 18 32">
 			<scene src="shared" />
-			<sprite origin="24 30" texture="./guard_footman/guard_footman.tif" material="system/default.mats:enemy">		
+			<sprite origin="24 30" texture="actors/undead/guard/guard_footman/guard_footman.tif" material="system/default.mats:enemy">		
 				<frame time="160">240 0 48 48</frame>
 			</sprite>
 		</scene>
 		<scene name="idle-6" editor-bounds="-9 -24 18 32">
 			<scene src="shared" />
-			<sprite origin="24 30" texture="./guard_footman/guard_footman.tif" material="system/default.mats:enemy">		
+			<sprite origin="24 30" texture="actors/undead/guard/guard_footman/guard_footman.tif" material="system/default.mats:enemy">		
 				<frame time="160">288 0 48 48</frame>
 			</sprite>
 		</scene>
 		<scene name="idle-7" editor-bounds="-9 -24 18 32">
 			<scene src="shared" />
-			<sprite origin="24 30" texture="./guard_footman/guard_footman.tif" material="system/default.mats:enemy">		
+			<sprite origin="24 30" texture="actors/undead/guard/guard_footman/guard_footman.tif" material="system/default.mats:enemy">		
 				<frame time="160">336 0 48 48</frame>
 			</sprite>
 		</scene>
@@ -79,7 +79,7 @@
 
 %defblock AnimWalk XCOORD
 <scene src="shared" />
-<sprite origin="24 30" texture="./guard_footman/guard_footman_move.tif" material="system/default.mats:enemy">		
+<sprite origin="24 30" texture="actors/undead/guard/guard_footman/guard_footman_move.tif" material="system/default.mats:enemy">		
 	<frame time="100">%%XCOORD%% 0 48 48</frame>
 	<frame time="100">%%XCOORD%% 48 48 48</frame>
 	<frame time="100">%%XCOORD%% 96 48 48</frame>
@@ -118,7 +118,7 @@
 
 %defblock AnimGuard XCOORD
 <scene src="shared-guard" />
-<sprite origin="24 30" loopback="100" texture="./guard_footman/guard_footman.tif" material="system/default.mats:enemy">		
+<sprite origin="24 30" loopback="100" texture="actors/undead/guard/guard_footman/guard_footman.tif" material="system/default.mats:enemy">		
 	<frame time="100">%%XCOORD%% 48 48 48</frame>
 	<frame time="100">%%XCOORD%% 96 48 48</frame>
 </sprite>
@@ -150,7 +150,7 @@
 
 %defblock AnimGuardWalk XCOORD
 <scene src="shared-guard" />
-<sprite origin="24 30" loopback="100" texture="./guard_footman/guard_footman.tif" material="system/default.mats:enemy">		
+<sprite origin="24 30" loopback="100" texture="actors/undead/guard/guard_footman/guard_footman.tif" material="system/default.mats:enemy">		
 	<frame time="100">%%XCOORD%% 48 48 48</frame>
 	<frame time="100">%%XCOORD%% 96 48 48</frame>
 </sprite>

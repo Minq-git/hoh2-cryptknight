@@ -45,7 +45,7 @@
 			<string name="class">RangedFollowerMovement</string>
 			<string name="anim-idle">idle 8</string>
 			<string name="anim-walk">walk 8</string>
-			<vec2 name="speed">2.2 2.4</vec2>
+			<float name="speed">2.3</float>
 			<float name="speed-boost">1.2</float>
 			<int name="speed-boost-min-dist">140</int>
 			<int name="dist">140</int>

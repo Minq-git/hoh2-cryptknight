@@ -15,56 +15,56 @@
 		
 		<scene name="idle-0" editor-bounds="-9 -24 18 32">
 			<scene src="shared" />
-			<sprite origin="24 30" texture="./guard_sentry/guard_sentry.tif" material="system/default.mats:enemy">		
+			<sprite origin="24 30" texture="actors/undead/guard/guard_sentry/guard_sentry.tif" material="system/default.mats:enemy">		
 				<frame time="160">0 0 48 48</frame>
 			</sprite>
 		</scene>
 		<scene name="idle-1" editor-bounds="-9 -24 18 32">
 			<scene src="shared" />
-			<sprite origin="24 30" texture="./guard_sentry/guard_sentry.tif" material="system/default.mats:enemy">		
+			<sprite origin="24 30" texture="actors/undead/guard/guard_sentry/guard_sentry.tif" material="system/default.mats:enemy">		
 				<frame time="160">48 0 48 48</frame>
 			</sprite>
 		</scene>
 		<scene name="idle-2" editor-bounds="-9 -24 18 32">
 			<scene src="shared" />
-			<sprite origin="24 30" texture="./guard_sentry/guard_sentry.tif" material="system/default.mats:enemy"> 		
+			<sprite origin="24 30" texture="actors/undead/guard/guard_sentry/guard_sentry.tif" material="system/default.mats:enemy"> 		
 				<frame time="160">96 0 48 48</frame>
 			</sprite>
 		</scene>
 		<scene name="idle-3" editor-bounds="-9 -24 18 32">
 			<scene src="shared" />
-			<sprite origin="24 30" texture="./guard_sentry/guard_sentry.tif" material="system/default.mats:enemy">		
+			<sprite origin="24 30" texture="actors/undead/guard/guard_sentry/guard_sentry.tif" material="system/default.mats:enemy">		
 				<frame time="160">144 0 48 48</frame>
 			</sprite>
 		</scene>
 		<scene name="idle-4" editor-bounds="-9 -24 18 32">
 			<scene src="shared" />
-			<sprite origin="24 30" texture="./guard_sentry/guard_sentry.tif" material="system/default.mats:enemy">		
+			<sprite origin="24 30" texture="actors/undead/guard/guard_sentry/guard_sentry.tif" material="system/default.mats:enemy">		
 				<frame time="160">192 0 48 48</frame>
 			</sprite>
 		</scene>
 		<scene name="idle-5" editor-bounds="-9 -24 18 32">
 			<scene src="shared" />
-			<sprite origin="24 30" texture="./guard_sentry/guard_sentry.tif" material="system/default.mats:enemy">		
+			<sprite origin="24 30" texture="actors/undead/guard/guard_sentry/guard_sentry.tif" material="system/default.mats:enemy">		
 				<frame time="160">240 0 48 48</frame>
 			</sprite>
 		</scene>
 		<scene name="idle-6" editor-bounds="-9 -24 18 32">
 			<scene src="shared" />
-			<sprite origin="24 30" texture="./guard_sentry/guard_sentry.tif" material="system/default.mats:enemy">		
+			<sprite origin="24 30" texture="actors/undead/guard/guard_sentry/guard_sentry.tif" material="system/default.mats:enemy">		
 				<frame time="160">288 0 48 48</frame>
 			</sprite>
 		</scene>
 		<scene name="idle-7" editor-bounds="-9 -24 18 32">
 			<scene src="shared" />
-			<sprite origin="24 30" texture="./guard_sentry/guard_sentry.tif" material="system/default.mats:enemy">		
+			<sprite origin="24 30" texture="actors/undead/guard/guard_sentry/guard_sentry.tif" material="system/default.mats:enemy">		
 				<frame time="160">336 0 48 48</frame>
 			</sprite>
 		</scene>
 		
 %defblock AnimWalk XCOORD
 <scene src="shared" />
-<sprite origin="24 30" texture="./guard_sentry/guard_sentry_move.tif" material="system/default.mats:enemy">	
+<sprite origin="24 30" texture="actors/undead/guard/guard_sentry/guard_sentry_move.tif" material="system/default.mats:enemy">	
 	<frame time="100">%%XCOORD%% 0 48 48</frame>
 	<frame time="100">%%XCOORD%% 48 48 48</frame>
 	<frame time="100">%%XCOORD%% 96 48 48</frame>
@@ -103,12 +103,12 @@
 
 %defblock AnimShoot XCOORD
 <scene src="shared" />
-<sprite origin="24 30" looping="false" texture="./guard_sentry/guard_sentry_attack.tif" material="system/default.mats:enemy">		
+<sprite origin="24 30" looping="false" texture="actors/undead/guard/guard_sentry/guard_sentry_attack.tif" material="system/default.mats:enemy">		
 	<frame time="150">%%XCOORD%% 0 48 48</frame>
 	<frame time="150">%%XCOORD%% 48 48 48</frame>
 	<frame time="100">%%XCOORD%% 96 48 48</frame>
 	<frame time="100">%%XCOORD%% 144 48 48</frame>
-
+	
 	<frame time="100">%%XCOORD%% 192 48 48</frame>
 	<frame time="100">%%XCOORD%% 240 48 48</frame>
 	<frame time="100">%%XCOORD%% 288 48 48</frame>

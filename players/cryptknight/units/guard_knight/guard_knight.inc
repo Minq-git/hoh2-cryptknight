@@ -15,49 +15,49 @@
 
 		<scene name="idle-0" editor-bounds="-12 -39 21 48">
 			<scene src="shared" />
-			<sprite origin="32 46" texture="./guard_knight/guard_knight.tif" material="system/default.mats:enemy">
+			<sprite origin="32 46" texture="actors/undead/guard/guard_knight/guard_knight.tif" material="system/default.mats:enemy">
 				<frame time="100">0 0 64 64</frame>
 			</sprite>
 		</scene>
 		<scene name="idle-1" editor-bounds="-12 -39 21 48">
 			<scene src="shared" /> 
-			<sprite origin="32 46" texture="./guard_knight/guard_knight.tif" material="system/default.mats:enemy">
+			<sprite origin="32 46" texture="actors/undead/guard/guard_knight/guard_knight.tif" material="system/default.mats:enemy">
 				<frame time="100">64 0 64 64</frame>
 			</sprite>
 		</scene>
 		<scene name="idle-2" editor-bounds="-12 -39 21 48">
 		<scene src="shared" />
-			<sprite origin="32 46" texture="./guard_knight/guard_knight.tif" material="system/default.mats:enemy">
+			<sprite origin="32 46" texture="actors/undead/guard/guard_knight/guard_knight.tif" material="system/default.mats:enemy">
 				<frame time="100">128 0 64 64</frame>
 			</sprite>
 		</scene>
 		<scene name="idle-3" editor-bounds="-12 -39 21 48">
 			<scene src="shared" />
-			<sprite origin="32 46" texture="./guard_knight/guard_knight.tif" material="system/default.mats:enemy">
+			<sprite origin="32 46" texture="actors/undead/guard/guard_knight/guard_knight.tif" material="system/default.mats:enemy">
 				<frame time="100">192 0 64 64</frame>
 			</sprite>
 		</scene>
 		<scene name="idle-4" editor-bounds="-12 -39 21 48">
 			<scene src="shared" />
-			<sprite origin="32 46" texture="./guard_knight/guard_knight.tif" material="system/default.mats:enemy">
+			<sprite origin="32 46" texture="actors/undead/guard/guard_knight/guard_knight.tif" material="system/default.mats:enemy">
 				<frame time="100">256 0 64 64</frame>
 			</sprite>
 		</scene>
 		<scene name="idle-5" editor-bounds="-12 -39 21 48">
 			<scene src="shared" />
-			<sprite origin="32 46" texture="./guard_knight/guard_knight.tif" material="system/default.mats:enemy">
+			<sprite origin="32 46" texture="actors/undead/guard/guard_knight/guard_knight.tif" material="system/default.mats:enemy">
 				<frame time="100">320 0 64 64</frame>
 			</sprite>
 		</scene>
 		<scene name="idle-6" editor-bounds="-12 -39 21 48">
 			<scene src="shared" />
-			<sprite origin="32 46" texture="./guard_knight/guard_knight.tif" material="system/default.mats:enemy">
+			<sprite origin="32 46" texture="actors/undead/guard/guard_knight/guard_knight.tif" material="system/default.mats:enemy">
 				<frame time="100">384 0 64 64</frame>
 			</sprite>
 		</scene>
 		<scene name="idle-7" editor-bounds="-12 -39 21 48">
 			<scene src="shared" />
-			<sprite origin="32 46" texture="./guard_knight/guard_knight.tif" material="system/default.mats:enemy">
+			<sprite origin="32 46" texture="actors/undead/guard/guard_knight/guard_knight.tif" material="system/default.mats:enemy">
 				<frame time="100">448 0 64 64</frame>
 			</sprite>
 		</scene>
@@ -65,7 +65,7 @@
 
 %defblock AnimWalk XCOORD
 <scene src="shared" />
-<sprite origin="32 46" texture="./guard_knight/guard_knight_move.tif" material="system/default.mats:enemy">	
+<sprite origin="32 46" texture="actors/undead/guard/guard_knight/guard_knight_move.tif" material="system/default.mats:enemy">	
 	<frame time="250">%%XCOORD%% 0 64 64</frame>
 	<frame time="250">%%XCOORD%% 64 64 64</frame>
 	<frame time="250">%%XCOORD%% 128 64 64</frame>
@@ -100,7 +100,7 @@
 
 %defblock AnimGuard XCOORD
 <scene src="shared" />
-<sprite origin="32 46" texture="./guard_knight/guard_knight.tif" material="system/default.mats:enemy">	
+<sprite origin="32 46" texture="actors/undead/guard/guard_knight/guard_knight.tif" material="system/default.mats:enemy">	
 	<frame time="100">%%XCOORD%% 64 64 64</frame>
 </sprite>
 %endblock
@@ -132,7 +132,7 @@
 
 %defblock AnimMelee XCOORD
 <scene src="shared" />
-<sprite origin="40 54" looping="false" texture="./guard_knight/guard_knight_melee.tif" material="system/default.mats:enemy">	
+<sprite origin="40 54" looping="false" texture="actors/undead/guard/guard_knight/guard_knight_melee.tif" material="system/default.mats:enemy">	
 	<frame time="100">%%XCOORD%% 0 80 80</frame>
 	<frame time="300">%%XCOORD%% 80 80 80</frame>
 	<frame time="50">%%XCOORD%% 160 80 80</frame>
@@ -172,7 +172,7 @@
 
 %defblock AnimCastHeal XCOORD
 <scene src="shared" />
-<sprite origin="32 56" looping="false" texture="./guard_knight/guard_knight_cast.tif" material="system/default.mats:enemy">	
+<sprite origin="32 56" looping="false" texture="actors/undead/guard/guard_knight/guard_knight_cast.tif" material="system/default.mats:enemy">	
 	<frame time="150">%%XCOORD%% 640 64 64</frame>
 	<frame time="200">%%XCOORD%% 0 64 64</frame>
 	<frame time="50">%%XCOORD%% 64 64 64</frame>
@@ -208,7 +208,7 @@
 
 %defblock AnimCast XCOORD POSX POSY
 <scene src="shared" />
-<sprite origin="32 56" looping="false" texture="./guard_knight/guard_knight_cast.tif" material="system/default.mats:enemy">	
+<sprite origin="32 56" looping="false" texture="actors/undead/guard/guard_knight/guard_knight_cast.tif" material="system/default.mats:enemy">	
 	<frame time="100">%%XCOORD%% 640 64 64</frame>
 	<frame time="100">%%XCOORD%% 0 64 64</frame>
 	<frame time="300">%%XCOORD%% 192 64 64</frame>
@@ -251,7 +251,7 @@
 				<circle radius="8" offset="0 0" sensor="true" shoot-through="false" />
 			</collision>
 			<scene src="special/shadow.unit:24"/>
-			<sprite origin="32 56" looping="false" texture="./guard_knight/guard_knight_cast.tif" material="system/default.mats:enemy">	
+			<sprite origin="32 56" looping="false" texture="actors/undead/guard/guard_knight/guard_knight_cast.tif" material="system/default.mats:enemy">	
 				<frame time="100">512 0 64 64</frame>
 				<frame time="100">512 64 64 64</frame>
 				<frame time="600">512 128 64 64</frame>

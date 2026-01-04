@@ -15,49 +15,49 @@
 		
 		<scene name="idle-0" editor-bounds="-8 -18 16 25">
 			<scene src="shared" />
-			<sprite origin="24 30" looping="false" texture="./guard_defender/guard_defender.tif" material="system/default.mats:enemy">
+			<sprite origin="24 30" looping="false" texture="actors/undead/guard/guard_defender/guard_defender.tif" material="system/default.mats:enemy">
 				<frame time="100">0 0 48 48</frame>
 			</sprite>
 		</scene>
 		<scene name="idle-1" editor-bounds="-8 -18 16 25">
 			<scene src="shared" />
-			<sprite origin="24 30" looping="false" texture="./guard_defender/guard_defender.tif" material="system/default.mats:enemy">		
+			<sprite origin="24 30" looping="false" texture="actors/undead/guard/guard_defender/guard_defender.tif" material="system/default.mats:enemy">		
 				<frame time="100">48 0 48 48</frame>
 			</sprite>
 		</scene>
 		<scene name="idle-2" editor-bounds="-8 -18 16 25">
 			<scene src="shared" />
-			<sprite origin="24 30" looping="false" texture="./guard_defender/guard_defender.tif" material="system/default.mats:enemy">		
+			<sprite origin="24 30" looping="false" texture="actors/undead/guard/guard_defender/guard_defender.tif" material="system/default.mats:enemy">		
 				<frame time="100">96 0 48 48</frame>
 			</sprite>
 		</scene>
 		<scene name="idle-3" editor-bounds="-8 -18 16 25">
 			<scene src="shared" />
-			<sprite origin="24 30" looping="false" texture="./guard_defender/guard_defender.tif" material="system/default.mats:enemy">		
+			<sprite origin="24 30" looping="false" texture="actors/undead/guard/guard_defender/guard_defender.tif" material="system/default.mats:enemy">		
 				<frame time="100">144 0 48 48</frame>
 			</sprite>
 		</scene>
 		<scene name="idle-4" editor-bounds="-8 -18 16 25">
 			<scene src="shared" />
-			<sprite origin="24 30" looping="false" texture="./guard_defender/guard_defender.tif" material="system/default.mats:enemy">		
+			<sprite origin="24 30" looping="false" texture="actors/undead/guard/guard_defender/guard_defender.tif" material="system/default.mats:enemy">		
 				<frame time="100">192 0 48 48</frame>
 			</sprite>
 		</scene>
 		<scene name="idle-5" editor-bounds="-8 -18 16 25">
 			<scene src="shared" />
-			<sprite origin="24 30" looping="false" texture="./guard_defender/guard_defender.tif" material="system/default.mats:enemy">		
+			<sprite origin="24 30" looping="false" texture="actors/undead/guard/guard_defender/guard_defender.tif" material="system/default.mats:enemy">		
 				<frame time="100">240 0 48 48</frame>
 			</sprite>
 		</scene>
 		<scene name="idle-6" editor-bounds="-8 -18 16 25">
 			<scene src="shared" />
-			<sprite origin="24 30" looping="false" texture="./guard_defender/guard_defender.tif" material="system/default.mats:enemy">		
+			<sprite origin="24 30" looping="false" texture="actors/undead/guard/guard_defender/guard_defender.tif" material="system/default.mats:enemy">		
 				<frame time="100">288 0 48 48</frame>
 			</sprite>
 		</scene>
 		<scene name="idle-7" editor-bounds="-8 -18 16 25">
 			<scene src="shared" />
-			<sprite origin="24 30" looping="false" texture="./guard_defender/guard_defender.tif" material="system/default.mats:enemy">		
+			<sprite origin="24 30" looping="false" texture="actors/undead/guard/guard_defender/guard_defender.tif" material="system/default.mats:enemy">		
 				<frame time="100">336 0 48 48</frame>
 			</sprite>
 		</scene>
@@ -65,7 +65,7 @@
 
 %defblock AnimWalk XCOORD
 <scene src="shared" />
-<sprite origin="24 30" texture="./guard_defender/guard_defender_move.tif" material="system/default.mats:enemy">		
+<sprite origin="24 30" texture="actors/undead/guard/guard_defender/guard_defender_move.tif" material="system/default.mats:enemy">		
 	<frame time="100">%%XCOORD%% 0 48 48</frame>
 	<frame time="100">%%XCOORD%% 48 48 48</frame>
 	<frame time="100">%%XCOORD%% 96 48 48</frame>
@@ -104,7 +104,7 @@
 
 %defblock AnimGuard XCOORD
 <scene src="shared" />
-<sprite origin="24 30" loopback="100" texture="./guard_defender/guard_defender_attack.tif" material="system/default.mats:enemy">		
+<sprite origin="24 30" loopback="100" texture="actors/undead/guard/guard_defender/guard_defender_attack.tif" material="system/default.mats:enemy">		
 	<frame time="100">%%XCOORD%% 0 48 48</frame>
 	<frame time="100">%%XCOORD%% 48 48 48</frame>
 </sprite>
@@ -137,7 +137,7 @@
 
 %defblock AnimGuardWalk XCOORD
 <scene src="shared" />
-<sprite origin="24 30" texture="./guard_defender/guard_defender_guard_move.tif" material="system/default.mats:enemy">		
+<sprite origin="24 30" texture="actors/undead/guard/guard_defender/guard_defender_guard_move.tif" material="system/default.mats:enemy">		
 	<frame time="150">%%XCOORD%% 0 48 48</frame>
 	<frame time="250">%%XCOORD%% 48 48 48</frame>
 	<frame time="150">%%XCOORD%% 96 48 48</frame>
