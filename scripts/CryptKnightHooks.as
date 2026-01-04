@@ -99,6 +99,70 @@ namespace CryptKnight
 		}
 	}
 	
+	// Helper function to clear unwavering oath buffs from a player
+	void ClearUnwaveringOathBuffs(PlayerBase@ playerBase)
+	{
+		if (playerBase is null)
+			return;
+			
+		auto actor = cast<Actor>(playerBase);
+		if (actor is null)
+			return;
+			
+		auto buffList = actor.GetBuffList();
+		if (buffList is null)
+			return;
+		
+		// Remove zombie transformation buffs
+		for (int i = int(buffList.m_buffs.length()) - 1; i >= 0; i--)
+		{
+			auto buff = buffList.m_buffs[i];
+			uint pathHash = buff.m_def.m_pathHash;
+			
+			// Check for zombie transformation buffs or tracking buff
+			if (pathHash == g_zombieBuffHash1 || pathHash == g_zombieBuffHash2 || 
+			    pathHash == g_zombieBuffHash3 || pathHash == g_zombieBuffHash4 || 
+			    pathHash == g_zombieBuffHash5 || pathHash == g_unwaveringOathBuffHash)
+			{
+				buff.Clear();
+				buffList.m_buffs.removeAt(i);
+			}
+		}
+		
+		// Clear zombie state tracking
+		auto player = cast<Player>(playerBase);
+		if (player !is null && player.m_record !is null)
+		{
+			// Find player peer ID
+			for (uint j = 0; j < g_players.length(); j++)
+			{
+				if (g_players[j] is player.m_record)
+				{
+					if (g_zombieTransformed.exists(g_players[j].peer))
+						g_zombieTransformed.delete(g_players[j].peer);
+					break;
+				}
+			}
+		}
+	}
+	
+	// Hook: Clear unwavering oath condition when player refills potions at a well
+	// Hook into ResetPlayerHealthMana which is called by the well
+	[Hook]
+	void ResetPlayerHealthMana(PlayerRecord@ record)
+	{
+		// Clear unwavering oath condition when player uses a well
+		if (record !is null)
+		{
+			auto playerBase = cast<PlayerBase>(record.actor);
+			if (playerBase !is null)
+			{
+				PrintError("[CryptKnight] ResetPlayerHealthMana hook called, clearing unwavering oath buffs");
+				ClearUnwaveringOathBuffs(playerBase);
+			}
+		}
+	}
+	
 	// Hook: Clean up zombie state on player spawn/load to prevent save state issues
 	[Hook]
 	void GameModeSpawnPlayer(AGameplayGameMode@ gameMode, int i, vec2 pos)

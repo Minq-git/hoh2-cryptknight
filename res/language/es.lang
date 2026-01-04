@@ -9,7 +9,7 @@
 	<string name="cryptknight_chaos.name">Armazón Blindado</string>
 	<string name="cryptknight_chaos.description">Un coloso no muerto imparable.</string>
 	
-	<string name=".htitle.cryptknight.desc">Obtén Fuerza.</string>
+	<string name=".htitle.cryptknight.desc">Regeneración de Vida.</string>
 	
 	<string name="death_grip.name">Agarre Mortal</string>
 	<string name="death_grip.description">Atrae a todos los monstruos cercanos hacia ti.</string>

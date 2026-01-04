@@ -9,7 +9,7 @@
 	<string name="cryptknight_chaos.name">装甲躯壳</string>
 	<string name="cryptknight_chaos.description">不可阻挡的不死巨像。</string>
 	
-	<string name=".htitle.cryptknight.desc">获得力量。</string>
+	<string name=".htitle.cryptknight.desc">生命回复。</string>
 	
 	<string name="death_grip.name">死亡之握</string>
 	<string name="death_grip.description">将附近所有的怪物拉向你。</string>

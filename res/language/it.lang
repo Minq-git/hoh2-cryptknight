@@ -9,7 +9,7 @@
 	<string name="cryptknight_chaos.name">Guscio Corazzato</string>
 	<string name="cryptknight_chaos.description">Un colosso non morto inarrestabile.</string>
 	
-	<string name=".htitle.cryptknight.desc">Ottieni Forza.</string>
+	<string name=".htitle.cryptknight.desc">Rigenerazione Vita.</string>
 	
 	<string name="death_grip.name">Presa della Morte</string>
 	<string name="death_grip.description">Attira tutti i mostri vicini verso di te.</string>

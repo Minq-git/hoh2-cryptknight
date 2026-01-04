@@ -3,12 +3,12 @@
 	<dict>
 		<string name="id">title_cryptknight</string>
 		<string name="name">Crypt Knight</string>
-		<string name="description">Gain Strength.</string>
-		<float name="desc-per-level">3</float>
+		<string name="description">HP Regen.</string>
+		<float name="desc-per-level">0.2</float>
 
 		<dict name="modifier">
-			<string name="class">Modifiers::StatAdd</string>
-			<ivec2 name="str">0 30</ivec2>
+			<string name="class">Modifiers::AttribAdd</string>
+			<vec2 name="health-regen">0 2.0</vec2>
 		</dict>
 	</dict>
 </array>

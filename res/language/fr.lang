@@ -9,7 +9,7 @@
 	<string name="cryptknight_chaos.name">Carcasse Blindée</string>
 	<string name="cryptknight_chaos.description">Un colosse mort-vivant imparable.</string>
 	
-	<string name=".htitle.cryptknight.desc">Gagnez de la Force.</string>
+	<string name=".htitle.cryptknight.desc">Régénération de Vie.</string>
 	
 	<string name="death_grip.name">Étreinte Mortelle</string>
 	<string name="death_grip.description">Attire tous les monstres proches vers vous.</string>

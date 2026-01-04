@@ -9,7 +9,7 @@
 	<string name="cryptknight_chaos.name">Armoured Husk</string>
 	<string name="cryptknight_chaos.description">An unstoppable undead juggernaut.</string>
 	
-	<string name=".htitle.cryptknight.desc">Gain Strength.</string>
+	<string name=".htitle.cryptknight.desc">HP Regen.</string>
 	
 	<string name="death_grip.name">Death Grip</string>
 	<string name="death_grip.description">Pulls all nearby monsters towards you.</string>

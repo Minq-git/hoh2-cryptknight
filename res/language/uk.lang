@@ -9,7 +9,7 @@
 	<string name="cryptknight_chaos.name">Броньована Оболонка</string>
 	<string name="cryptknight_chaos.description">Незупинний колос-нежить.</string>
 	
-	<string name=".htitle.cryptknight.desc">Отримайте Силу.</string>
+	<string name=".htitle.cryptknight.desc">Регенерація HP.</string>
 	
 	<string name="death_grip.name">Смертельна Хватка</string>
 	<string name="death_grip.description">Притягує всіх монстрів поблизу до вас.</string>

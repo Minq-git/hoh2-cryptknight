@@ -9,7 +9,7 @@
 	<string name="cryptknight_chaos.name">Gepanzerte Hülle</string>
 	<string name="cryptknight_chaos.description">Ein unaufhaltsamer untoter Koloss.</string>
 	
-	<string name=".htitle.cryptknight.desc">Erhalte Stärke.</string>
+	<string name=".htitle.cryptknight.desc">LP-Regeneration.</string>
 	
 	<string name="death_grip.name">Todesgriff</string>
 	<string name="death_grip.description">Zieht alle nahen Monster zu dir.</string>
