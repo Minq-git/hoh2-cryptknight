@@ -32,6 +32,8 @@ namespace Skills
 		UnitScene@ m_chainFx;
 		SoundEvent@ m_hitSnd;
 		SoundEvent@ m_missSnd;
+		
+		ActorBuffDef@ m_stunBuff;
 
 		array<Modifiers::IModifier@> m_mods;
 
@@ -63,6 +65,8 @@ namespace Skills
 			m_hitFx = GetParamString(unit, params, "hit-fx", false);
 			@m_hitSnd = Resources::GetSoundEvent(GetParamString(unit, params, "hit-snd", false));
 			@m_missSnd = Resources::GetSoundEvent(GetParamString(unit, params, "miss-snd", false));
+			
+			@m_stunBuff = LoadActorBuff("players/cryptknight/buffs/grip_stun.sval");
 			
 			PropagateWeaponInformation(m_effectList, id);
 			PropagateWeaponInformation(m_hitEffects, id);
@@ -147,6 +151,12 @@ namespace Skills
 				
 				// Pull logic init
 				m_hookedUnit = hitUnit;
+
+				// Apply Stun to prevent enemy movement logic from overriding pull
+				auto hitActor = cast<Actor>(hitUnit.GetScriptBehavior());
+				if (hitActor !is null && m_stunBuff !is null)
+					hitActor.ApplyBuff(ActorBuff(m_owner, m_stunBuff, 1.0f, false));
+
 				float ds = dist(from, to) - (toRadius + 4);
 				if (ds > 3.5f)
 				{
@@ -161,6 +171,34 @@ namespace Skills
 		
 		void CancelCharge()
 		{
+			if (m_hookedUnit.IsValid() && m_stunBuff !is null)
+			{
+				auto hitActor = cast<Actor>(m_hookedUnit.GetScriptBehavior());
+				if (hitActor !is null)
+				{
+					auto buffList = hitActor.GetBuffList();
+					if (buffList !is null)
+					{
+						bool removed = false;
+						for (uint i = 0; i < buffList.m_buffs.length(); i++)
+						{
+							if (buffList.m_buffs[i].m_def is m_stunBuff)
+							{
+								buffList.m_buffs[i].Clear();
+								buffList.m_buffs.removeAt(i--);
+								removed = true;
+							}
+						}
+						if (removed)
+						{
+							auto player = cast<PlayerBase>(hitActor);
+							if (player !is null)
+								player.RefreshModifiers();
+						}
+					}
+				}
+			}
+
 			m_durationC = 0;
 			m_hookedUnit = UnitPtr();
 			cast<PlayerBase>(m_owner).SetCharging(false);

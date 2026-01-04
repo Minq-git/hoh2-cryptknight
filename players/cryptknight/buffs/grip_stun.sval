@@ -1,0 +1,17 @@
+<dict>
+	<string name="name">Grip Stun</string>
+	<array name="tags">
+		<string>debuff</string>
+		<string>stun</string>
+	</array>
+	
+	<bool name="debuff">true</bool>
+	<int name="duration">5000</int>
+	
+	<float name="speed-mul">0</float>
+	<bool name="disarm">true</bool>
+	<bool name="silence">true</bool>
+	
+	<bool name="hidden">true</bool>
+</dict>
+
