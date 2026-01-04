@@ -39,7 +39,7 @@
 	<string name="panel-style">warrior</string>
 	<string name="panel-color-tint">#303030ff</string>
 	<string name="portrait-class">paladin</string>
-	<string name="title">Crypt Knight</string>
+	<string name="title">title_cryptknight</string>
 
 	<array name="waypoint">
 		<string>gui/icons.png</string>
