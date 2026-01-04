@@ -42,10 +42,10 @@
 		<array name="colorize">
 			<i>0</i><a><s>#96895Eff</s><s>#E0D097FF</s><s>#F2E9CAff</s></a> <!-- skeleton light -->
 			<i>1</i><a><s>#352C18ff</s><s>#5F5433ff</s><s>#7D6C3Aff</s></a> <!-- skeleton dark -->
-			<i>2</i><a><s>#232323ff</s><s>#7b7b7bff</s><s>#e9e9e9ff</s></a> <!-- tasset + shield embelm -->
-			<i>3</i><a><s>#171c21ff</s><s>#4e5971ff</s><s>#d9e5efff</s></a> <!-- shoulderguards + shield trim -->
-			<i>4</i><a><s>#171c22ff</s><s>#4E5972FF</s><s>#d9e5efff</s></a> <!-- armour -->
-			<i>5</i><a><s>#1d0007ff</s><s>#701214ff</s><s>#ac1014ff</s></a> <!-- cloth + arms + shield face -->
+			<i>2</i><a><s>#1a221a</s><s>#546054</s><s>#c9d1c9</s></a> <!-- tasset + shield embelm (greenish/grey) -->
+			<i>3</i><a><s>#1e3612</s><s>#4d7c32</s><s>#89c966</s></a> <!-- shoulderguards + shield trim (green) -->
+			<i>4</i><a><s>#1a221a</s><s>#546054</s><s>#c9d1c9</s></a> <!-- armour (greenish) -->
+			<i>5</i><a><s>#1e3612</s><s>#4d7c32</s><s>#89c966</s></a> <!-- cloth + arms + shield face (green) -->
 			<i>6</i><a><s>#171c22ff</s><s>#4E5972FF</s><s>#d9e5efff</s></a> <!-- boots + gloves -->
 		</array>
 		

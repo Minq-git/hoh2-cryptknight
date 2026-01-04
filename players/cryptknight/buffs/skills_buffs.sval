@@ -51,7 +51,7 @@
 		<string name="name">Zombie Form</string>
 		<int name="duration">%%DUR%%</int>
 		<string name="icon">players/icons_skills.png</string>
-		<int>100</int><vec4>120 168 24 24</vec4>
+		<int>100</int><vec4>120 168 48 48</vec4>
 		
 		<!-- Remove on Fountain/Town Interaction -->
 		<bool name="dispel-on-fountain">true</bool> <!-- Assumed flag based on requirements -->

@@ -40,9 +40,9 @@
 		<array name="colorize">
 			<i>0</i><a><s>#96895Eff</s><s>#E0D097FF</s><s>#F2E9CAff</s></a> <!-- skeleton light -->
 			<i>1</i><a><s>#352C18ff</s><s>#5F5433ff</s><s>#7D6C3Aff</s></a> <!-- skeleton dark -->
-			<i>2</i><a><s>#430002ff</s><s>#C90000FF</s><s>#ff8b8bff</s></a> <!-- shoulderguards + cloth -->
+			<i>2</i><a><s>#1e3612</s><s>#4d7c32</s><s>#89c966</s></a> <!-- shoulderguards + cloth (green) -->
 			<i>3</i><a><s>#4c3816ff</s><s>#e49600ff</s><s>#ffb831ff</s></a> <!-- boots + gloves -->
-			<i>4</i><a><s>#1a1a1aff</s><s>#545454ff</s><s>#c9c9c9ff</s></a> <!-- amrour -->
+			<i>4</i><a><s>#1a221a</s><s>#546054</s><s>#c9d1c9</s></a> <!-- armour (greenish) -->
 		</array>
 
 		<dict name="movement">

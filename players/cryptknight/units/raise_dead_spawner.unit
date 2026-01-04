@@ -13,28 +13,27 @@
 			<dict>
 				<string name="class">SpawnUnit</string>
 				<string name="unit">players/cryptknight/units/minion_sentry.unit</string>
-				<float name="chance">0.2</float>
+				<float name="chance">0.25</float>
 				<bool name="safe-spawn">true</bool>
 			</dict>
 			
 			<dict>
 				<string name="class">SpawnUnit</string>
 				<string name="unit">players/cryptknight/units/minion_footman.unit</string>
-				<float name="chance">0.2</float>
+				<float name="chance">0.333</float>
 				<bool name="safe-spawn">true</bool>
 			</dict>
 			
 			<dict>
 				<string name="class">SpawnUnit</string>
 				<string name="unit">players/cryptknight/units/minion_mage.unit</string>
-				<float name="chance">0.2</float>
+				<float name="chance">0.5</float>
 				<bool name="safe-spawn">true</bool>
 			</dict>
 			
 			<dict>
 				<string name="class">SpawnUnit</string>
 				<string name="unit">players/cryptknight/units/minion_knight.unit</string>
-				<float name="chance">0.2</float>
 				<bool name="safe-spawn">true</bool>
 			</dict>
 		</array>

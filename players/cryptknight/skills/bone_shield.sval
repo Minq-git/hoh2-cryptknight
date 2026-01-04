@@ -6,7 +6,7 @@
 
 	<array name="description-params">
 		<array><s>reduction</s><s>Damage Reduction</s><s>-30%</s><s>-35%</s><s>-40%</s><s>-45%</s><s>-50%</s></array>
-		<array><s>stacks</s><s>Max Stacks</s><s>3</s><s>3</s><s>5</s><s>5</s><s>7</s></array>
+		<array><s>stacks</s><s>Max Stacks</s><s>3</s><s>3</s><s>4</s><s>4</s><s>5</s></array>
 		<array><s>cooldown</s><b>t</b><s>.skills.desc.params.cooldown</s><s>45s</s><s>40s</s><s>35s</s><s>30s</s><s>25s</s></array>
 	</array>
 
@@ -40,19 +40,6 @@
 
 		<dict name="actions">
 			<array name="cast">
-				<!-- First, remove existing stacks to "refresh" to max -->
-				<!-- Actually, AddStacks with a large number and clamping is handled by 'max' in stack def, 
-				     but AddStacks adds TO current. If we want to Set to Max:
-				     We can remove the buff first, then add Max. 
-				     Or we can check if we can 'set' stacks. 
-				     Wizard Barrier adds 1 stack over time.
-				     Here we want to refill completely. 
-				     We can use RemoveBuff then AddStacks.
-				-->
-				<dict>
-					<string name="class">RemoveBuff</string>
-					<string name="buff">players/cryptknight/stacks_cryptknight_boneshield.sval:bone_shield</string>
-				</dict>
 				<dict>
 					<string name="class">AddStacks</string>
 					<string name="buff">players/cryptknight/stacks_cryptknight_boneshield.sval:bone_shield</string>
@@ -98,7 +85,7 @@
 			<int name="skill-cost">5</int>
 			<int name="cooldown">35000</int>
 			<dict name="binds">
-				<int name="max-stacks">5</int>
+				<int name="max-stacks">4</int>
 				<float name="dmg-taken">0.6</float>
 			</dict>
 		</dict>
@@ -106,7 +93,7 @@
 			<int name="skill-cost">5</int>
 			<int name="cooldown">30000</int>
 			<dict name="binds">
-				<int name="max-stacks">5</int>
+				<int name="max-stacks">4</int>
 				<float name="dmg-taken">0.55</float>
 			</dict>
 		</dict>
@@ -114,7 +101,7 @@
 			<int name="skill-cost">7</int>
 			<int name="cooldown">25000</int>
 			<dict name="binds">
-				<int name="max-stacks">7</int>
+				<int name="max-stacks">5</int>
 				<float name="dmg-taken">0.5</float>
 			</dict>
 		</dict>
