@@ -26,42 +26,64 @@
 		<dict name="binds">
 			<int name="max-bonus">1</int>
 			<float name="stat-mul">1.5</float>
+			<ivec2 name="max-summons-bind">1 5</ivec2>
 		</dict>
 
 		<array name="modifiers">
-			<!-- Boost all 5 potential guard types -->
+			<!-- Shared cap enforcement -->
+			<dict>
+				<string name="class">Modifiers::SharedSummonCap</string>
+				<string name="max-summons-bind">max-summons-bind</string>
+				<array name="units">
+					<string>players/cryptknight/units/minion_defender.unit</string>
+					<string>players/cryptknight/units/minion_sentry.unit</string>
+					<string>players/cryptknight/units/minion_footman.unit</string>
+					<string>players/cryptknight/units/minion_mage.unit</string>
+					<string>players/cryptknight/units/minion_knight.unit</string>
+				</array>
+			</dict>
+			
+			<!-- HUD Tracker -->
+			<dict>
+				<string name="class">Modifiers::CountSummons</string>
+				<string name="buff">players/cryptknight/stacks_cryptknight_minions.sval:minion_count</string>
+				<array name="units">
+					<string>players/cryptknight/units/minion_defender.unit</string>
+					<string>players/cryptknight/units/minion_sentry.unit</string>
+					<string>players/cryptknight/units/minion_footman.unit</string>
+					<string>players/cryptknight/units/minion_mage.unit</string>
+					<string>players/cryptknight/units/minion_knight.unit</string>
+				</array>
+			</dict>
+
+			<!-- Boosts stats -->
 			<dict>
 				<string name="class">Modifiers::ModifySummons</string>
-				<string name="unit">actors/undead/guard/guard_defender.unit</string>
-				<string name="add-max-num-bind">max-bonus</string>
+				<string name="unit">players/cryptknight/units/minion_defender.unit</string>
 				<string name="hp-mul-bind">stat-mul</string>
 				<string name="dmg-mul-bind">stat-mul</string>
 			</dict>
 			<dict>
 				<string name="class">Modifiers::ModifySummons</string>
-				<string name="unit">actors/undead/guard/guard_sentry.unit</string>
-				<string name="add-max-num-bind">max-bonus</string>
+				<string name="unit">players/cryptknight/units/minion_sentry.unit</string>
 				<string name="hp-mul-bind">stat-mul</string>
 				<string name="dmg-mul-bind">stat-mul</string>
 			</dict>
 			<dict>
 				<string name="class">Modifiers::ModifySummons</string>
-				<string name="unit">actors/undead/guard/guard_footman.unit</string>
-				<string name="add-max-num-bind">max-bonus</string>
+				<string name="unit">players/cryptknight/units/minion_footman.unit</string>
 				<string name="hp-mul-bind">stat-mul</string>
 				<string name="dmg-mul-bind">stat-mul</string>
 			</dict>
 			<dict>
 				<string name="class">Modifiers::ModifySummons</string>
-				<string name="unit">actors/undead/guard/guard_mage.unit</string>
-				<string name="add-max-num-bind">max-bonus</string>
+				<string name="unit">players/cryptknight/units/minion_mage.unit</string>
 				<string name="hp-mul-bind">stat-mul</string>
 				<string name="dmg-mul-bind">stat-mul</string>
 			</dict>
 			<dict>
 				<string name="class">Modifiers::ModifySummons</string>
-				<string name="unit">actors/undead/guard/guard_knight.unit</string>
-				<string name="add-max-num-bind">max-bonus</string>
+				<string name="unit">players/cryptknight/units/minion_knight.unit</string>
 				<string name="hp-mul-bind">stat-mul</string>
 				<string name="dmg-mul-bind">stat-mul</string>
 			</dict>
@@ -72,26 +94,27 @@
 		<dict>
 			<int name="skill-cost">SKILLCOSTLEVEL_2</int>
 			<dict name="binds">
-				<int name="max-bonus">2</int>
+				<ivec2 name="max-summons-bind">2 5</ivec2>
 			</dict>
 		</dict>
+
 		<dict>
 			<int name="skill-cost">SKILLCOSTLEVEL_3</int>
 			<dict name="binds">
-				<int name="max-bonus">3</int>
+				<ivec2 name="max-summons-bind">3 5</ivec2>
 			</dict>
 		</dict>
 		<dict>
 			<int name="skill-cost">SKILLCOSTLEVEL_4</int>
 			<dict name="binds">
-				<int name="max-bonus">4</int>
+				<ivec2 name="max-summons-bind">4 5</ivec2>
 			</dict>
 		</dict>
 		<dict>
 			<int name="skill-cost">SKILLCOSTLEVEL_5</int>
 			<dict name="binds">
-				<int name="max-bonus">4</int>
 				<float name="stat-mul">1.6</float> <!-- Slight stat boost at max level -->
+				<ivec2 name="max-summons-bind">5 5</ivec2>
 			</dict>
 		</dict>
 	</array>

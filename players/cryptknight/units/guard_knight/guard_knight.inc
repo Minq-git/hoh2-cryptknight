@@ -5,7 +5,7 @@
 				<circle radius="14" sensor="true" offset="0 -14" shoot-through="false" aim-through="true" charge-through="true"/>
 			</collision>
 			<scene src="special/shadow.unit:24"/>
-<!-- Minimap marker removed -->
+			<scene src="special/minimap.unit:npc_normal"/>
 		</scene>
 
 		<scene name="idle-0" editor-bounds="-12 -39 21 48">

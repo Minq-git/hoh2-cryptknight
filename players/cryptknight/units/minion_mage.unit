@@ -33,12 +33,12 @@
 		
 		<array name="colorize">
 			<i>0</i><a><s>#352c18ff</s><s>#7d6c39ff</s><s>#e4d8acff</s></a> <!-- skeleton -->
-			<i>1</i><a><s>#1e3612</s><s>#4d7c32</s><s>#89c966</s></a> <!-- hood + cape (green) -->
+			<i>1</i><a><s>#16393e</s><s>#066664</s><s>#77cbbf</s></a> <!-- hood + cape (ghastly green) -->
 			<i>2</i><a><s>#4c3816ff</s><s>#e49600ff</s><s>#ffe361ff</s></a> <!-- hood trim -->
-			<i>3</i><a><s>#1a221a</s><s>#546054</s><s>#c9d1c9</s></a> <!-- armour (greenish) -->
-			<i>4</i><a><s>#1e3612</s><s>#4d7c32</s><s>#89c966</s></a> <!-- cloth (green) -->
+			<i>3</i><a><s>#124d45</s><s>#066664</s><s>#d1ffee</s></a> <!-- armour (ghastly green) -->
+			<i>4</i><a><s>#16393e</s><s>#066664</s><s>#77cbbf</s></a> <!-- cloth (ghastly green) -->
 			<i>5</i><a><s>#4c3816ff</s><s>#e49600ff</s><s>#ffe361ff</s></a> <!-- boots + gloves -->
-			<i>6</i><a><s>#004400</s><s>#00cc00</s><s>#66ff66</s></a> <!-- gem (green) -->
+			<i>6</i><a><s>#066664</s><s>#77cbbf</s><s>#d1ffee</s></a> <!-- gem (ghastly green) -->
 		</array>
 
 		<dict name="movement">

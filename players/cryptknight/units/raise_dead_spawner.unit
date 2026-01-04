@@ -5,35 +5,13 @@
 		<array name="actions">
 			<dict>
 				<string name="class">SpawnUnit</string>
-				<string name="unit">players/cryptknight/units/minion_defender.unit</string>
-				<float name="chance">0.2</float>
-				<bool name="safe-spawn">true</bool>
-			</dict>
-			
-			<dict>
-				<string name="class">SpawnUnit</string>
-				<string name="unit">players/cryptknight/units/minion_sentry.unit</string>
-				<float name="chance">0.25</float>
-				<bool name="safe-spawn">true</bool>
-			</dict>
-			
-			<dict>
-				<string name="class">SpawnUnit</string>
-				<string name="unit">players/cryptknight/units/minion_footman.unit</string>
-				<float name="chance">0.333</float>
-				<bool name="safe-spawn">true</bool>
-			</dict>
-			
-			<dict>
-				<string name="class">SpawnUnit</string>
-				<string name="unit">players/cryptknight/units/minion_mage.unit</string>
-				<float name="chance">0.5</float>
-				<bool name="safe-spawn">true</bool>
-			</dict>
-			
-			<dict>
-				<string name="class">SpawnUnit</string>
-				<string name="unit">players/cryptknight/units/minion_knight.unit</string>
+				<array name="units">
+					<int>200</int><string>players/cryptknight/units/minion_defender.unit</string>
+					<int>250</int><string>players/cryptknight/units/minion_sentry.unit</string>
+					<int>333</int><string>players/cryptknight/units/minion_footman.unit</string>
+					<int>500</int><string>players/cryptknight/units/minion_mage.unit</string>
+					<int>1000</int><string>players/cryptknight/units/minion_knight.unit</string>
+				</array>
 				<bool name="safe-spawn">true</bool>
 			</dict>
 		</array>
