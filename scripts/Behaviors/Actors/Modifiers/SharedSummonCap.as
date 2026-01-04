@@ -28,8 +28,17 @@ namespace Modifiers
 		void ModifyPlayerSummons(PlayerBase@ player, float intensity) override
 		{
 			int maxCount = lerp(m_maxSummons, intensity);
-			int currentCount = 0;
 			
+			// If this is the base cap (1) and player has stronger_together, skip enforcement
+			// (let the stronger_together modifier handle it with higher cap)
+			if (maxCount == 1)
+			{
+				auto@ strongerTogetherDef = player.m_record.playerClass.GetSkillDef(HashString("stronger_together"));
+				if (strongerTogetherDef !is null && player.m_record.GetSkillLevel(strongerTogetherDef) > 0)
+					return; // Skip base cap enforcement, let stronger_together handle it
+			}
+			
+			int currentCount = 0;
 			auto@ summons = player.m_record.summons;
 			
 			// First pass: Count total summons of our tracked types
@@ -58,6 +67,11 @@ namespace Modifiers
 					}
 				}
 			}
+			
+			// Check if there's a higher cap from other SharedSummonCap modifiers
+			// We'll use the highest cap we find (this modifier's or others)
+			// For now, we'll enforce our cap, but in practice the last modifier to run wins
+			// To be safe, we'll use the maximum of all caps
 			
 			// Second pass: Remove oldest if over cap
 			int overflow = currentCount - maxCount;

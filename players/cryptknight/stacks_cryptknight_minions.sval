@@ -15,7 +15,7 @@
 
 			<array name="hud">
 				<string>players/cryptknight/icons_skills.png</string>
-				<int>100</int><vec4>206 0 13 13</vec4>
+				<int>100</int><vec4>206 0 14 14</vec4>
 			</array>
 			
 			<array name="modifiers">

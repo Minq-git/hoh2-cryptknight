@@ -52,31 +52,30 @@
 		</array>
 		
 		<array name="modifiers">
-			<!-- Limit each minion type to 1 by default -->
+			<!-- Base shared cap: 1 minion total (increases with stronger_together skill) -->
 			<dict>
-				<string name="class">Modifiers::ModifySummons</string>
-				<string name="unit">players/cryptknight/units/minion_defender.unit</string>
-				<int name="max-num">1</int>
+				<string name="class">Modifiers::SharedSummonCap</string>
+				<ivec2 name="max-summons">1 1</ivec2>
+				<array name="units">
+					<string>players/cryptknight/units/minion_defender.unit</string>
+					<string>players/cryptknight/units/minion_sentry.unit</string>
+					<string>players/cryptknight/units/minion_footman.unit</string>
+					<string>players/cryptknight/units/minion_mage.unit</string>
+					<string>players/cryptknight/units/minion_knight.unit</string>
+				</array>
 			</dict>
+			
+			<!-- HUD Tracker - always active -->
 			<dict>
-				<string name="class">Modifiers::ModifySummons</string>
-				<string name="unit">players/cryptknight/units/minion_sentry.unit</string>
-				<int name="max-num">1</int>
-			</dict>
-			<dict>
-				<string name="class">Modifiers::ModifySummons</string>
-				<string name="unit">players/cryptknight/units/minion_footman.unit</string>
-				<int name="max-num">1</int>
-			</dict>
-			<dict>
-				<string name="class">Modifiers::ModifySummons</string>
-				<string name="unit">players/cryptknight/units/minion_mage.unit</string>
-				<int name="max-num">1</int>
-			</dict>
-			<dict>
-				<string name="class">Modifiers::ModifySummons</string>
-				<string name="unit">players/cryptknight/units/minion_knight.unit</string>
-				<int name="max-num">1</int>
+				<string name="class">Modifiers::CountSummons</string>
+				<string name="buff">players/cryptknight/stacks_cryptknight_minions.sval:minion_count</string>
+				<array name="units">
+					<string>players/cryptknight/units/minion_defender.unit</string>
+					<string>players/cryptknight/units/minion_sentry.unit</string>
+					<string>players/cryptknight/units/minion_footman.unit</string>
+					<string>players/cryptknight/units/minion_mage.unit</string>
+					<string>players/cryptknight/units/minion_knight.unit</string>
+				</array>
 			</dict>
 		</array>
 	</dict>

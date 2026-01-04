@@ -4,12 +4,15 @@ namespace Modifiers
 	{
 		array<UnitProducer@> m_producers;
 		string m_buffId;
-		uint m_buffHash;
+		uint m_stackIdHash;
+		ActorBuffStackDef@ m_stackDef;
 
 		CountSummons(UnitPtr unit, SValue& params)
 		{
 			m_buffId = GetParamString(unit, params, "buff", false);
-			m_buffHash = HashString(m_buffId);
+			@m_stackDef = ActorBuffStackDef::Get(m_buffId);
+			if (m_stackDef !is null)
+				m_stackIdHash = m_stackDef.m_idHash;
 			
 			array<SValue@>@ unitsArr = GetParamArray(unit, params, "units", false);
 			if (unitsArr !is null)
@@ -55,11 +58,14 @@ namespace Modifiers
 			if (buffList is null)
 				return;
 
-			// Find our buff stack
+			if (m_stackDef is null)
+				return;
+			
+			// Find our buff stack by ID hash
 			for (uint i = 0; i < buffList.m_stacks.length(); i++)
 			{
 				auto stack = buffList.m_stacks[i];
-				if (stack.m_def.m_buffDef.m_pathHash == m_buffHash)
+				if (stack.m_def.m_idHash == m_stackIdHash)
 				{
 					if (stack.m_stacks != count)
 					{
@@ -70,26 +76,10 @@ namespace Modifiers
 				}
 			}
 			
-			// If we have count > 0 but no buff, apply it
+			// If we have count > 0 but no buff, apply it using AddStacks
 			if (count > 0)
 			{
-				player.m_record.actor.ApplyBuff(ActorBuff(player.m_record.actor, LoadActorBuff(m_buffId), 1.0f, false));
-				
-				// Re-find to set stacks
-				@buffList = player.m_record.actor.GetBuffList();
-				if (buffList !is null)
-				{
-					for (uint i = 0; i < buffList.m_stacks.length(); i++)
-					{
-						auto stack = buffList.m_stacks[i];
-						if (stack.m_def.m_buffDef.m_pathHash == m_buffHash)
-						{
-							if (stack.m_stacks < count)
-								stack.AddStacks(player.m_record.actor, count - stack.m_stacks);
-							break;
-						}
-					}
-				}
+				player.m_record.actor.AddStacks(player.m_record.actor, m_stackDef, count, 0);
 			}
 		}
 	}
