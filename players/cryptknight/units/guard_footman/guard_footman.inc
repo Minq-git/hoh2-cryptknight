@@ -183,7 +183,7 @@
 
 %defblock AnimMelee XCOORD
 <scene src="shared" />
-<sprite origin="24 30" looping="false" texture="./guard_footman/guard_footman_attack.tif" material="system/default.mats:enemy">		
+<sprite origin="24 30" looping="false" texture="actors/undead/guard/guard_footman/guard_footman_attack.tif" material="system/default.mats:enemy">		
 	<frame time="50">%%XCOORD%% 0 48 48</frame>
 	<frame time="100">%%XCOORD%% 48 48 48</frame>
 	<frame time="300">%%XCOORD%% 96 48 48</frame>
@@ -221,7 +221,7 @@
 
 %defblock AnimMeleeGuard XCOORD
 <scene src="shared-guard" />
-<sprite origin="24 30" looping="false" texture="./guard_footman/guard_footman_attack.tif" material="system/default.mats:enemy">		
+<sprite origin="24 30" looping="false" texture="actors/undead/guard/guard_footman/guard_footman_attack.tif" material="system/default.mats:enemy">		
 	<frame time="50">%%XCOORD%% 0 48 48</frame>
 	<frame time="100">%%XCOORD%% 48 48 48</frame>
 	<frame time="300">%%XCOORD%% 96 48 48</frame>

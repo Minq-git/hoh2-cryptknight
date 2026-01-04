@@ -62,4 +62,4 @@
 		</array>
 	</behavior>
 
-%include "actors/undead/guard/guard_footman/guard_footman.inc"
+%include "players/cryptknight/units/guard_footman/guard_footman.inc"

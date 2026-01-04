@@ -173,7 +173,7 @@
 
 %defblock AnimMeleeLunge XCOORD
 <scene src="shared" />
-<sprite origin="24 30" looping="false" texture="./guard_defender/guard_defender_attack.tif" material="system/default.mats:enemy">		
+<sprite origin="24 30" looping="false" texture="actors/undead/guard/guard_defender/guard_defender_attack.tif" material="system/default.mats:enemy">		
 	<frame time="100">%%XCOORD%% 0 48 48</frame>
 	<frame time="100">%%XCOORD%% 48 48 48</frame>
 	<frame time="250">%%XCOORD%% 96 48 48</frame>
@@ -210,7 +210,7 @@
 
 %defblock AnimMeleeStab XCOORD
 <scene src="shared" />
-<sprite origin="24 30" looping="false" texture="./guard_defender/guard_defender_attack.tif" material="system/default.mats:enemy">
+<sprite origin="24 30" looping="false" texture="actors/undead/guard/guard_defender/guard_defender_attack.tif" material="system/default.mats:enemy">
 	<frame time="100">%%XCOORD%% 48 48 48</frame>
 	<frame time="200">%%XCOORD%% 96 48 48</frame>
 	<frame time="50">%%XCOORD%% 144 48 48</frame>

@@ -108,7 +108,7 @@
 	<frame time="150">%%XCOORD%% 48 48 48</frame>
 	<frame time="100">%%XCOORD%% 96 48 48</frame>
 	<frame time="100">%%XCOORD%% 144 48 48</frame>
-	
+
 	<frame time="100">%%XCOORD%% 192 48 48</frame>
 	<frame time="100">%%XCOORD%% 240 48 48</frame>
 	<frame time="100">%%XCOORD%% 288 48 48</frame>
@@ -153,7 +153,7 @@
 
 %defblock AnimReload XCOORD
 <scene src="shared" />
-<sprite origin="24 29" looping="false" texture="./guard_sentry/guard_sentry_attack.tif" material="system/default.mats:enemy">
+<sprite origin="24 29" looping="false" texture="actors/undead/guard/guard_sentry/guard_sentry_attack.tif" material="system/default.mats:enemy">
 	<frame time="100">%%XCOORD%% 192 48 48</frame>
 	<frame time="100">%%XCOORD%% 240 48 48</frame>
 	<frame time="100">%%XCOORD%% 288 48 48</frame>
@@ -190,7 +190,7 @@
 
 %defblock AnimMelee XCOORD
 <scene src="shared" />
-<sprite origin="24 29" looping="false" texture="./guard_sentry/guard_sentry_stab.tif" material="system/default.mats:enemy">
+<sprite origin="24 29" looping="false" texture="actors/undead/guard/guard_sentry/guard_sentry_stab.tif" material="system/default.mats:enemy">
 	<frame time="100">%%XCOORD%% 0 48 48</frame>
 	<frame time="100">%%XCOORD%% 48 48 48</frame>
 	<frame time="100">%%XCOORD%% 96 48 48</frame>
