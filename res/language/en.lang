@@ -26,8 +26,8 @@
 	<string name="sickly.name">Sickly</string>
 	<string name="sickly.description">Attacks apply a stacking disease on the target. Scales with Strength and Skill Level.</string>
 	
-	<string name="void_funnel.name">Void Funnel</string>
-	<string name="void_funnel.description">Channel a frontal cone of void magic. Duration increases with skill level.</string>
+	<string name="soul_vortex.name">Soul Vortex</string>
+	<string name="soul_vortex.description">Channel a frontal cone of void magic. Duration increases with skill level.</string>
 	
 	<string name="cursed.name">Cursed</string>
 	<string name="cursed.description">Gain Strength and Vitality based on your Shadow Curse stacks.</string>
@@ -56,8 +56,8 @@
 	<string name="bone_shield.reduction">Damage Reduction</string>
 	<string name="bone_shield.stacks">Max Stacks</string>
 	<string name="sickly.damage">Damage</string>
-	<string name="void_funnel.damage">Damage</string>
-	<string name="void_funnel.duration">Duration</string>
+	<string name="soul_vortex.damage">Damage</string>
+	<string name="soul_vortex.duration">Duration</string>
 	<string name="cursed.stat-gain">Multiplier</string>
 	<string name="unwavering_oath.duration">Duration</string>
 </dict>

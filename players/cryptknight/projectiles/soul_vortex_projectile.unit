@@ -1,7 +1,7 @@
 <unit netsync="none">
 	<behavior class="NewProjectile">
 		<string name="anim">default</string>
-		<int name="ttl">1500</int>
+		<int name="ttl">1200</int>
 		<float name="speed">8</float>
 		<int name="penetration">1</int>
 		<string name="destroyed-fx">effects/generic/impacts/magic_impact_1.effect</string>
@@ -23,7 +23,7 @@
 			<collision static="false">
 				<circle projectile="true" radius="4"/>
 			</collision>
-			<effect src="players/cryptknight/effects/void_funnel_projectile.effect"/>
+			<effect src="players/cryptknight/effects/soul_vortex_projectile.effect"/>
 		</scene>
 	</scenes>
 </unit>

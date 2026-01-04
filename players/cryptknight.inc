@@ -112,7 +112,7 @@
 		<string>players/cryptknight/skills/bone_shield.sval</string>
 		<string>players/cryptknight/skills/raise_dead.sval</string>
 		
-		<string>players/cryptknight/skills/void_funnel.sval</string>
+		<string>players/cryptknight/skills/soul_vortex.sval</string>
 		<string>players/cryptknight/skills/cursed.sval</string>
 	</array>
 

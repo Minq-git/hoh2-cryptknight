@@ -1,6 +1,6 @@
 %include "players/skills_cost.inc"
 <dict>
-	<string name="name">Void Funnel</string>
+	<string name="name">Soul Vortex</string>
 	<string name="type-name">.skills.type.spell</string>
 	<string name="description">Channel a frontal cone of void magic. Duration increases with skill level.</string>
 
@@ -14,7 +14,7 @@
 		<int>100</int><vec4>24 24 24 24</vec4>
 	</array>
 
-	<string name="id">void_funnel</string>
+	<string name="id">soul_vortex</string>
 	<string name="type">spell</string>
 	<array name="tags"><s>spell</s><s>void</s></array>
 	<int name="starting-level">1</int>
@@ -40,9 +40,9 @@
 			<array name="wave">
 				<dict>
 					<string name="class">ShootProjectileFan</string>
-					<string name="projectile">players/cryptknight/projectiles/void_funnel_projectile.unit</string>
+					<string name="projectile">players/cryptknight/projectiles/soul_vortex_projectile.unit</string>
 					<int name="dist">10</int>
-					<int name="spread">90</int>
+					<int name="spread">45</int>
 					<int name="projectiles">5</int>
 					<string name="damage-mul-bind">dmg</string>
 				</dict>
@@ -119,3 +119,4 @@
 		</dict>
 	</array>
 </dict>
+
