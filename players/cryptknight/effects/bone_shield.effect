@@ -2,39 +2,39 @@
 	<param name="radius" default="35" />
 	
 	<!-- Rotating Skull 1 -->
-	<sprite looping="true" origin="7 7" texture="players/cryptknight/effects/bone_serpent_effects.png" material="system/default.mats:default"
+	<sprite looping="true" origin="4 4" texture="players/cryptknight/effects/bone_serpent_effects.png" material="system/default.mats:default"
 		angle="0"
 		pos-x="cos(t*2*pi)*radius"
 		pos-y="sin(t*2*pi)*radius*0.7 - 12"
 		color-a="1"
 	>
-		<frame time="5000">0 160 13 13</frame>
+		<frame time="5000">19 64 8 8</frame>
 	</sprite>
-	<sprite looping="true" origin="7 7" texture="players/cryptknight/effects/bone_serpent_effects.png" material="system/default.mats:shadow"
+	<sprite looping="true" origin="4 4" texture="players/cryptknight/effects/bone_serpent_effects.png" material="system/default.mats:shadow"
 		angle="0"
 		pos-x="cos(t*2*pi)*radius"
 		pos-y="sin(t*2*pi)*radius*0.7"
 		color-a="1"
 	>
-		<frame time="5000">0 160 13 13</frame>
+		<frame time="5000">19 64 8 8</frame>
 	</sprite>
 
 	<!-- Rotating Skull 2 (Offset by pi) -->
-	<sprite looping="true" origin="7 7" texture="players/cryptknight/effects/bone_serpent_effects.png" material="system/default.mats:default"
+	<sprite looping="true" origin="4 4" texture="players/cryptknight/effects/bone_serpent_effects.png" material="system/default.mats:default"
 		angle="0"
 		pos-x="cos(t*2*pi + pi)*radius"
 		pos-y="sin(t*2*pi + pi)*radius*0.7 - 12"
 		color-a="1"
 	>
-		<frame time="5000">16 160 13 13</frame>
+		<frame time="5000">27 64 8 8</frame>
 	</sprite>
-	<sprite looping="true" origin="7 7" texture="players/cryptknight/effects/bone_serpent_effects.png" material="system/default.mats:shadow"
+	<sprite looping="true" origin="4 4" texture="players/cryptknight/effects/bone_serpent_effects.png" material="system/default.mats:shadow"
 		angle="0"
 		pos-x="cos(t*2*pi + pi)*radius"
 		pos-y="sin(t*2*pi + pi)*radius*0.7"
 		color-a="1"
 	>
-		<frame time="5000">16 160 13 13</frame>
+		<frame time="5000">27 64 8 8</frame>
 	</sprite>
 	
 	<!-- Orbiting Particles -->
