@@ -1,0 +1,65 @@
+%define NORMAL
+%include "actors/undead/guard/_guard_skills_defender.inc"
+
+<unit slot="actor" netsync="position">
+	<behavior class="PlayerOwnedActor">
+		<string name="team">player</string>
+		<bool name="collide-with-team">false</bool>
+		<int name="hp">700</int>
+		<float name="mp-scale-fact">0.4</float>
+		<int name="armor">40</int>
+		<int name="res-fire">30</int>
+		<int name="res-ice">30</int>
+		<int name="res-lightning">30</int>
+		<int name="res-poison">30</int>
+		
+		<int name="aggro-range">150</int>
+		<int name="max-range">500</int>
+		<bool name="must-see-target">true</bool>
+
+		<int name="teleport-leash">400</int>
+		<float name="hp-regen-time">1.0</float>
+
+		<string name="aggro-snd">event:/sfx/actors/undead/guard/guard_defender/horde_defender_aggro</string>
+		<string name="hurt-snd">event:/sfx/actors/undead/guard/guard_defender/horde_defender_hurt</string>
+		<string name="death-snd">event:/sfx/actors/undead/guard/guard_defender/horde_defender_death</string>
+
+		<array name="tags">
+			<string>undead</string>
+		</array>
+
+		<dict name="effect-params">
+			<float name="thrust_cR">2</float>
+			<float name="thrust_cG">0</float>
+			<float name="thrust_cB">0</float>
+			<float name="thrust_speed">3</float>
+			<float name="thrust_range">40</float>
+			<float name="thrust_width">16</float>
+		</dict>
+		
+		<array name="colorize">
+			<i>0</i><a><s>#96895Eff</s><s>#E0D097FF</s><s>#F2E9CAff</s></a> <!-- skeleton light -->
+			<i>1</i><a><s>#352C18ff</s><s>#5F5433ff</s><s>#7D6C3Aff</s></a> <!-- skeleton dark -->
+			<i>2</i><a><s>#430002ff</s><s>#C90000FF</s><s>#ff8b8bff</s></a> <!-- shoulderguards + cloth -->
+			<i>3</i><a><s>#4c3816ff</s><s>#e49600ff</s><s>#ffb831ff</s></a> <!-- boots + gloves -->
+			<i>4</i><a><s>#1a1a1aff</s><s>#545454ff</s><s>#c9c9c9ff</s></a> <!-- amrour -->
+		</array>
+
+		<dict name="movement">
+			<string name="class">MeleeFollowerMovement</string>
+			<string name="anim-idle">idle 8</string>
+			<string name="anim-walk">walk 8</string>
+			<vec2 name="speed">2.4 2.6</vec2>
+			<float name="speed-boost">1.2</float>
+			<int name="speed-boost-min-dist">60</int>
+			<int name="dist">40</int>
+			<float name="roaming">0.5</float>
+		</dict>
+
+		<array name="skills">
+			%block SkillMeleeStab 40
+			%block SkillDashStrike "1500 2000" 40
+		</array>
+	</behavior>
+
+%include "actors/undead/guard/guard_defender/guard_defender.inc"

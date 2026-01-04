@@ -1,0 +1,63 @@
+%define NORMAL
+%include "actors/undead/guard/_guard_skills_mage.inc"
+
+<unit slot="actor" netsync="position">
+	<behavior class="PlayerOwnedActor">
+		<string name="team">player</string>
+		<bool name="collide-with-team">false</bool>
+		<int name="hp">600</int>
+		<float name="mp-scale-fact">0.4</float>
+		<int name="armor">30</int>
+		<int name="res-fire">60</int>
+		<int name="res-ice">60</int>
+		<int name="res-lightning">60</int>
+		<int name="res-poison">60</int>
+		
+		<int name="aggro-range">150</int>
+		<int name="max-range">500</int>
+		<bool name="must-see-target">true</bool>
+
+		<int name="teleport-leash">400</int>
+		<float name="hp-regen-time">1.0</float>
+
+		<string name="aggro-snd">event:/sfx/actors/undead/guard/guard_mage/horde_mage_aggro</string>
+		<string name="hurt-snd">event:/sfx/actors/undead/guard/guard_mage/horde_mage_hurt</string>
+		<string name="death-snd">event:/sfx/actors/undead/guard/guard_mage/horde_mage_death</string>
+
+		<array name="tags">
+			<string>undead</string>
+		</array>
+
+		<dict name="effect-params">
+		</dict>
+		
+		<array name="colorize">
+			<i>0</i><a><s>#352c18ff</s><s>#7d6c39ff</s><s>#e4d8acff</s></a> <!-- skeleton -->
+			<i>1</i><a><s>#4d1315ff</s><s>#b50c0cff</s><s>#fe3737ff</s></a> <!-- hood + cape  -->
+			<i>2</i><a><s>#4c3816ff</s><s>#e49600ff</s><s>#ffe361ff</s></a> <!-- hood trim -->
+			<i>3</i><a><s>#1a1a1aff</s><s>#545454ff</s><s>#c9c9c9ff</s></a> <!-- amrour -->
+			<i>4</i><a><s>#430002ff</s><s>#C90000FF</s><s>#ff8b8bff</s></a> <!-- cloth -->
+			<i>5</i><a><s>#4c3816ff</s><s>#e49600ff</s><s>#ffe361ff</s></a> <!-- boots + gloves -->
+			<i>6</i><a><s>#0861a1ff</s><s>#0095d8ff</s><s>#25ffffff</s></a> <!-- gem -->
+		</array>
+
+		<dict name="movement">
+			<string name="class">RangedFollowerMovement</string>
+			<string name="anim-idle">idle 8</string>
+			<string name="anim-walk">walk 8</string>
+			<vec2 name="speed">2.2 2.4</vec2>
+			<float name="speed-boost">1.2</float>
+			<int name="speed-boost-min-dist">140</int>
+			<int name="dist">140</int>
+			<int name="min-dist">90</int>
+			<float name="roaming">0.5</float>
+			<bool name="strafing">false</bool>
+		</dict>
+
+		<array name="skills">
+			%block SkillBlast
+			%block SkillElementalBolts
+		</array>
+	</behavior>
+
+%include "actors/undead/guard/guard_mage/guard_mage.inc"

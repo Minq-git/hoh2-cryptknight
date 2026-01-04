@@ -55,27 +55,27 @@
 			<!-- Limit each minion type to 1 by default -->
 			<dict>
 				<string name="class">Modifiers::ModifySummons</string>
-				<string name="unit">actors/undead/guard/guard_defender.unit</string>
+				<string name="unit">players/cryptknight/units/minion_defender.unit</string>
 				<int name="max-num">1</int>
 			</dict>
 			<dict>
 				<string name="class">Modifiers::ModifySummons</string>
-				<string name="unit">actors/undead/guard/guard_sentry.unit</string>
+				<string name="unit">players/cryptknight/units/minion_sentry.unit</string>
 				<int name="max-num">1</int>
 			</dict>
 			<dict>
 				<string name="class">Modifiers::ModifySummons</string>
-				<string name="unit">actors/undead/guard/guard_footman.unit</string>
+				<string name="unit">players/cryptknight/units/minion_footman.unit</string>
 				<int name="max-num">1</int>
 			</dict>
 			<dict>
 				<string name="class">Modifiers::ModifySummons</string>
-				<string name="unit">actors/undead/guard/guard_mage.unit</string>
+				<string name="unit">players/cryptknight/units/minion_mage.unit</string>
 				<int name="max-num">1</int>
 			</dict>
 			<dict>
 				<string name="class">Modifiers::ModifySummons</string>
-				<string name="unit">actors/undead/guard/guard_knight.unit</string>
+				<string name="unit">players/cryptknight/units/minion_knight.unit</string>
 				<int name="max-num">1</int>
 			</dict>
 		</array>

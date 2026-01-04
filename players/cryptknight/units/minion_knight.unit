@@ -1,0 +1,72 @@
+%define NORMAL
+%include "actors/undead/guard/_guard_skills_knight.inc"
+
+<unit slot="actor" netsync="position">
+	<behavior class="PlayerOwnedActor">
+		<string name="team">player</string>
+		<bool name="collide-with-team">false</bool>
+		<int name="hp">1500</int>
+		<float name="mp-scale-fact">0.8</float>
+		<int name="armor">80</int>
+		<int name="res-fire">40</int>
+		<int name="res-ice">40</int>
+		<int name="res-lightning">40</int>
+		<int name="res-poison">40</int>
+		<float name="debuff-scale">0.75</float>
+		
+		<int name="aggro-range">150</int>
+		<int name="max-range">500</int>
+		<bool name="must-see-target">true</bool>
+
+		<int name="teleport-leash">400</int>
+		<float name="hp-regen-time">1.0</float>
+		<int name="unit-height">28</int>
+
+		<string name="aggro-snd">event:/sfx/actors/undead/guard/guard_knight/horde_knight_aggro</string>
+		<string name="hurt-snd">event:/sfx/actors/undead/guard/guard_knight/horde_knight_hurt</string>
+		<string name="death-snd">event:/sfx/actors/undead/guard/guard_knight/horde_knight_death</string>
+
+		<array name="tags">
+			<string>undead</string>
+		</array>
+
+		<dict name="effect-params">
+			<float name="slash_cR">2</float>
+			<float name="slash_cG">0</float>
+			<float name="slash_cB">0</float>
+			<float name="slash_speed">1</float>
+			<float name="slash_range">46</float>
+			<float name="slash_arc">160</float>
+		</dict>
+
+		<array name="colorize">
+			<i>0</i><a><s>#96895Eff</s><s>#E0D097FF</s><s>#F2E9CAff</s></a> <!-- skeleton light -->
+			<i>1</i><a><s>#352C18ff</s><s>#5F5433ff</s><s>#7D6C3Aff</s></a> <!-- skeleton dark -->
+			<i>2</i><a><s>#232323ff</s><s>#7b7b7bff</s><s>#e9e9e9ff</s></a> <!-- tasset + shield embelm -->
+			<i>3</i><a><s>#171c21ff</s><s>#4e5971ff</s><s>#d9e5efff</s></a> <!-- shoulderguards + shield trim -->
+			<i>4</i><a><s>#171c22ff</s><s>#4E5972FF</s><s>#d9e5efff</s></a> <!-- armour -->
+			<i>5</i><a><s>#1d0007ff</s><s>#701214ff</s><s>#ac1014ff</s></a> <!-- cloth + arms + shield face -->
+			<i>6</i><a><s>#171c22ff</s><s>#4E5972FF</s><s>#d9e5efff</s></a> <!-- boots + gloves -->
+		</array>
+		
+		<dict name="movement">
+			<string name="class">RangedFollowerMovement</string>
+			<string name="anim-idle">idle 8</string>
+			<string name="anim-walk">walk 8</string>
+			<vec2 name="speed">2.4 2.6</vec2>
+			<float name="speed-boost">1.2</float>
+			<int name="speed-boost-min-dist">60</int>
+			<int name="dist">50</int>
+			<int name="min-dist">35</int>
+			<float name="roaming">0.5</float>
+			<bool name="strafing">false</bool>
+		</dict>
+
+		<array name="skills">
+			%block SkillMelee
+			%block SkillSmite
+			%block SkillBlock
+		</array>
+	</behavior>
+
+%include "actors/undead/guard/guard_knight/guard_knight.inc"
