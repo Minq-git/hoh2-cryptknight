@@ -2,11 +2,11 @@
 <dict>
 	<string name="name">Raise Dead</string>
 	<string name="type-name">.skills.type.spell</string>
-	<string name="description">Raises a random undead minion to fight for you.</string>
+	<string name="description">Raises an undead minion to fight for you. Available minion types depend on your Stronger Together skill level.</string>
 
 	<array name="description-params">
-		<array><s>mana-cost</s><s>.skills.desc.params.mana_cost</s><s>50</s></array>
-		<array><s>cooldown</s><b>t</b><s>.skills.desc.params.cooldown</s><s>5s</s></array>
+		<array><s>mana-cost</s><s>.skills.desc.params.mana_cost</s><s>50</s><s>45</s><s>40</s><s>35</s><s>30</s></array>
+		<array><s>cooldown</s><b>t</b><s>.skills.desc.params.cooldown</s><s>5s</s><s>4.5s</s><s>4s</s><s>3.5s</s><s>3s</s></array>
 	</array>
 
 	<array name="icon">
@@ -31,16 +31,13 @@
 		<int name="mana-cost">50</int>
 		
 		<dict name="binds">
-			<string name="unit">players/cryptknight/units/raise_dead_spawner.unit</string>
-			<!-- Spawner count doesn't matter much as it dies -->
-			<!-- <int name="max-count">1</int> -->
+			<!-- No longer using spawner unit, using custom spawn action -->
 		</dict>
 
 		<dict name="actions">
 			<array name="cast">
 				<dict>
-					<string name="class">SpawnUnit</string>
-					<string name="unit-bind">unit</string>
+					<string name="class">SpawnRaiseDeadMinion</string>
 					<bool name="safe-spawn">true</bool>
 					<int name="dist">40</int>
 				</dict>
@@ -79,4 +76,27 @@
 			</dict>
 		</array>
 	</dict>
+
+	<array name="upgrades">
+		<dict>
+			<int name="skill-cost">SKILLCOSTLEVEL_2</int>
+			<int name="mana-cost">45</int>
+			<int name="cooldown">4500</int>
+		</dict>
+		<dict>
+			<int name="skill-cost">SKILLCOSTLEVEL_3</int>
+			<int name="mana-cost">40</int>
+			<int name="cooldown">4000</int>
+		</dict>
+		<dict>
+			<int name="skill-cost">SKILLCOSTLEVEL_4</int>
+			<int name="mana-cost">35</int>
+			<int name="cooldown">3500</int>
+		</dict>
+		<dict>
+			<int name="skill-cost">SKILLCOSTLEVEL_5</int>
+			<int name="mana-cost">30</int>
+			<int name="cooldown">3000</int>
+		</dict>
+	</array>
 </dict>

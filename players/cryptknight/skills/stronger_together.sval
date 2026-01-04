@@ -2,11 +2,11 @@
 <dict>
 	<string name="name">Stronger Together</string>
 	<string name="type-name">.skills.type.passive</string>
-	<string name="description">Increases max summons and strengthens them with Elite stats.</string>
+	<string name="description">Strengthens minions and unlocks new types. Level 1: +50% stats. Level 2: Unlocks Footman, cap 2. Level 3: Unlocks Sentry, cap 3. Level 4: Unlocks Mage, cap 4. Level 5: Unlocks Knight, cap 5.</string>
 
 	<array name="description-params">
-		<array><s>max-summons</s><s>Max Summons</s><s>+1</s><s>+2</s><s>+3</s><s>+4</s><s>+4</s></array>
-		<array><s>stats</s><s>Stats</s><s>+50%</s></array>
+		<array><s>max-summons</s><s>Max Summons</s><s>1</s><s>1</s><s>2</s><s>3</s><s>4</s><s>5</s></array>
+		<array><s>stats</s><s>Stats</s><s>+50%</s><s>+50%</s><s>+50%</s><s>+50%</s><s>+60%</s></array>
 	</array>
 
 	<array name="icon">
@@ -26,7 +26,7 @@
 		<dict name="binds">
 			<int name="max-bonus">1</int>
 			<float name="stat-mul">1.5</float>
-			<ivec2 name="max-summons-bind">1 5</ivec2>
+			<ivec2 name="max-summons-bind">1 5</ivec2> <!-- Level 1: cap 1, Level 5: cap 5 -->
 		</dict>
 
 		<array name="modifiers">
@@ -81,27 +81,27 @@
 		<dict>
 			<int name="skill-cost">SKILLCOSTLEVEL_2</int>
 			<dict name="binds">
-				<ivec2 name="max-summons-bind">2 5</ivec2>
+				<ivec2 name="max-summons-bind">2 5</ivec2> <!-- Level 2: cap 2, unlocks footman -->
 			</dict>
 		</dict>
 
 		<dict>
 			<int name="skill-cost">SKILLCOSTLEVEL_3</int>
 			<dict name="binds">
-				<ivec2 name="max-summons-bind">3 5</ivec2>
+				<ivec2 name="max-summons-bind">3 5</ivec2> <!-- Level 3: cap 3, unlocks sentry -->
 			</dict>
 		</dict>
 		<dict>
 			<int name="skill-cost">SKILLCOSTLEVEL_4</int>
 			<dict name="binds">
-				<ivec2 name="max-summons-bind">4 5</ivec2>
+				<ivec2 name="max-summons-bind">4 5</ivec2> <!-- Level 4: cap 4, unlocks mage -->
 			</dict>
 		</dict>
 		<dict>
 			<int name="skill-cost">SKILLCOSTLEVEL_5</int>
 			<dict name="binds">
 				<float name="stat-mul">1.6</float> <!-- Slight stat boost at max level -->
-				<ivec2 name="max-summons-bind">5 5</ivec2>
+				<ivec2 name="max-summons-bind">5 5</ivec2> <!-- Level 5: cap 5, unlocks knight -->
 			</dict>
 		</dict>
 	</array>
