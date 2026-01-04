@@ -4,7 +4,7 @@
 		<string name="id">bone_shield</string>
 		<string name="name">Bone Shield</string>
 		<string name="description">Reduces damage taken.</string>
-		<int name="max">7</int> <!-- Max 5 stacks at level 5, refreshed by skill -->
+		<int name="max">3</int> <!-- Max 5 stacks at level 5, refreshed by skill -->
 		<bool name="refresh-on-max">true</bool>
 		
 		<dict name="buff">
@@ -16,7 +16,7 @@
 
 			<array name="hud">
 				<string>players/cryptknight/icons_skills.png</string>
-				<int>100</int><vec4>192 0 13 13</vec4> <!-- Smaller 15x15 icon to the right of the skill icon -->
+				<int>100</int><vec4>192 0 14 14</vec4> <!-- Smaller 15x15 icon to the right of the skill icon -->
 			</array>
 			
 			<array name="modifiers">
