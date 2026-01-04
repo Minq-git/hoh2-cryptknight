@@ -5,12 +5,7 @@
 				<circle radius="14" sensor="true" offset="0 -14" shoot-through="false" aim-through="true" charge-through="true"/>
 			</collision>
 			<scene src="special/shadow.unit:24"/>
-%if ELITE
-			<scene src="special/minimap.unit:enemy_normal_elite"/>
-			<scene src="actors/shared/elite_marker.unit:20"/>
-%else
-			<scene src="special/minimap.unit:enemy_normal"/>
-%endif
+<!-- Minimap marker removed -->
 		</scene>
 
 		<scene name="idle-0" editor-bounds="-12 -39 21 48">
