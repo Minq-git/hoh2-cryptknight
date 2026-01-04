@@ -68,10 +68,10 @@
 	<array name="skills">
 		<string>players/attacks/dash.sval</string>
 
-		<string>players/cryptknight/skills/death_grip.sval</string>
-		<string>players/cryptknight/skills/bone_shield.sval</string>
-		
+		<string>players/cryptknight/skills/bone_shield.sval</string>		
 		<string>players/cryptknight/skills/raise_dead.sval</string>
+
+		<string>players/cryptknight/skills/death_grip.sval</string>
 	</array>
 
 	%block SharedStats
@@ -88,10 +88,10 @@
 	<array name="skills">
 		<string>players/attacks/dash.sval</string>
 		
-		<string>players/cryptknight/skills/pestilence.sval</string>
 		<string>players/cryptknight/skills/bone_shield.sval</string>
-		
 		<string>players/cryptknight/skills/raise_dead.sval</string>
+		
+		<string>players/cryptknight/skills/pestilence.sval</string>
 		<string>players/cryptknight/skills/sickly.sval</string>
 	</array>
 
@@ -109,10 +109,10 @@
 	<array name="skills">
 		<string>players/attacks/dash.sval</string>
 		
-		<string>players/cryptknight/skills/void_funnel.sval</string>
 		<string>players/cryptknight/skills/bone_shield.sval</string>
-		
 		<string>players/cryptknight/skills/raise_dead.sval</string>
+		
+		<string>players/cryptknight/skills/void_funnel.sval</string>
 		<string>players/cryptknight/skills/cursed.sval</string>
 	</array>
 
@@ -130,10 +130,10 @@
 	<array name="skills">
 		<string>players/attacks/dash.sval</string>
 		
-		<string>players/cryptknight/skills/death_grip.sval</string>
 		<string>players/cryptknight/skills/bone_shield.sval</string>
-		
 		<string>players/cryptknight/skills/raise_dead.sval</string>
+		g
+		<string>players/cryptknight/skills/death_grip.sval</string>
 		<string>players/cryptknight/skills/stronger_together.sval</string>
 		<string>players/cryptknight/skills/unwaivering_oath.sval</string>
 	</array>
