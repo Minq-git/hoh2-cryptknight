@@ -1,0 +1,75 @@
+# Crypt Knight Mod - English Language File
+# This file contains all translatable strings for the Crypt Knight mod
+
+# Class Names
+cryptknight.name=Crypt Knight
+cryptknight.description=An undead knight raised to serve again.
+
+# Subclass Names
+cryptknight_summoning.name=Plaguebearer
+cryptknight_summoning.description=Master of disease and decay.
+cryptknight_souls.name=Void Knight
+cryptknight_souls.description=Empowered by Shadow Curse.
+cryptknight_chaos.name=Armoured Husk
+cryptknight_chaos.description=An unstoppable undead juggernaut.
+
+# Title
+.htitle.cryptknight.desc=Gain Strength.
+
+# Skills - Base Class
+death_grip.name=Death Grip
+death_grip.description=Pulls all nearby monsters towards you.
+
+bone_shield.name=Bone Shield
+bone_shield.description=Reduces damage taken by consuming stacks.
+
+raise_dead.name=Raise Dead
+raise_dead.description=Raises an undead minion to fight for you. Available minion types depend on your Stronger Together skill level.
+
+# Skills - Plaguebearer
+pestilence.name=Pestilence
+pestilence.description=Turn into a fast-moving plague cloud.
+
+sickly.name=Sickly
+sickly.description=Attacks apply a stacking disease on the target. Scales with Strength and Skill Level.
+
+# Skills - Void Knight
+void_funnel.name=Void Funnel
+void_funnel.description=Channel a frontal cone of void magic. Duration increases with skill level.
+
+cursed.name=Cursed
+cursed.description=Gain Strength and Vitality based on your Shadow Curse stacks.
+
+# Skills - Armoured Husk
+stronger_together.name=Stronger Together
+stronger_together.description=Strengthens minions and unlocks new types. Level 1: +50% stats. Level 2: Unlocks Footman, cap 2. Level 3: Unlocks Sentry, cap 3. Level 4: Unlocks Mage, cap 4. Level 5: Unlocks Knight, cap 5.
+
+unwaivering_oath.name=Unwaivering Oath
+unwaivering_oath.description=Upon taking lethal damage, transform into a zombie for a short time before dying.
+
+# Zombie Skills
+zombie_bite.name=Bite
+zombie_bite.description=Bite the target, applying Vulnerability.
+
+zombie_claw.name=Claw
+zombie_claw.description=A vicious claw attack that cleaves enemies.
+
+# Buffs and Stacks
+minion_count.name=Minion Count
+minion_count.description=Current number of active minions.
+
+# Description Parameters (these are used in skill tooltips)
+stronger_together.max-summons=Max Summons
+stronger_together.stats=Stats
+raise_dead.mana-cost=Mana Cost
+raise_dead.cooldown=Cooldown
+death_grip.damage=Damage
+death_grip.mana-cost=Mana Cost
+bone_shield.reduction=Damage Reduction
+bone_shield.stacks=Max Stacks
+sickly.damage=Damage
+void_funnel.damage=Damage
+void_funnel.duration=Duration
+cursed.stat-gain=Multiplier
+unwaivering_oath.duration=Duration
+
