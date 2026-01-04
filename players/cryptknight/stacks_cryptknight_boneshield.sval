@@ -6,7 +6,7 @@
 		<string name="description">Reduces damage taken.</string>
 		<int name="max">3</int> <!-- Max 5 stacks at level 5, refreshed by skill -->
 		<bool name="refresh-on-max">true</bool>
-		
+
 		<dict name="buff">
 			<bool name="debuff">false</bool>
 			<string name="fx">players/cryptknight/effects/bone_shield.effect</string>

@@ -1,49 +1,45 @@
 <effect looping="true">
-	<param name="radius" default="35" />
+	<param name="radius" default="14" />
+	<param name="real_stacks" default="3" />
 	
-	<!-- Rotating Skull 1 -->
+	%defblock Skull INDEX FRAME
+	<!-- Skull Sprite -->
 	<sprite looping="true" origin="4 4" texture="players/cryptknight/effects/bone_serpent_effects.png" material="system/default.mats:default"
 		angle="0"
-		pos-x="cos(t*2*pi)*radius"
-		pos-y="sin(t*2*pi)*radius*0.7 - 12"
-		color-a="1"
+		pos-x="cos(t*2*pi + (%%INDEX%% * 2 * pi / (real_stacks + (1 - saturate(ceil(real_stacks)))))) * radius"
+		pos-y="sin(t*2*pi + (%%INDEX%% * 2 * pi / (real_stacks + (1 - saturate(ceil(real_stacks)))))) * radius * 0.7 - 12"
+		color-a="saturate(real_stacks - %%INDEX%%)"
 	>
-		<frame time="5000">19 64 8 8</frame>
+		<frame time="5000">%%FRAME%%</frame>
 	</sprite>
+	
+	<!-- Shadow -->
 	<sprite looping="true" origin="4 4" texture="players/cryptknight/effects/bone_serpent_effects.png" material="system/default.mats:shadow"
 		angle="0"
-		pos-x="cos(t*2*pi)*radius"
-		pos-y="sin(t*2*pi)*radius*0.7"
-		color-a="1"
+		pos-x="cos(t*2*pi + (%%INDEX%% * 2 * pi / (real_stacks + (1 - saturate(ceil(real_stacks)))))) * radius"
+		pos-y="sin(t*2*pi + (%%INDEX%% * 2 * pi / (real_stacks + (1 - saturate(ceil(real_stacks)))))) * radius * 0.7"
+		color-a="saturate(real_stacks - %%INDEX%%)"
 	>
-		<frame time="5000">19 64 8 8</frame>
+		<frame time="5000">%%FRAME%%</frame>
 	</sprite>
+	
+	<!-- Orbiting Particle -->
+	<sprite looping="true" origin="2 3" texture="players/cryptknight/effects/bone_serpent_effects.png" material="system/default.mats:default"
+		pos-x="cos(t*2*pi + (%%INDEX%% * 2 * pi / (real_stacks + (1 - saturate(ceil(real_stacks)))))) * radius"
+		pos-y="sin(t*2*pi + (%%INDEX%% * 2 * pi / (real_stacks + (1 - saturate(ceil(real_stacks)))))) * radius * 0.7 - 12"
+		color-a="0.6 * saturate(real_stacks - %%INDEX%%)"
+	>
+		<frame time="5000">83 101 5 6</frame>
+	</sprite>
+	%endblock
 
-	<!-- Rotating Skull 2 (Offset by pi) -->
-	<sprite looping="true" origin="4 4" texture="players/cryptknight/effects/bone_serpent_effects.png" material="system/default.mats:default"
-		angle="0"
-		pos-x="cos(t*2*pi + pi)*radius"
-		pos-y="sin(t*2*pi + pi)*radius*0.7 - 12"
-		color-a="1"
-	>
-		<frame time="5000">27 64 8 8</frame>
-	</sprite>
-	<sprite looping="true" origin="4 4" texture="players/cryptknight/effects/bone_serpent_effects.png" material="system/default.mats:shadow"
-		angle="0"
-		pos-x="cos(t*2*pi + pi)*radius"
-		pos-y="sin(t*2*pi + pi)*radius*0.7"
-		color-a="1"
-	>
-		<frame time="5000">27 64 8 8</frame>
-	</sprite>
-	
-	<!-- Orbiting Particles -->
-	<sprite looping="true" origin="1 1" texture="players/cryptknight/effects/bone_serpent_effects.png" material="system/default.mats:default"
-		pos-x="cos(t*2*pi*2)*radius"
-		pos-y="sin(t*2*pi*2)*radius*0.7 - 12"
-		color-a="0.6"
-	>
-		<frame time="5000">32 160 3 3</frame>
-	</sprite>
+	<!-- Define 7 potential skulls to support up to 7 stacks -->
+	%block Skull 0 "0 65 8 8"
+	%block Skull 1 "10 66 8 8"
+	%block Skull 2 "19 65 8 8"
+	%block Skull 3 "28 65 8 8"
+	%block Skull 4 "0 65 8 8"
+	%block Skull 5 "10 66 8 8"
+	%block Skull 6 "19 65 8 8"
 
 </effect>
