@@ -1,75 +1,63 @@
-# Crypt Knight Mod - German Language File
-# Kryptritter Mod - Deutsche Sprachdatei
-
-# Class Names
-cryptknight.name=Kryptritter
-cryptknight.description=Ein untoter Ritter, der wieder zum Dienst erweckt wurde.
-
-# Subclass Names
-cryptknight_summoning.name=Seuchenträger
-cryptknight_summoning.description=Meister der Krankheit und des Verfalls.
-cryptknight_souls.name=Leerenritter
-cryptknight_souls.description=Verstärkt durch Schattenfluch.
-cryptknight_chaos.name=Gepanzerte Hülle
-cryptknight_chaos.description=Ein unaufhaltsamer untoter Koloss.
-
-# Title
-.htitle.cryptknight.desc=Erhalte Stärke.
-
-# Skills - Base Class
-death_grip.name=Todesgriff
-death_grip.description=Zieht alle nahen Monster zu dir.
-
-bone_shield.name=Knochenschild
-bone_shield.description=Reduziert erlittenen Schaden durch Verbrauch von Stapeln.
-
-raise_dead.name=Tote Erwecken
-raise_dead.description=Erweckt einen untoten Diener zum Kampf. Verfügbare Diener-Typen hängen von deinem "Gemeinsam Stärker"-Fähigkeitslevel ab.
-
-# Skills - Plaguebearer
-pestilence.name=Pestilenz
-pestilence.description=Verwandle dich in eine sich schnell bewegende Pestwolke.
-
-sickly.name=Krankhaft
-sickly.description=Angriffe fügen dem Ziel einen stapelnden Krankheitseffekt zu. Skaliert mit Stärke und Fähigkeitslevel.
-
-# Skills - Void Knight
-void_funnel.name=Leeren-Trichter
-void_funnel.description=Kanalisiere einen frontalen Kegel aus Leerenmagie. Die Dauer erhöht sich mit dem Fähigkeitslevel.
-
-cursed.name=Verflucht
-cursed.description=Erhalte Stärke und Vitalität basierend auf deinen Schattenfluch-Stapeln.
-
-# Skills - Armoured Husk
-stronger_together.name=Gemeinsam Stärker
-stronger_together.description=Stärkt Diener und schaltet neue Typen frei. Level 1: +50% Werte. Level 2: Schaltet Fußsoldat frei, Limit 2. Level 3: Schaltet Wächter frei, Limit 3. Level 4: Schaltet Magier frei, Limit 4. Level 5: Schaltet Ritter frei, Limit 5.
-
-unwaivering_oath.name=Unerschütterlicher Eid
-unwaivering_oath.description=Bei tödlichem Schaden verwandle dich für kurze Zeit in einen Zombie, bevor du stirbst.
-
-# Zombie Skills
-zombie_bite.name=Biss
-zombie_bite.description=Beißt das Ziel und fügt Verwundbarkeit hinzu.
-
-zombie_claw.name=Klaue
-zombie_claw.description=Ein bösartiger Klauenangriff, der Feinde spaltet.
-
-# Buffs and Stacks
-minion_count.name=Diener-Anzahl
-minion_count.description=Aktuelle Anzahl aktiver Diener.
-
-# Description Parameters
-stronger_together.max-summons=Maximale Beschwörungen
-stronger_together.stats=Werte
-raise_dead.mana-cost=Manakosten
-raise_dead.cooldown=Abklingzeit
-death_grip.damage=Schaden
-death_grip.mana-cost=Manakosten
-bone_shield.reduction=Schadensreduzierung
-bone_shield.stacks=Maximale Stapel
-sickly.damage=Schaden
-void_funnel.damage=Schaden
-void_funnel.duration=Dauer
-cursed.stat-gain=Multiplikator
-unwaivering_oath.duration=Dauer
-
+<dict>
+	<string name="cryptknight.name">Gruftritter</string>
+	<string name="cryptknight.description">Ein untoter Ritter, der wieder zum Dienst erweckt wurde.</string>
+	
+	<string name="cryptknight_summoning.name">Seuchenträger</string>
+	<string name="cryptknight_summoning.description">Meister der Krankheit und des Verfalls.</string>
+	<string name="cryptknight_souls.name">Leerenritter</string>
+	<string name="cryptknight_souls.description">Verstärkt durch den Schattenfluch.</string>
+	<string name="cryptknight_chaos.name">Gepanzerte Hülle</string>
+	<string name="cryptknight_chaos.description">Ein unaufhaltsamer untoter Koloss.</string>
+	
+	<string name=".htitle.cryptknight.desc">Erhalte Stärke.</string>
+	
+	<string name="death_grip.name">Todesgriff</string>
+	<string name="death_grip.description">Zieht alle nahen Monster zu dir.</string>
+	
+	<string name="bone_shield.name">Knochenschild</string>
+	<string name="bone_shield.description">Reduziert erlittenen Schaden durch Verbrauch von Stapeln.</string>
+	
+	<string name="raise_dead.name">Tote erwecken</string>
+	<string name="raise_dead.description">Erweckt einen untoten Diener zum Kampf. Verfügbare Dienertypen hängen von deinem "Gemeinsam Stärker"-Fähigkeitslevel ab.</string>
+	
+	<string name="pestilence.name">Pestilenz</string>
+	<string name="pestilence.description">Verwandle dich in eine sich schnell bewegende Pestwolke.</string>
+	
+	<string name="sickly.name">Krankhaft</string>
+	<string name="sickly.description">Angriffe fügen dem Ziel einen stapelnden Krankheitseffekt zu. Skaliert mit Stärke und Fähigkeitslevel.</string>
+	
+	<string name="void_funnel.name">Leeren-Trichter</string>
+	<string name="void_funnel.description">Kanalisiere einen frontalen Kegel aus Leerenmagie. Die Dauer erhöht sich mit dem Fähigkeitslevel.</string>
+	
+	<string name="cursed.name">Verflucht</string>
+	<string name="cursed.description">Erhalte Stärke und Vitalität basierend auf deinen Schattenfluch-Stapeln.</string>
+	
+	<string name="stronger_together.name">Gemeinsam Stärker</string>
+	<string name="stronger_together.description">Stärkt Diener und schaltet neue Typen frei. Level 1: +50% Werte. Level 2: Schaltet Fußsoldat frei, Limit 2. Level 3: Schaltet Wächter frei, Limit 3. Level 4: Schaltet Magier frei, Limit 4. Level 5: Schaltet Ritter frei, Limit 5.</string>
+	
+	<string name="unwavering_oath.name">Unerschütterlicher Eid</string>
+	<string name="unwavering_oath.description">Bei tödlichem Schaden verwandle dich für kurze Zeit in einen Zombie, bevor du stirbst.</string>
+	
+	<string name="zombie_bite.name">Biss</string>
+	<string name="zombie_bite.description">Beißt das Ziel und macht es verwundbar.</string>
+	
+	<string name="zombie_claw.name">Klaue</string>
+	<string name="zombie_claw.description">Ein bösartiger Klauenangriff, der Feinde spaltet.</string>
+	
+	<string name="minion_count.name">Dieneranzahl</string>
+	<string name="minion_count.description">Aktuelle Anzahl aktiver Diener.</string>
+	
+	<string name="stronger_together.max-summons">Maximale Beschwörungen</string>
+	<string name="stronger_together.stats">Werte</string>
+	<string name="raise_dead.mana-cost">Manakosten</string>
+	<string name="raise_dead.cooldown">Abklingzeit</string>
+	<string name="death_grip.damage">Schaden</string>
+	<string name="death_grip.mana-cost">Manakosten</string>
+	<string name="bone_shield.reduction">Schadensreduzierung</string>
+	<string name="bone_shield.stacks">Maximale Stapel</string>
+	<string name="sickly.damage">Schaden</string>
+	<string name="void_funnel.damage">Schaden</string>
+	<string name="void_funnel.duration">Dauer</string>
+	<string name="cursed.stat-gain">Multiplikator</string>
+	<string name="unwavering_oath.duration">Dauer</string>
+</dict>

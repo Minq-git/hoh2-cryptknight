@@ -1,75 +1,63 @@
-# Crypt Knight Mod - Ukrainian Language File
-# Мод Крипт-Лицар - Український мовний файл
-
-# Class Names
-cryptknight.name=Крипт-Лицар
-cryptknight.description=Неживий лицар, піднятий для служби знову.
-
-# Subclass Names
-cryptknight_summoning.name=Чумоносець
-cryptknight_summoning.description=Майстер хвороби та розкладу.
-cryptknight_souls.name=Лицар Порожнечі
-cryptknight_souls.description=Посилений Прокляттям Тіней.
-cryptknight_chaos.name=Броньована Оболонка
-cryptknight_chaos.description=Незупинний неживий колос.
-
-# Title
-.htitle.cryptknight.desc=Отримайте Силу.
-
-# Skills - Base Class
-death_grip.name=Смертельна Хватка
-death_grip.description=Притягує всіх навколишніх монстрів до вас.
-
-bone_shield.name=Кістковий Щит
-bone_shield.description=Зменшує отриману шкоду, споживаючи стеки.
-
-raise_dead.name=Підняття Мертвих
-raise_dead.description=Піднімає неживого слугу для бою. Доступні типи слуг залежать від рівня вашої навички "Разом Сильніші".
-
-# Skills - Plaguebearer
-pestilence.name=Чума
-pestilence.description=Перетворюється на швидко рухливу чумну хмару.
-
-sickly.name=Хворобливий
-sickly.description=Атаки застосовують накопичувану хворобу до цілі. Масштабується з Силлю та Рівнем Навички.
-
-# Skills - Void Knight
-void_funnel.name=Воронка Порожнечі
-void_funnel.description=Каналізує фронтальний конус магії порожнечі. Тривалість збільшується з рівнем навички.
-
-cursed.name=Проклятий
-cursed.description=Отримайте Силу та Життєвість на основі ваших стеків Прокляття Тіней.
-
-# Skills - Armoured Husk
-stronger_together.name=Разом Сильніші
-stronger_together.description=Посилює слуг і розблоковує нові типи. Рівень 1: +50% характеристик. Рівень 2: Розблоковує Піхотинця, ліміт 2. Рівень 3: Розблоковує Вартового, ліміт 3. Рівень 4: Розблоковує Мага, ліміт 4. Рівень 5: Розблоковує Лицаря, ліміт 5.
-
-unwaivering_oath.name=Незворушна Клятва
-unwaivering_oath.description=При отриманні смертельної шкоди перетворюється на зомбі на короткий час перед смертю.
-
-# Zombie Skills
-zombie_bite.name=Укус
-zombie_bite.description=Кусає ціль, застосовуючи Вразливість.
-
-zombie_claw.name=Кіготь
-zombie_claw.description=Злісна атака кігтями, що розсікає ворогів.
-
-# Buffs and Stacks
-minion_count.name=Кількість Слуг
-minion_count.description=Поточна кількість активних слуг.
-
-# Description Parameters
-stronger_together.max-summons=Максимальні Виклики
-stronger_together.stats=Характеристики
-raise_dead.mana-cost=Вартість Мани
-raise_dead.cooldown=Час Перезарядки
-death_grip.damage=Шкода
-death_grip.mana-cost=Вартість Мани
-bone_shield.reduction=Зменшення Шкоди
-bone_shield.stacks=Максимальні Стеки
-sickly.damage=Шкода
-void_funnel.damage=Шкода
-void_funnel.duration=Тривалість
-cursed.stat-gain=Множник
-unwaivering_oath.duration=Тривалість
-
+<dict>
+	<string name="cryptknight.name">Лицар Склепу</string>
+	<string name="cryptknight.description">Лицар-нежить, піднятий, щоб служити знову.</string>
+	
+	<string name="cryptknight_summoning.name">Чумоносець</string>
+	<string name="cryptknight_summoning.description">Майстер хвороб та розкладу.</string>
+	<string name="cryptknight_souls.name">Лицар Порожнечі</string>
+	<string name="cryptknight_souls.description">Посилений Прокляттям Тіней.</string>
+	<string name="cryptknight_chaos.name">Броньована Оболонка</string>
+	<string name="cryptknight_chaos.description">Незупинний колос-нежить.</string>
+	
+	<string name=".htitle.cryptknight.desc">Отримайте Силу.</string>
+	
+	<string name="death_grip.name">Смертельна Хватка</string>
+	<string name="death_grip.description">Притягує всіх монстрів поблизу до вас.</string>
+	
+	<string name="bone_shield.name">Кістковий Щит</string>
+	<string name="bone_shield.description">Зменшує отриману шкоду, споживаючи заряди.</string>
+	
+	<string name="raise_dead.name">Підняття Мертвих</string>
+	<string name="raise_dead.description">Піднімає прислужника-нежить для бою. Доступні типи прислужників залежать від рівня вашої навички "Разом Сильніші".</string>
+	
+	<string name="pestilence.name">Чума</string>
+	<string name="pestilence.description">Перетворює вас на швидку чумну хмару.</string>
+	
+	<string name="sickly.name">Хвороба</string>
+	<string name="sickly.description">Атаки накладають на ціль хворобу, що накопичується. Масштабується від Сили та Рівня Навички.</string>
+	
+	<string name="void_funnel.name">Подих Порожнечі</string>
+	<string name="void_funnel.description">Випускає фронтальний конус магії порожнечі. Тривалість збільшується з рівнем навички.</string>
+	
+	<string name="cursed.name">Проклятий</string>
+	<string name="cursed.description">Отримуйте Силу та Живучість залежно від кількості зарядів Прокляття Тіней.</string>
+	
+	<string name="stronger_together.name">Разом Сильніші</string>
+	<string name="stronger_together.description">Посилює прислужників і розблоковує нові типи. Рівень 1: +50% до характеристик. Рівень 2: Розблоковує Піхотинця, ліміт 2. Рівень 3: Розблоковує Вартового, ліміт 3. Рівень 4: Розблоковує Мага, ліміт 4. Рівень 5: Розблоковує Лицаря, ліміт 5.</string>
+	
+	<string name="unwavering_oath.name">Непохитна Клятва</string>
+	<string name="unwavering_oath.description">При отриманні смертельної шкоди ви перетворюєтесь на зомбі на короткий час перед смертю.</string>
+	
+	<string name="zombie_bite.name">Укус</string>
+	<string name="zombie_bite.description">Кусає ціль, накладаючи Вразливість.</string>
+	
+	<string name="zombie_claw.name">Кіготь</string>
+	<string name="zombie_claw.description">Люта атака кігтями, що розсікає ворогів.</string>
+	
+	<string name="minion_count.name">Кількість Прислужників</string>
+	<string name="minion_count.description">Поточна кількість активних прислужників.</string>
+	
+	<string name="stronger_together.max-summons">Макс. Викликів</string>
+	<string name="stronger_together.stats">Характеристики</string>
+	<string name="raise_dead.mana-cost">Вартість Мани</string>
+	<string name="raise_dead.cooldown">Час Перезарядки</string>
+	<string name="death_grip.damage">Шкода</string>
+	<string name="death_grip.mana-cost">Вартість Мани</string>
+	<string name="bone_shield.reduction">Зменшення Шкоди</string>
+	<string name="bone_shield.stacks">Макс. Зарядів</string>
+	<string name="sickly.damage">Шкода</string>
+	<string name="void_funnel.damage">Шкода</string>
+	<string name="void_funnel.duration">Тривалість</string>
+	<string name="cursed.stat-gain">Множник</string>
+	<string name="unwavering_oath.duration">Тривалість</string>
+</dict>

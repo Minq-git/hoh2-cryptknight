@@ -1,6 +1,6 @@
 %include "players/skills_cost.inc"
 <dict>
-	<string name="name">Unwaivering Oath</string>
+	<string name="name">Unwavering Oath</string>
 	<string name="type-name">.skills.type.passive</string>
 	<string name="description">Upon taking lethal damage, transform into a zombie for a short time before dying.</string>
 
@@ -13,7 +13,7 @@
 		<int>100</int><vec4>48 0 24 24</vec4>
 	</array>
 
-	<string name="id">unwaivering_oath</string>
+	<string name="id">unwavering_oath</string>
 	<string name="type">passive</string>
 	<array name="tags"><s>passive</s></array>
 	<int name="starting-level">1</int>

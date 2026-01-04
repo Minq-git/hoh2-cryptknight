@@ -135,7 +135,7 @@
 		g
 		<string>players/cryptknight/skills/death_grip.sval</string>
 		<string>players/cryptknight/skills/stronger_together.sval</string>
-		<string>players/cryptknight/skills/unwaivering_oath.sval</string>
+		<string>players/cryptknight/skills/unwavering_oath.sval</string>
 	</array>
 
 	%block SharedStats

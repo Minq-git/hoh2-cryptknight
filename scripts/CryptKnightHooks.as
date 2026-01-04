@@ -55,18 +55,18 @@ namespace CryptKnight
 		if (IsZombieTransformed(player))
 			return;
 			
-		// Check if player has unwaivering_oath skill
-		bool hasUnwaiveringOath = false;
+		// Check if player has unwavering_oath skill
+		bool hasUnwaveringOath = false;
 		uint oathLevel = 0;
 		
 		// Check picked skills dictionary
-		if (record.pickedSkills.exists("unwaivering_oath"))
+		if (record.pickedSkills.exists("unwavering_oath"))
 		{
-			hasUnwaiveringOath = true;
-			oathLevel = uint(record.pickedSkills["unwaivering_oath"]);
+			hasUnwaveringOath = true;
+			oathLevel = uint(record.pickedSkills["unwavering_oath"]);
 		}
 		
-		if (!hasUnwaiveringOath || oathLevel == 0)
+		if (!hasUnwaveringOath || oathLevel == 0)
 			return;
 			
 		// Check if this damage would kill the player
