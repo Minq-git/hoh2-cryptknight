@@ -1,0 +1,75 @@
+# Crypt Knight Mod - Korean Language File
+# 암흑 기사 Mod - 한국어 언어 파일
+
+# Class Names
+cryptknight.name=암흑 기사
+cryptknight.description=다시 복무하기 위해 일어난 언데드 기사.
+
+# Subclass Names
+cryptknight_summoning.name=역병 운반자
+cryptknight_summoning.description=질병과 부패의 대가.
+cryptknight_souls.name=공허 기사
+cryptknight_souls.description=그림자 저주로 강화됨.
+cryptknight_chaos.name=갑옷 껍데기
+cryptknight_chaos.description=멈출 수 없는 언데드 거상.
+
+# Title
+.htitle.cryptknight.desc=힘을 얻습니다.
+
+# Skills - Base Class
+death_grip.name=죽음의 손아귀
+death_grip.description=주변의 모든 몬스터를 자신에게 끌어당깁니다.
+
+bone_shield.name=뼈 방패
+bone_shield.description=스택을 소모하여 받는 피해를 감소시킵니다.
+
+raise_dead.name=시체 소환
+raise_dead.description=언데드 하수인을 일으켜 싸우게 합니다. 사용 가능한 하수인 유형은 '함께 강해짐' 스킬 레벨에 따라 다릅니다.
+
+# Skills - Plaguebearer
+pestilence.name=역병
+pestilence.description=빠르게 움직이는 역병 구름으로 변신합니다.
+
+sickly.name=병약함
+sickly.description=공격이 대상에게 중첩되는 질병을 부여합니다. 힘과 스킬 레벨에 비례하여 증가합니다.
+
+# Skills - Void Knight
+void_funnel.name=공허 깔때기
+void_funnel.description=전방의 공허 마법 원뿔을 채널링합니다. 지속 시간은 스킬 레벨에 따라 증가합니다.
+
+cursed.name=저주받음
+cursed.description=그림자 저주 스택에 따라 힘과 활력을 얻습니다.
+
+# Skills - Armoured Husk
+stronger_together.name=함께 강해짐
+stronger_together.description=하수인을 강화하고 새로운 유형을 해제합니다. 레벨 1: +50% 스탯. 레벨 2: 보병 해제, 상한 2. 레벨 3: 센트리 해제, 상한 3. 레벨 4: 마법사 해제, 상한 4. 레벨 5: 기사 해제, 상한 5.
+
+unwaivering_oath.name=흔들리지 않는 맹세
+unwaivering_oath.description=치명적인 피해를 받으면 죽기 전에 짧은 시간 동안 좀비로 변신합니다.
+
+# Zombie Skills
+zombie_bite.name=물기
+zombie_bite.description=대상을 물어 취약성을 부여합니다.
+
+zombie_claw.name=발톱
+zombie_claw.description=적을 베어내는 사나운 발톱 공격.
+
+# Buffs and Stacks
+minion_count.name=하수인 수
+minion_count.description=현재 활성화된 하수인의 수.
+
+# Description Parameters
+stronger_together.max-summons=최대 소환 수
+stronger_together.stats=스탯
+raise_dead.mana-cost=마나 소모
+raise_dead.cooldown=재사용 대기 시간
+death_grip.damage=피해
+death_grip.mana-cost=마나 소모
+bone_shield.reduction=피해 감소
+bone_shield.stacks=최대 스택
+sickly.damage=피해
+void_funnel.damage=피해
+void_funnel.duration=지속 시간
+cursed.stat-gain=배율
+unwaivering_oath.duration=지속 시간
+

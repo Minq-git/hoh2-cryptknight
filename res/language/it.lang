@@ -1,0 +1,75 @@
+# Crypt Knight Mod - Italian Language File
+# Mod Cavaliere Cripta - File Lingua Italiana
+
+# Class Names
+cryptknight.name=Cavaliere Cripta
+cryptknight.description=Un cavaliere non morto rianimato per servire di nuovo.
+
+# Subclass Names
+cryptknight_summoning.name=Portatore di Peste
+cryptknight_summoning.description=Maestro della malattia e del decadimento.
+cryptknight_souls.name=Cavaliere del Vuoto
+cryptknight_souls.description=Potenziato dalla Maledizione delle Ombre.
+cryptknight_chaos.name=Guscio Corazzato
+cryptknight_chaos.description=Un colosso non morto inarrestabile.
+
+# Title
+.htitle.cryptknight.desc=Ottieni Forza.
+
+# Skills - Base Class
+death_grip.name=Presa della Morte
+death_grip.description=Attira tutti i mostri vicini verso di te.
+
+bone_shield.name=Scudo d'Ossa
+bone_shield.description=Riduce i danni subiti consumando accumuli.
+
+raise_dead.name=Evocare i Morti
+raise_dead.description=Evoca un servitore non morto per combattere per te. I tipi di servitori disponibili dipendono dal livello della tua abilità "Più Forti Insieme".
+
+# Skills - Plaguebearer
+pestilence.name=Pestilenza
+pestilence.description=Trasformati in una nuvola di peste in rapido movimento.
+
+sickly.name=Malaticcio
+sickly.description=Gli attacchi applicano una malattia accumulabile al bersaglio. Scala con Forza e Livello Abilità.
+
+# Skills - Void Knight
+void_funnel.name=Imbuto del Vuoto
+void_funnel.description=Incanalare un cono frontale di magia del vuoto. La durata aumenta con il livello dell'abilità.
+
+cursed.name=Maledetto
+cursed.description=Ottieni Forza e Vitalità basate sui tuoi accumuli di Maledizione delle Ombre.
+
+# Skills - Armoured Husk
+stronger_together.name=Più Forti Insieme
+stronger_together.description=Potenzia i servitori e sblocca nuovi tipi. Livello 1: +50% statistiche. Livello 2: Sblocca Fante, limite 2. Livello 3: Sblocca Sentinella, limite 3. Livello 4: Sblocca Mago, limite 4. Livello 5: Sblocca Cavaliere, limite 5.
+
+unwaivering_oath.name=Giuramento Incrollabile
+unwaivering_oath.description=Quando subisci danni letali, ti trasformi in zombi per un breve periodo prima di morire.
+
+# Zombie Skills
+zombie_bite.name=Morso
+zombie_bite.description=Morde il bersaglio, applicando Vulnerabilità.
+
+zombie_claw.name=Artiglio
+zombie_claw.description=Un attacco con artiglio feroce che taglia i nemici.
+
+# Buffs and Stacks
+minion_count.name=Conteggio Servitori
+minion_count.description=Numero attuale di servitori attivi.
+
+# Description Parameters
+stronger_together.max-summons=Evocazioni Massime
+stronger_together.stats=Statistiche
+raise_dead.mana-cost=Costo Mana
+raise_dead.cooldown=Tempo di Ricarica
+death_grip.damage=Danno
+death_grip.mana-cost=Costo Mana
+bone_shield.reduction=Riduzione Danno
+bone_shield.stacks=Accumuli Massimi
+sickly.damage=Danno
+void_funnel.damage=Danno
+void_funnel.duration=Durata
+cursed.stat-gain=Moltiplicatore
+unwaivering_oath.duration=Durata
+

@@ -1,0 +1,75 @@
+# Crypt Knight Mod - Spanish Language File
+# Mod Caballero Cripta - Archivo de Idioma Español
+
+# Class Names
+cryptknight.name=Caballero Cripta
+cryptknight.description=Un caballero no muerto resucitado para servir de nuevo.
+
+# Subclass Names
+cryptknight_summoning.name=Portador de Plaga
+cryptknight_summoning.description=Maestro de la enfermedad y la decadencia.
+cryptknight_souls.name=Caballero del Vacío
+cryptknight_souls.description=Potenciado por la Maldición de las Sombras.
+cryptknight_chaos.name=Armazón Blindado
+cryptknight_chaos.description=Un coloso no muerto imparable.
+
+# Title
+.htitle.cryptknight.desc=Obtén Fuerza.
+
+# Skills - Base Class
+death_grip.name=Agarre Mortal
+death_grip.description=Atrae a todos los monstruos cercanos hacia ti.
+
+bone_shield.name=Escudo de Huesos
+bone_shield.description=Reduce el daño recibido consumiendo acumulaciones.
+
+raise_dead.name=Resucitar Muertos
+raise_dead.description=Resucita un esbirro no muerto para luchar por ti. Los tipos de esbirros disponibles dependen del nivel de tu habilidad "Más Fuertes Juntos".
+
+# Skills - Plaguebearer
+pestilence.name=Pestilencia
+pestilence.description=Conviértete en una nube de plaga de movimiento rápido.
+
+sickly.name=Enfermizo
+sickly.description=Los ataques aplican una enfermedad acumulativa al objetivo. Escala con Fuerza y Nivel de Habilidad.
+
+# Skills - Void Knight
+void_funnel.name=Embudo del Vacío
+void_funnel.description=Canaliza un cono frontal de magia del vacío. La duración aumenta con el nivel de habilidad.
+
+cursed.name=Maldito
+cursed.description=Obtén Fuerza y Vitalidad basadas en tus acumulaciones de Maldición de las Sombras.
+
+# Skills - Armoured Husk
+stronger_together.name=Más Fuertes Juntos
+stronger_together.description=Fortalece a los esbirros y desbloquea nuevos tipos. Nivel 1: +50% de estadísticas. Nivel 2: Desbloquea Soldado de Infantería, límite 2. Nivel 3: Desbloquea Centinela, límite 3. Nivel 4: Desbloquea Mago, límite 4. Nivel 5: Desbloquea Caballero, límite 5.
+
+unwaivering_oath.name=Juramento Inquebrantable
+unwaivering_oath.description=Al recibir daño letal, te transformas en zombi por un breve tiempo antes de morir.
+
+# Zombie Skills
+zombie_bite.name=Mordisco
+zombie_bite.description=Muerde al objetivo, aplicando Vulnerabilidad.
+
+zombie_claw.name=Garra
+zombie_claw.description=Un ataque de garra vicioso que corta a los enemigos.
+
+# Buffs and Stacks
+minion_count.name=Conteo de Esbirros
+minion_count.description=Número actual de esbirros activos.
+
+# Description Parameters
+stronger_together.max-summons=Invocaciones Máximas
+stronger_together.stats=Estadísticas
+raise_dead.mana-cost=Costo de Maná
+raise_dead.cooldown=Tiempo de Recarga
+death_grip.damage=Daño
+death_grip.mana-cost=Costo de Maná
+bone_shield.reduction=Reducción de Daño
+bone_shield.stacks=Acumulaciones Máximas
+sickly.damage=Daño
+void_funnel.damage=Daño
+void_funnel.duration=Duración
+cursed.stat-gain=Multiplicador
+unwaivering_oath.duration=Duración
+

@@ -1,0 +1,75 @@
+# Crypt Knight Mod - French Language File
+# Mod Chevalier Crypte - Fichier de Langue Française
+
+# Class Names
+cryptknight.name=Chevalier Crypte
+cryptknight.description=Un chevalier mort-vivant ressuscité pour servir à nouveau.
+
+# Subclass Names
+cryptknight_summoning.name=Porteur de Peste
+cryptknight_summoning.description=Maître de la maladie et de la décomposition.
+cryptknight_souls.name=Chevalier du Vide
+cryptknight_souls.description=Renforcé par la Malédiction des Ombres.
+cryptknight_chaos.name=Carapace Blindée
+cryptknight_chaos.description=Un colosse mort-vivant imparable.
+
+# Title
+.htitle.cryptknight.desc=Gagnez de la Force.
+
+# Skills - Base Class
+death_grip.name=Étreinte Mortelle
+death_grip.description=Attire tous les monstres proches vers vous.
+
+bone_shield.name=Bouclier d'Os
+bone_shield.description=Réduit les dégâts subis en consommant des charges.
+
+raise_dead.name=Ressusciter les Morts
+raise_dead.description=Ressuscite un serviteur mort-vivant pour combattre à vos côtés. Les types de serviteurs disponibles dépendent du niveau de votre compétence "Plus Forts Ensemble".
+
+# Skills - Plaguebearer
+pestilence.name=Pestilence
+pestilence.description=Transformez-vous en un nuage de peste à mouvement rapide.
+
+sickly.name=Malsain
+sickly.description=Les attaques appliquent une maladie qui s'accumule sur la cible. S'adapte à la Force et au Niveau de Compétence.
+
+# Skills - Void Knight
+void_funnel.name=Entonnoir du Vide
+void_funnel.description=Canalise un cône frontal de magie du vide. La durée augmente avec le niveau de compétence.
+
+cursed.name=Maudit
+cursed.description=Gagnez de la Force et de la Vitalité basées sur vos charges de Malédiction des Ombres.
+
+# Skills - Armoured Husk
+stronger_together.name=Plus Forts Ensemble
+stronger_together.description=Renforce les serviteurs et débloque de nouveaux types. Niveau 1 : +50% de statistiques. Niveau 2 : Débloque Fantassin, limite 2. Niveau 3 : Débloque Sentinelle, limite 3. Niveau 4 : Débloque Mage, limite 4. Niveau 5 : Débloque Chevalier, limite 5.
+
+unwaivering_oath.name=Serment Inébranlable
+unwaivering_oath.description=Lorsque vous subissez des dégâts mortels, transformez-vous en zombie pendant un court instant avant de mourir.
+
+# Zombie Skills
+zombie_bite.name=Morsure
+zombie_bite.description=Mord la cible, appliquant la Vulnérabilité.
+
+zombie_claw.name=Griffe
+zombie_claw.description=Une attaque de griffe vicieuse qui fend les ennemis.
+
+# Buffs and Stacks
+minion_count.name=Nombre de Serviteurs
+minion_count.description=Nombre actuel de serviteurs actifs.
+
+# Description Parameters
+stronger_together.max-summons=Invocations Maximales
+stronger_together.stats=Statistiques
+raise_dead.mana-cost=Coût en Mana
+raise_dead.cooldown=Temps de Recharge
+death_grip.damage=Dégâts
+death_grip.mana-cost=Coût en Mana
+bone_shield.reduction=Réduction des Dégâts
+bone_shield.stacks=Charges Maximales
+sickly.damage=Dégâts
+void_funnel.damage=Dégâts
+void_funnel.duration=Durée
+cursed.stat-gain=Multiplicateur
+unwaivering_oath.duration=Durée
+

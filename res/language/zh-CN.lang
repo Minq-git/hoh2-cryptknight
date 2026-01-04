@@ -1,0 +1,75 @@
+# Crypt Knight Mod - Simplified Chinese Language File
+# 暗影骑士模组 - 简体中文语言文件
+
+# Class Names
+cryptknight.name=暗影骑士
+cryptknight.description=被重新唤醒的不死骑士。
+
+# Subclass Names
+cryptknight_summoning.name=瘟疫使者
+cryptknight_summoning.description=疾病与腐朽的大师。
+cryptknight_souls.name=虚空骑士
+cryptknight_souls.description=被暗影诅咒所强化。
+cryptknight_chaos.name=装甲躯壳
+cryptknight_chaos.description=不可阻挡的不死巨像。
+
+# Title
+.htitle.cryptknight.desc=获得力量。
+
+# Skills - Base Class
+death_grip.name=死亡之握
+death_grip.description=将所有附近的怪物拉向你。
+
+bone_shield.name=骨盾
+bone_shield.description=通过消耗层数来减少受到的伤害。
+
+raise_dead.name=复活死者
+raise_dead.description=复活一个不死仆从为你战斗。可用的仆从类型取决于你的"团结更强"技能等级。
+
+# Skills - Plaguebearer
+pestilence.name=瘟疫
+pestilence.description=变成快速移动的瘟疫云。
+
+sickly.name=病态
+sickly.description=攻击对目标施加叠加的疾病效果。随力量和技能等级提升。
+
+# Skills - Void Knight
+void_funnel.name=虚空漏斗
+void_funnel.description=引导一个前方的虚空魔法锥。持续时间随技能等级增加。
+
+cursed.name=诅咒
+cursed.description=根据你的暗影诅咒层数获得力量和活力。
+
+# Skills - Armoured Husk
+stronger_together.name=团结更强
+stronger_together.description=强化仆从并解锁新类型。等级1：+50%属性。等级2：解锁步兵，上限2。等级3：解锁哨兵，上限3。等级4：解锁法师，上限4。等级5：解锁骑士，上限5。
+
+unwaivering_oath.name=不渝誓言
+unwaivering_oath.description=受到致命伤害时，在死亡前短暂变成僵尸。
+
+# Zombie Skills
+zombie_bite.name=撕咬
+zombie_bite.description=撕咬目标，施加易伤效果。
+
+zombie_claw.name=利爪
+zombie_claw.description=凶猛的爪击，可劈砍敌人。
+
+# Buffs and Stacks
+minion_count.name=仆从数量
+minion_count.description=当前活跃仆从的数量。
+
+# Description Parameters
+stronger_together.max-summons=最大召唤数
+stronger_together.stats=属性
+raise_dead.mana-cost=法力消耗
+raise_dead.cooldown=冷却时间
+death_grip.damage=伤害
+death_grip.mana-cost=法力消耗
+bone_shield.reduction=伤害减免
+bone_shield.stacks=最大层数
+sickly.damage=伤害
+void_funnel.damage=伤害
+void_funnel.duration=持续时间
+cursed.stat-gain=倍率
+unwaivering_oath.duration=持续时间
+

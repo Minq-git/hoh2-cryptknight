@@ -1,0 +1,75 @@
+# Crypt Knight Mod - Japanese Language File
+# クリプトナイト Mod - 日本語言語ファイル
+
+# Class Names
+cryptknight.name=クリプトナイト
+cryptknight.description=再び仕えるために蘇ったアンデッドの騎士。
+
+# Subclass Names
+cryptknight_summoning.name=ペストベアラー
+cryptknight_summoning.description=病と腐敗の支配者。
+cryptknight_souls.name=ヴォイドナイト
+cryptknight_souls.description=シャドウカースによって強化される。
+cryptknight_chaos.name=アーマードハスク
+cryptknight_chaos.description=止められないアンデッドの巨像。
+
+# Title
+.htitle.cryptknight.desc=力を獲得する。
+
+# Skills - Base Class
+death_grip.name=デスグリップ
+death_grip.description=近くのすべてのモンスターを自分に引き寄せる。
+
+bone_shield.name=ボーンシールド
+bone_shield.description=スタックを消費して受けるダメージを減らす。
+
+raise_dead.name=死者蘇生
+raise_dead.description=アンデッドのミニオンを蘇らせて戦わせる。利用可能なミニオンの種類は「共に強く」スキルのレベルに依存する。
+
+# Skills - Plaguebearer
+pestilence.name=ペスティレンス
+pestilence.description=高速移動するペストの雲に変身する。
+
+sickly.name=シックリー
+sickly.description=攻撃がターゲットにスタックする病気を付与する。力とスキルレベルに比例してスケールする。
+
+# Skills - Void Knight
+void_funnel.name=ヴォイドファネル
+void_funnel.description=正面のヴォイド魔法の円錐をチャネルする。持続時間はスキルレベルに応じて増加する。
+
+cursed.name=カースド
+cursed.description=シャドウカースのスタックに基づいて力と活力を獲得する。
+
+# Skills - Armoured Husk
+stronger_together.name=共に強く
+stronger_together.description=ミニオンを強化し、新しいタイプを解放する。レベル1：+50%ステータス。レベル2：フットマンを解放、上限2。レベル3：セントリーを解放、上限3。レベル4：メイジを解放、上限4。レベル5：ナイトを解放、上限5。
+
+unwaivering_oath.name=揺るぎない誓い
+unwaivering_oath.description=致命的なダメージを受けた時、死ぬ前に短時間ゾンビに変身する。
+
+# Zombie Skills
+zombie_bite.name=噛みつき
+zombie_bite.description=ターゲットを噛み、脆弱性を付与する。
+
+zombie_claw.name=爪
+zombie_claw.description=敵を切り裂く凶暴な爪攻撃。
+
+# Buffs and Stacks
+minion_count.name=ミニオン数
+minion_count.description=現在アクティブなミニオンの数。
+
+# Description Parameters
+stronger_together.max-summons=最大召喚数
+stronger_together.stats=ステータス
+raise_dead.mana-cost=マナコスト
+raise_dead.cooldown=クールダウン
+death_grip.damage=ダメージ
+death_grip.mana-cost=マナコスト
+bone_shield.reduction=ダメージ軽減
+bone_shield.stacks=最大スタック
+sickly.damage=ダメージ
+void_funnel.damage=ダメージ
+void_funnel.duration=持続時間
+cursed.stat-gain=倍率
+unwaivering_oath.duration=持続時間
+

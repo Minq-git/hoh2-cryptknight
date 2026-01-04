@@ -1,12 +1,23 @@
 # Crypt Knight Mod - Language Files
 
-This directory contains language files for the Crypt Knight mod. To add support for additional languages, create a new file with the language name (e.g., `french`, `german`, `spanish`, etc.) using the same format as `english`.
+This directory contains language files for the Crypt Knight mod. Language files use ISO 639 language codes (e.g., `en.lang`, `fr.lang`, `de.lang`, etc.) using the same format as `en.lang`.
 
 ## Supported Languages
 
-Currently, only English is provided. To add translations:
+The mod currently supports the following languages:
+- English (`en.lang`)
+- Simplified Chinese (`zh-CN.lang`)
+- Japanese (`ja.lang`)
+- Korean (`ko.lang`)
+- Spanish (`es.lang`)
+- French (`fr.lang`)
+- German (`de.lang`)
+- Ukrainian (`uk.lang`)
+- Italian (`it.lang`)
 
-1. Copy `english` to a new file named after your language (e.g., `french`, `german`, `spanish`)
+To add additional translations:
+
+1. Copy `en.lang` to a new file using the appropriate ISO 639 language code (e.g., `fr.lang` for French, `de.lang` for German, `es.lang` for Spanish)
 2. Translate all the strings on the right side of the `=` sign
 3. Keep the keys (left side) unchanged
 
