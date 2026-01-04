@@ -89,4 +89,26 @@
 	%block ZombieTransform zombie_transformation_4 45000
 	%block ZombieTransform zombie_transformation_5 50000
 
+	<!-- Unwavering Oath Tracking Buff -->
+	<dict name="unwavering_oath_active">
+		<string name="id">unwavering_oath_active</string>
+		<bool name="debuff">false</bool>
+		<string name="name">Unwavering Oath</string>
+		<int name="duration">30000</int> <!-- Default duration, will be set dynamically to match zombie buff -->
+		<bool name="display-timer-radius">true</bool> <!-- Show timer on HUD icon -->
+		<array name="hud">
+			<string>players/cryptknight/icons_skills.png</string>
+			<int>100</int><vec4>220 0 14 14</vec4>
+		</array>
+		
+		<!-- This buff is just for tracking/display purposes -->
+		<!-- The actual immunity and HP locking is handled in CryptKnightHooks.as -->
+		<array name="modifiers">
+			<!-- No modifiers needed - just a visual indicator -->
+			<dict>
+				<string name="class">Modifiers::DummyModifier</string>
+			</dict>
+		</array>
+	</dict>
+	
 </svals>

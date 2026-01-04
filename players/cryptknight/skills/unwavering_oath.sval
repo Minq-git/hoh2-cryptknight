@@ -23,14 +23,13 @@
 		<string name="class">Skills::PassiveSkill</string>
 		
 		<dict name="binds">
-			<string name="transform-buff">players/cryptknight/buffs/skills_buffs.sval:zombie_transformation_1</string>
+			<string name="zombie-buff">players/cryptknight/buffs/skills_buffs.sval:zombie_transformation_1</string>
+			<int name="level">1</int>
 		</dict>
 
 		<array name="modifiers">
-			<!-- CheatDeath will be handled by a custom modifier script -->
-			<!-- For now, we'll use a hook-based approach in CryptKnightHooks.as -->
 			<dict>
-				<string name="class">Modifiers::DummyModifier</string>
+				<string name="class">Modifiers::UnwaveringOath</string>
 			</dict>
 		</array>
 	</dict>
@@ -39,25 +38,29 @@
 		<dict>
 			<int name="skill-cost">SKILLCOSTLEVEL_2</int>
 			<dict name="binds">
-				<string name="transform-buff">players/cryptknight/buffs/skills_buffs.sval:zombie_transformation_2</string>
+				<string name="zombie-buff">players/cryptknight/buffs/skills_buffs.sval:zombie_transformation_2</string>
+				<int name="level">2</int>
 			</dict>
 		</dict>
 		<dict>
 			<int name="skill-cost">SKILLCOSTLEVEL_3</int>
 			<dict name="binds">
-				<string name="transform-buff">players/cryptknight/buffs/skills_buffs.sval:zombie_transformation_3</string>
+				<string name="zombie-buff">players/cryptknight/buffs/skills_buffs.sval:zombie_transformation_3</string>
+				<int name="level">3</int>
 			</dict>
 		</dict>
 		<dict>
 			<int name="skill-cost">SKILLCOSTLEVEL_4</int>
 			<dict name="binds">
-				<string name="transform-buff">players/cryptknight/buffs/skills_buffs.sval:zombie_transformation_4</string>
+				<string name="zombie-buff">players/cryptknight/buffs/skills_buffs.sval:zombie_transformation_4</string>
+				<int name="level">4</int>
 			</dict>
 		</dict>
 		<dict>
 			<int name="skill-cost">SKILLCOSTLEVEL_5</int>
 			<dict name="binds">
-				<string name="transform-buff">players/cryptknight/buffs/skills_buffs.sval:zombie_transformation_5</string>
+				<string name="zombie-buff">players/cryptknight/buffs/skills_buffs.sval:zombie_transformation_5</string>
+				<int name="level">5</int>
 			</dict>
 		</dict>
 	</array>
