@@ -11,8 +11,8 @@
 	</array>
 
 	<array name="icon">
-		<string>players/icons_skills.png</string>
-		<int>100</int><vec4>0 168 24 24</vec4>
+		<string>players/cryptknight/icons_skills.png</string>
+		<int>100</int><vec4>95 0 24 24</vec4>
 	</array>
 
 	<string name="id">death_grip</string>

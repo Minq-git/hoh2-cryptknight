@@ -15,8 +15,8 @@
 			<!-- <int name="duration">30000</int> Infinite duration until used -->
 
 			<array name="hud">
-				<string>players/icons_skills.png</string>
-				<int>100</int><vec4>72 168 15 15</vec4> <!-- Smaller 15x15 icon to the right of the skill icon -->
+				<string>players/cryptknight/icons_skills.png</string>
+				<int>100</int><vec4>192 0 13 13</vec4> <!-- Smaller 15x15 icon to the right of the skill icon -->
 			</array>
 			
 			<array name="modifiers">
