@@ -2,40 +2,68 @@ class SpawnRaiseDeadMinion : IAction
 {
 	int m_dist;
 	bool m_safeSpawn;
+	uint m_weaponInfo;
 	
 	SpawnRaiseDeadMinion(UnitPtr unit, SValue& params)
 	{
 		m_dist = GetParamInt(unit, params, "dist", false, 40);
 		m_safeSpawn = GetParamBool(unit, params, "safe-spawn", false, false);
+		m_weaponInfo = 0;
 	}
 	
 	void CancelAction() {}
-	void SetWeaponInformation(uint weapon) {}
+	void SetWeaponInformation(uint weapon) { m_weaponInfo = weapon; }
 	void Update(int dt, int cooldown) {}
 	bool NeedNetParams() { return true; }
 	
 	bool DoAction(SValueBuilder@ builder, Actor@ owner, Actor@ target, vec2 pos, vec2 dir, float intensity)
 	{
-		PrintError("[SpawnRaiseDeadMinion] DoAction called - IsServer: " + Network::IsServer());
+		bool isServer = Network::IsServer();
+		PrintError("[SpawnRaiseDeadMinion] ===== DoAction START =====");
+		PrintError("[SpawnRaiseDeadMinion] IsServer: " + isServer);
+		PrintError("[SpawnRaiseDeadMinion] Owner: " + (owner is null ? "null" : owner.m_unit.GetDebugName()));
+		PrintError("[SpawnRaiseDeadMinion] Pos: " + pos.x + ", " + pos.y);
+		PrintError("[SpawnRaiseDeadMinion] Intensity: " + intensity);
 		
 		// Only the server can spawn units in multiplayer
 		// In single player, IsServer() returns true, so this works for both cases
-		if (!Network::IsServer())
+		if (!isServer)
 		{
 			// Client: Push intensity to builder and return true
 			// The game engine will send this to the server and call NetDoAction()
 			if (builder !is null)
 				builder.PushFloat(intensity);
 			PrintError("[SpawnRaiseDeadMinion] Client: Pushed intensity to builder, server will handle via NetDoAction");
+			PrintError("[SpawnRaiseDeadMinion] ===== DoAction END (Client) =====");
 			return true;
 		}
 		
 		if (owner is null)
+		{
+			PrintError("[SpawnRaiseDeadMinion] ERROR: Owner is null");
+			PrintError("[SpawnRaiseDeadMinion] ===== DoAction END (Error) =====");
 			return false;
+		}
 		
 		auto player = cast<PlayerBase>(owner);
 		if (player is null || player.m_record is null)
+		{
+			PrintError("[SpawnRaiseDeadMinion] ERROR: Owner is not a PlayerBase or record is null");
+			PrintError("[SpawnRaiseDeadMinion] ===== DoAction END (Error) =====");
 			return false;
+		}
+		
+		PrintError("[SpawnRaiseDeadMinion] Player: " + player.m_record.playerClass.GetName());
+		PrintError("[SpawnRaiseDeadMinion] WeaponInfo: " + m_weaponInfo);
+		
+		// Log current summons state
+		auto@ summons = player.m_record.summons;
+		PrintError("[SpawnRaiseDeadMinion] Current summons state:");
+		PrintError("[SpawnRaiseDeadMinion]   Total groups: " + summons.length());
+		for (uint i = 0; i < summons.length(); i++)
+		{
+			PrintError("[SpawnRaiseDeadMinion]   Group " + i + ": " + summons[i].m_units.length() + " units, cap: " + summons[i].m_maxSummons);
+		}
 		
 		// Validate player record is valid for multiplayer
 		// The game engine should handle network synchronization automatically
@@ -50,7 +78,7 @@ class SpawnRaiseDeadMinion : IAction
 		// Logic: Spawn the first unlocked type that we don't have yet
 		string unitPath = "";
 		
-		auto@ summons = player.m_record.summons;
+		PrintError("[SpawnRaiseDeadMinion] Stronger Together level: " + strongerTogetherLevel);
 		auto defenderProd = Resources::GetUnitProducer("players/cryptknight/units/minion_defender.unit");
 		auto footmanProd = Resources::GetUnitProducer("players/cryptknight/units/minion_footman.unit");
 		auto sentryProd = Resources::GetUnitProducer("players/cryptknight/units/minion_sentry.unit");
@@ -120,15 +148,24 @@ class SpawnRaiseDeadMinion : IAction
 			return false;
 		}
 		
-		PrintError("[SpawnRaiseDeadMinion] Attempting to spawn: " + unitPath);
+		PrintError("[SpawnRaiseDeadMinion] Selected unit to spawn: " + unitPath);
+		PrintError("[SpawnRaiseDeadMinion] Unit selection summary:");
+		PrintError("[SpawnRaiseDeadMinion]   hasDefender: " + hasDefender);
+		PrintError("[SpawnRaiseDeadMinion]   hasFootman: " + hasFootman);
+		PrintError("[SpawnRaiseDeadMinion]   hasSentry: " + hasSentry);
+		PrintError("[SpawnRaiseDeadMinion]   hasMage: " + hasMage);
+		PrintError("[SpawnRaiseDeadMinion]   hasKnight: " + hasKnight);
 		
 		// Spawn the unit
 		auto prod = Resources::GetUnitProducer(unitPath);
 		if (prod is null)
 		{
 			PrintError("[SpawnRaiseDeadMinion] ERROR: Failed to get producer for: " + unitPath);
+			PrintError("[SpawnRaiseDeadMinion] ===== DoAction END (Error) =====");
 			return false;
 		}
+		
+		PrintError("[SpawnRaiseDeadMinion] Producer obtained successfully, hash: " + prod.GetResourceHash());
 		
 		// Check if player already has a minion of this type
 		// If so, find and destroy the one with lowest health before spawning
@@ -243,13 +280,17 @@ class SpawnRaiseDeadMinion : IAction
 		// Destroy first to ensure it's fully cleaned up before spawning the new one
 		if (lowestHealthUnit !is null && lowestHealthGroupIndex != -1 && lowestHealthUnitIndex != -1)
 		{
+			PrintError("[SpawnRaiseDeadMinion] ===== REPLACEMENT LOGIC =====");
 			PrintError("[SpawnRaiseDeadMinion] REPLACING existing minion:");
-			PrintError("  - Group index: " + lowestHealthGroupIndex);
-			PrintError("  - Unit index: " + lowestHealthUnitIndex);
-			PrintError("  - Health: " + lowestHealth);
+			PrintError("[SpawnRaiseDeadMinion]   Group index: " + lowestHealthGroupIndex);
+			PrintError("[SpawnRaiseDeadMinion]   Unit index: " + lowestHealthUnitIndex);
+			PrintError("[SpawnRaiseDeadMinion]   Health: " + lowestHealth);
 			
 			// Store reference to the unit
 			UnitPtr unitToDestroy = lowestHealthUnit.GetUnit();
+			PrintError("[SpawnRaiseDeadMinion]   Unit ID: " + unitToDestroy.GetId());
+			PrintError("[SpawnRaiseDeadMinion]   Unit valid: " + unitToDestroy.IsValid());
+			PrintError("[SpawnRaiseDeadMinion]   Unit destroyed: " + unitToDestroy.IsDestroyed());
 			
 			PrintError("[SpawnRaiseDeadMinion] Step 1: Destroying old unit...");
 			// Destroy the unit FIRST
@@ -265,6 +306,7 @@ class SpawnRaiseDeadMinion : IAction
 			}
 			
 			PrintError("[SpawnRaiseDeadMinion] Step 3: Removing from summons array...");
+			PrintError("[SpawnRaiseDeadMinion]   Array size before: " + summons[lowestHealthGroupIndex].m_units.length());
 			// Remove from summons array AFTER destroying
 			// This ensures the unit is gone before we spawn the new one
 			summons[lowestHealthGroupIndex].m_units.removeAt(lowestHealthUnitIndex);
@@ -275,6 +317,7 @@ class SpawnRaiseDeadMinion : IAction
 			if (lowestHealthUnitIndex < int(summons[lowestHealthGroupIndex].m_saveData.length()))
 				summons[lowestHealthGroupIndex].m_saveData.removeAt(lowestHealthUnitIndex);
 			PrintError("[SpawnRaiseDeadMinion] Step 4: Removed from array, units remaining: " + summons[lowestHealthGroupIndex].m_units.length());
+			PrintError("[SpawnRaiseDeadMinion] ===== END REPLACEMENT LOGIC =====");
 		}
 		else
 		{
@@ -301,8 +344,53 @@ class SpawnRaiseDeadMinion : IAction
 				// Initialize the owned unit with owner and intensity
 				// PlayerOwnedActor.Initialize() will automatically register the summon
 				// to player.m_record.summons, which is already per-player in multiplayer
-				ownedUnit.Initialize(owner, intensity, false, 0);
+				// Pass weapon info (matching SpawnUnit pattern)
+				ownedUnit.Initialize(owner, intensity, false, m_weaponInfo);
 				PrintError("[SpawnRaiseDeadMinion] Step 8: Unit initialized and registered");
+				
+				// Send network message to clients so they can initialize the unit locally
+				// This matches the pattern from SpawnUnitBase::SpawnUnitBaseImpl()
+				// Clients need to call Initialize() with husk=true to register in their local summons array
+				if (Network::IsServer())
+				{
+					uint prodHash = prod.GetResourceHash();
+					int unitId = spawned.GetId();
+					PrintError("[SpawnRaiseDeadMinion] Step 9: Preparing to send SpawnedOwnedUnit network message");
+					PrintError("[SpawnRaiseDeadMinion]   prodHash: " + prodHash);
+					PrintError("[SpawnRaiseDeadMinion]   unitId: " + unitId);
+					PrintError("[SpawnRaiseDeadMinion]   spawnPos: " + spawnPos.x + ", " + spawnPos.y);
+					PrintError("[SpawnRaiseDeadMinion]   owner: " + owner.m_unit.GetId());
+					PrintError("[SpawnRaiseDeadMinion]   intensity: " + intensity);
+					PrintError("[SpawnRaiseDeadMinion]   weaponInfo: " + int(m_weaponInfo));
+					
+					(Network::Message("SpawnedOwnedUnit") << prodHash << unitId << spawnPos << "" << 0 << owner.m_unit << 0 << intensity << int(m_weaponInfo)).SendToAll();
+					PrintError("[SpawnRaiseDeadMinion] Step 9: Sent SpawnedOwnedUnit network message to all clients");
+				}
+				
+				// Ensure the cap is set correctly immediately after registration
+				// This prevents the base game from destroying the unit before modifiers apply
+				auto@ summons = player.m_record.summons;
+				PrintError("[SpawnRaiseDeadMinion] Step 10: Checking summons array after registration");
+				PrintError("[SpawnRaiseDeadMinion]   Total groups: " + summons.length());
+				for (uint i = 0; i < summons.length(); i++)
+				{
+					if (summons[i].m_prod is prod)
+					{
+						PrintError("[SpawnRaiseDeadMinion]   Group " + i + " (matching prod):");
+						PrintError("[SpawnRaiseDeadMinion]     Units: " + summons[i].m_units.length());
+						PrintError("[SpawnRaiseDeadMinion]     Cap before: " + summons[i].m_maxSummons);
+						// Set cap to 1 (base) + 0 (from modifier) = 1
+						// This matches what ModifySummons with add-max-num: 0 should do
+						if (summons[i].m_maxSummons < 1)
+							summons[i].m_maxSummons = 1;
+						PrintError("[SpawnRaiseDeadMinion]     Cap after: " + summons[i].m_maxSummons);
+						break;
+					}
+					else
+					{
+						PrintError("[SpawnRaiseDeadMinion]   Group " + i + ": " + summons[i].m_units.length() + " units, cap: " + summons[i].m_maxSummons + " (not matching)");
+					}
+				}
 			}
 			else
 			{
@@ -319,19 +407,32 @@ class SpawnRaiseDeadMinion : IAction
 			return false;
 		}
 		
+		// Final state check
+		PrintError("[SpawnRaiseDeadMinion] Step 11: Final summons state:");
+		for (uint i = 0; i < summons.length(); i++)
+		{
+			PrintError("[SpawnRaiseDeadMinion]   Group " + i + ": " + summons[i].m_units.length() + " units, cap: " + summons[i].m_maxSummons);
+		}
+		
 		PrintError("[SpawnRaiseDeadMinion] SUCCESS: Spawn complete");
+		PrintError("[SpawnRaiseDeadMinion] ===== DoAction END (Success) =====");
 		return true;
 	}
 	
 	bool NetDoAction(SValue@ param, Actor@ owner, vec2 pos, vec2 dir)
 	{
-		PrintError("[SpawnRaiseDeadMinion] NetDoAction called - IsServer: " + Network::IsServer());
+		bool isServer = Network::IsServer();
+		PrintError("[SpawnRaiseDeadMinion] ===== NetDoAction START =====");
+		PrintError("[SpawnRaiseDeadMinion] IsServer: " + isServer);
+		PrintError("[SpawnRaiseDeadMinion] Owner: " + (owner is null ? "null" : owner.m_unit.GetDebugName()));
+		PrintError("[SpawnRaiseDeadMinion] Pos: " + pos.x + ", " + pos.y);
 		
 		// Network handling - only the server should execute this
 		// Clients will have their actions synced by the server
-		if (!Network::IsServer())
+		if (!isServer)
 		{
-			PrintError("[SpawnRaiseDeadMinion] NetDoAction called on client, ignoring");
+			PrintError("[SpawnRaiseDeadMinion] ERROR: NetDoAction called on client, ignoring");
+			PrintError("[SpawnRaiseDeadMinion] ===== NetDoAction END (Client Reject) =====");
 			return false;
 		}
 		
@@ -340,10 +441,18 @@ class SpawnRaiseDeadMinion : IAction
 		if (param !is null)
 		{
 			intensity = param.GetFloat();
+			PrintError("[SpawnRaiseDeadMinion] Extracted intensity from param: " + intensity);
+		}
+		else
+		{
+			PrintError("[SpawnRaiseDeadMinion] WARNING: param is null, using default intensity 1.0");
 		}
 		
-		PrintError("[SpawnRaiseDeadMinion] NetDoAction executing on server with intensity: " + intensity);
-		return DoAction(null, owner, null, pos, dir, intensity);
+		PrintError("[SpawnRaiseDeadMinion] NetDoAction executing on server, calling DoAction...");
+		bool result = DoAction(null, owner, null, pos, dir, intensity);
+		PrintError("[SpawnRaiseDeadMinion] NetDoAction result: " + result);
+		PrintError("[SpawnRaiseDeadMinion] ===== NetDoAction END =====");
+		return result;
 	}
 	
 	vec2 FindSafeSpawnPosition(vec2 pos, UnitPtr ownerUnit)
