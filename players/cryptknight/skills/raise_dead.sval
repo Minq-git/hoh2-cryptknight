@@ -79,17 +79,19 @@
 			</array>
 			
 			<!-- HUD Tracker - always active -->
-			<dict>
-				<string name="class">Modifiers::CountSummons</string>
-				<string name="buff">players/cryptknight/stacks_cryptknight_minions.sval:minion_count</string>
-				<array name="units">
-					<string>players/cryptknight/units/minion_defender.unit</string>
-					<string>players/cryptknight/units/minion_sentry.unit</string>
-					<string>players/cryptknight/units/minion_footman.unit</string>
-					<string>players/cryptknight/units/minion_mage.unit</string>
-					<string>players/cryptknight/units/minion_knight.unit</string>
-				</array>
-			</dict>
+			<array>
+				<dict>
+					<string name="class">Modifiers::CountSummons</string>
+					<string name="buff">players/cryptknight/stacks_cryptknight_minions.sval:minion_count</string>
+					<array name="units">
+						<string>players/cryptknight/units/minion_defender.unit</string>
+						<string>players/cryptknight/units/minion_sentry.unit</string>
+						<string>players/cryptknight/units/minion_footman.unit</string>
+						<string>players/cryptknight/units/minion_mage.unit</string>
+						<string>players/cryptknight/units/minion_knight.unit</string>
+					</array>
+				</dict>
+			</array>
 		</array>
 	</dict>
 
