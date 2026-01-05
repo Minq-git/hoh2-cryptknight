@@ -141,6 +141,8 @@ class SpawnRaiseDeadMinion : IAction
 		PrintError("[SpawnRaiseDeadMinion] Total summon groups: " + summons.length());
 		
 		// First, clean up any destroyed units from the array
+		// Only clean up units that are definitely destroyed - be conservative to avoid removing units
+		// that are still syncing in multiplayer
 		for (uint i = 0; i < summons.length(); i++)
 		{
 			if (summons[i].m_prod is prod)
@@ -149,9 +151,9 @@ class SpawnRaiseDeadMinion : IAction
 				for (int k = int(summons[i].m_units.length()) - 1; k >= 0; k--)
 				{
 					auto unit = summons[i].m_units[k];
-					if (unit is null || unit.GetUnit().IsDestroyed() || !unit.GetUnit().IsValid())
+					if (unit is null)
 					{
-						PrintError("[SpawnRaiseDeadMinion] Cleaning up destroyed unit at index " + k);
+						PrintError("[SpawnRaiseDeadMinion] Cleaning up null unit at index " + k);
 						summons[i].m_units.removeAt(k);
 						if (k < int(summons[i].m_weaponInfo.length()))
 							summons[i].m_weaponInfo.removeAt(k);
@@ -159,6 +161,23 @@ class SpawnRaiseDeadMinion : IAction
 							summons[i].m_save.removeAt(k);
 						if (k < int(summons[i].m_saveData.length()))
 							summons[i].m_saveData.removeAt(k);
+					}
+					else
+					{
+						// Only remove if unit is definitely destroyed
+						// Don't check IsValid() as it might return false for units that are still syncing
+						UnitPtr unitPtr = unit.GetUnit();
+						if (unitPtr.IsDestroyed())
+						{
+							PrintError("[SpawnRaiseDeadMinion] Cleaning up destroyed unit at index " + k);
+							summons[i].m_units.removeAt(k);
+							if (k < int(summons[i].m_weaponInfo.length()))
+								summons[i].m_weaponInfo.removeAt(k);
+							if (k < int(summons[i].m_save.length()))
+								summons[i].m_save.removeAt(k);
+							if (k < int(summons[i].m_saveData.length()))
+								summons[i].m_saveData.removeAt(k);
+						}
 					}
 				}
 			}

@@ -126,10 +126,22 @@ namespace Modifiers
 				if (isTracked)
 				{
 					// Clean up destroyed units (iterate backwards to avoid index issues)
+					// Only check IsDestroyed() - don't check IsValid() as it might return false
+					// for units that are still syncing in multiplayer
 					for (int k = int(summons[i].m_units.length()) - 1; k >= 0; k--)
 					{
 						auto unit = summons[i].m_units[k];
-						if (unit is null || unit.GetUnit().IsDestroyed() || !unit.GetUnit().IsValid())
+						if (unit is null)
+						{
+							summons[i].m_units.removeAt(k);
+							if (k < int(summons[i].m_weaponInfo.length()))
+								summons[i].m_weaponInfo.removeAt(k);
+							if (k < int(summons[i].m_save.length()))
+								summons[i].m_save.removeAt(k);
+							if (k < int(summons[i].m_saveData.length()))
+								summons[i].m_saveData.removeAt(k);
+						}
+						else if (unit.GetUnit().IsDestroyed())
 						{
 							summons[i].m_units.removeAt(k);
 							if (k < int(summons[i].m_weaponInfo.length()))
