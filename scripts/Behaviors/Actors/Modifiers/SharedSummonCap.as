@@ -4,18 +4,17 @@ namespace Modifiers
 	{
 		ivec2 m_maxSummons;
 		array<UnitProducer@> m_producers;
+		string m_bindName;
+		bool m_hasBind;
 
 		SharedSummonCap(UnitPtr unit, SValue& params)
 		{
-			// Try to read bind parameter first
-			// The game engine should resolve binds, but if it doesn't work, try reading as string
-			m_maxSummons = GetParamIVec2(unit, params, "max-summons-bind", false, ivec2(0));
+			// Check if we have a bind parameter (stored as string reference)
+			m_bindName = GetParamString(unit, params, "max-summons-bind", false, "");
+			m_hasBind = !m_bindName.isEmpty();
 			
-			// If bind not found or is 0, try reading as direct parameter
-			if (m_maxSummons.x == 0 && m_maxSummons.y == 0)
-			{
-				m_maxSummons = GetParamIVec2(unit, params, "max-summons", false, ivec2(1));
-			}
+			// Try to read direct parameter as fallback
+			m_maxSummons = GetParamIVec2(unit, params, "max-summons", false, ivec2(1));
 
 			array<SValue@>@ unitsArr = GetParamArray(unit, params, "units", false);
 			if (unitsArr !is null)
@@ -32,29 +31,69 @@ namespace Modifiers
 		ModDynamism HasModifyPlayerSummons() override { return ModDynamism::Dynamic; }
 		void ModifyPlayerSummons(PlayerBase@ player, float intensity) override
 		{
-			// Calculate max count from the ivec2 range (x = min level, y = max level)
-			// If bind wasn't resolved correctly, try to get it from stronger_together skill level
-			int maxCount = lerp(m_maxSummons, intensity);
+			// Validate player is valid
+			if (player is null || player.m_record is null)
+				return;
 			
-			// If bind failed (x == 0 && y == 0), calculate from stronger_together skill level
-			if (m_maxSummons.x == 0 && m_maxSummons.y == 0)
+			// Calculate max count - try to read bind at runtime if available
+			int maxCount = 1;
+			ivec2 effectiveMaxSummons = m_maxSummons;
+			
+			// If we have a bind name, try to resolve it from the skill's binds
+			if (m_hasBind)
 			{
+				// Try to get the bind value from the skill that owns this modifier
+				// The intensity parameter should correspond to skill level, so we can use it
+				// But first, try to get the actual bind value from stronger_together skill
 				auto@ strongerTogetherDef = player.m_record.playerClass.GetSkillDef(HashString("stronger_together"));
 				if (strongerTogetherDef !is null)
 				{
 					uint skillLevel = player.m_record.GetSkillLevel(strongerTogetherDef);
-					// Cap progression: 0->1, 1->1, 2->2, 3->3, 4->4, 5->5
-					maxCount = int(skillLevel == 0 ? 1 : skillLevel);
+					// The bind should be ivec2(1, 5) for stronger_together, lerp based on level
+					// Level 0->1, 1->1, 2->2, 3->3, 4->4, 5->5
+					if (skillLevel == 0)
+						maxCount = 1;
+					else if (skillLevel <= 5)
+						maxCount = int(skillLevel);
+					else
+						maxCount = 5;
+					
+					// Use the calculated value
+					effectiveMaxSummons = ivec2(maxCount, maxCount);
 				}
 				else
 				{
-					maxCount = 1; // Base cap
+					// No stronger_together skill, use base cap
+					maxCount = lerp(m_maxSummons, intensity);
+					effectiveMaxSummons = m_maxSummons;
+				}
+			}
+			else
+			{
+				// No bind, use direct parameter with intensity lerp
+				maxCount = lerp(m_maxSummons, intensity);
+				effectiveMaxSummons = m_maxSummons;
+				
+				// If bind failed (x == 0 && y == 0), calculate from stronger_together skill level
+				if (m_maxSummons.x == 0 && m_maxSummons.y == 0)
+				{
+					auto@ strongerTogetherDef = player.m_record.playerClass.GetSkillDef(HashString("stronger_together"));
+					if (strongerTogetherDef !is null)
+					{
+						uint skillLevel = player.m_record.GetSkillLevel(strongerTogetherDef);
+						// Cap progression: 0->1, 1->1, 2->2, 3->3, 4->4, 5->5
+						maxCount = int(skillLevel == 0 ? 1 : skillLevel);
+					}
+					else
+					{
+						maxCount = 1; // Base cap
+					}
 				}
 			}
 			
 			// If this is the base cap (1) and player has stronger_together, skip enforcement
 			// (let the stronger_together modifier handle it with higher cap)
-			if (maxCount == 1)
+			if (maxCount == 1 && !m_hasBind)
 			{
 				auto@ strongerTogetherDef = player.m_record.playerClass.GetSkillDef(HashString("stronger_together"));
 				if (strongerTogetherDef !is null && player.m_record.GetSkillLevel(strongerTogetherDef) > 0)
@@ -91,12 +130,17 @@ namespace Modifiers
 						int lastIndex = int(summons[i].m_units.length()) - 1;
 						auto excessUnit = summons[i].m_units[lastIndex];
 						
+						// Verify ownership before removing
 						if (excessUnit !is null && !excessUnit.GetUnit().IsDestroyed())
 						{
-							if (Network::IsServer())
-								excessUnit.Destroy();
-							else
-								(Network::Message("UnitDestroyed") << excessUnit.GetUnit()).SendToHost();
+							auto ownedUnit = cast<IOwnedUnit>(excessUnit);
+							if (ownedUnit !is null && ownedUnit.GetOwner() is player)
+							{
+								if (Network::IsServer())
+									excessUnit.Destroy();
+								else
+									(Network::Message("UnitDestroyed") << excessUnit.GetUnit()).SendToHost();
+							}
 						}
 						
 						summons[i].m_units.removeAt(lastIndex);
@@ -128,8 +172,14 @@ namespace Modifiers
 				{
 					for (uint k = 0; k < summons[i].m_units.length(); k++)
 					{
-						if (summons[i].m_units[k] !is null && !summons[i].m_units[k].GetUnit().IsDestroyed())
-							currentCount++;
+						auto unit = summons[i].m_units[k];
+						if (unit !is null && !unit.GetUnit().IsDestroyed())
+						{
+							// Verify ownership - critical for multiplayer
+							auto ownedUnit = cast<IOwnedUnit>(unit);
+							if (ownedUnit !is null && ownedUnit.GetOwner() is player)
+								currentCount++;
+						}
 					}
 				}
 			}
@@ -172,6 +222,11 @@ namespace Modifiers
 							if (candidateUnit is null || candidateUnit.GetUnit().IsDestroyed())
 								continue;
 							
+							// Verify ownership - critical for multiplayer
+							auto ownedCandidate = cast<IOwnedUnit>(candidateUnit);
+							if (ownedCandidate is null || ownedCandidate.GetOwner() !is player)
+								continue;
+							
 							if (oldestUnit is null)
 							{
 								@oldestUnit = candidateUnit;
@@ -193,21 +248,32 @@ namespace Modifiers
 					
 					if (oldestUnit !is null && oldestGroupIndex != -1 && oldestUnitIndex != -1)
 					{
-						// Destroy the oldest unit found
-						if (Network::IsServer())
-							oldestUnit.Destroy();
+						// Verify the unit belongs to this player before destroying
+						auto ownedUnit = cast<IOwnedUnit>(oldestUnit);
+						if (ownedUnit !is null && ownedUnit.GetOwner() is player)
+						{
+							// Destroy the oldest unit found
+							if (Network::IsServer())
+								oldestUnit.Destroy();
+							else
+								(Network::Message("UnitDestroyed") << oldestUnit.GetUnit()).SendToHost();
+							
+							summons[oldestGroupIndex].m_units.removeAt(oldestUnitIndex);
+							if (oldestUnitIndex < int(summons[oldestGroupIndex].m_weaponInfo.length()))
+								summons[oldestGroupIndex].m_weaponInfo.removeAt(oldestUnitIndex);
+							if (oldestUnitIndex < int(summons[oldestGroupIndex].m_save.length()))
+								summons[oldestGroupIndex].m_save.removeAt(oldestUnitIndex);
+							if (oldestUnitIndex < int(summons[oldestGroupIndex].m_saveData.length()))
+								summons[oldestGroupIndex].m_saveData.removeAt(oldestUnitIndex);
+							
+							overflow--;
+						}
 						else
-							(Network::Message("UnitDestroyed") << oldestUnit.GetUnit()).SendToHost();
-						
-						summons[oldestGroupIndex].m_units.removeAt(oldestUnitIndex);
-						if (oldestUnitIndex < int(summons[oldestGroupIndex].m_weaponInfo.length()))
-							summons[oldestGroupIndex].m_weaponInfo.removeAt(oldestUnitIndex);
-						if (oldestUnitIndex < int(summons[oldestGroupIndex].m_save.length()))
-							summons[oldestGroupIndex].m_save.removeAt(oldestUnitIndex);
-						if (oldestUnitIndex < int(summons[oldestGroupIndex].m_saveData.length()))
-							summons[oldestGroupIndex].m_saveData.removeAt(oldestUnitIndex);
-						
-						overflow--;
+						{
+							// Unit doesn't belong to this player, skip it and continue
+							// This shouldn't happen, but handle it gracefully
+							break;
+						}
 					}
 					else
 					{

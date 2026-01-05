@@ -20,8 +20,11 @@ class SpawnRaiseDeadMinion : IAction
 			return false;
 		
 		auto player = cast<PlayerBase>(owner);
-		if (player is null)
+		if (player is null || player.m_record is null)
 			return false;
+		
+		// Validate player record is valid for multiplayer
+		// The game engine should handle network synchronization automatically
 		
 		// Get stronger_together skill level
 		uint strongerTogetherLevel = 0;
@@ -122,8 +125,28 @@ class SpawnRaiseDeadMinion : IAction
 				// Initialize the owned unit with owner and intensity
 				// PlayerOwnedActor.Initialize() will automatically register the summon
 				ownedUnit.Initialize(owner, intensity, false, 0);
-				// No need to manually register - PlayerOwnedActor handles it
+				
+				// Verify the unit was properly registered to this player
+				// This ensures multiplayer synchronization
+				if (ownedUnit.GetOwner() !is player)
+				{
+					// Ownership failed, destroy the unit
+					if (Network::IsServer())
+						ownedUnit.Destroy();
+					return false;
+				}
 			}
+			else
+			{
+				// Failed to get IOwnedUnit interface, destroy the spawned unit
+				if (Network::IsServer())
+					spawned.Destroy();
+				return false;
+			}
+		}
+		else
+		{
+			return false;
 		}
 		
 		return true;
@@ -131,7 +154,8 @@ class SpawnRaiseDeadMinion : IAction
 	
 	bool NetDoAction(SValue@ param, Actor@ owner, vec2 pos, vec2 dir)
 	{
-		// Network handling - just call DoAction
+		// Network handling - the game engine will sync this to clients
+		// Server spawns with intensity 1.0
 		return DoAction(null, owner, null, pos, dir, 1.0f);
 	}
 	
