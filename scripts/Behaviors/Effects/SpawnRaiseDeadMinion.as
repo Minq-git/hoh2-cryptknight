@@ -53,8 +53,7 @@ class SpawnRaiseDeadMinion : IAction
 			return false;
 		}
 		
-		PrintError("[SpawnRaiseDeadMinion] Player: " + player.m_record.playerClass.GetName());
-		PrintError("[SpawnRaiseDeadMinion] WeaponInfo: " + m_weaponInfo);
+		PrintError("[SpawnRaiseDeadMinion] Player record valid, WeaponInfo: " + m_weaponInfo);
 		
 		// Log current summons state
 		auto@ summons = player.m_record.summons;
@@ -369,7 +368,7 @@ class SpawnRaiseDeadMinion : IAction
 				
 				// Ensure the cap is set correctly immediately after registration
 				// This prevents the base game from destroying the unit before modifiers apply
-				auto@ summons = player.m_record.summons;
+				// Note: summons is already declared earlier in the function
 				PrintError("[SpawnRaiseDeadMinion] Step 10: Checking summons array after registration");
 				PrintError("[SpawnRaiseDeadMinion]   Total groups: " + summons.length());
 				for (uint i = 0; i < summons.length(); i++)
