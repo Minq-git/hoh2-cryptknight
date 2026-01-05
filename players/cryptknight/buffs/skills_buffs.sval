@@ -111,4 +111,24 @@
 		</array>
 	</dict>
 	
+	<!-- Unwavering Oath Cooldown Buff -->
+	<dict name="unwavering_oath_cooldown">
+		<string name="id">unwavering_oath_cooldown</string>
+		<bool name="debuff">true</bool>
+		<string name="name">Unwavering Oath (Cooldown)</string>
+		<int name="duration">180000</int> <!-- 3 minutes cooldown (180000 ms) -->
+		<bool name="display-timer-radius">true</bool> <!-- Show timer on HUD icon -->
+		<array name="hud">
+			<string>players/cryptknight/icons_skills.png</string>
+			<int>100</int><vec4>220 0 14 14</vec4>
+		</array>
+		
+		<!-- Red tint to indicate cooldown -->
+		<array name="modifiers">
+			<dict>
+				<string name="class">Modifiers::DummyModifier</string>
+			</dict>
+		</array>
+	</dict>
+	
 </svals>

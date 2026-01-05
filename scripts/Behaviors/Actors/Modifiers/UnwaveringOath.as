@@ -4,6 +4,7 @@ namespace Modifiers
 	{
 		string m_zombieBuffPath;
 		string m_trackingBuffPath;
+		string m_cooldownBuffPath;
 		uint m_oathLevel;
 		
 		UnwaveringOath(UnitPtr unit, SValue& params)
@@ -12,6 +13,7 @@ namespace Modifiers
 			// Store the base path pattern
 			m_zombieBuffPath = ""; // Will be set dynamically
 			m_trackingBuffPath = "players/cryptknight/buffs/skills_buffs.sval:unwavering_oath_active";
+			m_cooldownBuffPath = "players/cryptknight/buffs/skills_buffs.sval:unwavering_oath_cooldown";
 			
 			// Get skill level from params (default to 1)
 			m_oathLevel = GetParamInt(unit, params, "level", false, 1);
@@ -71,8 +73,9 @@ namespace Modifiers
 			if (buffList !is null)
 			{
 				uint trackingBuffHash = HashString(m_trackingBuffPath);
-				// Check for any zombie transformation buff (levels 1-5) OR tracking buff
-				// If either exists, we've already triggered the transformation
+				uint cooldownBuffHash = HashString(m_cooldownBuffPath);
+				// Check for any zombie transformation buff (levels 1-5) OR tracking buff OR cooldown buff
+				// If any exists, we can't trigger the transformation
 				for (uint i = 0; i < buffList.m_buffs.length(); i++)
 				{
 					uint pathHash = buffList.m_buffs[i].m_def.m_pathHash;
@@ -81,10 +84,13 @@ namespace Modifiers
 					uint hash3 = HashString("players/cryptknight/buffs/skills_buffs.sval:zombie_transformation_3");
 					uint hash4 = HashString("players/cryptknight/buffs/skills_buffs.sval:zombie_transformation_4");
 					uint hash5 = HashString("players/cryptknight/buffs/skills_buffs.sval:zombie_transformation_5");
-					if (pathHash == hash1 || pathHash == hash2 || pathHash == hash3 || pathHash == hash4 || pathHash == hash5 || pathHash == trackingBuffHash)
+					if (pathHash == hash1 || pathHash == hash2 || pathHash == hash3 || pathHash == hash4 || pathHash == hash5 || pathHash == trackingBuffHash || pathHash == cooldownBuffHash)
 					{
-						// Already transformed, don't apply again
-						PrintError("[UnwaveringOath] DamageTaken: Already has zombie or tracking buff, skipping");
+						// Already transformed or on cooldown, don't apply again
+						if (pathHash == cooldownBuffHash)
+							PrintError("[UnwaveringOath] DamageTaken: On cooldown, skipping");
+						else
+							PrintError("[UnwaveringOath] DamageTaken: Already has zombie or tracking buff, skipping");
 						return;
 					}
 				}
@@ -170,20 +176,25 @@ namespace Modifiers
 							{
 								PrintError("[UnwaveringOath] Tracking buff loaded, original duration: " + trackingBuffDef.m_duration);
 								
-								// Temporarily modify the buff definition's duration before applying
-								// This ensures the buff is created with the correct duration
-								int originalDuration = trackingBuffDef.m_duration;
+								// Temporarily modify the definition's duration to match zombie buff
+								// This ensures the UI displays the correct duration
+								int originalDefDuration = trackingBuffDef.m_duration;
 								trackingBuffDef.m_duration = zombieDuration;
+								
+								// Create and apply the buff with the modified duration
+								auto trackingBuff = ActorBuff(actor, trackingBuffDef, 1.0f, false);
+								// Also set the instance duration explicitly (in case it's initialized from definition)
+								trackingBuff.m_duration = zombieDuration;
 								PrintError("[UnwaveringOath] Set tracking buff duration to: " + zombieDuration);
 								
-								// Apply the tracking buff with the modified duration
-								actor.ApplyBuff(ActorBuff(actor, trackingBuffDef, 1.0f, false));
+								// Apply the buff
+								actor.ApplyBuff(trackingBuff);
 								PrintError("[UnwaveringOath] Applied tracking buff with duration: " + zombieDuration);
 								
-								// Restore the original duration in the definition (for future uses)
-								trackingBuffDef.m_duration = originalDuration;
+								// Restore the original definition duration for future uses
+								trackingBuffDef.m_duration = originalDefDuration;
 								
-								// Verify the buff was applied with correct duration
+								// Verify and ensure the buff instance has the correct duration
 								if (trackingBuffList !is null)
 								{
 									for (uint i = 0; i < trackingBuffList.m_buffs.length(); i++)
@@ -191,7 +202,9 @@ namespace Modifiers
 										auto buff = trackingBuffList.m_buffs[i];
 										if (buff.m_def.m_pathHash == trackingBuffHash)
 										{
-											PrintError("[UnwaveringOath] Verified tracking buff duration: " + buff.m_duration);
+											// Ensure the instance duration matches (in case it was reset)
+											buff.m_duration = zombieDuration;
+											PrintError("[UnwaveringOath] Verified and set tracking buff duration: " + buff.m_duration);
 											break;
 										}
 									}
