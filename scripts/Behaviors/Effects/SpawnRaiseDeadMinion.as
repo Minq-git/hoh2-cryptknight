@@ -22,10 +22,11 @@ class SpawnRaiseDeadMinion : IAction
 		// In single player, IsServer() returns true, so this works for both cases
 		if (!Network::IsServer())
 		{
-			// Client: Return true to accept the action (so mana is consumed and cooldown starts)
-			// The game engine will automatically call NetDoAction() on the server
-			// We don't spawn here - the server will handle it via NetDoAction()
-			PrintError("[SpawnRaiseDeadMinion] Client: Accepting action, server will handle via NetDoAction");
+			// Client: Push intensity to builder and return true
+			// The game engine will send this to the server and call NetDoAction()
+			if (builder !is null)
+				builder.PushFloat(intensity);
+			PrintError("[SpawnRaiseDeadMinion] Client: Pushed intensity to builder, server will handle via NetDoAction");
 			return true;
 		}
 		
@@ -334,9 +335,15 @@ class SpawnRaiseDeadMinion : IAction
 			return false;
 		}
 		
-		PrintError("[SpawnRaiseDeadMinion] NetDoAction executing on server");
-		// Server spawns with intensity 1.0
-		return DoAction(null, owner, null, pos, dir, 1.0f);
+		// Extract intensity from network parameter (pushed by client)
+		float intensity = 1.0f;
+		if (param !is null)
+		{
+			intensity = param.GetFloat();
+		}
+		
+		PrintError("[SpawnRaiseDeadMinion] NetDoAction executing on server with intensity: " + intensity);
+		return DoAction(null, owner, null, pos, dir, intensity);
 	}
 	
 	vec2 FindSafeSpawnPosition(vec2 pos, UnitPtr ownerUnit)
