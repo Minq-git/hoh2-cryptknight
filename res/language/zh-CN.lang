@@ -27,7 +27,7 @@
 	<string name="sickly.description">攻击会对目标施加叠加的疾病效果。随力量和技能等级提升。</string>
 	
 	<string name="void_funnel.name">虚空吐息</string>
-	<string name="void_funnel.description">向前方引导虚空魔法锥。持续时间随技能等级增加。</string>
+	<string name="void_funnel.description">向前方引导虚空魔法锥。施放时获得暗影诅咒。持续时间随技能等级增加。</string>
 	
 	<string name="cursed.name">诅咒</string>
 	<string name="cursed.description">根据你的暗影诅咒层数获得力量和活力。</string>

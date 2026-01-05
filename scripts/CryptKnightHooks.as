@@ -8,6 +8,9 @@ namespace CryptKnight
 	dictionary g_previousHp;  // Track previous HP for each player
 	dictionary g_previousMana; // Track previous mana for each player
 	
+	// Track previous shadow curse count to sync stack
+	dictionary g_previousShadowCurses; // Track previous shadow curse count for each player
+	
 	// Hash strings for zombie transformation buffs (full path)
 	uint g_zombieBuffHash1 = HashString("players/cryptknight/buffs/skills_buffs.sval:zombie_transformation_1");
 	uint g_zombieBuffHash2 = HashString("players/cryptknight/buffs/skills_buffs.sval:zombie_transformation_2");
@@ -299,6 +302,45 @@ namespace CryptKnight
 			// Update previous values for next frame
 			g_previousHp[player.peer] = currentHp;
 			g_previousMana[player.peer] = currentMana;
+			
+			// Sync shadow curse stack with shadow curse property
+			// This ensures the visual effect (purple particles) appears when shadow curses are active
+			int currentShadowCurses = player.shadowCurses;
+			int previousShadowCurses = 0;
+			if (g_previousShadowCurses.exists(player.peer))
+				previousShadowCurses = int(g_previousShadowCurses[player.peer]);
+			
+			// Only sync if shadow curse count changed
+			if (currentShadowCurses != previousShadowCurses)
+			{
+				auto actor = cast<Actor>(playerBase);
+				if (actor !is null)
+				{
+					// Get the shadow curse stack definition
+					auto shadowCurseStackDef = ActorBuffStackDef::Get("players/cryptknight/stacks_cryptknight.sval:shadowcurses");
+					if (shadowCurseStackDef !is null)
+					{
+						// Get current stack count
+						int currentStacks = playerBase.GetStacks(shadowCurseStackDef);
+						
+						// Calculate difference
+						int stackDiff = currentShadowCurses - currentStacks;
+						
+						// Clamp shadow curses to max 10 (matching stack max)
+						int targetStacks = clamp(currentShadowCurses, 0, 10);
+						stackDiff = targetStacks - currentStacks;
+						
+						// Apply stack difference
+						if (stackDiff != 0)
+						{
+							playerBase.AddStacks(actor, shadowCurseStackDef, stackDiff, 0);
+						}
+					}
+				}
+				
+				// Update previous value
+				g_previousShadowCurses[player.peer] = currentShadowCurses;
+			}
 				
 			// If player has zombie buff, continuously lock HP to 1 and ensure they're immune
 			bool isZombie = IsZombieTransformed(playerBase);

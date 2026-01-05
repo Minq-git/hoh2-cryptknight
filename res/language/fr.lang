@@ -27,7 +27,7 @@
 	<string name="sickly.description">Les attaques appliquent une maladie cumulable sur la cible. S'adapte à la Force et au Niveau de Compétence.</string>
 	
 	<string name="void_funnel.name">Cône du Vide</string>
-	<string name="void_funnel.description">Canalise un cône frontal de magie du vide. La durée augmente avec le niveau de compétence.</string>
+	<string name="void_funnel.description">Canalise un cône frontal de magie du vide. Accorde la Malédiction des Ombres lors du lancement. La durée augmente avec le niveau de compétence.</string>
 	
 	<string name="cursed.name">Maudit</string>
 	<string name="cursed.description">Gagnez de la Force et de la Vitalité basées sur vos charges de Malédiction des Ombres.</string>

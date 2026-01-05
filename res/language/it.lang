@@ -27,7 +27,7 @@
 	<string name="sickly.description">Gli attacchi applicano una malattia accumulabile al bersaglio. Scala con Forza e Livello Abilità.</string>
 	
 	<string name="void_funnel.name">Vortice del Vuoto</string>
-	<string name="void_funnel.description">Incanala un cono frontale di magia del vuoto. La durata aumenta con il livello dell'abilità.</string>
+	<string name="void_funnel.description">Incanala un cono frontale di magia del vuoto. Concede Maledizione delle Ombre quando lanciato. La durata aumenta con il livello dell'abilità.</string>
 	
 	<string name="cursed.name">Maledetto</string>
 	<string name="cursed.description">Ottieni Forza e Vitalità basate sui tuoi accumuli di Maledizione delle Ombre.</string>

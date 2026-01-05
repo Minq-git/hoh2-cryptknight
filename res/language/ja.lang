@@ -27,7 +27,7 @@
 	<string name="sickly.description">攻撃対象にスタックする病気を付与する。筋力とスキルレベルに応じて威力が増加する。</string>
 	
 	<string name="void_funnel.name">ヴォイドブレス</string>
-	<string name="void_funnel.description">前方にヴォイド魔法のブレスを吐く。持続時間はスキルレベルに応じて増加する。</string>
+	<string name="void_funnel.description">前方にヴォイド魔法のブレスを吐く。使用時にシャドウカースを付与する。持続時間はスキルレベルに応じて増加する。</string>
 	
 	<string name="cursed.name">呪い</string>
 	<string name="cursed.description">シャドウカースのスタック数に基づいて筋力と活力を得る。</string>

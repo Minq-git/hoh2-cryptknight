@@ -27,7 +27,7 @@
 	<string name="sickly.description">Los ataques aplican una enfermedad acumulativa al objetivo. Escala con Fuerza y Nivel de Habilidad.</string>
 	
 	<string name="void_funnel.name">Embudo del Vacío</string>
-	<string name="void_funnel.description">Canaliza un cono frontal de magia del vacío. La duración aumenta con el nivel de habilidad.</string>
+	<string name="void_funnel.description">Canaliza un cono frontal de magia del vacío. Otorga Maldición de las Sombras al lanzar. La duración aumenta con el nivel de habilidad.</string>
 	
 	<string name="cursed.name">Maldito</string>
 	<string name="cursed.description">Obtén Fuerza y Vitalidad basadas en tus acumulaciones de Maldición de las Sombras.</string>

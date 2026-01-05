@@ -1,6 +1,7 @@
-<effect looping="true">
+<effect looping="true" bounds="50 50">
 	<param name="angle" default="0" />
 	
+	<!-- Main Projectile Sprite -->
 	<sprite looping="true" origin="16 16" texture="players/cryptknight/effects/soul_projectile.png" material="system/default.mats:default"
 		scale-x="1" scale-y="1"
 		angle="angle"
@@ -20,5 +21,62 @@
 	>
 		<frame time="100">0 32 32 32</frame>
 	</sprite>
+	
+	<!-- Purple particle trail behind projectile -->
+	<particle_spawner
+		layer="1"
+		spawn-rate="40"
+		length="600"
+		looping="true"
+		ttl="300"
+		pos="0;0;0"
+		color="100 50 150 80; 200 100 255 120"
+	>
+		<behaviors>
+			<spread_range radius="rpick(0,1.5)"/>
+			<fade_to a="0" r="0.2" g="0" b="0.3" />
+			<force_dir dir="cos(angle + pi); sin(angle + pi); 0" mul="0.3"/>
+		</behaviors>
+		<particle src="effects/subeffects/particles_speckles.unit:single_white_default"/>
+	</particle_spawner>
+	
+	<!-- Purple wisps orbiting around projectile -->
+	<particle_spawner
+		layer="0"
+		wind-speed="0.1"
+		spawn-rate="20"
+		color="80 40 120 60; 180 80 240 100"
+		length="600"
+		looping="true"
+		ttl="rpick(200,400)"
+		pos="0;0; 0"
+		force-damping="rpick(5,10)"
+	>
+		<behaviors>
+			<spread_range radius="rpick(-1,1)"/>
+			<force_toward pos="0; 0; 0" mul="-sin(t*pi*2 + rpick(0, pi*2))*0.05"/>
+			<force_dir dir="rpick(-0.2,0.2); rpick(-0.2,0.2); 0"/>
+			<fade_to a="0" r="0.5" g="0" b="1" />
+		</behaviors>
+		<particle src="effects/subeffects/particles_speckles.unit:single_white_default"/>
+	</particle_spawner>
+	
+	<!-- Additional purple particles for more visual impact -->
+	<particle_spawner
+		layer="0"
+		spawn-rate="30"
+		length="600"
+		looping="true"
+		ttl="200"
+		pos="0;0;0"
+		color="120 60 180 100; 220 120 255 150"
+	>
+		<behaviors>
+			<spread_range radius="rpick(0,2)"/>
+			<fade_to a="0" r="0.3" g="0" b="0.4" />
+			<force_dir dir="rpick(-0.3,0.3); rpick(-0.3,0.3); 0"/>
+		</behaviors>
+		<particle src="effects/subeffects/particles_speckles.unit:single_white_default"/>
+	</particle_spawner>
 </effect>
 

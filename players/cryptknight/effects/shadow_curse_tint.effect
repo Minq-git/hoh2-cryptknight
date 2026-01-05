@@ -1,11 +1,106 @@
-<effect looping="true">
-	<param name="angle" default="0" />
-	
-	<!-- Simple Purple Tint Overlay -->
+<effect looping="true" bounds="100 100">
+	<!-- Purple Tint Overlay -->
 	<sprite looping="true" origin="16 16" texture="players/cryptknight/effects/pestilence_light.png" material="system/default.mats:glow"
 		scale-x="1.5" scale-y="1.5"
 		color-r="0.5" color-g="0.0" color-b="1.0" color-a="0.3"
 	>
 		<frame time="100">0 0 32 32</frame>
 	</sprite>
+	
+	<!-- Right side purple particles -->
+	<particle_spawner
+		layer="1"
+		spawn-rate="60"
+		length="1500"
+		looping="true"
+		ttl="500"
+		pos="22;-10;0"
+		color="100 50 150 100; 200 100 255 100"
+	>
+		<behaviors>
+			<spread_range radius="rpick(0,2)"/>
+			<fade_to a="0" r="0.2" g="0" b="0.3" />
+			<force_dir dir="sin(t*pi)/2; 0.5; 0"/>
+		</behaviors>
+		<particle src="effects/subeffects/particles_speckles.unit:single_white_default"/>
+	</particle_spawner>
+	
+	<!-- Left side purple particles -->
+	<particle_spawner
+		layer="1"
+		spawn-rate="60"
+		length="1500"
+		looping="true"
+		ttl="500"
+		pos="-22;-10;0"
+		color="100 50 150 100; 200 100 255 100"
+	>
+		<behaviors>
+			<spread_range radius="rpick(0,2)"/>
+			<fade_to a="0" r="0.2" g="0" b="0.3" />
+			<force_dir dir="-sin(t*pi)/2; 0.5; 0"/>
+		</behaviors>
+		<particle src="effects/subeffects/particles_speckles.unit:single_white_default"/>
+	</particle_spawner>
+	
+	<!-- Middle purple particles -->
+	<particle_spawner
+		layer="0"
+		spawn-rate="60"
+		length="1500"
+		looping="true"
+		ttl="500"
+		pos="0;10;0"
+		color="100 50 150 100; 200 100 255 100"
+	>
+		<behaviors>
+			<spread_range radius="rpick(0,2)"/>
+			<fade_to a="0" r="0.2" g="0" b="0.3" />
+			<force_dir dir="0; 0.5; 0"/>
+		</behaviors>
+		<particle src="effects/subeffects/particles_speckles.unit:single_white_default"/>
+	</particle_spawner>
+	
+	<!-- Floating purple wisps around player -->
+	<particle_spawner
+		layer="0"
+		wind-speed="0.1"
+		spawn-rate="30"
+		color="80 40 120 50; 180 80 240 100"
+		length="100"
+		looping="true"
+		ttl="rpick(200,800)"
+		pos="-20;0; 0"
+		force-damping="rpick(-1,15)"
+	>
+		<behaviors>
+			<spread_range radius="rpick(-2,2)"/>
+			<spread_line offset="40 ; 0 ; 0"/> 
+			<force_toward pos="0; 0; 0" mul="-sin(t*pi*2)*0.02"/>
+			<force_dir dir="rpick(-0.1,0.1); rpick(0.01,0.3); 0"/>
+			<fade_to a="0" r="0.5" g="0" b="1" />
+		</behaviors>
+		<particle src="effects/subeffects/particles_speckles.unit:single_white_default"/>
+	</particle_spawner>
+	
+	<particle_spawner
+		layer="0"
+		wind-speed="0.1"
+		spawn-rate="30"
+		color="80 40 120 50; 180 80 240 100"
+		length="100"
+		looping="true"
+		ttl="rpick(200,800)"
+		pos="20;0; 0"
+		force-damping="rpick(-1,15)"
+	>
+		<behaviors>
+			<spread_range radius="rpick(-2,2)"/>
+			<spread_line offset="-40 ; 0 ; 0"/> 
+			<force_toward pos="0; 0; 0" mul="-sin(t*pi*3)*0.02"/>
+			<force_dir dir="rpick(-0.1,0.1); rpick(0.1,0.3); 0"/>
+			<fade_to a="0" r="0.5" g="0" b="1" />
+		</behaviors>
+		<particle src="effects/subeffects/particles_speckles.unit:single_white_default"/>
+	</particle_spawner>
 </effect>

@@ -27,7 +27,7 @@
 	<string name="sickly.description">Attacks apply a stacking disease on the target. Scales with Strength and Skill Level.</string>
 	
 	<string name="soul_vortex.name">Soul Vortex</string>
-	<string name="soul_vortex.description">Channel a frontal cone of void magic. Duration increases with skill level.</string>
+	<string name="soul_vortex.description">Channel a frontal cone of void magic. Grants Shadow Curse on cast. Duration increases with skill level.</string>
 	
 	<string name="cursed.name">Cursed</string>
 	<string name="cursed.description">Gain Strength and Vitality based on your Shadow Curse stacks.</string>

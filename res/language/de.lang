@@ -27,7 +27,7 @@
 	<string name="sickly.description">Angriffe fügen dem Ziel einen stapelnden Krankheitseffekt zu. Skaliert mit Stärke und Fähigkeitslevel.</string>
 	
 	<string name="void_funnel.name">Leeren-Trichter</string>
-	<string name="void_funnel.description">Kanalisiere einen frontalen Kegel aus Leerenmagie. Die Dauer erhöht sich mit dem Fähigkeitslevel.</string>
+	<string name="void_funnel.description">Kanalisiere einen frontalen Kegel aus Leerenmagie. Gewährt Schattenfluch beim Wirken. Die Dauer erhöht sich mit dem Fähigkeitslevel.</string>
 	
 	<string name="cursed.name">Verflucht</string>
 	<string name="cursed.description">Erhalte Stärke und Vitalität basierend auf deinen Schattenfluch-Stapeln.</string>

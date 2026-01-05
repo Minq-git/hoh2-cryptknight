@@ -50,9 +50,19 @@
 					<string name="sound">event:/sfx/player/classes/warlock/soul_vortex/soul_vortex_cast</string>
 				</dict>
 			</array>
+			<!-- Give shadow curse when skill is cast -->
+			<array name="cast">
+				<dict>
+					<string name="class">GiveShadowCurseToSelf</string>
+					<float name="num">1.0</float>
+					<int name="ngp">0</int> <!-- Allow execution even when NGP is 0 (single player) -->
+				</dict>
+			</array>
 		</dict>
 		
 		<array name="timeline">
+			<!-- Give shadow curse once at the start of the cast -->
+			<i>0</i><s>cast</s>
 			<!-- 2 waves per second -->
 			<i>0</i><s>wave</s>
 			<i>500</i><s>wave</s>

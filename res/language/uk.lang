@@ -27,7 +27,7 @@
 	<string name="sickly.description">Атаки накладають на ціль хворобу, що накопичується. Масштабується від Сили та Рівня Навички.</string>
 	
 	<string name="void_funnel.name">Подих Порожнечі</string>
-	<string name="void_funnel.description">Випускає фронтальний конус магії порожнечі. Тривалість збільшується з рівнем навички.</string>
+	<string name="void_funnel.description">Випускає фронтальний конус магії порожнечі. Надає Прокляття Тіней при застосуванні. Тривалість збільшується з рівнем навички.</string>
 	
 	<string name="cursed.name">Проклятий</string>
 	<string name="cursed.description">Отримуйте Силу та Живучість залежно від кількості зарядів Прокляття Тіней.</string>

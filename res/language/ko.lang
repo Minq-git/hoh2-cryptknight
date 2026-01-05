@@ -27,7 +27,7 @@
 	<string name="sickly.description">공격 시 대상에게 중첩되는 질병을 부여합니다. 힘과 스킬 레벨에 비례하여 위력이 증가합니다.</string>
 	
 	<string name="void_funnel.name">공허의 숨결</string>
-	<string name="void_funnel.description">전방에 공허 마법의 숨결을 내뿜습니다. 지속 시간은 스킬 레벨에 따라 증가합니다.</string>
+	<string name="void_funnel.description">전방에 공허 마법의 숨결을 내뿜습니다. 시전 시 그림자 저주를 부여합니다. 지속 시간은 스킬 레벨에 따라 증가합니다.</string>
 	
 	<string name="cursed.name">저주</string>
 	<string name="cursed.description">그림자 저주 스택에 따라 힘과 활력을 얻습니다.</string>
