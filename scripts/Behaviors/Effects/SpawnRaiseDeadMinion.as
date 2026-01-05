@@ -16,6 +16,15 @@ class SpawnRaiseDeadMinion : IAction
 	
 	bool DoAction(SValueBuilder@ builder, Actor@ owner, Actor@ target, vec2 pos, vec2 dir, float intensity)
 	{
+		// Only the server can spawn units in multiplayer
+		// In single player, IsServer() returns true, so this works for both cases
+		if (!Network::IsServer())
+		{
+			// Client: Return true to accept the action, server will handle spawning via NetDoAction()
+			// The game engine will automatically send the network message to the server
+			return true;
+		}
+		
 		if (owner is null)
 			return false;
 		
@@ -268,7 +277,14 @@ class SpawnRaiseDeadMinion : IAction
 	
 	bool NetDoAction(SValue@ param, Actor@ owner, vec2 pos, vec2 dir)
 	{
-		// Network handling - the game engine will sync this to clients
+		// Network handling - only the server should execute this
+		// Clients will have their actions synced by the server
+		if (!Network::IsServer())
+		{
+			PrintError("[SpawnRaiseDeadMinion] NetDoAction called on client, ignoring");
+			return false;
+		}
+		
 		// Server spawns with intensity 1.0
 		return DoAction(null, owner, null, pos, dir, 1.0f);
 	}
