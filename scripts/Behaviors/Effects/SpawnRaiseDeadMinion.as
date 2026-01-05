@@ -139,12 +139,36 @@ class SpawnRaiseDeadMinion : IAction
 		PrintError("[SpawnRaiseDeadMinion] Checking for existing minions of type: " + unitPath);
 		PrintError("[SpawnRaiseDeadMinion] Total summon groups: " + summons.length());
 		
+		// First, clean up any destroyed units from the array
+		for (uint i = 0; i < summons.length(); i++)
+		{
+			if (summons[i].m_prod is prod)
+			{
+				// Clean up destroyed units from this group (iterate backwards to avoid index issues)
+				for (int k = int(summons[i].m_units.length()) - 1; k >= 0; k--)
+				{
+					auto unit = summons[i].m_units[k];
+					if (unit is null || unit.GetUnit().IsDestroyed() || !unit.GetUnit().IsValid())
+					{
+						PrintError("[SpawnRaiseDeadMinion] Cleaning up destroyed unit at index " + k);
+						summons[i].m_units.removeAt(k);
+						if (k < int(summons[i].m_weaponInfo.length()))
+							summons[i].m_weaponInfo.removeAt(k);
+						if (k < int(summons[i].m_save.length()))
+							summons[i].m_save.removeAt(k);
+						if (k < int(summons[i].m_saveData.length()))
+							summons[i].m_saveData.removeAt(k);
+					}
+				}
+			}
+		}
+		
 		for (uint i = 0; i < summons.length(); i++)
 		{
 			if (summons[i].m_prod is prod)
 			{
 				PrintError("[SpawnRaiseDeadMinion] Found matching producer at group index: " + i);
-				PrintError("[SpawnRaiseDeadMinion] Units in this group: " + summons[i].m_units.length());
+				PrintError("[SpawnRaiseDeadMinion] Units in this group (after cleanup): " + summons[i].m_units.length());
 				
 				// Found the matching producer type
 				for (uint k = 0; k < summons[i].m_units.length(); k++)

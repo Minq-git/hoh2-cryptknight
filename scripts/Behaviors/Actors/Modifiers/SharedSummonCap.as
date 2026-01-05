@@ -105,6 +105,39 @@ namespace Modifiers
 			
 			auto@ summons = player.m_record.summons;
 			
+			// Cleanup pass: Remove destroyed units from all tracked groups first
+			for (uint i = 0; i < summons.length(); i++)
+			{
+				bool isTracked = false;
+				for (uint j = 0; j < m_producers.length(); j++)
+				{
+					if (summons[i].m_prod is m_producers[j])
+					{
+						isTracked = true;
+						break;
+					}
+				}
+				
+				if (isTracked)
+				{
+					// Clean up destroyed units (iterate backwards to avoid index issues)
+					for (int k = int(summons[i].m_units.length()) - 1; k >= 0; k--)
+					{
+						auto unit = summons[i].m_units[k];
+						if (unit is null || unit.GetUnit().IsDestroyed() || !unit.GetUnit().IsValid())
+						{
+							summons[i].m_units.removeAt(k);
+							if (k < int(summons[i].m_weaponInfo.length()))
+								summons[i].m_weaponInfo.removeAt(k);
+							if (k < int(summons[i].m_save.length()))
+								summons[i].m_save.removeAt(k);
+							if (k < int(summons[i].m_saveData.length()))
+								summons[i].m_saveData.removeAt(k);
+						}
+					}
+				}
+			}
+			
 			// First pass: Set individual max to 1 for each type and remove excess
 			for (uint i = 0; i < summons.length(); i++)
 			{
