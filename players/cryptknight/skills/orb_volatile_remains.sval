@@ -1,0 +1,205 @@
+%include "players/skills_cost.inc"
+<dict>
+	<string name="name">Orb of Volatile Remains</string>
+	<string name="type-name">.skills.type.orb</string>
+	<string name="description">When your minions die, they explode dealing damage based on your Strength.</string>
+
+	<array name="description-params">
+		<array><s>damage</s><s>.skills.desc.params.damage</s><s>100% Str</s></array>
+	</array>
+
+	<array name="icon">
+		<string>players/cryptknight/icons_skills.png</string>
+		<int>100</int><vec4>96 24 24 24</vec4>
+	</array>
+
+	<string name="id">orb_volatile_remains</string>
+	<string name="type">orb</string>
+	<array name="tags"><s>orb</s><s>summon</s></array>
+	<int name="starting-level">0</int>
+
+	<dict name="skill">
+		<int name="skill-cost">0</int>
+		<string name="class">Skills::PassiveSkill</string>
+		
+		<array name="modifiers">
+			<!-- Apply explosion on death to all minion types -->
+			<dict>
+				<string name="class">Modifiers::ModifySummons</string>
+				<string name="unit">players/cryptknight/units/minion_defender.unit</string>
+				<array name="modifiers">
+					<dict>
+						<string name="class">Modifiers::TriggerEffect</string>
+						<string name="trigger">death</string>
+						<bool name="target-self">false</bool>
+						<int name="timeout">0</int>
+						<array name="effects">
+							<dict>
+								<string name="class">Explode</string>
+								<int name="radius">64</int>
+								<int name="min-radius">64</int>
+								<array name="effects">
+									<dict>
+										<string name="class">StatBasedDamage</string>
+										<string name="stat">str</string>
+										<float name="mul">1.0</float>
+										<bool name="true-strike">true</bool>
+									</dict>
+									<dict>
+										<string name="class">PlaySound</string>
+										<string name="sound">event:/sfx/player/classes/wizard/barrier/barrier_lose</string>
+									</dict>
+									<dict>
+										<string name="class">SpawnEffect</string>
+										<string name="effect">effects/generic/impacts/gib_blood.effect</string>
+									</dict>
+								</array>
+							</dict>
+						</array>
+					</dict>
+				</array>
+			</dict>
+			<dict>
+				<string name="class">Modifiers::ModifySummons</string>
+				<string name="unit">players/cryptknight/units/minion_sentry.unit</string>
+				<array name="modifiers">
+					<dict>
+						<string name="class">Modifiers::TriggerEffect</string>
+						<string name="trigger">death</string>
+						<bool name="target-self">false</bool>
+						<int name="timeout">0</int>
+						<array name="effects">
+							<dict>
+								<string name="class">Explode</string>
+								<int name="radius">64</int>
+								<int name="min-radius">64</int>
+								<array name="effects">
+									<dict>
+										<string name="class">StatBasedDamage</string>
+										<string name="stat">str</string>
+										<float name="mul">1.0</float>
+										<bool name="true-strike">true</bool>
+									</dict>
+									<dict>
+										<string name="class">PlaySound</string>
+										<string name="sound">event:/sfx/player/classes/wizard/barrier/barrier_lose</string>
+									</dict>
+									<dict>
+										<string name="class">SpawnEffect</string>
+										<string name="effect">effects/generic/impacts/gib_blood.effect</string>
+									</dict>
+								</array>
+							</dict>
+						</array>
+					</dict>
+				</array>
+			</dict>
+			<dict>
+				<string name="class">Modifiers::ModifySummons</string>
+				<string name="unit">players/cryptknight/units/minion_footman.unit</string>
+				<array name="modifiers">
+					<dict>
+						<string name="class">Modifiers::TriggerEffect</string>
+						<string name="trigger">death</string>
+						<bool name="target-self">false</bool>
+						<int name="timeout">0</int>
+						<array name="effects">
+							<dict>
+								<string name="class">Explode</string>
+								<int name="radius">64</int>
+								<int name="min-radius">64</int>
+								<array name="effects">
+									<dict>
+										<string name="class">StatBasedDamage</string>
+										<string name="stat">str</string>
+										<float name="mul">1.0</float>
+										<bool name="true-strike">true</bool>
+									</dict>
+									<dict>
+										<string name="class">PlaySound</string>
+										<string name="sound">event:/sfx/player/classes/wizard/barrier/barrier_lose</string>
+									</dict>
+									<dict>
+										<string name="class">SpawnEffect</string>
+										<string name="effect">effects/generic/impacts/gib_blood.effect</string>
+									</dict>
+								</array>
+							</dict>
+						</array>
+					</dict>
+				</array>
+			</dict>
+			<dict>
+				<string name="class">Modifiers::ModifySummons</string>
+				<string name="unit">players/cryptknight/units/minion_mage.unit</string>
+				<array name="modifiers">
+					<dict>
+						<string name="class">Modifiers::TriggerEffect</string>
+						<string name="trigger">death</string>
+						<bool name="target-self">false</bool>
+						<int name="timeout">0</int>
+						<array name="effects">
+							<dict>
+								<string name="class">Explode</string>
+								<int name="radius">64</int>
+								<int name="min-radius">64</int>
+								<array name="effects">
+									<dict>
+										<string name="class">StatBasedDamage</string>
+										<string name="stat">str</string>
+										<float name="mul">1.0</float>
+										<bool name="true-strike">true</bool>
+									</dict>
+									<dict>
+										<string name="class">PlaySound</string>
+										<string name="sound">event:/sfx/player/classes/wizard/barrier/barrier_lose</string>
+									</dict>
+									<dict>
+										<string name="class">SpawnEffect</string>
+										<string name="effect">effects/generic/impacts/gib_blood.effect</string>
+									</dict>
+								</array>
+							</dict>
+						</array>
+					</dict>
+				</array>
+			</dict>
+			<dict>
+				<string name="class">Modifiers::ModifySummons</string>
+				<string name="unit">players/cryptknight/units/minion_knight.unit</string>
+				<array name="modifiers">
+					<dict>
+						<string name="class">Modifiers::TriggerEffect</string>
+						<string name="trigger">death</string>
+						<bool name="target-self">false</bool>
+						<int name="timeout">0</int>
+						<array name="effects">
+							<dict>
+								<string name="class">Explode</string>
+								<int name="radius">64</int>
+								<int name="min-radius">64</int>
+								<array name="effects">
+									<dict>
+										<string name="class">StatBasedDamage</string>
+										<string name="stat">str</string>
+										<float name="mul">1.0</float>
+										<bool name="true-strike">true</bool>
+									</dict>
+									<dict>
+										<string name="class">PlaySound</string>
+										<string name="sound">event:/sfx/player/classes/wizard/barrier/barrier_lose</string>
+									</dict>
+									<dict>
+										<string name="class">SpawnEffect</string>
+										<string name="effect">effects/generic/impacts/gib_blood.effect</string>
+									</dict>
+								</array>
+							</dict>
+						</array>
+					</dict>
+				</array>
+			</dict>
+		</array>
+	</dict>
+</dict>
+
