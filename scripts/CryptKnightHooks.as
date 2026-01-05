@@ -108,28 +108,16 @@ namespace CryptKnight
 	// Helper function to clear unwavering oath buffs from a player
 	void ClearUnwaveringOathBuffs(PlayerBase@ playerBase)
 	{
-		PrintError("[CryptKnight] ClearUnwaveringOathBuffs called");
 		if (playerBase is null)
-		{
-			PrintError("[CryptKnight] ClearUnwaveringOathBuffs: playerBase is null");
 			return;
-		}
 			
 		auto actor = cast<Actor>(playerBase);
 		if (actor is null)
-		{
-			PrintError("[CryptKnight] ClearUnwaveringOathBuffs: actor is null");
 			return;
-		}
-			
+		
 		auto buffList = actor.GetBuffList();
 		if (buffList is null)
-		{
-			PrintError("[CryptKnight] ClearUnwaveringOathBuffs: buffList is null");
 			return;
-		}
-		
-		PrintError("[CryptKnight] ClearUnwaveringOathBuffs: checking " + buffList.m_buffs.length() + " buffs");
 		
 		// Remove only the unwavering oath tracking buff and zombie transformation buffs
 		// This clears the "Unwavering Oath" condition when player uses a well/fountain
@@ -149,21 +137,15 @@ namespace CryptKnight
 			    pathHash == g_zombieBuffHash3 || pathHash == g_zombieBuffHash4 || 
 			    pathHash == g_zombieBuffHash5)
 			{
-				PrintError("[CryptKnight] ClearUnwaveringOathBuffs: removing unwavering oath buff with hash " + pathHash);
 				buff.Clear();
 				buffs.removeAt(i--); // Use i-- to account for removed element
 				removedCount++;
 			}
 		}
 		
-		PrintError("[CryptKnight] ClearUnwaveringOathBuffs: removed " + removedCount + " buffs");
-		
 		// Refresh modifiers after removing buffs (like RemoveBuff.as does)
 		if (removedCount > 0)
-		{
 			playerBase.RefreshModifiers();
-			PrintError("[CryptKnight] ClearUnwaveringOathBuffs: refreshed modifiers");
-		}
 		
 		// Clear zombie state tracking
 		auto player = cast<Player>(playerBase);
@@ -175,16 +157,11 @@ namespace CryptKnight
 				if (g_players[j] is player.m_record)
 				{
 					if (g_zombieTransformed.exists(g_players[j].peer))
-					{
-						PrintError("[CryptKnight] ClearUnwaveringOathBuffs: clearing zombie state for peer " + g_players[j].peer);
 						g_zombieTransformed.delete(g_players[j].peer);
-					}
 					break;
 				}
 			}
 		}
-		
-		PrintError("[CryptKnight] ClearUnwaveringOathBuffs: finished");
 	}
 	
 	// Hook: Clear unwavering oath condition when player uses a well/fountain
@@ -192,25 +169,13 @@ namespace CryptKnight
 	[Hook]
 	bool RefillPotionCharges(PlayerRecord@ record, int charges)
 	{
-		PrintError("[CryptKnight] RefillPotionCharges hook called with charges=" + charges);
 		// Clear unwavering oath condition when player uses a well/fountain
 		// This is called when wells/fountains refill potions
 		if (record !is null)
 		{
 			auto playerBase = cast<PlayerBase>(record.actor);
 			if (playerBase !is null && !playerBase.IsDead())
-			{
-				PrintError("[CryptKnight] RefillPotionCharges: playerBase found, clearing unwavering oath buffs");
 				ClearUnwaveringOathBuffs(playerBase);
-			}
-			else
-			{
-				PrintError("[CryptKnight] RefillPotionCharges: playerBase is null or dead");
-			}
-		}
-		else
-		{
-			PrintError("[CryptKnight] RefillPotionCharges: record is null");
 		}
 		// Return false to allow the original function to continue
 		return false;
@@ -220,25 +185,13 @@ namespace CryptKnight
 	[Hook]
 	void ResetPlayerHealthMana(PlayerRecord@ record)
 	{
-		PrintError("[CryptKnight] ResetPlayerHealthMana hook called");
 		// Clear unwavering oath condition when player uses a well/fountain
 		// This is called when wells/fountains refill health and mana
 		if (record !is null)
 		{
 			auto playerBase = cast<PlayerBase>(record.actor);
 			if (playerBase !is null && !playerBase.IsDead())
-			{
-				PrintError("[CryptKnight] ResetPlayerHealthMana: playerBase found, clearing unwavering oath buffs");
 				ClearUnwaveringOathBuffs(playerBase);
-			}
-			else
-			{
-				PrintError("[CryptKnight] ResetPlayerHealthMana: playerBase is null or dead");
-			}
-		}
-		else
-		{
-			PrintError("[CryptKnight] ResetPlayerHealthMana: record is null");
 		}
 	}
 	
@@ -338,10 +291,7 @@ namespace CryptKnight
 						}
 						
 						if (hasUnwaveringOath)
-						{
-							PrintError("[CryptKnight] GameModeUpdate: Detected well usage, clearing unwavering oath buffs");
 							ClearUnwaveringOathBuffs(playerBase);
-						}
 					}
 				}
 			}
@@ -435,10 +385,7 @@ namespace CryptKnight
 								}
 								
 								if (!cooldownExists)
-								{
 									actor.ApplyBuff(ActorBuff(actor, cooldownBuffDef, 1.0f, false));
-									PrintError("[CryptKnight] Applied unwavering oath cooldown buff");
-								}
 							}
 							
 							// Kill the player - trigger death properly

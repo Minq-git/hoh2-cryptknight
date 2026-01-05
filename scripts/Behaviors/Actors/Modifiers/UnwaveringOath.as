@@ -17,7 +17,6 @@ namespace Modifiers
 			
 			// Get skill level from params (default to 1)
 			m_oathLevel = GetParamInt(unit, params, "level", false, 1);
-			PrintError("[UnwaveringOath] Constructor: level = " + m_oathLevel);
 		}
 		
 		string GetZombieBuffPath(uint level)
@@ -56,18 +55,12 @@ namespace Modifiers
 		void DamageTaken(PlayerBase@ player, Actor@ enemy, int dmgAmnt, float intensity) override
 		{
 			if (player is null || player.m_record is null || dmgAmnt <= 0)
-			{
-				PrintError("[UnwaveringOath] DamageTaken: Early return - player null or no damage");
 				return;
-			}
 			
 			// Check if player already has zombie transformation buff
 			auto actor = cast<Actor>(player);
 			if (actor is null)
-			{
-				PrintError("[UnwaveringOath] DamageTaken: Actor is null");
 				return;
-			}
 			
 			auto buffList = actor.GetBuffList();
 			if (buffList !is null)
@@ -87,10 +80,6 @@ namespace Modifiers
 					if (pathHash == hash1 || pathHash == hash2 || pathHash == hash3 || pathHash == hash4 || pathHash == hash5 || pathHash == trackingBuffHash || pathHash == cooldownBuffHash)
 					{
 						// Already transformed or on cooldown, don't apply again
-						if (pathHash == cooldownBuffHash)
-							PrintError("[UnwaveringOath] DamageTaken: On cooldown, skipping");
-						else
-							PrintError("[UnwaveringOath] DamageTaken: Already has zombie or tracking buff, skipping");
 						return;
 					}
 				}
@@ -99,40 +88,25 @@ namespace Modifiers
 			// Check if HP is at or below 1 HP point
 			int maxHp = player.m_record.currStats.Health;
 			if (maxHp <= 0)
-			{
-				PrintError("[UnwaveringOath] DamageTaken: Max HP is 0 or negative");
 				return;
-			}
 			
 			float currentHpPercent = player.m_record.hp;
 			float oneHpPercent = 1.0f / float(maxHp);
 			int currentHp = int(currentHpPercent * float(maxHp) + 0.5f);
 			
-			PrintError("[UnwaveringOath] DamageTaken: HP=" + currentHp + "/" + maxHp + " (" + currentHpPercent + "), damage=" + dmgAmnt);
-			
 			// If HP is at 1 or below, apply zombie transformation
 			if (currentHp <= 1)
 			{
-				PrintError("[UnwaveringOath] DamageTaken: HP <= 1, applying transformation");
-				
 				// Get the actual skill level from the player's record
 				uint actualLevel = m_oathLevel;
 				if (player.m_record.pickedSkills.exists("unwavering_oath"))
-				{
 					actualLevel = uint(player.m_record.pickedSkills["unwavering_oath"]);
-					PrintError("[UnwaveringOath] Got skill level from pickedSkills: " + actualLevel);
-				}
-				else
-				{
-					PrintError("[UnwaveringOath] Using default level: " + actualLevel);
-				}
 				
 				// Lock HP to exactly 1 HP point
 				player.m_record.hp = max(player.m_record.hp, oneHpPercent);
 				
 				// Get the zombie buff path based on skill level
 				string zombieBuffPath = GetZombieBuffPath(actualLevel);
-				PrintError("[UnwaveringOath] Loading zombie buff: " + zombieBuffPath);
 				
 				// Apply zombie transformation buff
 				if (zombieBuffPath != "")
@@ -142,11 +116,9 @@ namespace Modifiers
 					{
 						// Get the duration from the zombie buff
 						int zombieDuration = buffDef.m_duration;
-						PrintError("[UnwaveringOath] Zombie buff duration: " + zombieDuration);
 						
 						// Apply zombie transformation buff
 						actor.ApplyBuff(ActorBuff(actor, buffDef, 1.0f, false));
-						PrintError("[UnwaveringOath] Applied zombie buff");
 						
 						// Apply unwavering oath tracking buff with the same duration
 						// This will show a timer in the UI
@@ -162,7 +134,6 @@ namespace Modifiers
 								if (trackingBuffList.m_buffs[i].m_def.m_pathHash == trackingBuffHash)
 								{
 									trackingBuffExists = true;
-									PrintError("[UnwaveringOath] Tracking buff already exists, not re-applying");
 									break;
 								}
 							}
@@ -170,12 +141,9 @@ namespace Modifiers
 						
 						if (!trackingBuffExists)
 						{
-							PrintError("[UnwaveringOath] Loading tracking buff: " + m_trackingBuffPath);
 							auto trackingBuffDef = LoadActorBuff(m_trackingBuffPath);
 							if (trackingBuffDef !is null)
 							{
-								PrintError("[UnwaveringOath] Tracking buff loaded, original duration: " + trackingBuffDef.m_duration);
-								
 								// Temporarily modify the definition's duration to match zombie buff
 								// This ensures the UI displays the correct duration
 								int originalDefDuration = trackingBuffDef.m_duration;
@@ -185,11 +153,9 @@ namespace Modifiers
 								auto trackingBuff = ActorBuff(actor, trackingBuffDef, 1.0f, false);
 								// Also set the instance duration explicitly (in case it's initialized from definition)
 								trackingBuff.m_duration = zombieDuration;
-								PrintError("[UnwaveringOath] Set tracking buff duration to: " + zombieDuration);
 								
 								// Apply the buff
 								actor.ApplyBuff(trackingBuff);
-								PrintError("[UnwaveringOath] Applied tracking buff with duration: " + zombieDuration);
 								
 								// Restore the original definition duration for future uses
 								trackingBuffDef.m_duration = originalDefDuration;
@@ -204,31 +170,14 @@ namespace Modifiers
 										{
 											// Ensure the instance duration matches (in case it was reset)
 											buff.m_duration = zombieDuration;
-											PrintError("[UnwaveringOath] Verified and set tracking buff duration: " + buff.m_duration);
 											break;
 										}
 									}
 								}
 							}
-							else
-							{
-								PrintError("[UnwaveringOath] ERROR: Failed to load tracking buff definition: " + m_trackingBuffPath);
-							}
 						}
 					}
-					else
-					{
-						PrintError("[UnwaveringOath] ERROR: Failed to load zombie buff definition: " + m_zombieBuffPath);
-					}
 				}
-				else
-				{
-					PrintError("[UnwaveringOath] ERROR: m_zombieBuffPath is empty!");
-				}
-			}
-			else
-			{
-				PrintError("[UnwaveringOath] DamageTaken: HP > 1, not applying transformation");
 			}
 		}
 	}
