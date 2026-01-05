@@ -22,10 +22,11 @@ class SpawnRaiseDeadMinion : IAction
 		// In single player, IsServer() returns true, so this works for both cases
 		if (!Network::IsServer())
 		{
-			// Client: Return false to force network path
-			// The game engine will call NetDoAction() on the server
-			PrintError("[SpawnRaiseDeadMinion] Client: Returning false to force network path");
-			return false;
+			// Client: Return true to accept the action (so mana is consumed and cooldown starts)
+			// The game engine will automatically call NetDoAction() on the server
+			// We don't spawn here - the server will handle it via NetDoAction()
+			PrintError("[SpawnRaiseDeadMinion] Client: Accepting action, server will handle via NetDoAction");
+			return true;
 		}
 		
 		if (owner is null)
