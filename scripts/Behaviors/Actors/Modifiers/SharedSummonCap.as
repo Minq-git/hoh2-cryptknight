@@ -31,6 +31,11 @@ namespace Modifiers
 		ModDynamism HasModifyPlayerSummons() override { return ModDynamism::Dynamic; }
 		void ModifyPlayerSummons(PlayerBase@ player, float intensity) override
 		{
+			// Only run on server - clients will receive synced units from server
+			// This prevents clients from trying to destroy units or seeing units before they're synced
+			if (!Network::IsServer())
+				return;
+			
 			// Validate player is valid
 			if (player is null || player.m_record is null)
 				return;
