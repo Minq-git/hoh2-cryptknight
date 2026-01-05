@@ -16,8 +16,11 @@
 		<string name="id">pestilence_buff</string>
 		<bool name="debuff">false</bool>
 		<int name="duration">6000</int> <!-- Base duration 6 seconds, will be set dynamically based on skill level -->
-		<string name="icon">players/icons_skills.png</string>
-		<int>100</int><vec4>72 168 24 24</vec4>
+		<bool name="display-timer-radius">true</bool> <!-- Show timer on HUD icon -->
+		<array name="hud">
+			<string>players/cryptknight/icons_skills.png</string>
+			<int>100</int><vec4>0 0 14 14</vec4> <!-- Same icon as skill, scaled to buff icon size -->
+		</array>
 		
 		<!-- Green-tinted wisp effect to replace player model -->
 		<string name="fx">actors/aberrations/wisp/effects/wisp.effect?cR=0.0&cG=1.0&cB=0.0&radius=8</string>
