@@ -4,7 +4,7 @@
 		<string name="id">bone_shield</string>
 		<string name="name">Bone Shield</string>
 		<string name="description">Reduces damage taken.</string>
-		<int name="max">3</int> <!-- Max 5 stacks at level 5, refreshed by skill -->
+		<int name="max">7</int> <!-- Max 7 stacks at level 5, modified by ModifyStack modifier based on skill level -->
 		<bool name="refresh-on-max">true</bool>
 
 		<dict name="buff">

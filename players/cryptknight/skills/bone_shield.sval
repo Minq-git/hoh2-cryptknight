@@ -59,7 +59,7 @@
 						<string name="dmg-taken-mul-bind">dmg-taken</string>
 					</dict>
 					<dict>
-						<string name="class">Modifiers::ModifyStack</string>
+						<string name="class">Modifiers::SetStackMax</string>
 						<string name="buff">players/cryptknight/stacks_cryptknight_boneshield.sval:bone_shield</string>
 						<string name="max-bind">max-stacks</string>
 					</dict>

@@ -34,12 +34,13 @@
 	%endblock
 
 	<!-- Define 7 potential skulls to support up to 7 stacks -->
+	<!-- Skulls 0-3 use unique sprites, skulls 4-6 reuse sprites 1-3 -->
 	%block Skull 0 "0 65 8 8"
 	%block Skull 1 "10 66 8 8"
 	%block Skull 2 "19 65 8 8"
 	%block Skull 3 "28 65 8 8"
-	%block Skull 4 "0 65 8 8"
-	%block Skull 5 "10 66 8 8"
-	%block Skull 6 "19 65 8 8"
+	%block Skull 4 "10 66 8 8"  <!-- Reuse sprite 1 -->
+	%block Skull 5 "19 65 8 8"  <!-- Reuse sprite 2 -->
+	%block Skull 6 "28 65 8 8"  <!-- Reuse sprite 3 -->
 
 </effect>
