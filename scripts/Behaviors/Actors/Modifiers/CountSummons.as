@@ -53,13 +53,9 @@ namespace Modifiers
 					for (uint k = 0; k < summons[i].m_units.length(); k++)
 					{
 						auto unit = summons[i].m_units[k];
+						// player.m_record.summons is already per-player, so all units here belong to this player
 						if (unit !is null && !unit.GetUnit().IsDestroyed())
-						{
-							// Verify ownership - critical for multiplayer
-							auto ownedUnit = cast<IOwnedUnit>(unit);
-							if (ownedUnit !is null && ownedUnit.GetOwner() is player)
-								count++;
-						}
+							count++;
 					}
 				}
 			}

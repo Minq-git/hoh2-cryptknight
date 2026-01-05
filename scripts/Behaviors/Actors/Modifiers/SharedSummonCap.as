@@ -125,22 +125,18 @@ namespace Modifiers
 					
 					// Remove excess units of this type (keep only the first one)
 					// Remove from the end to avoid index shifting issues
+					// Note: player.m_record.summons is already per-player, so all units here belong to this player
 					while (summons[i].m_units.length() > 1)
 					{
 						int lastIndex = int(summons[i].m_units.length()) - 1;
 						auto excessUnit = summons[i].m_units[lastIndex];
 						
-						// Verify ownership before removing
 						if (excessUnit !is null && !excessUnit.GetUnit().IsDestroyed())
 						{
-							auto ownedUnit = cast<IOwnedUnit>(excessUnit);
-							if (ownedUnit !is null && ownedUnit.GetOwner() is player)
-							{
-								if (Network::IsServer())
-									excessUnit.Destroy();
-								else
-									(Network::Message("UnitDestroyed") << excessUnit.GetUnit()).SendToHost();
-							}
+							if (Network::IsServer())
+								excessUnit.Destroy();
+							else
+								(Network::Message("UnitDestroyed") << excessUnit.GetUnit()).SendToHost();
 						}
 						
 						summons[i].m_units.removeAt(lastIndex);
@@ -173,13 +169,9 @@ namespace Modifiers
 					for (uint k = 0; k < summons[i].m_units.length(); k++)
 					{
 						auto unit = summons[i].m_units[k];
+						// player.m_record.summons is already per-player, so all units here belong to this player
 						if (unit !is null && !unit.GetUnit().IsDestroyed())
-						{
-							// Verify ownership - critical for multiplayer
-							auto ownedUnit = cast<IOwnedUnit>(unit);
-							if (ownedUnit !is null && ownedUnit.GetOwner() is player)
-								currentCount++;
-						}
+							currentCount++;
 					}
 				}
 			}
@@ -216,15 +208,11 @@ namespace Modifiers
 							continue;
 
 						// Find the oldest unit in this group (first in array = oldest)
+						// player.m_record.summons is already per-player, so all units here belong to this player
 						for (uint k = 0; k < summons[i].m_units.length(); k++)
 						{
 							auto candidateUnit = summons[i].m_units[k];
 							if (candidateUnit is null || candidateUnit.GetUnit().IsDestroyed())
-								continue;
-							
-							// Verify ownership - critical for multiplayer
-							auto ownedCandidate = cast<IOwnedUnit>(candidateUnit);
-							if (ownedCandidate is null || ownedCandidate.GetOwner() !is player)
 								continue;
 							
 							if (oldestUnit is null)
@@ -248,32 +236,22 @@ namespace Modifiers
 					
 					if (oldestUnit !is null && oldestGroupIndex != -1 && oldestUnitIndex != -1)
 					{
-						// Verify the unit belongs to this player before destroying
-						auto ownedUnit = cast<IOwnedUnit>(oldestUnit);
-						if (ownedUnit !is null && ownedUnit.GetOwner() is player)
-						{
-							// Destroy the oldest unit found
-							if (Network::IsServer())
-								oldestUnit.Destroy();
-							else
-								(Network::Message("UnitDestroyed") << oldestUnit.GetUnit()).SendToHost();
-							
-							summons[oldestGroupIndex].m_units.removeAt(oldestUnitIndex);
-							if (oldestUnitIndex < int(summons[oldestGroupIndex].m_weaponInfo.length()))
-								summons[oldestGroupIndex].m_weaponInfo.removeAt(oldestUnitIndex);
-							if (oldestUnitIndex < int(summons[oldestGroupIndex].m_save.length()))
-								summons[oldestGroupIndex].m_save.removeAt(oldestUnitIndex);
-							if (oldestUnitIndex < int(summons[oldestGroupIndex].m_saveData.length()))
-								summons[oldestGroupIndex].m_saveData.removeAt(oldestUnitIndex);
-							
-							overflow--;
-						}
+						// Destroy the oldest unit found
+						// player.m_record.summons is already per-player, so this unit belongs to this player
+						if (Network::IsServer())
+							oldestUnit.Destroy();
 						else
-						{
-							// Unit doesn't belong to this player, skip it and continue
-							// This shouldn't happen, but handle it gracefully
-							break;
-						}
+							(Network::Message("UnitDestroyed") << oldestUnit.GetUnit()).SendToHost();
+						
+						summons[oldestGroupIndex].m_units.removeAt(oldestUnitIndex);
+						if (oldestUnitIndex < int(summons[oldestGroupIndex].m_weaponInfo.length()))
+							summons[oldestGroupIndex].m_weaponInfo.removeAt(oldestUnitIndex);
+						if (oldestUnitIndex < int(summons[oldestGroupIndex].m_save.length()))
+							summons[oldestGroupIndex].m_save.removeAt(oldestUnitIndex);
+						if (oldestUnitIndex < int(summons[oldestGroupIndex].m_saveData.length()))
+							summons[oldestGroupIndex].m_saveData.removeAt(oldestUnitIndex);
+						
+						overflow--;
 					}
 					else
 					{
