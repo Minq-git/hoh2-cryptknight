@@ -4,6 +4,11 @@
 	<string name="type-name">.skills.type.spell</string>
 	<string name="description">Turn into a fast-moving plague cloud.</string>
 
+	<array name="description-params">
+		<array><s>duration</s><s>.skills.desc.params.duration</s><s>6s</s><s>10s</s><s>14s</s><s>18s</s><s>22s</s></array>
+		<array><s>damage-reduction</s><s>Damage Reduction</s><s>10%</s><s>20%</s><s>30%</s><s>40%</s><s>50%</s></array>
+	</array>
+
 	<array name="icon">
 		<string>players/cryptknight/icons_skills.png</string>
 		<int>100</int><vec4>0 0 24 24</vec4>
@@ -28,17 +33,31 @@
 		<dict name="actions">
 			<array name="cast">
 				<dict>
-					<string name="class">Dash</string>
-					<int name="duration">500</int>
-					<float name="speed">2.5</float>
-				</dict>
-				<dict>
-					<string name="class">ApplyBuff</string>
+					<string name="class">ApplyPestilenceBuff</string>
 					<string name="buff">players/cryptknight/buffs/skills_buffs.sval:pestilence_buff</string>
 					<bool name="target-self">true</bool>
 				</dict>
 			</array>
 		</dict>
+		
+		<array name="timeline">
+			<i>0</i><s>cast</s>
+		</array>
 	</dict>
+
+	<array name="upgrades">
+		<dict>
+			<int name="skill-cost">SKILLCOSTLEVEL_2</int>
+		</dict>
+		<dict>
+			<int name="skill-cost">SKILLCOSTLEVEL_3</int>
+		</dict>
+		<dict>
+			<int name="skill-cost">SKILLCOSTLEVEL_4</int>
+		</dict>
+		<dict>
+			<int name="skill-cost">SKILLCOSTLEVEL_5</int>
+		</dict>
+	</array>
 </dict>
 

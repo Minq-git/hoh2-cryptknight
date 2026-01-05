@@ -1,6 +1,29 @@
 <dict>
-    <string name="name">Crypt Knight Class</string>
-    <string name="author">Minq</string>
-    <string name="description">Adds a new undead knight class to the game.</string>
-    <string name="version">1.0.0</string>
+	<string name="name">Crypt Knight Class</string>
+	<string name="author">Minq</string>
+	<string name="description">An undead knight class raised to serve again. Master of death, decay, and shadow magic with three unique specializations:
+
+• PLAGUEBEARER - Master of disease and decay
+  - Pestilence: Transform into a fast-moving plague cloud with damage reduction
+  - Sickly: Melee attacks apply bleeding and vulnerability
+
+• VOID KNIGHT - Empowered by Shadow Curse
+  - Soul Vortex: Channel a frontal cone of void magic that grants Shadow Curse
+  - Cursed: Gain Strength and Vitality based on Shadow Curse stacks
+
+• ARMOURED HUSK - An unstoppable undead juggernaut
+  - Unwavering Oath: Cheat death by transforming into a zombie
+  - Stronger Together: Strengthen minions and unlock new types
+
+Features:
+- Summon undead minions to fight by your side
+- Bone Shield for damage mitigation
+- Death Grip to pull enemies close
+- Full localization support (English, German, Spanish, French, Italian, Japanese, Korean, Ukrainian, Chinese)</string>
+	<string name="version">1.0.0</string>
+	<string name="logo">logos.png</string>
+	<string name="icon">logos.png</string>
+	<string name="banner">logos.png</string>
+	<string name="background">logos.png</string>
+	<string name="preview">logos.png</string>
 </dict> 

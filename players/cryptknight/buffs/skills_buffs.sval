@@ -15,32 +15,65 @@
 	<dict name="pestilence_buff">
 		<string name="id">pestilence_buff</string>
 		<bool name="debuff">false</bool>
-		<int name="duration">3000</int>
+		<int name="duration">6000</int> <!-- Base duration 6 seconds, will be set dynamically based on skill level -->
 		<string name="icon">players/icons_skills.png</string>
 		<int>100</int><vec4>72 168 24 24</vec4>
 		
-		<string name="fx">players/cryptknight/effects/pestilence_form.effect</string>
+		<!-- Green-tinted wisp effect to replace player model -->
+		<string name="fx">actors/aberrations/wisp/effects/wisp.effect?cR=0.0&cG=1.0&cB=0.0&radius=8</string>
 		
 		<array name="modifiers">
+			<!-- 25% movement speed increase -->
 			<dict>
 				<string name="class">Modifiers::SpeedMul</string>
-				<float name="mul">1.5</float>
+				<float name="mul">1.25</float>
 			</dict>
+			<!-- Damage reduction based on skill level (10% to 50%) -->
+			<dict>
+				<string name="class">Modifiers::PestilenceDamageReduction</string>
+			</dict>
+			<!-- Pass through enemies -->
+			<dict>
+				<string name="class">Modifiers::PassThroughEnemies</string>
+			</dict>
+			<!-- Apply poison damage to enemies passed through -->
 			<dict>
 				<string name="class">Modifiers::Aura</string>
-				<int name="radius">50</int>
-				<int name="freq">250</int>
-				<dict name="effect">
-					<string name="class">Damage</string>
-					<int name="poison">5</int>
-				</dict>
+				<ivec2 name="range">50 50</ivec2>
+				<int name="freq">100</int>
+				<bool name="friendly">false</bool>
+				<string name="buff">players/cryptknight/buffs/skills_buffs.sval:pestilence_poison</string>
 			</dict>
-			<!-- Hide Player Model -->
+			<!-- Hide Player Model - using a dummy modifier since Opacity doesn't exist -->
+			<!-- The wisp effect will replace the player visually -->
 			<dict>
-				<string name="class">Modifiers::Opacity</string>
-				<float name="alpha">0</float>
+				<string name="class">Modifiers::DummyModifier</string>
 			</dict>
 		</array>
+	</dict>
+	
+	<!-- Poison debuff applied to enemies when passed through -->
+	<dict name="pestilence_poison">
+		<string name="id">pestilence_poison</string>
+		<bool name="debuff">true</bool>
+		<int name="duration">500</int>
+		
+		<array name="tags">
+			<string>debuff</string>
+			<string>poison</string>
+		</array>
+		
+		<dict name="tick">
+			<int name="freq">250</int>
+			<array name="effects">
+				<dict>
+					<string name="class">Damage</string>
+					<int name="poison">10</int>
+					<bool name="dot">true</bool>
+					<bool name="true-strike">true</bool>
+				</dict>
+			</array>
+		</dict>
 	</dict>
 	
 	<!-- Zombie Transformation Definitions -->

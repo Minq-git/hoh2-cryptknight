@@ -19,6 +19,7 @@ namespace CryptKnight
 	uint g_zombieBuffHash5 = HashString("players/cryptknight/buffs/skills_buffs.sval:zombie_transformation_5");
 	uint g_unwaveringOathBuffHash = HashString("players/cryptknight/buffs/skills_buffs.sval:unwavering_oath_active");
 	uint g_unwaveringOathCooldownHash = HashString("players/cryptknight/buffs/skills_buffs.sval:unwavering_oath_cooldown");
+	uint g_pestilenceBuffHash = HashString("players/cryptknight/buffs/skills_buffs.sval:pestilence_buff");
 	
 	bool IsZombieTransformed(PlayerBase@ player)
 	{
@@ -338,11 +339,35 @@ namespace CryptKnight
 					}
 				}
 				
-				// Update previous value
-				g_previousShadowCurses[player.peer] = currentShadowCurses;
-			}
+			// Update previous value
+			g_previousShadowCurses[player.peer] = currentShadowCurses;
+		}
+		
+		// Handle Pestilence buff: Enable pass-through enemies by setting charging state
+		// This allows the player to pass through enemies during normal movement
+		auto actor = cast<Actor>(playerBase);
+		if (actor !is null)
+		{
+			auto buffList = actor.GetBuffList();
+			if (buffList !is null)
+			{
+				bool hasPestilence = false;
+				for (uint j = 0; j < buffList.m_buffs.length(); j++)
+				{
+					if (buffList.m_buffs[j].m_def.m_pathHash == g_pestilenceBuffHash)
+					{
+						hasPestilence = true;
+						break;
+					}
+				}
 				
-			// If player has zombie buff, continuously lock HP to 1 and ensure they're immune
+				// Enable charging state (pass-through) when pestilence buff is active
+				// SetCharging(true) switches the player to the "shared-charge" scene which has charging="true" in collision
+				playerBase.SetCharging(hasPestilence);
+			}
+		}
+				
+		// If player has zombie buff, continuously lock HP to 1 and ensure they're immune
 			bool isZombie = IsZombieTransformed(playerBase);
 			if (isZombie)
 			{
