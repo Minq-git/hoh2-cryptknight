@@ -101,6 +101,9 @@
 			<int>100</int><vec4>220 0 14 14</vec4>
 		</array>
 		
+		<!-- Ghastly green visual effect -->
+		<string name="fx">players/cryptknight/effects/unwavering_oath_tint.effect</string>
+		
 		<!-- This buff is just for tracking/display purposes -->
 		<!-- The actual immunity and HP locking is handled in CryptKnightHooks.as -->
 		<array name="modifiers">

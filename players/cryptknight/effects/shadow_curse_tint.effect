@@ -1,81 +1,83 @@
 <effect looping="true" bounds="100 100">
-	<!-- Purple Tint Overlay -->
+	<param name="real_stacks" default="1" />
+	
+	<!-- Purple Tint Overlay - scales with stacks -->
 	<sprite looping="true" origin="16 16" texture="players/cryptknight/effects/pestilence_light.png" material="system/default.mats:glow"
-		scale-x="1.5" scale-y="1.5"
-		color-r="0.5" color-g="0.0" color-b="1.0" color-a="0.3"
+		scale-x="1.5 * (1.0 + (real_stacks - 1) * 0.15)" scale-y="1.5 * (1.0 + (real_stacks - 1) * 0.15)"
+		color-r="0.5" color-g="0.0" color-b="1.0" color-a="0.3 * saturate(real_stacks / 10)"
 	>
 		<frame time="100">0 0 32 32</frame>
 	</sprite>
 	
-	<!-- Right side purple particles -->
+	<!-- Right side purple particles - closer and scaled by stack size -->
 	<particle_spawner
 		layer="1"
-		spawn-rate="60"
+		spawn-rate="60 * (1.0 + (real_stacks - 1) * 0.15)"
 		length="1500"
 		looping="true"
 		ttl="500"
-		pos="22;-10;0"
+		pos="12;-5;0"
 		color="100 50 150 100; 200 100 255 100"
 	>
 		<behaviors>
-			<spread_range radius="rpick(0,2)"/>
+			<spread_range radius="rpick(0,1.5 * (1.0 + (real_stacks - 1) * 0.15))"/>
 			<fade_to a="0" r="0.2" g="0" b="0.3" />
 			<force_dir dir="sin(t*pi)/2; 0.5; 0"/>
 		</behaviors>
 		<particle src="effects/subeffects/particles_speckles.unit:single_white_default"/>
 	</particle_spawner>
 	
-	<!-- Left side purple particles -->
+	<!-- Left side purple particles - closer and scaled by stack size -->
 	<particle_spawner
 		layer="1"
-		spawn-rate="60"
+		spawn-rate="60 * (1.0 + (real_stacks - 1) * 0.15)"
 		length="1500"
 		looping="true"
 		ttl="500"
-		pos="-22;-10;0"
+		pos="-12;-5;0"
 		color="100 50 150 100; 200 100 255 100"
 	>
 		<behaviors>
-			<spread_range radius="rpick(0,2)"/>
+			<spread_range radius="rpick(0,1.5 * (1.0 + (real_stacks - 1) * 0.15))"/>
 			<fade_to a="0" r="0.2" g="0" b="0.3" />
 			<force_dir dir="-sin(t*pi)/2; 0.5; 0"/>
 		</behaviors>
 		<particle src="effects/subeffects/particles_speckles.unit:single_white_default"/>
 	</particle_spawner>
 	
-	<!-- Middle purple particles -->
+	<!-- Middle purple particles - closer and scaled by stack size -->
 	<particle_spawner
 		layer="0"
-		spawn-rate="60"
+		spawn-rate="60 * (1.0 + (real_stacks - 1) * 0.15)"
 		length="1500"
 		looping="true"
 		ttl="500"
-		pos="0;10;0"
+		pos="0;5;0"
 		color="100 50 150 100; 200 100 255 100"
 	>
 		<behaviors>
-			<spread_range radius="rpick(0,2)"/>
+			<spread_range radius="rpick(0,1.5 * (1.0 + (real_stacks - 1) * 0.15))"/>
 			<fade_to a="0" r="0.2" g="0" b="0.3" />
 			<force_dir dir="0; 0.5; 0"/>
 		</behaviors>
 		<particle src="effects/subeffects/particles_speckles.unit:single_white_default"/>
 	</particle_spawner>
 	
-	<!-- Floating purple wisps around player -->
+	<!-- Floating purple wisps around player - closer and scaled by stack size -->
 	<particle_spawner
 		layer="0"
 		wind-speed="0.1"
-		spawn-rate="30"
+		spawn-rate="30 * (1.0 + (real_stacks - 1) * 0.15)"
 		color="80 40 120 50; 180 80 240 100"
 		length="100"
 		looping="true"
 		ttl="rpick(200,800)"
-		pos="-20;0; 0"
+		pos="-12;0; 0"
 		force-damping="rpick(-1,15)"
 	>
 		<behaviors>
-			<spread_range radius="rpick(-2,2)"/>
-			<spread_line offset="40 ; 0 ; 0"/> 
+			<spread_range radius="rpick(-1.5 * (1.0 + (real_stacks - 1) * 0.15), 1.5 * (1.0 + (real_stacks - 1) * 0.15))"/>
+			<spread_line offset="24 * (1.0 + (real_stacks - 1) * 0.15) ; 0 ; 0"/> 
 			<force_toward pos="0; 0; 0" mul="-sin(t*pi*2)*0.02"/>
 			<force_dir dir="rpick(-0.1,0.1); rpick(0.01,0.3); 0"/>
 			<fade_to a="0" r="0.5" g="0" b="1" />
@@ -86,19 +88,209 @@
 	<particle_spawner
 		layer="0"
 		wind-speed="0.1"
-		spawn-rate="30"
+		spawn-rate="30 * (1.0 + (real_stacks - 1) * 0.15)"
 		color="80 40 120 50; 180 80 240 100"
 		length="100"
 		looping="true"
 		ttl="rpick(200,800)"
-		pos="20;0; 0"
+		pos="12;0; 0"
 		force-damping="rpick(-1,15)"
 	>
 		<behaviors>
-			<spread_range radius="rpick(-2,2)"/>
-			<spread_line offset="-40 ; 0 ; 0"/> 
+			<spread_range radius="rpick(-1.5 * (1.0 + (real_stacks - 1) * 0.15), 1.5 * (1.0 + (real_stacks - 1) * 0.15))"/>
+			<spread_line offset="-24 * (1.0 + (real_stacks - 1) * 0.15) ; 0 ; 0"/> 
 			<force_toward pos="0; 0; 0" mul="-sin(t*pi*3)*0.02"/>
 			<force_dir dir="rpick(-0.1,0.1); rpick(0.1,0.3); 0"/>
+			<fade_to a="0" r="0.5" g="0" b="1" />
+		</behaviors>
+		<particle src="effects/subeffects/particles_speckles.unit:single_white_default"/>
+	</particle_spawner>
+	
+	<!-- Stack-based particles: 10 particles positioned around player, each appears when stack count >= its index -->
+	<!-- TEMP: Testing with fixed spawn rate to verify particles are visible -->
+	<!-- Particle 1: Top (appears at stack 1+) -->
+	<particle_spawner
+		layer="1"
+		spawn-rate="50"
+		length="1500"
+		looping="true"
+		ttl="500"
+		pos="0;10;0"
+		color="120 60 180 100; 220 120 255 150"
+	>
+		<behaviors>
+			<spread_range radius="rpick(0,1.5)"/>
+			<fade_to a="0" r="0.2" g="0" b="0.3" />
+			<force_dir dir="0; 0.4; 0"/>
+		</behaviors>
+		<particle src="effects/subeffects/particles_speckles.unit:single_white_default"/>
+	</particle_spawner>
+	
+	<!-- Particle 2: Top-right (appears at stack 2+) -->
+	<particle_spawner
+		layer="1"
+		spawn-rate="50"
+		length="1500"
+		looping="true"
+		ttl="500"
+		pos="7;7;0"
+		color="120 60 180 100; 220 120 255 150"
+	>
+		<behaviors>
+			<spread_range radius="rpick(0,1.5)"/>
+			<fade_to a="0" r="0.2" g="0" b="0.3" />
+			<force_dir dir="cos(t*pi*1.2)/3; sin(t*pi*1.2)/3; 0"/>
+		</behaviors>
+		<particle src="effects/subeffects/particles_speckles.unit:single_white_default"/>
+	</particle_spawner>
+	
+	<!-- Particle 3: Right (appears at stack 3+) -->
+	<particle_spawner
+		layer="1"
+		spawn-rate="50"
+		length="1500"
+		looping="true"
+		ttl="500"
+		pos="10;0;0"
+		color="120 60 180 100; 220 120 255 150"
+	>
+		<behaviors>
+			<spread_range radius="rpick(0,1.5)"/>
+			<fade_to a="0" r="0.2" g="0" b="0.3" />
+			<force_dir dir="0.4; 0; 0"/>
+		</behaviors>
+		<particle src="effects/subeffects/particles_speckles.unit:single_white_default"/>
+	</particle_spawner>
+	
+	<!-- Particle 4: Bottom-right (appears at stack 4+) -->
+	<particle_spawner
+		layer="1"
+		spawn-rate="50"
+		length="1500"
+		looping="true"
+		ttl="500"
+		pos="7;-7;0"
+		color="120 60 180 100; 220 120 255 150"
+	>
+		<behaviors>
+			<spread_range radius="rpick(0,1.5)"/>
+			<fade_to a="0" r="0.2" g="0" b="0.3" />
+			<force_dir dir="cos(t*pi*1.2)/3; -sin(t*pi*1.2)/3; 0"/>
+		</behaviors>
+		<particle src="effects/subeffects/particles_speckles.unit:single_white_default"/>
+	</particle_spawner>
+	
+	<!-- Particle 5: Bottom (appears at stack 5+) -->
+	<particle_spawner
+		layer="1"
+		spawn-rate="50"
+		length="1500"
+		looping="true"
+		ttl="500"
+		pos="0;-10;0"
+		color="120 60 180 100; 220 120 255 150"
+	>
+		<behaviors>
+			<spread_range radius="rpick(0,1.5)"/>
+			<fade_to a="0" r="0.2" g="0" b="0.3" />
+			<force_dir dir="0; -0.4; 0"/>
+		</behaviors>
+		<particle src="effects/subeffects/particles_speckles.unit:single_white_default"/>
+	</particle_spawner>
+	
+	<!-- Particle 6: Bottom-left (appears at stack 6+) -->
+	<particle_spawner
+		layer="1"
+		spawn-rate="50"
+		length="1500"
+		looping="true"
+		ttl="500"
+		pos="-7;-7;0"
+		color="120 60 180 100; 220 120 255 150"
+	>
+		<behaviors>
+			<spread_range radius="rpick(0,1.5)"/>
+			<fade_to a="0" r="0.2" g="0" b="0.3" />
+			<force_dir dir="-cos(t*pi*1.2)/3; -sin(t*pi*1.2)/3; 0"/>
+		</behaviors>
+		<particle src="effects/subeffects/particles_speckles.unit:single_white_default"/>
+	</particle_spawner>
+	
+	<!-- Particle 7: Left (appears at stack 7+) -->
+	<particle_spawner
+		layer="1"
+		spawn-rate="50"
+		length="1500"
+		looping="true"
+		ttl="500"
+		pos="-10;0;0"
+		color="120 60 180 100; 220 120 255 150"
+	>
+		<behaviors>
+			<spread_range radius="rpick(0,1.5)"/>
+			<fade_to a="0" r="0.2" g="0" b="0.3" />
+			<force_dir dir="-0.4; 0; 0"/>
+		</behaviors>
+		<particle src="effects/subeffects/particles_speckles.unit:single_white_default"/>
+	</particle_spawner>
+	
+	<!-- Particle 8: Top-left (appears at stack 8+) -->
+	<particle_spawner
+		layer="1"
+		spawn-rate="50"
+		length="1500"
+		looping="true"
+		ttl="500"
+		pos="-7;7;0"
+		color="120 60 180 100; 220 120 255 150"
+	>
+		<behaviors>
+			<spread_range radius="rpick(0,1.5)"/>
+			<fade_to a="0" r="0.2" g="0" b="0.3" />
+			<force_dir dir="-cos(t*pi*1.2)/3; sin(t*pi*1.2)/3; 0"/>
+		</behaviors>
+		<particle src="effects/subeffects/particles_speckles.unit:single_white_default"/>
+	</particle_spawner>
+	
+	<!-- Particle 9: Upper diagonal (appears at stack 9+) -->
+	<particle_spawner
+		layer="0"
+		wind-speed="0.12"
+		spawn-rate="35"
+		color="100 50 150 70; 200 100 255 130"
+		length="100"
+		looping="true"
+		ttl="rpick(300,800)"
+		pos="6;6; 0"
+		force-damping="rpick(0,12)"
+	>
+		<behaviors>
+			<spread_range radius="rpick(-1.5,1.5)"/>
+			<spread_line offset="-14 ; -14 ; 0"/> 
+			<force_toward pos="0; 0; 0" mul="-sin(t*pi*2.2)*0.02"/>
+			<force_dir dir="rpick(-0.15,0.15); rpick(0.02,0.3); 0"/>
+			<fade_to a="0" r="0.5" g="0" b="1" />
+		</behaviors>
+		<particle src="effects/subeffects/particles_speckles.unit:single_white_default"/>
+	</particle_spawner>
+	
+	<!-- Particle 10: Lower diagonal (appears at stack 10+) -->
+	<particle_spawner
+		layer="0"
+		wind-speed="0.12"
+		spawn-rate="35"
+		color="100 50 150 70; 200 100 255 130"
+		length="100"
+		looping="true"
+		ttl="rpick(300,800)"
+		pos="-6;-6; 0"
+		force-damping="rpick(0,12)"
+	>
+		<behaviors>
+			<spread_range radius="rpick(-1.5,1.5)"/>
+			<spread_line offset="14 ; 14 ; 0"/> 
+			<force_toward pos="0; 0; 0" mul="-sin(t*pi*2.8)*0.02"/>
+			<force_dir dir="rpick(-0.15,0.15); rpick(-0.15,0.15); 0"/>
 			<fade_to a="0" r="0.5" g="0" b="1" />
 		</behaviors>
 		<particle src="effects/subeffects/particles_speckles.unit:single_white_default"/>
