@@ -157,7 +157,6 @@
 			</array>
 
 			<string name="id">void_eruption</string>
-			<string name="type">orb</string>
 			<array name="tags"><s>orb</s><s>void</s></array>
 			<string name="quality">uncommon</string>
 			<int name="starting-level">0</int>
@@ -238,7 +237,6 @@
 			</array>
 
 			<string name="id">soul_siphon</string>
-			<string name="type">orb</string>
 			<array name="tags"><s>orb</s><s>void</s></array>
 			<string name="quality">uncommon</string>
 			<int name="starting-level">0</int>

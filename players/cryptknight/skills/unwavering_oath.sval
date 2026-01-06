@@ -82,7 +82,6 @@
 			</array>
 
 			<string name="id">eternal_undeath</string>
-			<string name="type">orb</string>
 			<array name="tags"><s>orb</s><s>defense</s></array>
 			<string name="quality">uncommon</string>
 			<int name="starting-level">0</int>
@@ -148,7 +147,6 @@
 			</array>
 
 			<string name="id">zombie_rage</string>
-			<string name="type">orb</string>
 			<array name="tags"><s>orb</s><s>defense</s></array>
 			<string name="quality">uncommon</string>
 			<int name="starting-level">0</int>

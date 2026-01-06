@@ -123,7 +123,6 @@
 			</array>
 
 			<string name="id">bone_armor</string>
-			<string name="type">orb</string>
 			<array name="tags"><s>orb</s><s>defense</s></array>
 			<string name="quality">uncommon</string>
 			<int name="starting-level">0</int>
@@ -181,7 +180,6 @@
 			</array>
 
 			<string name="id">serrated_marrow</string>
-			<string name="type">orb</string>
 			<array name="tags"><s>orb</s><s>defense</s></array>
 			<string name="quality">uncommon</string>
 			<int name="starting-level">0</int>
@@ -249,7 +247,6 @@
 			</array>
 
 			<string name="id">thick_skulls</string>
-			<string name="type">orb</string>
 			<array name="tags"><s>orb</s><s>defense</s></array>
 			<string name="quality">uncommon</string>
 			<int name="starting-level">0</int>

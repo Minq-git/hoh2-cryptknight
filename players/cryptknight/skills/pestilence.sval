@@ -76,7 +76,6 @@
 			</array>
 
 			<string name="id">plague_cloud</string>
-			<string name="type">orb</string>
 			<array name="tags"><s>orb</s><s>mobility</s></array>
 			<string name="quality">uncommon</string>
 			<int name="starting-level">0</int>
@@ -143,7 +142,6 @@
 			</array>
 
 			<string name="id">pestilent_strike</string>
-			<string name="type">orb</string>
 			<array name="tags"><s>orb</s><s>mobility</s></array>
 			<string name="quality">uncommon</string>
 			<int name="starting-level">0</int>

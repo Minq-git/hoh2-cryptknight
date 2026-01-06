@@ -107,7 +107,6 @@
 			</array>
 
 			<string name="id">contagious_grasp</string>
-			<string name="type">orb</string>
 			<array name="tags"><s>orb</s><s>spell</s></array>
 			<string name="quality">uncommon</string>
 			<int name="starting-level">0</int>
@@ -169,7 +168,6 @@
 			</array>
 
 			<string name="id">grasping_chains</string>
-			<string name="type">orb</string>
 			<array name="tags"><s>orb</s><s>spell</s></array>
 			<string name="quality">uncommon</string>
 			<int name="starting-level">0</int>
@@ -232,7 +230,6 @@
 			</array>
 
 			<string name="id">soul_rend</string>
-			<string name="type">orb</string>
 			<array name="tags"><s>orb</s><s>spell</s></array>
 			<string name="quality">uncommon</string>
 			<int name="starting-level">0</int>

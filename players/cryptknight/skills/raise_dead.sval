@@ -135,7 +135,6 @@
 			</array>
 
 			<string name="id">volatile_remains</string>
-			<string name="type">orb</string>
 			<array name="tags"><s>orb</s><s>summon</s></array>
 			<string name="quality">uncommon</string>
 			<int name="starting-level">0</int>
@@ -361,7 +360,6 @@
 			</array>
 
 			<string name="id">undead_legion</string>
-			<string name="type">orb</string>
 			<array name="tags"><s>orb</s><s>summon</s></array>
 			<string name="quality">uncommon</string>
 			<int name="starting-level">0</int>
@@ -435,7 +433,6 @@
 			</array>
 
 			<string name="id">minion_mastery</string>
-			<string name="type">orb</string>
 			<array name="tags"><s>orb</s><s>summon</s></array>
 			<string name="quality">uncommon</string>
 			<int name="starting-level">0</int>
