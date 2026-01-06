@@ -139,5 +139,152 @@
 			</array>
 		</dict>
 	</array>
+
+	<array name="modifier-skills">
+		<dict>
+			<string name="name">Void Eruption</string>
+			<string name="type-name">.skills.type.orb</string>
+			<string name="description">Soul Vortex projectiles explode on impact, dealing additional Strength-based damage.</string>
+
+			<array name="description-params">
+				<array><s>damage</s><s>Damage</s><s>50% Str</s><s>75% Str</s><s>100% Str</s></array>
+				<array><s>radius</s><s>Radius</s><s>32</s><s>48</s><s>64</s></array>
+			</array>
+
+			<array name="icon">
+				<string>players/cryptknight/icons_skills.png</string>
+				<int>100</int><vec4>24 24 24 24</vec4>
+			</array>
+
+			<string name="id">void_eruption</string>
+			<string name="type">orb</string>
+			<array name="tags"><s>orb</s><s>void</s></array>
+			<string name="quality">uncommon</string>
+			<int name="starting-level">0</int>
+
+			<dict name="skill">
+				<int name="skill-cost">0</int>
+				<string name="class">Skills::PassiveSkill</string>
+				
+				<dict name="binds">
+					<float name="explosion-dmg-mul">0.5</float>
+					<int name="explosion-radius">32</int>
+				</dict>
+
+				<array name="modifiers">
+					<dict>
+						<string name="class">Modifiers::SkillTriggerEffect</string>
+						<string name="trigger">projectilehit</string>
+						<array name="skill-tags"><s>void</s></array>
+						<string name="skill-id">soul_vortex</string>
+						<bool name="target-self">false</bool>
+						<float name="chance">1.0</float>
+						<array name="effects">
+							<dict>
+								<string name="class">Explode</string>
+								<string name="radius-bind">explosion-radius</string>
+								<string name="min-radius-bind">explosion-radius</string>
+								<bool name="hit-self">false</bool>
+								<bool name="hit-same-team">false</bool>
+								<bool name="hit-different-team">true</bool>
+								<array name="effects">
+									<dict>
+										<string name="class">StatBasedDamage</string>
+										<string name="stat">str</string>
+										<string name="mul-bind">explosion-dmg-mul</string>
+										<bool name="true-strike">true</bool>
+									</dict>
+									<dict>
+										<string name="class">SpawnEffect</string>
+										<string name="effect">effects/generic/impacts/arcane_impact_2.effect?radius=14</string>
+									</dict>
+								</array>
+							</dict>
+						</array>
+					</dict>
+				</array>
+			</dict>
+
+			<array name="upgrades">
+				<dict>
+					<string name="quality">uncommon</string>
+					<dict name="binds">
+						<float name="explosion-dmg-mul">0.75</float>
+						<int name="explosion-radius">48</int>
+					</dict>
+				</dict>
+				<dict>
+					<string name="quality">rare</string>
+					<dict name="binds">
+						<float name="explosion-dmg-mul">1.0</float>
+						<int name="explosion-radius">64</int>
+					</dict>
+				</dict>
+			</array>
+		</dict>
+
+		<dict>
+			<string name="name">Soul Siphon</string>
+			<string name="type-name">.skills.type.orb</string>
+			<string name="description">Soul Vortex deals damage, restoring a portion of your maximum Mana.</string>
+
+			<array name="description-params">
+				<array><s>mana-restore</s><s>Mana Restore</s><s>10%</s><s>20%</s><s>30%</s></array>
+			</array>
+
+			<array name="icon">
+				<string>players/cryptknight/icons_skills.png</string>
+				<int>100</int><vec4>24 24 24 24</vec4>
+			</array>
+
+			<string name="id">soul_siphon</string>
+			<string name="type">orb</string>
+			<array name="tags"><s>orb</s><s>void</s></array>
+			<string name="quality">uncommon</string>
+			<int name="starting-level">0</int>
+
+			<dict name="skill">
+				<int name="skill-cost">0</int>
+				<string name="class">Skills::PassiveSkill</string>
+				
+				<dict name="binds">
+					<float name="mana-restore-amount">0.1</float>
+				</dict>
+
+				<array name="modifiers">
+					<dict>
+						<string name="class">Modifiers::SkillTriggerEffect</string>
+						<string name="trigger">spellhit</string>
+						<array name="skill-tags"><s>void</s></array>
+						<string name="skill-id">soul_vortex</string>
+						<bool name="target-self">true</bool>
+						<float name="chance">1.0</float>
+						<array name="effects">
+							<dict>
+								<string name="class">GivePercentageMana</string>
+								<string name="mana-bind">mana-restore-amount</string>
+								<bool name="curr-mana">false</bool>
+							</dict>
+						</array>
+					</dict>
+				</array>
+			</dict>
+
+			<array name="upgrades">
+				<dict>
+					<string name="quality">uncommon</string>
+					<dict name="binds">
+						<float name="mana-restore-amount">0.2</float>
+					</dict>
+				</dict>
+				<dict>
+					<string name="quality">rare</string>
+					<dict name="binds">
+						<float name="mana-restore-amount">0.3</float>
+					</dict>
+				</dict>
+			</array>
+		</dict>
+	</array>
 </dict>
 
