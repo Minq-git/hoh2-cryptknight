@@ -1,0 +1,865 @@
+#A000FF Log - 2026-1-5
+[NFO] [18:17:58] Heroes of Hammerwatch II started
+[NFO] [18:17:58] Build 135: ARCH_64 USING_STEAM RELEASE FINAL
+[NFO] [18:17:58] Initializing Steam
+[NFO] [18:17:58] Steam ID: 110000103a3591d
+[NFO] [18:17:58] Launch options: 1: C:\Program Files (x86)\Steam\steamapps\common\Heroes of Hammerwatch 2\HWR2.exe 
+[NFO] [18:17:58] Listing system info:
+[NFO] [18:17:58]   Platform:   Windows
+[NFO] [18:17:58]   CPU count:  16
+[NFO] [18:17:58]   RAM:        32679 MB
+[NFO] [18:17:58] Opening SDL window
+[NFO] [18:17:58] Display DPI scale: 1
+[NFO] [18:17:58] Starting BGFX renderer OpenGL 3.2
+[NFO] [18:17:59] BGFX initialized
+[NFO] [18:17:59] Listing renderer info:
+[NFO] [18:17:59]   Renderer:   OpenGL 3.2
+[NFO] [18:17:59]   Vendor:     Nvidia
+[NFO] [18:17:59] Workshop: Subscribed items: 3
+[NFO] [18:17:59] Workshop: Item: d8f0a320 - C:\Program Files (x86)\Steam\steamapps\workshop\content\619820\3639649056
+[NFO] [18:17:59] Workshop: Item: ce924dc9 - C:\Program Files (x86)\Steam\steamapps\workshop\content\619820\3465694665
+[NFO] [18:17:59] Workshop: Item: d8a5be90 - C:\Program Files (x86)\Steam\steamapps\workshop\content\619820\3634740880
+[NFO] [18:17:59] logos size: 5423967
+[NFO] [18:17:59] logos wxh 2048x2048
+[NFO] [18:17:59] Resource mod: CryptKnight.bin: Crypt Knight Class (CryptKnight)
+[NFO] [18:17:59] logos size: 0
+[NFO] [18:17:59] Resource mod: secret revealed.bin: Secret walls revealed (secret revealed)
+[NFO] [18:17:59] logos size: 0
+[NFO] [18:17:59] Resource mod: toolkit_colorize_unit.bin: Toolkit Colorize Unit (toolkit_colorize_unit)
+[NFO] [18:17:59] Official Language: res/language/french.lang (French)
+[NFO] [18:17:59] Official Language: res/language/german.lang (German)
+[NFO] [18:17:59] Official Language: res/language/korean.lang (Korean)
+[NFO] [18:17:59] Official Language: res/language/portuguese.lang (Portuguese (Brazil))
+[NFO] [18:17:59] Official Language: res/language/russian.lang (Russian)
+[NFO] [18:17:59] Official Language: res/language/schinese.lang (Simplified Chinese)
+[NFO] [18:17:59] Official Language: res/language/tchinese.lang (Traditional Chinese)
+[NFO] [18:17:59] Official Language: res/language/english (English)
+[NFO] [18:17:59] Loading control bindings from 'res/controls_default.cfg'
+[NFO] [18:17:59] 9 control maps loaded
+[NFO] [18:17:59] Automatically assigning with 0 gamepads, 0 joysticks, 0 steam controllers
+[NFO] [18:17:59] Assign 'kbm' to 0
+[WRN] [18:17:59] No scenario set!
+[NFO] [18:17:59] LoadPersistentData()
+[NFO] [18:17:59] Trying to load persistent save 'saves/2_2.hps'
+[NFO] [18:17:59] Reading hash of 22899 bytes of data
+[NFO] [18:17:59] Adding packed mod 'CryptKnight'
+[NFO] [18:17:59] Adding packed mod 'secret revealed'
+[NFO] [18:17:59] LoadManager::StartLoadMenu levels/town.lvl
+[NFO] [18:17:59] Zoom in scene by factor of: 1.777778
+[NFO] [18:17:59] Resizing render targets: 1024x768 (1.000000)
+[NFO] [18:17:59] Zoom in scene by factor of: 1.111883
+[NFO] [18:17:59] Resizing render targets: 3440x1441 (3.000000)
+[NFO] [18:17:59] Zoom in scene by factor of: 1.113426
+[NFO] [18:17:59] Resizing render targets: 3441x1443 (3.000000)
+[NFO] [18:17:59] Adding packed mod 'CryptKnight'
+[NFO] [18:17:59] Adding packed mod 'secret revealed'
+[NFO] [18:17:59] Loading resources
+[NFO] [18:17:59] Opening all resources
+[NFO] [18:18:00] ResourceLoader unthreaded load time:      81.65 ms
+[NFO] [18:18:00] Resource load time: 972 ms
+[NFO] [18:18:00] Creating sound engine
+[NFO] [18:18:00] ResourceLoader unthreaded load time:       0.14 ms
+[NFO] [18:18:02] ResourceLoader load times:
+[NFO] [18:18:02]  class EffectLoader                     1708.03 ms (1450 files)
+[NFO] [18:18:02]  class TilesetLoader                    1197.64 ms (307 files)
+[NFO] [18:18:02]  class TextureLoader                    1022.76 ms (1139 files)
+[NFO] [18:18:02]  class ScriptLoader                      891.21 ms (958 files)
+[NFO] [18:18:02]  class ShaderLoader                      813.35 ms (798 files)
+[NFO] [18:18:02]  class SValueLoader                      495.15 ms (311 files)
+[NFO] [18:18:02]  class GUILoader                         380.50 ms (93 files)
+[NFO] [18:18:02]  class TIFFLoader                        322.73 ms (215 files)
+[NFO] [18:18:02]  class FontLoader                        285.76 ms (18 files)
+[NFO] [18:18:02]  class FBXLoader                         201.76 ms (118 files)
+[NFO] [18:18:02]  class OzzModelLoader                    148.08 ms (129 files)
+[NFO] [18:18:02]  class TTFFontLoader                      99.88 ms (7 files)
+[NFO] [18:18:02]  class PrefabLoader                       79.70 ms (2569 files)
+[NFO] [18:18:02]  class BrushLoader                        75.55 ms (75 files)
+[NFO] [18:18:02]  class OzzAnimationLoader                 73.18 ms (69 files)
+[NFO] [18:18:02]  class LevelLoader                        51.94 ms (44 files)
+[NFO] [18:18:02]  class EnvironmentLoader                  51.92 ms (53 files)
+[NFO] [18:18:02]  class UnitLoader                         39.75 ms (4743 files)
+[NFO] [18:18:02]  class IncludeLoader                      25.75 ms (557 files)
+[NFO] [18:18:02]  class MaterialLoader                     18.19 ms (18 files)
+[NFO] [18:18:02]  class LanguageLoader                      6.67 ms (9 files)
+[NFO] [18:18:02]  class MetaScriptLoader                    5.03 ms (4 files)
+[NFO] [18:18:02]  class TextureMergeLoader                  3.10 ms (1 files)
+[NFO] [18:18:02]  class SkeletonSetLoader                   2.02 ms (2 files)
+[NFO] [18:18:02]  class NetMessageLoader                    1.24 ms (1 files)
+[NFO] [18:18:02]  class Material3DLoader                    1.15 ms (1 files)
+[NFO] [18:18:02]  class OzzSkeletonLoader                   1.00 ms (1 files)
+[NFO] [18:18:02]  class FMODSoundBankLoader                 0.01 ms (5 files)
+[NFO] [18:18:02]  class H265Loader                          0.00 ms (0 files)
+[NFO] [18:18:02]  class PenLoader                           0.00 ms (0 files)
+[NFO] [18:18:02]  class SoundLoader                         0.00 ms (0 files)
+[NFO] [18:18:02]  class BitmapLoader                        0.00 ms (0 files)
+[NFO] [18:18:02]  class SoundBankLoader                     0.00 ms (0 files)
+[NFO] [18:18:02] Loaded FMOD sound bank: sound/master.strings.bank
+[NFO] [18:18:02] Loaded FMOD sound bank: sound/sfx.bank
+[NFO] [18:18:02] Loaded FMOD sound bank: sound/ambience.bank
+[NFO] [18:18:02] Loaded FMOD sound bank: sound/music.bank
+[NFO] [18:18:02] Loaded FMOD sound bank: sound/master.bank
+[NFO] [18:18:02] Executing SValue loaders
+[NFO] [18:18:03] Initializing scripts
+[NFO] [18:18:03] Executing scripts on start
+[NFO] [18:18:03] Compiling shaders
+[WRN] [18:18:04] WARN : scripts/CryptKnightHooks.as (ln 393, col 10)
+[WRN] [18:18:04] SE : Variable 'actor' hides another variable of same name in outer scope
+[NFO] [18:18:06] Finished load state 'setting_scenario'
+[NFO] [18:18:06] [menu] Refreshing keybind strings
+[NFO] [18:18:07] Finished load state 'loading_level'
+[NFO] [18:18:07] Executing SValue loaders
+[ERR] [18:18:07] Widget type of name 'waypoints' not registered.
+[ERR] [18:18:07] Widget type of name 'map' not registered.
+[ERR] [18:18:07] Widget type of name 'skill' not registered.
+[ERR] [18:18:07] Trying to add a child to a widget without an AddChild function
+[ERR] [18:18:07] Widget type of name 'skill' not registered.
+[ERR] [18:18:07] Trying to add a child to a widget without an AddChild function
+[ERR] [18:18:07] Widget type of name 'bossbar' not registered.
+[NFO] [18:18:07]  :: Making Module PlayerMeasure
+[NFO] [18:18:07]  :: Making Module TimeManager
+[NFO] [18:18:07]  :: Making Module MissionModule
+[NFO] [18:18:07]  :: Making Module TutorialModule
+[NFO] [18:18:07]  :: Making Module CinemaManager
+[NFO] [18:18:07]  :: Making Module DebugModule
+[NFO] [18:18:07]  :: Making Module DelayedEvents
+[NFO] [18:18:07]  :: Making Module OverlayModule
+[NFO] [18:18:07]  :: Making Module QueuedTasks
+[NFO] [18:18:07]  :: Making Module HUDModule
+[NFO] [18:18:07] Initializing scripts
+[NFO] [18:18:07] Finished load state 'loading_level'
+[NFO] [18:18:07] Starting menu level
+[NFO] [18:18:07] Starting session for menu
+[NFO] [18:18:07] Initializing scripts
+[NFO] [18:18:07] Executing scripts on start
+[NFO] [18:18:07] There's 6 pieces of persistent data
+[NFO] [18:18:07] placing TownSegment prefabs/town/segments/base.pfb
+[ERR] [18:18:07] Couldn't find behavior 'WeatherEffect' (unit 'doodads/terrain/tree_oak_apple.unit')
+[NFO] [18:18:07]  placing MissionPrefabDef! prefabs/town/segments/section_east/intro.pfb
+[NFO] [18:18:07]    changed to prefabs/town/segments/section_east/base.pfb
+[NFO] [18:18:07] placing TownSegment prefabs/town/segments/section_east/base.pfb
+[NFO] [18:18:07]  placing BuildingDef blacksmith, variation! .building.blacksmith.name
+[NFO] [18:18:07]  placing BuildingDef general_store, variation! .building.general_store.name
+[NFO] [18:18:07]  placing MissionPrefabDef! prefabs/town/roads/road_tavern/road_tavern_0.pfb
+[NFO] [18:18:07] placing TownSegment prefabs/town/roads/road_tavern/road_tavern_3.pfb
+[NFO] [18:18:07]  placing BuildingDef chapel, variation! .building.chapel.name
+[NFO] [18:18:07]  placing BuildingDef pyre, variation! .building.pyre.name
+[NFO] [18:18:07]  placing BuildingDef tavern, variation! .building.tavern.name
+[NFO] [18:18:07]  placing BuildingDef guild_hall, variation! .building.guild_hall.name
+[NFO] [18:18:07]  placing BuildingDef treasury, unbuilt prefab! prefabs/town/buildings/treasury/treasury_tier_0.pfb
+[NFO] [18:18:07]  placing BuildingDef trading_post, variation! .building.trading_post.name
+[NFO] [18:18:07]  placing BuildingDef training_grounds, variation! .building.training_grounds.name
+[NFO] [18:18:08]  placing BuildingDef library, variation! .building.library.name
+[NFO] [18:18:08] No color set ("cloth_blue") for channel 3, actors/npcs/town/npc_misc_elin.unit
+[NFO] [18:18:08]  placing MissionPrefabDef! prefabs/town/segments/farm/farm_4.pfb
+[NFO] [18:18:08]    changed to prefabs/town/segments/farm/farm_0.pfb
+[NFO] [18:18:08] placing TownSegment prefabs/town/segments/farm/farm_4.pfb
+[NFO] [18:18:08]  placing MissionPrefabDef! prefabs/town/segments/small_house/small_house_3.pfb
+[NFO] [18:18:08]    changed to prefabs/town/segments/small_house/small_house_0.pfb
+[NFO] [18:18:08] placing TownSegment prefabs/town/segments/small_house/small_house_3.pfb
+[NFO] [18:18:08]  placing BuildingDef magic_shop, variation! .building.magic_shop.name
+[NFO] [18:18:08]  placing BuildingDef enchanter, variation! .building.enchanter.name
+[NFO] [18:18:08]  placing BuildingDef apothecary, variation! .building.apothecary.name
+[NFO] [18:18:08]  placing MissionPrefabDef! prefabs/town/segments/town_square/town_square_4.pfb
+[NFO] [18:18:08]    changed to prefabs/town/segments/town_square/town_square_0.pfb
+[NFO] [18:18:08] placing TownSegment prefabs/town/segments/town_square/town_square_10.pfb
+[NFO] [18:18:08]  placing MissionPrefabDef! prefabs/town/roads/small_bridge/small_bridge_0.pfb
+[NFO] [18:18:08] placing TownSegment prefabs/town/roads/small_bridge/small_bridge_3.pfb
+[NFO] [18:18:08]  placing MissionPrefabDef! prefabs/town/segments/north_exit/north_exit_0.pfb
+[NFO] [18:18:08] placing TownSegment prefabs/town/segments/north_exit/north_exit_1.pfb
+[NFO] [18:18:08]  placing BuildingDef hunters_cabin, variation! .building.hunters_cabin.name
+[NFO] [18:18:08]  placing BuildingDef architect, variation! .building.architect.name
+[NFO] [18:18:08]  placing MissionPrefabDef! prefabs/town/roads/road_hunter/road_hunter_0.pfb
+[NFO] [18:18:08] placing TownSegment prefabs/town/roads/road_hunter/road_hunter_3.pfb
+[NFO] [18:18:08]  placing MissionPrefabDef! prefabs/town/roads/road_library/road_library_0.pfb
+[NFO] [18:18:08] placing TownSegment prefabs/town/roads/road_library/road_library_3.pfb
+[NFO] [18:18:08]  placing MissionPrefabDef! prefabs/town/roads/road_southern_exit/road_southern_exit_0.pfb
+[NFO] [18:18:08] placing TownSegment prefabs/town/roads/road_southern_exit/road_southern_exit_3.pfb
+[NFO] [18:18:08]  placing MissionPrefabDef! prefabs/town/roads/road_chapel/road_chapel_0.pfb
+[NFO] [18:18:08] placing TownSegment prefabs/town/roads/road_chapel/road_chapel_3.pfb
+[NFO] [18:18:08]  placing MissionPrefabDef! prefabs/town/roads/road_architect/road_architect_0.pfb
+[NFO] [18:18:08] placing TownSegment prefabs/town/roads/road_architect/road_architect_3.pfb
+[NFO] [18:18:08]  placing MissionPrefabDef! prefabs/town/roads/road_tailor/road_tailor_0.pfb
+[NFO] [18:18:08] placing TownSegment prefabs/town/roads/road_tailor/road_tailor_3.pfb
+[NFO] [18:18:08]  placing MissionPrefabDef! prefabs/town/roads/small_bridge/small_bridge_0.pfb
+[NFO] [18:18:08] placing TownSegment prefabs/town/roads/small_bridge/small_bridge_3.pfb
+[NFO] [18:18:08]  placing MissionPrefabDef! prefabs/town/segments/medium_house/medium_house_5.pfb
+[NFO] [18:18:08]    changed to prefabs/town/segments/medium_house/medium_house_0.pfb
+[NFO] [18:18:08] placing TownSegment prefabs/town/segments/medium_house/medium_house_5.pfb
+[NFO] [18:18:08]  placing BuildingDef tailor, unbuilt prefab! prefabs/town/buildings/tailor/tailor_tier_0.pfb
+[NFO] [18:18:08]  placing MissionPrefabDef! prefabs/town/segments/large_house/large_house_6.pfb
+[NFO] [18:18:08]    changed to prefabs/town/segments/large_house/large_house_0.pfb
+[NFO] [18:18:08] placing TownSegment prefabs/town/segments/large_house/large_house_6.pfb
+[NFO] [18:18:08] Num town segments to place: 0
+[NFO] [18:18:08] Spawning 0 road prefabs
+[NFO] [18:18:08] Zoom in scene by factor of: 1.113426
+[NFO] [18:18:08] Resizing render targets: 3441x1443 (3.000000)
+[NFO] [18:18:08] Started menu level
+[NFO] [18:18:08] Finished load state 'start_level'
+[ERR] [18:18:08] (DoLayout -> DoLayout) WARNING: Potential infinite layout loop detected! Attempting to dump stack...
+[ERR] [18:18:08] From "scripts/GUI/WidgetHoster.as" line 55
+[NFO] [18:18:09] [menu] LostNonHoverFocus()
+[NFO] [18:18:11] Starting session
+[NFO] [18:18:11] HWR2GameMode::LoadDifficulty: false
+[NFO] [18:18:11] Starting with StartMode: StartGame
+[NFO] [18:18:11] ::::   Started with null save
+[NFO] [18:18:11] ActivatePlayerRecord: 0 (local) : 00000000-0000-0000-0000-000000000000
+[NFO] [18:18:11] Got no shared data!
+[NFO] [18:18:11] MP enemy health scale: 0, exp scale: 1, plr dmg taken scale: 1
+[NFO] [18:18:11] Spawn all local players (g_spawnPos: (-595, 67))
+[NFO] [18:18:11] MP enemy health scale: 0, exp scale: 1, plr dmg taken scale: 1
+[WRN] [18:18:11] Can't Lobby::SetJoinable when not in a lobby
+[NFO] [18:18:11] CreateLobby
+[NFO] [18:18:11] HUD changing target, now showing for 
+[NFO] [18:18:11] SHOWING PickCharacterWindow
+[NFO] [18:18:11] LoadPersistentData()
+[NFO] [18:18:11] Trying to load persistent save 'saves/2_2.hps'
+[NFO] [18:18:11] Reading hash of 22899 bytes of data
+[NFO] [18:18:11] There's 6 pieces of persistent data
+[NFO] [18:18:11] Listing 6 characters
+[NFO] [18:18:11] Skipping 0 char
+[NFO] [18:18:11] Loading char 3854291828, hp: 1, isDead: false, deadTime: 0, hasActor: false
+[NFO] [18:18:11] Loading char 1037613367, hp: 1, isDead: false, deadTime: 0, hasActor: false
+[NFO] [18:18:11] Loading char 1178158148, hp: 1, isDead: false, deadTime: 0, hasActor: false
+[NFO] [18:18:11] Loading char 3277530576, hp: 1, isDead: false, deadTime: 0, hasActor: false
+[NFO] [18:18:11] Loading char 561508434, hp: 1, isDead: false, deadTime: 0, hasActor: false
+[NFO] [18:18:11] Refreshing keybind strings
+[NFO] [18:18:11] OnLobbyCreated
+[NFO] [18:18:11] [menu] LobbyCreated()
+[NFO] [18:18:11] [menu] UpdateLobbyMemberData
+[NFO] [18:18:11] AddPlayer 0
+[NFO] [18:18:12] PickCharacterWindow::mouse select 561508434
+[NFO] [18:18:12] PickCharacterWindow::mouse play
+[NFO] [18:18:12] PickCharacterWindow::play 561508434
+[NFO] [18:18:12] Loading character...
+[NFO] [18:18:12] Character loaded!
+[NFO] [18:18:12] Loading char 561508434, hp: 1, isDead: false, deadTime: 0, hasActor: false
+[NFO] [18:18:12] Spawn all local players (g_spawnPos: (-595, 67))
+[NFO] [18:18:12] Spawn player 0
+[NFO] [18:19:42] OnLobbyPlayerJoined peer 1
+[NFO] [18:19:42] AddPlayer 1
+[NFO] [18:19:42] Sending DropIn ChangeLevel
+[NFO] [18:19:42] Saving New Game+: 0
+[NFO] [18:19:42] Modules
+[NFO] [18:19:42] Flags
+[NFO] [18:19:42] Scalars
+[NFO] [18:19:42] Saving char 561508434, hp: 1, isDead: false, deadTime: 0, hasActor: true
+[NFO] [18:19:44] Adding dropin player
+[NFO] [18:19:44] AddPlayer 1
+[NFO] [18:19:44] Adding player 1
+[NFO] [18:19:44] ActivatePlayerRecord: 1 : 00000100-0000-0000-e4b8-3c1901001001
+[NFO] [18:19:44] Got no shared data!
+[NFO] [18:19:44] MP enemy health scale: 0.784584, exp scale: 1, plr dmg taken scale: 1.1487
+[NFO] [18:19:44] MP enemy health scale: 0.784584, exp scale: 1, plr dmg taken scale: 1.1487
+[NFO] [18:19:44] Spawning current players for new player
+[NFO] [18:19:44] Spawn player 1
+[NFO] [18:19:46] GotPlayerSave 1
+[NFO] [18:19:46] GotPlayerSave: 1
+[NFO] [18:19:46] ActivatePlayerRecord: 1 : 00000100-0000-0000-e4b8-3c1901001001
+[NFO] [18:19:46] Got shared data, loading player
+[NFO] [18:19:46] Loading char 3350957226, hp: 1, isDead: false, deadTime: 0, hasActor: true
+[NFO] [18:19:46] MP enemy health scale: 0.784584, exp scale: 1, plr dmg taken scale: 1.1487
+[ERR] [18:19:48] (NetDoActions -> NetDoAction) [SpawnRaiseDeadMinion] ===== NetDoAction START =====
+[ERR] [18:19:48] From "scripts/Behaviors/Effects/SpawnRaiseDeadMinion.as" line 424
+[ERR] [18:19:48] (NetDoActions -> NetDoAction) [SpawnRaiseDeadMinion] IsServer: true
+[ERR] [18:19:48] From "scripts/Behaviors/Effects/SpawnRaiseDeadMinion.as" line 425
+[ERR] [18:19:48] (NetDoActions -> NetDoAction) [SpawnRaiseDeadMinion] Owner: players/player_husk.unit
+[ERR] [18:19:48] From "scripts/Behaviors/Effects/SpawnRaiseDeadMinion.as" line 426
+[ERR] [18:19:48] (NetDoActions -> NetDoAction) [SpawnRaiseDeadMinion] Pos: -526.572, 67
+[ERR] [18:19:48] From "scripts/Behaviors/Effects/SpawnRaiseDeadMinion.as" line 427
+[ERR] [18:19:48] (NetDoActions -> NetDoAction) [SpawnRaiseDeadMinion] Extracted intensity from param: 1
+[ERR] [18:19:48] From "scripts/Behaviors/Effects/SpawnRaiseDeadMinion.as" line 443
+[ERR] [18:19:48] (NetDoActions -> NetDoAction) [SpawnRaiseDeadMinion] NetDoAction executing on server, calling DoAction...
+[ERR] [18:19:48] From "scripts/Behaviors/Effects/SpawnRaiseDeadMinion.as" line 450
+[ERR] [18:19:48] (NetDoAction -> DoAction) [SpawnRaiseDeadMinion] ===== DoAction START =====
+[ERR] [18:19:48] From "scripts/Behaviors/Effects/SpawnRaiseDeadMinion.as" line 22
+[ERR] [18:19:48] (NetDoAction -> DoAction) [SpawnRaiseDeadMinion] IsServer: true
+[ERR] [18:19:48] From "scripts/Behaviors/Effects/SpawnRaiseDeadMinion.as" line 23
+[ERR] [18:19:48] (NetDoAction -> DoAction) [SpawnRaiseDeadMinion] Owner: players/player_husk.unit
+[ERR] [18:19:48] From "scripts/Behaviors/Effects/SpawnRaiseDeadMinion.as" line 24
+[ERR] [18:19:48] (NetDoAction -> DoAction) [SpawnRaiseDeadMinion] Pos: -526.572, 67
+[ERR] [18:19:48] From "scripts/Behaviors/Effects/SpawnRaiseDeadMinion.as" line 25
+[ERR] [18:19:48] (NetDoAction -> DoAction) [SpawnRaiseDeadMinion] Intensity: 1
+[ERR] [18:19:48] From "scripts/Behaviors/Effects/SpawnRaiseDeadMinion.as" line 26
+[ERR] [18:19:48] (NetDoAction -> DoAction) [SpawnRaiseDeadMinion] Player record valid, WeaponInfo: 478207370
+[ERR] [18:19:48] From "scripts/Behaviors/Effects/SpawnRaiseDeadMinion.as" line 56
+[ERR] [18:19:48] (NetDoAction -> DoAction) [SpawnRaiseDeadMinion] Current summons state:
+[ERR] [18:19:48] From "scripts/Behaviors/Effects/SpawnRaiseDeadMinion.as" line 60
+[ERR] [18:19:48] (NetDoAction -> DoAction) [SpawnRaiseDeadMinion]   Total groups: 0
+[ERR] [18:19:48] From "scripts/Behaviors/Effects/SpawnRaiseDeadMinion.as" line 61
+[ERR] [18:19:48] (NetDoAction -> DoAction) [SpawnRaiseDeadMinion] Stronger Together level: 0
+[ERR] [18:19:48] From "scripts/Behaviors/Effects/SpawnRaiseDeadMinion.as" line 80
+[ERR] [18:19:48] (NetDoAction -> DoAction) [SpawnRaiseDeadMinion] Selected unit to spawn: players/cryptknight/units/minion_defender.unit
+[ERR] [18:19:48] From "scripts/Behaviors/Effects/SpawnRaiseDeadMinion.as" line 150
+[ERR] [18:19:48] (NetDoAction -> DoAction) [SpawnRaiseDeadMinion] Unit selection summary:
+[ERR] [18:19:48] From "scripts/Behaviors/Effects/SpawnRaiseDeadMinion.as" line 151
+[ERR] [18:19:48] (NetDoAction -> DoAction) [SpawnRaiseDeadMinion]   hasDefender: false
+[ERR] [18:19:48] From "scripts/Behaviors/Effects/SpawnRaiseDeadMinion.as" line 152
+[ERR] [18:19:48] (NetDoAction -> DoAction) [SpawnRaiseDeadMinion]   hasFootman: false
+[ERR] [18:19:48] From "scripts/Behaviors/Effects/SpawnRaiseDeadMinion.as" line 153
+[ERR] [18:19:48] (NetDoAction -> DoAction) [SpawnRaiseDeadMinion]   hasSentry: false
+[ERR] [18:19:48] From "scripts/Behaviors/Effects/SpawnRaiseDeadMinion.as" line 154
+[ERR] [18:19:48] (NetDoAction -> DoAction) [SpawnRaiseDeadMinion]   hasMage: false
+[ERR] [18:19:48] From "scripts/Behaviors/Effects/SpawnRaiseDeadMinion.as" line 155
+[ERR] [18:19:48] (NetDoAction -> DoAction) [SpawnRaiseDeadMinion]   hasKnight: false
+[ERR] [18:19:48] From "scripts/Behaviors/Effects/SpawnRaiseDeadMinion.as" line 156
+[ERR] [18:19:48] (NetDoAction -> DoAction) [SpawnRaiseDeadMinion] Producer obtained successfully, hash: 3224787358
+[ERR] [18:19:48] From "scripts/Behaviors/Effects/SpawnRaiseDeadMinion.as" line 167
+[ERR] [18:19:48] (NetDoAction -> DoAction) [SpawnRaiseDeadMinion] Checking for existing minions of type: players/cryptknight/units/minion_defender.unit
+[ERR] [18:19:48] From "scripts/Behaviors/Effects/SpawnRaiseDeadMinion.as" line 177
+[ERR] [18:19:48] (NetDoAction -> DoAction) [SpawnRaiseDeadMinion] Total summon groups: 0
+[ERR] [18:19:48] From "scripts/Behaviors/Effects/SpawnRaiseDeadMinion.as" line 178
+[ERR] [18:19:48] (NetDoAction -> DoAction) [SpawnRaiseDeadMinion] Checked 0 units total
+[ERR] [18:19:48] From "scripts/Behaviors/Effects/SpawnRaiseDeadMinion.as" line 276
+[ERR] [18:19:48] (NetDoAction -> DoAction) [SpawnRaiseDeadMinion] No existing minion found to replace, spawning new one
+[ERR] [18:19:48] From "scripts/Behaviors/Effects/SpawnRaiseDeadMinion.as" line 323
+[ERR] [18:19:48] (NetDoAction -> DoAction) [SpawnRaiseDeadMinion] Step 5: Spawning new unit...
+[ERR] [18:19:48] From "scripts/Behaviors/Effects/SpawnRaiseDeadMinion.as" line 326
+[ERR] [18:19:48] (NetDoAction -> DoAction) [SpawnRaiseDeadMinion] Step 6: Unit produced successfully
+[ERR] [18:19:48] From "scripts/Behaviors/Effects/SpawnRaiseDeadMinion.as" line 338
+[ERR] [18:19:48] (NetDoAction -> DoAction) [SpawnRaiseDeadMinion] Step 7: Initializing owned unit...
+[ERR] [18:19:48] From "scripts/Behaviors/Effects/SpawnRaiseDeadMinion.as" line 342
+[ERR] [18:19:48] (NetDoAction -> DoAction) [SpawnRaiseDeadMinion] Step 8: Unit initialized and registered
+[ERR] [18:19:48] From "scripts/Behaviors/Effects/SpawnRaiseDeadMinion.as" line 348
+[ERR] [18:19:48] (NetDoAction -> DoAction) [SpawnRaiseDeadMinion] Step 9: Preparing to send SpawnedOwnedUnit network message
+[ERR] [18:19:48] From "scripts/Behaviors/Effects/SpawnRaiseDeadMinion.as" line 357
+[ERR] [18:19:48] (NetDoAction -> DoAction) [SpawnRaiseDeadMinion]   prodHash: 3224787358
+[ERR] [18:19:48] From "scripts/Behaviors/Effects/SpawnRaiseDeadMinion.as" line 358
+[ERR] [18:19:48] (NetDoAction -> DoAction) [SpawnRaiseDeadMinion]   unitId: 355
+[ERR] [18:19:48] From "scripts/Behaviors/Effects/SpawnRaiseDeadMinion.as" line 359
+[ERR] [18:19:48] (NetDoAction -> DoAction) [SpawnRaiseDeadMinion]   spawnPos: -486.184, 48.3522
+[ERR] [18:19:48] From "scripts/Behaviors/Effects/SpawnRaiseDeadMinion.as" line 360
+[ERR] [18:19:48] (NetDoAction -> DoAction) [SpawnRaiseDeadMinion]   owner: 353
+[ERR] [18:19:48] From "scripts/Behaviors/Effects/SpawnRaiseDeadMinion.as" line 361
+[ERR] [18:19:48] (NetDoAction -> DoAction) [SpawnRaiseDeadMinion]   intensity: 1
+[ERR] [18:19:48] From "scripts/Behaviors/Effects/SpawnRaiseDeadMinion.as" line 362
+[ERR] [18:19:48] (NetDoAction -> DoAction) [SpawnRaiseDeadMinion]   weaponInfo: 478207370
+[ERR] [18:19:48] From "scripts/Behaviors/Effects/SpawnRaiseDeadMinion.as" line 363
+[ERR] [18:19:48] (NetDoAction -> DoAction) [SpawnRaiseDeadMinion] Step 9: Sent SpawnedOwnedUnit network message to all clients
+[ERR] [18:19:48] From "scripts/Behaviors/Effects/SpawnRaiseDeadMinion.as" line 366
+[ERR] [18:19:48] (NetDoAction -> DoAction) [SpawnRaiseDeadMinion] Step 10: Checking summons array after registration
+[ERR] [18:19:48] From "scripts/Behaviors/Effects/SpawnRaiseDeadMinion.as" line 372
+[ERR] [18:19:48] (NetDoAction -> DoAction) [SpawnRaiseDeadMinion]   Total groups: 1
+[ERR] [18:19:48] From "scripts/Behaviors/Effects/SpawnRaiseDeadMinion.as" line 373
+[ERR] [18:19:48] (NetDoAction -> DoAction) [SpawnRaiseDeadMinion]   Group 0 (matching prod):
+[ERR] [18:19:48] From "scripts/Behaviors/Effects/SpawnRaiseDeadMinion.as" line 378
+[ERR] [18:19:48] (NetDoAction -> DoAction) [SpawnRaiseDeadMinion]     Units: 1
+[ERR] [18:19:48] From "scripts/Behaviors/Effects/SpawnRaiseDeadMinion.as" line 379
+[ERR] [18:19:48] (NetDoAction -> DoAction) [SpawnRaiseDeadMinion]     Cap before: 1
+[ERR] [18:19:48] From "scripts/Behaviors/Effects/SpawnRaiseDeadMinion.as" line 380
+[ERR] [18:19:48] (NetDoAction -> DoAction) [SpawnRaiseDeadMinion]     Cap after: 1
+[ERR] [18:19:48] From "scripts/Behaviors/Effects/SpawnRaiseDeadMinion.as" line 385
+[ERR] [18:19:48] (NetDoAction -> DoAction) [SpawnRaiseDeadMinion] Step 11: Final summons state:
+[ERR] [18:19:48] From "scripts/Behaviors/Effects/SpawnRaiseDeadMinion.as" line 410
+[ERR] [18:19:48] (NetDoAction -> DoAction) [SpawnRaiseDeadMinion]   Group 0: 1 units, cap: 1
+[ERR] [18:19:48] From "scripts/Behaviors/Effects/SpawnRaiseDeadMinion.as" line 413
+[ERR] [18:19:48] (NetDoAction -> DoAction) [SpawnRaiseDeadMinion] SUCCESS: Spawn complete
+[ERR] [18:19:48] From "scripts/Behaviors/Effects/SpawnRaiseDeadMinion.as" line 416
+[ERR] [18:19:48] (NetDoAction -> DoAction) [SpawnRaiseDeadMinion] ===== DoAction END (Success) =====
+[ERR] [18:19:48] From "scripts/Behaviors/Effects/SpawnRaiseDeadMinion.as" line 417
+[ERR] [18:19:48] (NetDoActions -> NetDoAction) [SpawnRaiseDeadMinion] NetDoAction result: true
+[ERR] [18:19:48] From "scripts/Behaviors/Effects/SpawnRaiseDeadMinion.as" line 452
+[ERR] [18:19:48] (NetDoActions -> NetDoAction) [SpawnRaiseDeadMinion] ===== NetDoAction END =====
+[ERR] [18:19:48] From "scripts/Behaviors/Effects/SpawnRaiseDeadMinion.as" line 453
+[ERR] [18:19:48] Trying to send destroyed unit with 'UnitDamaged' (param 0) : doodads/containers/urn_big.unit
+[ERR] [18:20:07] (DoActions -> DoAction) [SpawnRaiseDeadMinion] ===== DoAction START =====
+[ERR] [18:20:07] From "scripts/Behaviors/Effects/SpawnRaiseDeadMinion.as" line 22
+[ERR] [18:20:07] (DoActions -> DoAction) [SpawnRaiseDeadMinion] IsServer: true
+[ERR] [18:20:07] From "scripts/Behaviors/Effects/SpawnRaiseDeadMinion.as" line 23
+[ERR] [18:20:07] (DoActions -> DoAction) [SpawnRaiseDeadMinion] Owner: players/player.unit
+[ERR] [18:20:07] From "scripts/Behaviors/Effects/SpawnRaiseDeadMinion.as" line 24
+[ERR] [18:20:07] (DoActions -> DoAction) [SpawnRaiseDeadMinion] Pos: -595, 67
+[ERR] [18:20:07] From "scripts/Behaviors/Effects/SpawnRaiseDeadMinion.as" line 25
+[ERR] [18:20:07] (DoActions -> DoAction) [SpawnRaiseDeadMinion] Intensity: 1
+[ERR] [18:20:07] From "scripts/Behaviors/Effects/SpawnRaiseDeadMinion.as" line 26
+[ERR] [18:20:07] (DoActions -> DoAction) [SpawnRaiseDeadMinion] Player record valid, WeaponInfo: 478207370
+[ERR] [18:20:07] From "scripts/Behaviors/Effects/SpawnRaiseDeadMinion.as" line 56
+[ERR] [18:20:07] (DoActions -> DoAction) [SpawnRaiseDeadMinion] Current summons state:
+[ERR] [18:20:07] From "scripts/Behaviors/Effects/SpawnRaiseDeadMinion.as" line 60
+[ERR] [18:20:07] (DoActions -> DoAction) [SpawnRaiseDeadMinion]   Total groups: 0
+[ERR] [18:20:07] From "scripts/Behaviors/Effects/SpawnRaiseDeadMinion.as" line 61
+[ERR] [18:20:07] (DoActions -> DoAction) [SpawnRaiseDeadMinion] Stronger Together level: 5
+[ERR] [18:20:07] From "scripts/Behaviors/Effects/SpawnRaiseDeadMinion.as" line 80
+[ERR] [18:20:07] (DoActions -> DoAction) [SpawnRaiseDeadMinion] Selected unit to spawn: players/cryptknight/units/minion_defender.unit
+[ERR] [18:20:07] From "scripts/Behaviors/Effects/SpawnRaiseDeadMinion.as" line 150
+[ERR] [18:20:07] (DoActions -> DoAction) [SpawnRaiseDeadMinion] Unit selection summary:
+[ERR] [18:20:07] From "scripts/Behaviors/Effects/SpawnRaiseDeadMinion.as" line 151
+[ERR] [18:20:07] (DoActions -> DoAction) [SpawnRaiseDeadMinion]   hasDefender: false
+[ERR] [18:20:07] From "scripts/Behaviors/Effects/SpawnRaiseDeadMinion.as" line 152
+[ERR] [18:20:07] (DoActions -> DoAction) [SpawnRaiseDeadMinion]   hasFootman: false
+[ERR] [18:20:07] From "scripts/Behaviors/Effects/SpawnRaiseDeadMinion.as" line 153
+[ERR] [18:20:07] (DoActions -> DoAction) [SpawnRaiseDeadMinion]   hasSentry: false
+[ERR] [18:20:07] From "scripts/Behaviors/Effects/SpawnRaiseDeadMinion.as" line 154
+[ERR] [18:20:07] (DoActions -> DoAction) [SpawnRaiseDeadMinion]   hasMage: false
+[ERR] [18:20:07] From "scripts/Behaviors/Effects/SpawnRaiseDeadMinion.as" line 155
+[ERR] [18:20:07] (DoActions -> DoAction) [SpawnRaiseDeadMinion]   hasKnight: false
+[ERR] [18:20:07] From "scripts/Behaviors/Effects/SpawnRaiseDeadMinion.as" line 156
+[ERR] [18:20:07] (DoActions -> DoAction) [SpawnRaiseDeadMinion] Producer obtained successfully, hash: 3224787358
+[ERR] [18:20:07] From "scripts/Behaviors/Effects/SpawnRaiseDeadMinion.as" line 167
+[ERR] [18:20:07] (DoActions -> DoAction) [SpawnRaiseDeadMinion] Checking for existing minions of type: players/cryptknight/units/minion_defender.unit
+[ERR] [18:20:07] From "scripts/Behaviors/Effects/SpawnRaiseDeadMinion.as" line 177
+[ERR] [18:20:07] (DoActions -> DoAction) [SpawnRaiseDeadMinion] Total summon groups: 0
+[ERR] [18:20:07] From "scripts/Behaviors/Effects/SpawnRaiseDeadMinion.as" line 178
+[ERR] [18:20:07] (DoActions -> DoAction) [SpawnRaiseDeadMinion] Checked 0 units total
+[ERR] [18:20:07] From "scripts/Behaviors/Effects/SpawnRaiseDeadMinion.as" line 276
+[ERR] [18:20:07] (DoActions -> DoAction) [SpawnRaiseDeadMinion] No existing minion found to replace, spawning new one
+[ERR] [18:20:07] From "scripts/Behaviors/Effects/SpawnRaiseDeadMinion.as" line 323
+[ERR] [18:20:07] (DoActions -> DoAction) [SpawnRaiseDeadMinion] Step 5: Spawning new unit...
+[ERR] [18:20:07] From "scripts/Behaviors/Effects/SpawnRaiseDeadMinion.as" line 326
+[ERR] [18:20:07] (DoActions -> DoAction) [SpawnRaiseDeadMinion] Step 6: Unit produced successfully
+[ERR] [18:20:07] From "scripts/Behaviors/Effects/SpawnRaiseDeadMinion.as" line 338
+[ERR] [18:20:07] (DoActions -> DoAction) [SpawnRaiseDeadMinion] Step 7: Initializing owned unit...
+[ERR] [18:20:07] From "scripts/Behaviors/Effects/SpawnRaiseDeadMinion.as" line 342
+[ERR] [18:20:07] (DoActions -> DoAction) [SpawnRaiseDeadMinion] Step 8: Unit initialized and registered
+[ERR] [18:20:07] From "scripts/Behaviors/Effects/SpawnRaiseDeadMinion.as" line 348
+[ERR] [18:20:07] (DoActions -> DoAction) [SpawnRaiseDeadMinion] Step 9: Preparing to send SpawnedOwnedUnit network message
+[ERR] [18:20:07] From "scripts/Behaviors/Effects/SpawnRaiseDeadMinion.as" line 357
+[ERR] [18:20:07] (DoActions -> DoAction) [SpawnRaiseDeadMinion]   prodHash: 3224787358
+[ERR] [18:20:07] From "scripts/Behaviors/Effects/SpawnRaiseDeadMinion.as" line 358
+[ERR] [18:20:07] (DoActions -> DoAction) [SpawnRaiseDeadMinion]   unitId: 802
+[ERR] [18:20:07] From "scripts/Behaviors/Effects/SpawnRaiseDeadMinion.as" line 359
+[ERR] [18:20:07] (DoActions -> DoAction) [SpawnRaiseDeadMinion]   spawnPos: -551.668, 55.5711
+[ERR] [18:20:07] From "scripts/Behaviors/Effects/SpawnRaiseDeadMinion.as" line 360
+[ERR] [18:20:07] (DoActions -> DoAction) [SpawnRaiseDeadMinion]   owner: 1749
+[ERR] [18:20:07] From "scripts/Behaviors/Effects/SpawnRaiseDeadMinion.as" line 361
+[ERR] [18:20:07] (DoActions -> DoAction) [SpawnRaiseDeadMinion]   intensity: 1
+[ERR] [18:20:07] From "scripts/Behaviors/Effects/SpawnRaiseDeadMinion.as" line 362
+[ERR] [18:20:07] (DoActions -> DoAction) [SpawnRaiseDeadMinion]   weaponInfo: 478207370
+[ERR] [18:20:07] From "scripts/Behaviors/Effects/SpawnRaiseDeadMinion.as" line 363
+[ERR] [18:20:07] (DoActions -> DoAction) [SpawnRaiseDeadMinion] Step 9: Sent SpawnedOwnedUnit network message to all clients
+[ERR] [18:20:07] From "scripts/Behaviors/Effects/SpawnRaiseDeadMinion.as" line 366
+[ERR] [18:20:07] (DoActions -> DoAction) [SpawnRaiseDeadMinion] Step 10: Checking summons array after registration
+[ERR] [18:20:07] From "scripts/Behaviors/Effects/SpawnRaiseDeadMinion.as" line 372
+[ERR] [18:20:07] (DoActions -> DoAction) [SpawnRaiseDeadMinion]   Total groups: 1
+[ERR] [18:20:07] From "scripts/Behaviors/Effects/SpawnRaiseDeadMinion.as" line 373
+[ERR] [18:20:07] (DoActions -> DoAction) [SpawnRaiseDeadMinion]   Group 0 (matching prod):
+[ERR] [18:20:07] From "scripts/Behaviors/Effects/SpawnRaiseDeadMinion.as" line 378
+[ERR] [18:20:07] (DoActions -> DoAction) [SpawnRaiseDeadMinion]     Units: 1
+[ERR] [18:20:07] From "scripts/Behaviors/Effects/SpawnRaiseDeadMinion.as" line 379
+[ERR] [18:20:07] (DoActions -> DoAction) [SpawnRaiseDeadMinion]     Cap before: 1
+[ERR] [18:20:07] From "scripts/Behaviors/Effects/SpawnRaiseDeadMinion.as" line 380
+[ERR] [18:20:07] (DoActions -> DoAction) [SpawnRaiseDeadMinion]     Cap after: 1
+[ERR] [18:20:07] From "scripts/Behaviors/Effects/SpawnRaiseDeadMinion.as" line 385
+[ERR] [18:20:07] (DoActions -> DoAction) [SpawnRaiseDeadMinion] Step 11: Final summons state:
+[ERR] [18:20:07] From "scripts/Behaviors/Effects/SpawnRaiseDeadMinion.as" line 410
+[ERR] [18:20:07] (DoActions -> DoAction) [SpawnRaiseDeadMinion]   Group 0: 1 units, cap: 1
+[ERR] [18:20:07] From "scripts/Behaviors/Effects/SpawnRaiseDeadMinion.as" line 413
+[ERR] [18:20:07] (DoActions -> DoAction) [SpawnRaiseDeadMinion] SUCCESS: Spawn complete
+[ERR] [18:20:07] From "scripts/Behaviors/Effects/SpawnRaiseDeadMinion.as" line 416
+[ERR] [18:20:07] (DoActions -> DoAction) [SpawnRaiseDeadMinion] ===== DoAction END (Success) =====
+[ERR] [18:20:07] From "scripts/Behaviors/Effects/SpawnRaiseDeadMinion.as" line 417
+[NFO] [18:20:09] [menu] Refreshing keybind strings
+[NFO] [18:20:09] Refreshing keybind strings
+[NFO] [18:20:11] [menu] Refreshing keybind strings
+[NFO] [18:20:11] Refreshing keybind strings
+[ERR] [18:20:14] (DoActions -> DoAction) [SpawnRaiseDeadMinion] ===== DoAction START =====
+[ERR] [18:20:14] From "scripts/Behaviors/Effects/SpawnRaiseDeadMinion.as" line 22
+[ERR] [18:20:14] (DoActions -> DoAction) [SpawnRaiseDeadMinion] IsServer: true
+[ERR] [18:20:14] From "scripts/Behaviors/Effects/SpawnRaiseDeadMinion.as" line 23
+[ERR] [18:20:14] (DoActions -> DoAction) [SpawnRaiseDeadMinion] Owner: players/player.unit
+[ERR] [18:20:14] From "scripts/Behaviors/Effects/SpawnRaiseDeadMinion.as" line 24
+[ERR] [18:20:14] (DoActions -> DoAction) [SpawnRaiseDeadMinion] Pos: -640.163, 91.6344
+[ERR] [18:20:14] From "scripts/Behaviors/Effects/SpawnRaiseDeadMinion.as" line 25
+[ERR] [18:20:14] (DoActions -> DoAction) [SpawnRaiseDeadMinion] Intensity: 1
+[ERR] [18:20:14] From "scripts/Behaviors/Effects/SpawnRaiseDeadMinion.as" line 26
+[ERR] [18:20:14] (DoActions -> DoAction) [SpawnRaiseDeadMinion] Player record valid, WeaponInfo: 478207370
+[ERR] [18:20:14] From "scripts/Behaviors/Effects/SpawnRaiseDeadMinion.as" line 56
+[ERR] [18:20:14] (DoActions -> DoAction) [SpawnRaiseDeadMinion] Current summons state:
+[ERR] [18:20:14] From "scripts/Behaviors/Effects/SpawnRaiseDeadMinion.as" line 60
+[ERR] [18:20:14] (DoActions -> DoAction) [SpawnRaiseDeadMinion]   Total groups: 1
+[ERR] [18:20:14] From "scripts/Behaviors/Effects/SpawnRaiseDeadMinion.as" line 61
+[ERR] [18:20:14] (DoActions -> DoAction) [SpawnRaiseDeadMinion]   Group 0: 1 units, cap: 1
+[ERR] [18:20:14] From "scripts/Behaviors/Effects/SpawnRaiseDeadMinion.as" line 64
+[ERR] [18:20:14] (DoActions -> DoAction) [SpawnRaiseDeadMinion] Stronger Together level: 5
+[ERR] [18:20:14] From "scripts/Behaviors/Effects/SpawnRaiseDeadMinion.as" line 80
+[ERR] [18:20:14] (DoActions -> DoAction) [SpawnRaiseDeadMinion] Selected unit to spawn: players/cryptknight/units/minion_footman.unit
+[ERR] [18:20:14] From "scripts/Behaviors/Effects/SpawnRaiseDeadMinion.as" line 150
+[ERR] [18:20:14] (DoActions -> DoAction) [SpawnRaiseDeadMinion] Unit selection summary:
+[ERR] [18:20:14] From "scripts/Behaviors/Effects/SpawnRaiseDeadMinion.as" line 151
+[ERR] [18:20:14] (DoActions -> DoAction) [SpawnRaiseDeadMinion]   hasDefender: true
+[ERR] [18:20:14] From "scripts/Behaviors/Effects/SpawnRaiseDeadMinion.as" line 152
+[ERR] [18:20:14] (DoActions -> DoAction) [SpawnRaiseDeadMinion]   hasFootman: false
+[ERR] [18:20:14] From "scripts/Behaviors/Effects/SpawnRaiseDeadMinion.as" line 153
+[ERR] [18:20:14] (DoActions -> DoAction) [SpawnRaiseDeadMinion]   hasSentry: false
+[ERR] [18:20:14] From "scripts/Behaviors/Effects/SpawnRaiseDeadMinion.as" line 154
+[ERR] [18:20:14] (DoActions -> DoAction) [SpawnRaiseDeadMinion]   hasMage: false
+[ERR] [18:20:14] From "scripts/Behaviors/Effects/SpawnRaiseDeadMinion.as" line 155
+[ERR] [18:20:14] (DoActions -> DoAction) [SpawnRaiseDeadMinion]   hasKnight: false
+[ERR] [18:20:14] From "scripts/Behaviors/Effects/SpawnRaiseDeadMinion.as" line 156
+[ERR] [18:20:14] (DoActions -> DoAction) [SpawnRaiseDeadMinion] Producer obtained successfully, hash: 876434454
+[ERR] [18:20:14] From "scripts/Behaviors/Effects/SpawnRaiseDeadMinion.as" line 167
+[ERR] [18:20:14] (DoActions -> DoAction) [SpawnRaiseDeadMinion] Checking for existing minions of type: players/cryptknight/units/minion_footman.unit
+[ERR] [18:20:14] From "scripts/Behaviors/Effects/SpawnRaiseDeadMinion.as" line 177
+[ERR] [18:20:14] (DoActions -> DoAction) [SpawnRaiseDeadMinion] Total summon groups: 1
+[ERR] [18:20:14] From "scripts/Behaviors/Effects/SpawnRaiseDeadMinion.as" line 178
+[ERR] [18:20:14] (DoActions -> DoAction) [SpawnRaiseDeadMinion] Checked 0 units total
+[ERR] [18:20:14] From "scripts/Behaviors/Effects/SpawnRaiseDeadMinion.as" line 276
+[ERR] [18:20:14] (DoActions -> DoAction) [SpawnRaiseDeadMinion] No existing minion found to replace, spawning new one
+[ERR] [18:20:14] From "scripts/Behaviors/Effects/SpawnRaiseDeadMinion.as" line 323
+[ERR] [18:20:14] (DoActions -> DoAction) [SpawnRaiseDeadMinion] Step 5: Spawning new unit...
+[ERR] [18:20:14] From "scripts/Behaviors/Effects/SpawnRaiseDeadMinion.as" line 326
+[ERR] [18:20:14] (DoActions -> DoAction) [SpawnRaiseDeadMinion] Step 6: Unit produced successfully
+[ERR] [18:20:14] From "scripts/Behaviors/Effects/SpawnRaiseDeadMinion.as" line 338
+[ERR] [18:20:14] (DoActions -> DoAction) [SpawnRaiseDeadMinion] Step 7: Initializing owned unit...
+[ERR] [18:20:14] From "scripts/Behaviors/Effects/SpawnRaiseDeadMinion.as" line 342
+[ERR] [18:20:14] (DoActions -> DoAction) [SpawnRaiseDeadMinion] Step 8: Unit initialized and registered
+[ERR] [18:20:14] From "scripts/Behaviors/Effects/SpawnRaiseDeadMinion.as" line 348
+[ERR] [18:20:14] (DoActions -> DoAction) [SpawnRaiseDeadMinion] Step 9: Preparing to send SpawnedOwnedUnit network message
+[ERR] [18:20:14] From "scripts/Behaviors/Effects/SpawnRaiseDeadMinion.as" line 357
+[ERR] [18:20:14] (DoActions -> DoAction) [SpawnRaiseDeadMinion]   prodHash: 876434454
+[ERR] [18:20:14] From "scripts/Behaviors/Effects/SpawnRaiseDeadMinion.as" line 358
+[ERR] [18:20:14] (DoActions -> DoAction) [SpawnRaiseDeadMinion]   unitId: 832
+[ERR] [18:20:14] From "scripts/Behaviors/Effects/SpawnRaiseDeadMinion.as" line 359
+[ERR] [18:20:14] (DoActions -> DoAction) [SpawnRaiseDeadMinion]   spawnPos: -618.093, 127.809
+[ERR] [18:20:14] From "scripts/Behaviors/Effects/SpawnRaiseDeadMinion.as" line 360
+[ERR] [18:20:14] (DoActions -> DoAction) [SpawnRaiseDeadMinion]   owner: 1749
+[ERR] [18:20:14] From "scripts/Behaviors/Effects/SpawnRaiseDeadMinion.as" line 361
+[ERR] [18:20:14] (DoActions -> DoAction) [SpawnRaiseDeadMinion]   intensity: 1
+[ERR] [18:20:14] From "scripts/Behaviors/Effects/SpawnRaiseDeadMinion.as" line 362
+[ERR] [18:20:14] (DoActions -> DoAction) [SpawnRaiseDeadMinion]   weaponInfo: 478207370
+[ERR] [18:20:14] From "scripts/Behaviors/Effects/SpawnRaiseDeadMinion.as" line 363
+[ERR] [18:20:14] (DoActions -> DoAction) [SpawnRaiseDeadMinion] Step 9: Sent SpawnedOwnedUnit network message to all clients
+[ERR] [18:20:14] From "scripts/Behaviors/Effects/SpawnRaiseDeadMinion.as" line 366
+[ERR] [18:20:14] (DoActions -> DoAction) [SpawnRaiseDeadMinion] Step 10: Checking summons array after registration
+[ERR] [18:20:14] From "scripts/Behaviors/Effects/SpawnRaiseDeadMinion.as" line 372
+[ERR] [18:20:14] (DoActions -> DoAction) [SpawnRaiseDeadMinion]   Total groups: 2
+[ERR] [18:20:14] From "scripts/Behaviors/Effects/SpawnRaiseDeadMinion.as" line 373
+[ERR] [18:20:14] (DoActions -> DoAction) [SpawnRaiseDeadMinion]   Group 0: 1 units, cap: 1 (not matching)
+[ERR] [18:20:14] From "scripts/Behaviors/Effects/SpawnRaiseDeadMinion.as" line 390
+[ERR] [18:20:14] (DoActions -> DoAction) [SpawnRaiseDeadMinion]   Group 1 (matching prod):
+[ERR] [18:20:14] From "scripts/Behaviors/Effects/SpawnRaiseDeadMinion.as" line 378
+[ERR] [18:20:14] (DoActions -> DoAction) [SpawnRaiseDeadMinion]     Units: 1
+[ERR] [18:20:14] From "scripts/Behaviors/Effects/SpawnRaiseDeadMinion.as" line 379
+[ERR] [18:20:14] (DoActions -> DoAction) [SpawnRaiseDeadMinion]     Cap before: 1
+[ERR] [18:20:14] From "scripts/Behaviors/Effects/SpawnRaiseDeadMinion.as" line 380
+[ERR] [18:20:14] (DoActions -> DoAction) [SpawnRaiseDeadMinion]     Cap after: 1
+[ERR] [18:20:14] From "scripts/Behaviors/Effects/SpawnRaiseDeadMinion.as" line 385
+[ERR] [18:20:14] (DoActions -> DoAction) [SpawnRaiseDeadMinion] Step 11: Final summons state:
+[ERR] [18:20:14] From "scripts/Behaviors/Effects/SpawnRaiseDeadMinion.as" line 410
+[ERR] [18:20:14] (DoActions -> DoAction) [SpawnRaiseDeadMinion]   Group 0: 1 units, cap: 1
+[ERR] [18:20:14] From "scripts/Behaviors/Effects/SpawnRaiseDeadMinion.as" line 413
+[ERR] [18:20:14] (DoActions -> DoAction) [SpawnRaiseDeadMinion]   Group 1: 1 units, cap: 1
+[ERR] [18:20:14] From "scripts/Behaviors/Effects/SpawnRaiseDeadMinion.as" line 413
+[ERR] [18:20:14] (DoActions -> DoAction) [SpawnRaiseDeadMinion] SUCCESS: Spawn complete
+[ERR] [18:20:14] From "scripts/Behaviors/Effects/SpawnRaiseDeadMinion.as" line 416
+[ERR] [18:20:14] (DoActions -> DoAction) [SpawnRaiseDeadMinion] ===== DoAction END (Success) =====
+[ERR] [18:20:14] From "scripts/Behaviors/Effects/SpawnRaiseDeadMinion.as" line 417
+[NFO] [18:20:15] [menu] Refreshing keybind strings
+[NFO] [18:20:15] Refreshing keybind strings
+[NFO] [18:20:18] [menu] Refreshing keybind strings
+[NFO] [18:20:18] Refreshing keybind strings
+[ERR] [18:20:19] (DoActions -> DoAction) [SpawnRaiseDeadMinion] ===== DoAction START =====
+[ERR] [18:20:19] From "scripts/Behaviors/Effects/SpawnRaiseDeadMinion.as" line 22
+[ERR] [18:20:19] (DoActions -> DoAction) [SpawnRaiseDeadMinion] IsServer: true
+[ERR] [18:20:19] From "scripts/Behaviors/Effects/SpawnRaiseDeadMinion.as" line 23
+[ERR] [18:20:19] (DoActions -> DoAction) [SpawnRaiseDeadMinion] Owner: players/player.unit
+[ERR] [18:20:19] From "scripts/Behaviors/Effects/SpawnRaiseDeadMinion.as" line 24
+[ERR] [18:20:19] (DoActions -> DoAction) [SpawnRaiseDeadMinion] Pos: -636.057, 91.6344
+[ERR] [18:20:19] From "scripts/Behaviors/Effects/SpawnRaiseDeadMinion.as" line 25
+[ERR] [18:20:19] (DoActions -> DoAction) [SpawnRaiseDeadMinion] Intensity: 1
+[ERR] [18:20:19] From "scripts/Behaviors/Effects/SpawnRaiseDeadMinion.as" line 26
+[ERR] [18:20:19] (DoActions -> DoAction) [SpawnRaiseDeadMinion] Player record valid, WeaponInfo: 478207370
+[ERR] [18:20:19] From "scripts/Behaviors/Effects/SpawnRaiseDeadMinion.as" line 56
+[ERR] [18:20:19] (DoActions -> DoAction) [SpawnRaiseDeadMinion] Current summons state:
+[ERR] [18:20:19] From "scripts/Behaviors/Effects/SpawnRaiseDeadMinion.as" line 60
+[ERR] [18:20:19] (DoActions -> DoAction) [SpawnRaiseDeadMinion]   Total groups: 2
+[ERR] [18:20:19] From "scripts/Behaviors/Effects/SpawnRaiseDeadMinion.as" line 61
+[ERR] [18:20:19] (DoActions -> DoAction) [SpawnRaiseDeadMinion]   Group 0: 1 units, cap: 1
+[ERR] [18:20:19] From "scripts/Behaviors/Effects/SpawnRaiseDeadMinion.as" line 64
+[ERR] [18:20:19] (DoActions -> DoAction) [SpawnRaiseDeadMinion]   Group 1: 1 units, cap: 1
+[ERR] [18:20:19] From "scripts/Behaviors/Effects/SpawnRaiseDeadMinion.as" line 64
+[ERR] [18:20:19] (DoActions -> DoAction) [SpawnRaiseDeadMinion] Stronger Together level: 5
+[ERR] [18:20:19] From "scripts/Behaviors/Effects/SpawnRaiseDeadMinion.as" line 80
+[ERR] [18:20:19] (DoActions -> DoAction) [SpawnRaiseDeadMinion] Selected unit to spawn: players/cryptknight/units/minion_sentry.unit
+[ERR] [18:20:19] From "scripts/Behaviors/Effects/SpawnRaiseDeadMinion.as" line 150
+[ERR] [18:20:19] (DoActions -> DoAction) [SpawnRaiseDeadMinion] Unit selection summary:
+[ERR] [18:20:19] From "scripts/Behaviors/Effects/SpawnRaiseDeadMinion.as" line 151
+[ERR] [18:20:19] (DoActions -> DoAction) [SpawnRaiseDeadMinion]   hasDefender: true
+[ERR] [18:20:19] From "scripts/Behaviors/Effects/SpawnRaiseDeadMinion.as" line 152
+[ERR] [18:20:19] (DoActions -> DoAction) [SpawnRaiseDeadMinion]   hasFootman: true
+[ERR] [18:20:19] From "scripts/Behaviors/Effects/SpawnRaiseDeadMinion.as" line 153
+[ERR] [18:20:19] (DoActions -> DoAction) [SpawnRaiseDeadMinion]   hasSentry: false
+[ERR] [18:20:19] From "scripts/Behaviors/Effects/SpawnRaiseDeadMinion.as" line 154
+[ERR] [18:20:19] (DoActions -> DoAction) [SpawnRaiseDeadMinion]   hasMage: false
+[ERR] [18:20:19] From "scripts/Behaviors/Effects/SpawnRaiseDeadMinion.as" line 155
+[ERR] [18:20:19] (DoActions -> DoAction) [SpawnRaiseDeadMinion]   hasKnight: false
+[ERR] [18:20:19] From "scripts/Behaviors/Effects/SpawnRaiseDeadMinion.as" line 156
+[ERR] [18:20:19] (DoActions -> DoAction) [SpawnRaiseDeadMinion] Producer obtained successfully, hash: 4010338298
+[ERR] [18:20:19] From "scripts/Behaviors/Effects/SpawnRaiseDeadMinion.as" line 167
+[ERR] [18:20:19] (DoActions -> DoAction) [SpawnRaiseDeadMinion] Checking for existing minions of type: players/cryptknight/units/minion_sentry.unit
+[ERR] [18:20:19] From "scripts/Behaviors/Effects/SpawnRaiseDeadMinion.as" line 177
+[ERR] [18:20:19] (DoActions -> DoAction) [SpawnRaiseDeadMinion] Total summon groups: 2
+[ERR] [18:20:19] From "scripts/Behaviors/Effects/SpawnRaiseDeadMinion.as" line 178
+[ERR] [18:20:19] (DoActions -> DoAction) [SpawnRaiseDeadMinion] Checked 0 units total
+[ERR] [18:20:19] From "scripts/Behaviors/Effects/SpawnRaiseDeadMinion.as" line 276
+[ERR] [18:20:19] (DoActions -> DoAction) [SpawnRaiseDeadMinion] No existing minion found to replace, spawning new one
+[ERR] [18:20:19] From "scripts/Behaviors/Effects/SpawnRaiseDeadMinion.as" line 323
+[ERR] [18:20:19] (DoActions -> DoAction) [SpawnRaiseDeadMinion] Step 5: Spawning new unit...
+[ERR] [18:20:19] From "scripts/Behaviors/Effects/SpawnRaiseDeadMinion.as" line 326
+[ERR] [18:20:19] (DoActions -> DoAction) [SpawnRaiseDeadMinion] Step 6: Unit produced successfully
+[ERR] [18:20:19] From "scripts/Behaviors/Effects/SpawnRaiseDeadMinion.as" line 338
+[ERR] [18:20:19] (DoActions -> DoAction) [SpawnRaiseDeadMinion] Step 7: Initializing owned unit...
+[ERR] [18:20:19] From "scripts/Behaviors/Effects/SpawnRaiseDeadMinion.as" line 342
+[ERR] [18:20:19] (DoActions -> DoAction) [SpawnRaiseDeadMinion] Step 8: Unit initialized and registered
+[ERR] [18:20:19] From "scripts/Behaviors/Effects/SpawnRaiseDeadMinion.as" line 348
+[ERR] [18:20:19] (DoActions -> DoAction) [SpawnRaiseDeadMinion] Step 9: Preparing to send SpawnedOwnedUnit network message
+[ERR] [18:20:19] From "scripts/Behaviors/Effects/SpawnRaiseDeadMinion.as" line 357
+[ERR] [18:20:19] (DoActions -> DoAction) [SpawnRaiseDeadMinion]   prodHash: 4010338298
+[ERR] [18:20:19] From "scripts/Behaviors/Effects/SpawnRaiseDeadMinion.as" line 358
+[ERR] [18:20:19] (DoActions -> DoAction) [SpawnRaiseDeadMinion]   unitId: 836
+[ERR] [18:20:19] From "scripts/Behaviors/Effects/SpawnRaiseDeadMinion.as" line 359
+[ERR] [18:20:19] (DoActions -> DoAction) [SpawnRaiseDeadMinion]   spawnPos: -629.315, 131.596
+[ERR] [18:20:19] From "scripts/Behaviors/Effects/SpawnRaiseDeadMinion.as" line 360
+[ERR] [18:20:19] (DoActions -> DoAction) [SpawnRaiseDeadMinion]   owner: 1749
+[ERR] [18:20:19] From "scripts/Behaviors/Effects/SpawnRaiseDeadMinion.as" line 361
+[ERR] [18:20:19] (DoActions -> DoAction) [SpawnRaiseDeadMinion]   intensity: 1
+[ERR] [18:20:19] From "scripts/Behaviors/Effects/SpawnRaiseDeadMinion.as" line 362
+[ERR] [18:20:19] (DoActions -> DoAction) [SpawnRaiseDeadMinion]   weaponInfo: 478207370
+[ERR] [18:20:19] From "scripts/Behaviors/Effects/SpawnRaiseDeadMinion.as" line 363
+[ERR] [18:20:19] (DoActions -> DoAction) [SpawnRaiseDeadMinion] Step 9: Sent SpawnedOwnedUnit network message to all clients
+[ERR] [18:20:19] From "scripts/Behaviors/Effects/SpawnRaiseDeadMinion.as" line 366
+[ERR] [18:20:19] (DoActions -> DoAction) [SpawnRaiseDeadMinion] Step 10: Checking summons array after registration
+[ERR] [18:20:19] From "scripts/Behaviors/Effects/SpawnRaiseDeadMinion.as" line 372
+[ERR] [18:20:19] (DoActions -> DoAction) [SpawnRaiseDeadMinion]   Total groups: 3
+[ERR] [18:20:19] From "scripts/Behaviors/Effects/SpawnRaiseDeadMinion.as" line 373
+[ERR] [18:20:19] (DoActions -> DoAction) [SpawnRaiseDeadMinion]   Group 0: 1 units, cap: 1 (not matching)
+[ERR] [18:20:19] From "scripts/Behaviors/Effects/SpawnRaiseDeadMinion.as" line 390
+[ERR] [18:20:19] (DoActions -> DoAction) [SpawnRaiseDeadMinion]   Group 1: 1 units, cap: 1 (not matching)
+[ERR] [18:20:19] From "scripts/Behaviors/Effects/SpawnRaiseDeadMinion.as" line 390
+[ERR] [18:20:19] (DoActions -> DoAction) [SpawnRaiseDeadMinion]   Group 2 (matching prod):
+[ERR] [18:20:19] From "scripts/Behaviors/Effects/SpawnRaiseDeadMinion.as" line 378
+[ERR] [18:20:19] (DoActions -> DoAction) [SpawnRaiseDeadMinion]     Units: 1
+[ERR] [18:20:19] From "scripts/Behaviors/Effects/SpawnRaiseDeadMinion.as" line 379
+[ERR] [18:20:19] (DoActions -> DoAction) [SpawnRaiseDeadMinion]     Cap before: 1
+[ERR] [18:20:19] From "scripts/Behaviors/Effects/SpawnRaiseDeadMinion.as" line 380
+[ERR] [18:20:19] (DoActions -> DoAction) [SpawnRaiseDeadMinion]     Cap after: 1
+[ERR] [18:20:19] From "scripts/Behaviors/Effects/SpawnRaiseDeadMinion.as" line 385
+[ERR] [18:20:19] (DoActions -> DoAction) [SpawnRaiseDeadMinion] Step 11: Final summons state:
+[ERR] [18:20:19] From "scripts/Behaviors/Effects/SpawnRaiseDeadMinion.as" line 410
+[ERR] [18:20:19] (DoActions -> DoAction) [SpawnRaiseDeadMinion]   Group 0: 1 units, cap: 1
+[ERR] [18:20:19] From "scripts/Behaviors/Effects/SpawnRaiseDeadMinion.as" line 413
+[ERR] [18:20:19] (DoActions -> DoAction) [SpawnRaiseDeadMinion]   Group 1: 1 units, cap: 1
+[ERR] [18:20:19] From "scripts/Behaviors/Effects/SpawnRaiseDeadMinion.as" line 413
+[ERR] [18:20:19] (DoActions -> DoAction) [SpawnRaiseDeadMinion]   Group 2: 1 units, cap: 1
+[ERR] [18:20:19] From "scripts/Behaviors/Effects/SpawnRaiseDeadMinion.as" line 413
+[ERR] [18:20:19] (DoActions -> DoAction) [SpawnRaiseDeadMinion] SUCCESS: Spawn complete
+[ERR] [18:20:19] From "scripts/Behaviors/Effects/SpawnRaiseDeadMinion.as" line 416
+[ERR] [18:20:19] (DoActions -> DoAction) [SpawnRaiseDeadMinion] ===== DoAction END (Success) =====
+[ERR] [18:20:19] From "scripts/Behaviors/Effects/SpawnRaiseDeadMinion.as" line 417
+[ERR] [18:20:24] (DoActions -> DoAction) [SpawnRaiseDeadMinion] ===== DoAction START =====
+[ERR] [18:20:24] From "scripts/Behaviors/Effects/SpawnRaiseDeadMinion.as" line 22
+[ERR] [18:20:24] (DoActions -> DoAction) [SpawnRaiseDeadMinion] IsServer: true
+[ERR] [18:20:24] From "scripts/Behaviors/Effects/SpawnRaiseDeadMinion.as" line 23
+[ERR] [18:20:24] (DoActions -> DoAction) [SpawnRaiseDeadMinion] Owner: players/player.unit
+[ERR] [18:20:24] From "scripts/Behaviors/Effects/SpawnRaiseDeadMinion.as" line 24
+[ERR] [18:20:24] (DoActions -> DoAction) [SpawnRaiseDeadMinion] Pos: -646.467, 110.256
+[ERR] [18:20:24] From "scripts/Behaviors/Effects/SpawnRaiseDeadMinion.as" line 25
+[ERR] [18:20:24] (DoActions -> DoAction) [SpawnRaiseDeadMinion] Intensity: 1
+[ERR] [18:20:24] From "scripts/Behaviors/Effects/SpawnRaiseDeadMinion.as" line 26
+[ERR] [18:20:24] (DoActions -> DoAction) [SpawnRaiseDeadMinion] Player record valid, WeaponInfo: 478207370
+[ERR] [18:20:24] From "scripts/Behaviors/Effects/SpawnRaiseDeadMinion.as" line 56
+[ERR] [18:20:24] (DoActions -> DoAction) [SpawnRaiseDeadMinion] Current summons state:
+[ERR] [18:20:24] From "scripts/Behaviors/Effects/SpawnRaiseDeadMinion.as" line 60
+[ERR] [18:20:24] (DoActions -> DoAction) [SpawnRaiseDeadMinion]   Total groups: 3
+[ERR] [18:20:24] From "scripts/Behaviors/Effects/SpawnRaiseDeadMinion.as" line 61
+[ERR] [18:20:24] (DoActions -> DoAction) [SpawnRaiseDeadMinion]   Group 0: 1 units, cap: 1
+[ERR] [18:20:24] From "scripts/Behaviors/Effects/SpawnRaiseDeadMinion.as" line 64
+[ERR] [18:20:24] (DoActions -> DoAction) [SpawnRaiseDeadMinion]   Group 1: 1 units, cap: 1
+[ERR] [18:20:24] From "scripts/Behaviors/Effects/SpawnRaiseDeadMinion.as" line 64
+[ERR] [18:20:24] (DoActions -> DoAction) [SpawnRaiseDeadMinion]   Group 2: 1 units, cap: 1
+[ERR] [18:20:24] From "scripts/Behaviors/Effects/SpawnRaiseDeadMinion.as" line 64
+[ERR] [18:20:24] (DoActions -> DoAction) [SpawnRaiseDeadMinion] Stronger Together level: 5
+[ERR] [18:20:24] From "scripts/Behaviors/Effects/SpawnRaiseDeadMinion.as" line 80
+[ERR] [18:20:24] (DoActions -> DoAction) [SpawnRaiseDeadMinion] Selected unit to spawn: players/cryptknight/units/minion_mage.unit
+[ERR] [18:20:24] From "scripts/Behaviors/Effects/SpawnRaiseDeadMinion.as" line 150
+[ERR] [18:20:24] (DoActions -> DoAction) [SpawnRaiseDeadMinion] Unit selection summary:
+[ERR] [18:20:24] From "scripts/Behaviors/Effects/SpawnRaiseDeadMinion.as" line 151
+[ERR] [18:20:24] (DoActions -> DoAction) [SpawnRaiseDeadMinion]   hasDefender: true
+[ERR] [18:20:24] From "scripts/Behaviors/Effects/SpawnRaiseDeadMinion.as" line 152
+[ERR] [18:20:24] (DoActions -> DoAction) [SpawnRaiseDeadMinion]   hasFootman: true
+[ERR] [18:20:24] From "scripts/Behaviors/Effects/SpawnRaiseDeadMinion.as" line 153
+[ERR] [18:20:24] (DoActions -> DoAction) [SpawnRaiseDeadMinion]   hasSentry: true
+[ERR] [18:20:24] From "scripts/Behaviors/Effects/SpawnRaiseDeadMinion.as" line 154
+[ERR] [18:20:24] (DoActions -> DoAction) [SpawnRaiseDeadMinion]   hasMage: false
+[ERR] [18:20:24] From "scripts/Behaviors/Effects/SpawnRaiseDeadMinion.as" line 155
+[ERR] [18:20:24] (DoActions -> DoAction) [SpawnRaiseDeadMinion]   hasKnight: false
+[ERR] [18:20:24] From "scripts/Behaviors/Effects/SpawnRaiseDeadMinion.as" line 156
+[ERR] [18:20:24] (DoActions -> DoAction) [SpawnRaiseDeadMinion] Producer obtained successfully, hash: 1757850066
+[ERR] [18:20:24] From "scripts/Behaviors/Effects/SpawnRaiseDeadMinion.as" line 167
+[ERR] [18:20:24] (DoActions -> DoAction) [SpawnRaiseDeadMinion] Checking for existing minions of type: players/cryptknight/units/minion_mage.unit
+[ERR] [18:20:24] From "scripts/Behaviors/Effects/SpawnRaiseDeadMinion.as" line 177
+[ERR] [18:20:24] (DoActions -> DoAction) [SpawnRaiseDeadMinion] Total summon groups: 3
+[ERR] [18:20:24] From "scripts/Behaviors/Effects/SpawnRaiseDeadMinion.as" line 178
+[ERR] [18:20:24] (DoActions -> DoAction) [SpawnRaiseDeadMinion] Checked 0 units total
+[ERR] [18:20:24] From "scripts/Behaviors/Effects/SpawnRaiseDeadMinion.as" line 276
+[ERR] [18:20:24] (DoActions -> DoAction) [SpawnRaiseDeadMinion] No existing minion found to replace, spawning new one
+[ERR] [18:20:24] From "scripts/Behaviors/Effects/SpawnRaiseDeadMinion.as" line 323
+[ERR] [18:20:24] (DoActions -> DoAction) [SpawnRaiseDeadMinion] Step 5: Spawning new unit...
+[ERR] [18:20:24] From "scripts/Behaviors/Effects/SpawnRaiseDeadMinion.as" line 326
+[ERR] [18:20:24] (DoActions -> DoAction) [SpawnRaiseDeadMinion] Step 6: Unit produced successfully
+[ERR] [18:20:24] From "scripts/Behaviors/Effects/SpawnRaiseDeadMinion.as" line 338
+[ERR] [18:20:24] (DoActions -> DoAction) [SpawnRaiseDeadMinion] Step 7: Initializing owned unit...
+[ERR] [18:20:24] From "scripts/Behaviors/Effects/SpawnRaiseDeadMinion.as" line 342
+[ERR] [18:20:24] (DoActions -> DoAction) [SpawnRaiseDeadMinion] Step 8: Unit initialized and registered
+[ERR] [18:20:24] From "scripts/Behaviors/Effects/SpawnRaiseDeadMinion.as" line 348
+[ERR] [18:20:24] (DoActions -> DoAction) [SpawnRaiseDeadMinion] Step 9: Preparing to send SpawnedOwnedUnit network message
+[ERR] [18:20:24] From "scripts/Behaviors/Effects/SpawnRaiseDeadMinion.as" line 357
+[ERR] [18:20:24] (DoActions -> DoAction) [SpawnRaiseDeadMinion]   prodHash: 1757850066
+[ERR] [18:20:24] From "scripts/Behaviors/Effects/SpawnRaiseDeadMinion.as" line 358
+[ERR] [18:20:24] (DoActions -> DoAction) [SpawnRaiseDeadMinion]   unitId: 851
+[ERR] [18:20:24] From "scripts/Behaviors/Effects/SpawnRaiseDeadMinion.as" line 359
+[ERR] [18:20:24] (DoActions -> DoAction) [SpawnRaiseDeadMinion]   spawnPos: -638.18, 150.121
+[ERR] [18:20:24] From "scripts/Behaviors/Effects/SpawnRaiseDeadMinion.as" line 360
+[ERR] [18:20:24] (DoActions -> DoAction) [SpawnRaiseDeadMinion]   owner: 1749
+[ERR] [18:20:24] From "scripts/Behaviors/Effects/SpawnRaiseDeadMinion.as" line 361
+[ERR] [18:20:24] (DoActions -> DoAction) [SpawnRaiseDeadMinion]   intensity: 1
+[ERR] [18:20:24] From "scripts/Behaviors/Effects/SpawnRaiseDeadMinion.as" line 362
+[ERR] [18:20:24] (DoActions -> DoAction) [SpawnRaiseDeadMinion]   weaponInfo: 478207370
+[ERR] [18:20:24] From "scripts/Behaviors/Effects/SpawnRaiseDeadMinion.as" line 363
+[ERR] [18:20:24] (DoActions -> DoAction) [SpawnRaiseDeadMinion] Step 9: Sent SpawnedOwnedUnit network message to all clients
+[ERR] [18:20:24] From "scripts/Behaviors/Effects/SpawnRaiseDeadMinion.as" line 366
+[ERR] [18:20:24] (DoActions -> DoAction) [SpawnRaiseDeadMinion] Step 10: Checking summons array after registration
+[ERR] [18:20:24] From "scripts/Behaviors/Effects/SpawnRaiseDeadMinion.as" line 372
+[ERR] [18:20:24] (DoActions -> DoAction) [SpawnRaiseDeadMinion]   Total groups: 4
+[ERR] [18:20:24] From "scripts/Behaviors/Effects/SpawnRaiseDeadMinion.as" line 373
+[ERR] [18:20:24] (DoActions -> DoAction) [SpawnRaiseDeadMinion]   Group 0: 1 units, cap: 1 (not matching)
+[ERR] [18:20:24] From "scripts/Behaviors/Effects/SpawnRaiseDeadMinion.as" line 390
+[ERR] [18:20:24] (DoActions -> DoAction) [SpawnRaiseDeadMinion]   Group 1: 1 units, cap: 1 (not matching)
+[ERR] [18:20:24] From "scripts/Behaviors/Effects/SpawnRaiseDeadMinion.as" line 390
+[ERR] [18:20:24] (DoActions -> DoAction) [SpawnRaiseDeadMinion]   Group 2: 1 units, cap: 1 (not matching)
+[ERR] [18:20:24] From "scripts/Behaviors/Effects/SpawnRaiseDeadMinion.as" line 390
+[ERR] [18:20:24] (DoActions -> DoAction) [SpawnRaiseDeadMinion]   Group 3 (matching prod):
+[ERR] [18:20:24] From "scripts/Behaviors/Effects/SpawnRaiseDeadMinion.as" line 378
+[ERR] [18:20:24] (DoActions -> DoAction) [SpawnRaiseDeadMinion]     Units: 1
+[ERR] [18:20:24] From "scripts/Behaviors/Effects/SpawnRaiseDeadMinion.as" line 379
+[ERR] [18:20:24] (DoActions -> DoAction) [SpawnRaiseDeadMinion]     Cap before: 1
+[ERR] [18:20:24] From "scripts/Behaviors/Effects/SpawnRaiseDeadMinion.as" line 380
+[ERR] [18:20:24] (DoActions -> DoAction) [SpawnRaiseDeadMinion]     Cap after: 1
+[ERR] [18:20:24] From "scripts/Behaviors/Effects/SpawnRaiseDeadMinion.as" line 385
+[ERR] [18:20:24] (DoActions -> DoAction) [SpawnRaiseDeadMinion] Step 11: Final summons state:
+[ERR] [18:20:24] From "scripts/Behaviors/Effects/SpawnRaiseDeadMinion.as" line 410
+[ERR] [18:20:24] (DoActions -> DoAction) [SpawnRaiseDeadMinion]   Group 0: 1 units, cap: 1
+[ERR] [18:20:24] From "scripts/Behaviors/Effects/SpawnRaiseDeadMinion.as" line 413
+[ERR] [18:20:24] (DoActions -> DoAction) [SpawnRaiseDeadMinion]   Group 1: 1 units, cap: 1
+[ERR] [18:20:24] From "scripts/Behaviors/Effects/SpawnRaiseDeadMinion.as" line 413
+[ERR] [18:20:24] (DoActions -> DoAction) [SpawnRaiseDeadMinion]   Group 2: 1 units, cap: 1
+[ERR] [18:20:24] From "scripts/Behaviors/Effects/SpawnRaiseDeadMinion.as" line 413
+[ERR] [18:20:24] (DoActions -> DoAction) [SpawnRaiseDeadMinion]   Group 3: 1 units, cap: 1
+[ERR] [18:20:24] From "scripts/Behaviors/Effects/SpawnRaiseDeadMinion.as" line 413
+[ERR] [18:20:24] (DoActions -> DoAction) [SpawnRaiseDeadMinion] SUCCESS: Spawn complete
+[ERR] [18:20:24] From "scripts/Behaviors/Effects/SpawnRaiseDeadMinion.as" line 416
+[ERR] [18:20:24] (DoActions -> DoAction) [SpawnRaiseDeadMinion] ===== DoAction END (Success) =====
+[ERR] [18:20:24] From "scripts/Behaviors/Effects/SpawnRaiseDeadMinion.as" line 417
+[ERR] [18:20:27] (DoActions -> DoAction) [SpawnRaiseDeadMinion] ===== DoAction START =====
+[ERR] [18:20:27] From "scripts/Behaviors/Effects/SpawnRaiseDeadMinion.as" line 22
+[ERR] [18:20:27] (DoActions -> DoAction) [SpawnRaiseDeadMinion] IsServer: true
+[ERR] [18:20:27] From "scripts/Behaviors/Effects/SpawnRaiseDeadMinion.as" line 23
+[ERR] [18:20:27] (DoActions -> DoAction) [SpawnRaiseDeadMinion] Owner: players/player.unit
+[ERR] [18:20:27] From "scripts/Behaviors/Effects/SpawnRaiseDeadMinion.as" line 24
+[ERR] [18:20:27] (DoActions -> DoAction) [SpawnRaiseDeadMinion] Pos: -646.467, 110.256
+[ERR] [18:20:27] From "scripts/Behaviors/Effects/SpawnRaiseDeadMinion.as" line 25
+[ERR] [18:20:27] (DoActions -> DoAction) [SpawnRaiseDeadMinion] Intensity: 1
+[ERR] [18:20:27] From "scripts/Behaviors/Effects/SpawnRaiseDeadMinion.as" line 26
+[ERR] [18:20:27] (DoActions -> DoAction) [SpawnRaiseDeadMinion] Player record valid, WeaponInfo: 478207370
+[ERR] [18:20:27] From "scripts/Behaviors/Effects/SpawnRaiseDeadMinion.as" line 56
+[ERR] [18:20:27] (DoActions -> DoAction) [SpawnRaiseDeadMinion] Current summons state:
+[ERR] [18:20:27] From "scripts/Behaviors/Effects/SpawnRaiseDeadMinion.as" line 60
+[ERR] [18:20:27] (DoActions -> DoAction) [SpawnRaiseDeadMinion]   Total groups: 4
+[ERR] [18:20:27] From "scripts/Behaviors/Effects/SpawnRaiseDeadMinion.as" line 61
+[ERR] [18:20:27] (DoActions -> DoAction) [SpawnRaiseDeadMinion]   Group 0: 1 units, cap: 1
+[ERR] [18:20:27] From "scripts/Behaviors/Effects/SpawnRaiseDeadMinion.as" line 64
+[ERR] [18:20:27] (DoActions -> DoAction) [SpawnRaiseDeadMinion]   Group 1: 1 units, cap: 1
+[ERR] [18:20:27] From "scripts/Behaviors/Effects/SpawnRaiseDeadMinion.as" line 64
+[ERR] [18:20:27] (DoActions -> DoAction) [SpawnRaiseDeadMinion]   Group 2: 1 units, cap: 1
+[ERR] [18:20:27] From "scripts/Behaviors/Effects/SpawnRaiseDeadMinion.as" line 64
+[ERR] [18:20:27] (DoActions -> DoAction) [SpawnRaiseDeadMinion]   Group 3: 1 units, cap: 1
+[ERR] [18:20:27] From "scripts/Behaviors/Effects/SpawnRaiseDeadMinion.as" line 64
+[ERR] [18:20:27] (DoActions -> DoAction) [SpawnRaiseDeadMinion] Stronger Together level: 5
+[ERR] [18:20:27] From "scripts/Behaviors/Effects/SpawnRaiseDeadMinion.as" line 80
+[ERR] [18:20:27] (DoActions -> DoAction) [SpawnRaiseDeadMinion] Selected unit to spawn: players/cryptknight/units/minion_knight.unit
+[ERR] [18:20:27] From "scripts/Behaviors/Effects/SpawnRaiseDeadMinion.as" line 150
+[ERR] [18:20:27] (DoActions -> DoAction) [SpawnRaiseDeadMinion] Unit selection summary:
+[ERR] [18:20:27] From "scripts/Behaviors/Effects/SpawnRaiseDeadMinion.as" line 151
+[ERR] [18:20:27] (DoActions -> DoAction) [SpawnRaiseDeadMinion]   hasDefender: true
+[ERR] [18:20:27] From "scripts/Behaviors/Effects/SpawnRaiseDeadMinion.as" line 152
+[ERR] [18:20:27] (DoActions -> DoAction) [SpawnRaiseDeadMinion]   hasFootman: true
+[ERR] [18:20:27] From "scripts/Behaviors/Effects/SpawnRaiseDeadMinion.as" line 153
+[ERR] [18:20:27] (DoActions -> DoAction) [SpawnRaiseDeadMinion]   hasSentry: true
+[ERR] [18:20:27] From "scripts/Behaviors/Effects/SpawnRaiseDeadMinion.as" line 154
+[ERR] [18:20:27] (DoActions -> DoAction) [SpawnRaiseDeadMinion]   hasMage: true
+[ERR] [18:20:27] From "scripts/Behaviors/Effects/SpawnRaiseDeadMinion.as" line 155
+[ERR] [18:20:27] (DoActions -> DoAction) [SpawnRaiseDeadMinion]   hasKnight: false
+[ERR] [18:20:27] From "scripts/Behaviors/Effects/SpawnRaiseDeadMinion.as" line 156
+[ERR] [18:20:27] (DoActions -> DoAction) [SpawnRaiseDeadMinion] Producer obtained successfully, hash: 2296268821
+[ERR] [18:20:27] From "scripts/Behaviors/Effects/SpawnRaiseDeadMinion.as" line 167
+[ERR] [18:20:27] (DoActions -> DoAction) [SpawnRaiseDeadMinion] Checking for existing minions of type: players/cryptknight/units/minion_knight.unit
+[ERR] [18:20:27] From "scripts/Behaviors/Effects/SpawnRaiseDeadMinion.as" line 177
+[ERR] [18:20:27] (DoActions -> DoAction) [SpawnRaiseDeadMinion] Total summon groups: 4
+[ERR] [18:20:27] From "scripts/Behaviors/Effects/SpawnRaiseDeadMinion.as" line 178
+[ERR] [18:20:27] (DoActions -> DoAction) [SpawnRaiseDeadMinion] Checked 0 units total
+[ERR] [18:20:27] From "scripts/Behaviors/Effects/SpawnRaiseDeadMinion.as" line 276
+[ERR] [18:20:27] (DoActions -> DoAction) [SpawnRaiseDeadMinion] No existing minion found to replace, spawning new one
+[ERR] [18:20:27] From "scripts/Behaviors/Effects/SpawnRaiseDeadMinion.as" line 323
+[ERR] [18:20:27] (DoActions -> DoAction) [SpawnRaiseDeadMinion] Step 5: Spawning new unit...
+[ERR] [18:20:27] From "scripts/Behaviors/Effects/SpawnRaiseDeadMinion.as" line 326
+[ERR] [18:20:27] (DoActions -> DoAction) [SpawnRaiseDeadMinion] Step 6: Unit produced successfully
+[ERR] [18:20:27] From "scripts/Behaviors/Effects/SpawnRaiseDeadMinion.as" line 338
+[ERR] [18:20:27] (DoActions -> DoAction) [SpawnRaiseDeadMinion] Step 7: Initializing owned unit...
+[ERR] [18:20:27] From "scripts/Behaviors/Effects/SpawnRaiseDeadMinion.as" line 342
+[ERR] [18:20:27] (DoActions -> DoAction) [SpawnRaiseDeadMinion] Step 8: Unit initialized and registered
+[ERR] [18:20:27] From "scripts/Behaviors/Effects/SpawnRaiseDeadMinion.as" line 348
+[ERR] [18:20:27] (DoActions -> DoAction) [SpawnRaiseDeadMinion] Step 9: Preparing to send SpawnedOwnedUnit network message
+[ERR] [18:20:27] From "scripts/Behaviors/Effects/SpawnRaiseDeadMinion.as" line 357
+[ERR] [18:20:27] (DoActions -> DoAction) [SpawnRaiseDeadMinion]   prodHash: 2296268821
+[ERR] [18:20:27] From "scripts/Behaviors/Effects/SpawnRaiseDeadMinion.as" line 358
+[ERR] [18:20:27] (DoActions -> DoAction) [SpawnRaiseDeadMinion]   unitId: 854
+[ERR] [18:20:27] From "scripts/Behaviors/Effects/SpawnRaiseDeadMinion.as" line 359
+[ERR] [18:20:27] (DoActions -> DoAction) [SpawnRaiseDeadMinion]   spawnPos: -648.025, 149.715
+[ERR] [18:20:27] From "scripts/Behaviors/Effects/SpawnRaiseDeadMinion.as" line 360
+[ERR] [18:20:27] (DoActions -> DoAction) [SpawnRaiseDeadMinion]   owner: 1749
+[ERR] [18:20:27] From "scripts/Behaviors/Effects/SpawnRaiseDeadMinion.as" line 361
+[ERR] [18:20:27] (DoActions -> DoAction) [SpawnRaiseDeadMinion]   intensity: 1
+[ERR] [18:20:27] From "scripts/Behaviors/Effects/SpawnRaiseDeadMinion.as" line 362
+[ERR] [18:20:27] (DoActions -> DoAction) [SpawnRaiseDeadMinion]   weaponInfo: 478207370
+[ERR] [18:20:27] From "scripts/Behaviors/Effects/SpawnRaiseDeadMinion.as" line 363
+[ERR] [18:20:27] (DoActions -> DoAction) [SpawnRaiseDeadMinion] Step 9: Sent SpawnedOwnedUnit network message to all clients
+[ERR] [18:20:27] From "scripts/Behaviors/Effects/SpawnRaiseDeadMinion.as" line 366
+[ERR] [18:20:27] (DoActions -> DoAction) [SpawnRaiseDeadMinion] Step 10: Checking summons array after registration
+[ERR] [18:20:27] From "scripts/Behaviors/Effects/SpawnRaiseDeadMinion.as" line 372
+[ERR] [18:20:27] (DoActions -> DoAction) [SpawnRaiseDeadMinion]   Total groups: 5
+[ERR] [18:20:27] From "scripts/Behaviors/Effects/SpawnRaiseDeadMinion.as" line 373
+[ERR] [18:20:27] (DoActions -> DoAction) [SpawnRaiseDeadMinion]   Group 0: 1 units, cap: 1 (not matching)
+[ERR] [18:20:27] From "scripts/Behaviors/Effects/SpawnRaiseDeadMinion.as" line 390
+[ERR] [18:20:27] (DoActions -> DoAction) [SpawnRaiseDeadMinion]   Group 1: 1 units, cap: 1 (not matching)
+[ERR] [18:20:27] From "scripts/Behaviors/Effects/SpawnRaiseDeadMinion.as" line 390
+[ERR] [18:20:27] (DoActions -> DoAction) [SpawnRaiseDeadMinion]   Group 2: 1 units, cap: 1 (not matching)
+[ERR] [18:20:27] From "scripts/Behaviors/Effects/SpawnRaiseDeadMinion.as" line 390
+[ERR] [18:20:27] (DoActions -> DoAction) [SpawnRaiseDeadMinion]   Group 3: 1 units, cap: 1 (not matching)
+[ERR] [18:20:27] From "scripts/Behaviors/Effects/SpawnRaiseDeadMinion.as" line 390
+[ERR] [18:20:27] (DoActions -> DoAction) [SpawnRaiseDeadMinion]   Group 4 (matching prod):
+[ERR] [18:20:27] From "scripts/Behaviors/Effects/SpawnRaiseDeadMinion.as" line 378
+[ERR] [18:20:27] (DoActions -> DoAction) [SpawnRaiseDeadMinion]     Units: 1
+[ERR] [18:20:27] From "scripts/Behaviors/Effects/SpawnRaiseDeadMinion.as" line 379
+[ERR] [18:20:27] (DoActions -> DoAction) [SpawnRaiseDeadMinion]     Cap before: 1
+[ERR] [18:20:27] From "scripts/Behaviors/Effects/SpawnRaiseDeadMinion.as" line 380
+[ERR] [18:20:27] (DoActions -> DoAction) [SpawnRaiseDeadMinion]     Cap after: 1
+[ERR] [18:20:27] From "scripts/Behaviors/Effects/SpawnRaiseDeadMinion.as" line 385
+[ERR] [18:20:27] (DoActions -> DoAction) [SpawnRaiseDeadMinion] Step 11: Final summons state:
+[ERR] [18:20:27] From "scripts/Behaviors/Effects/SpawnRaiseDeadMinion.as" line 410
+[ERR] [18:20:27] (DoActions -> DoAction) [SpawnRaiseDeadMinion]   Group 0: 1 units, cap: 1
+[ERR] [18:20:27] From "scripts/Behaviors/Effects/SpawnRaiseDeadMinion.as" line 413
+[ERR] [18:20:27] (DoActions -> DoAction) [SpawnRaiseDeadMinion]   Group 1: 1 units, cap: 1
+[ERR] [18:20:27] From "scripts/Behaviors/Effects/SpawnRaiseDeadMinion.as" line 413
+[ERR] [18:20:27] (DoActions -> DoAction) [SpawnRaiseDeadMinion]   Group 2: 1 units, cap: 1
+[ERR] [18:20:27] From "scripts/Behaviors/Effects/SpawnRaiseDeadMinion.as" line 413
+[ERR] [18:20:27] (DoActions -> DoAction) [SpawnRaiseDeadMinion]   Group 3: 1 units, cap: 1
+[ERR] [18:20:27] From "scripts/Behaviors/Effects/SpawnRaiseDeadMinion.as" line 413
+[ERR] [18:20:27] (DoActions -> DoAction) [SpawnRaiseDeadMinion]   Group 4: 1 units, cap: 1
+[ERR] [18:20:27] From "scripts/Behaviors/Effects/SpawnRaiseDeadMinion.as" line 413
+[ERR] [18:20:27] (DoActions -> DoAction) [SpawnRaiseDeadMinion] SUCCESS: Spawn complete
+[ERR] [18:20:27] From "scripts/Behaviors/Effects/SpawnRaiseDeadMinion.as" line 416
+[ERR] [18:20:27] (DoActions -> DoAction) [SpawnRaiseDeadMinion] ===== DoAction END (Success) =====
+[ERR] [18:20:27] From "scripts/Behaviors/Effects/SpawnRaiseDeadMinion.as" line 417
+[NFO] [18:21:06] Saving char 561508434, hp: 1, isDead: false, deadTime: 0, hasActor: true
+[NFO] [18:21:06] Saving hash of 22911 bytes of data
+[NFO] [18:21:06] Saving persistent data for profile 2 to file 'saves/2_3.hps'
+[NFO] [18:21:06] Wrote binary file to drive 'saves/2_3.hps'
