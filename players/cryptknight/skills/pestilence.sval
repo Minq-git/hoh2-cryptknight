@@ -63,7 +63,6 @@
 	<array name="modifier-skills">
 		<dict>
 			<string name="name">Plague Cloud</string>
-			<string name="type-name">.skills.type.orb</string>
 			<string name="description">While in Pestilence form, you apply Poison to enemies you touch.</string>
 
 			<array name="description-params">
@@ -81,9 +80,6 @@
 			<int name="starting-level">0</int>
 
 			<dict name="skill">
-				<int name="skill-cost">0</int>
-				<string name="class">Skills::PassiveSkill</string>
-				
 				<dict name="binds">
 					<int name="poison-stacks">1</int>
 				</dict>
@@ -128,7 +124,6 @@
 
 		<dict>
 			<string name="name">Pestilent Strike</string>
-			<string name="type-name">.skills.type.orb</string>
 			<string name="description">While in Pestilence form, taking damage causes you to deal Strength-based damage to nearby enemies.</string>
 
 			<array name="description-params">
@@ -147,9 +142,6 @@
 			<int name="starting-level">0</int>
 
 			<dict name="skill">
-				<int name="skill-cost">0</int>
-				<string name="class">Skills::PassiveSkill</string>
-				
 				<dict name="binds">
 					<float name="strike-dmg-mul">1.0</float>
 					<int name="strike-radius">48</int>

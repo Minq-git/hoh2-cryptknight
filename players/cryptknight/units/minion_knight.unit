@@ -66,6 +66,38 @@
 			%block SkillMelee
 			%block SkillSmite
 			%block SkillBlock
+			<dict>
+				<string name="class">CompositeActorTriggeredSkill</string>
+				<string name="trigger">OnDeath</string>
+				<int name="range">999</int>
+				<array name="actions">
+					<dict>
+						<string name="class">Explode</string>
+						<int name="radius">64</int>
+						<int name="min-radius">0</int>
+						<float name="dist-scaling">1000</float>
+						<array name="effects">
+							<dict>
+								<string name="intensity-mul-bind">explosion-dmg-mul</string>
+							</dict>
+							<dict>
+								<string name="class">StatBasedDamage</string>
+								<string name="stat">str</string>
+								<float name="amount">1.0</float>
+								<bool name="true-strike">true</bool>
+							</dict>
+							<dict>
+								<string name="class">PlaySound</string>
+								<string name="sound">event:/sfx/player/classes/wizard/barrier/barrier_lose</string>
+							</dict>
+							<dict>
+								<string name="class">SpawnEffect</string>
+								<string name="effect">effects/generic/impacts/gib_blood.effect</string>
+							</dict>
+						</array>
+					</dict>
+				</array>
+			</dict>
 		</array>
 	</behavior>
 

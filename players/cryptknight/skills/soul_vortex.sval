@@ -143,7 +143,6 @@
 	<array name="modifier-skills">
 		<dict>
 			<string name="name">Void Eruption</string>
-			<string name="type-name">.skills.type.orb</string>
 			<string name="description">Soul Vortex projectiles explode on impact, dealing additional Strength-based damage.</string>
 
 			<array name="description-params">
@@ -162,9 +161,6 @@
 			<int name="starting-level">0</int>
 
 			<dict name="skill">
-				<int name="skill-cost">0</int>
-				<string name="class">Skills::PassiveSkill</string>
-				
 				<dict name="binds">
 					<float name="explosion-dmg-mul">0.5</float>
 					<int name="explosion-radius">32</int>
@@ -224,7 +220,6 @@
 
 		<dict>
 			<string name="name">Soul Siphon</string>
-			<string name="type-name">.skills.type.orb</string>
 			<string name="description">Soul Vortex deals damage, restoring a portion of your maximum Mana.</string>
 
 			<array name="description-params">
@@ -242,9 +237,6 @@
 			<int name="starting-level">0</int>
 
 			<dict name="skill">
-				<int name="skill-cost">0</int>
-				<string name="class">Skills::PassiveSkill</string>
-				
 				<dict name="binds">
 					<float name="mana-restore-amount">0.1</float>
 				</dict>

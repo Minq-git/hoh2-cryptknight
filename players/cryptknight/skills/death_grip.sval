@@ -94,7 +94,6 @@
 	<array name="modifier-skills">
 		<dict>
 			<string name="name">Contagious Grasp</string>
-			<string name="type-name">.skills.type.orb</string>
 			<string name="description">Death Grip applies Vulnerability to enemies it hits.</string>
 
 			<array name="description-params">
@@ -112,9 +111,6 @@
 			<int name="starting-level">0</int>
 
 			<dict name="skill">
-				<int name="skill-cost">0</int>
-				<string name="class">Skills::PassiveSkill</string>
-				
 				<dict name="binds">
 					<string name="vulnerability-buff">tweak/buffs/status_effects.sval:vulnerability</string>
 				</dict>
@@ -155,7 +151,6 @@
 
 		<dict>
 			<string name="name">Grasping Chains</string>
-			<string name="type-name">.skills.type.orb</string>
 			<string name="description">Death Grip deals additional Physical damage to enemies it hits.</string>
 
 			<array name="description-params">
@@ -173,9 +168,6 @@
 			<int name="starting-level">0</int>
 
 			<dict name="skill">
-				<int name="skill-cost">0</int>
-				<string name="class">Skills::PassiveSkill</string>
-				
 				<dict name="binds">
 					<float name="dmg-mul">0.25</float>
 				</dict>
@@ -217,7 +209,6 @@
 
 		<dict>
 			<string name="name">Soul Rend</string>
-			<string name="type-name">.skills.type.orb</string>
 			<string name="description">Death Grip chains have a chance to inflict Weakness on enemies.</string>
 
 			<array name="description-params">
@@ -235,9 +226,6 @@
 			<int name="starting-level">0</int>
 
 			<dict name="skill">
-				<int name="skill-cost">0</int>
-				<string name="class">Skills::PassiveSkill</string>
-				
 				<dict name="binds">
 					<float name="weakness-chance">0.25</float>
 				</dict>
