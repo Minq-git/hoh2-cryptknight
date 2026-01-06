@@ -24,10 +24,10 @@
 	<string name="pestilence.description">Transformez-vous en un nuage de peste à mouvement rapide.</string>
 	
 	<string name="sickly.name">Maladif</string>
-	<string name="sickly.description">Les attaques appliquent une maladie cumulable sur la cible. S'adapte à la Force et au Niveau de Compétence.</string>
+	<string name="sickly.description">Les attaques de mêlée appliquent Saignement et Vulnérabilité aux ennemis. S'adapte à la Force et au Niveau de Compétence.</string>
 	
-	<string name="void_funnel.name">Cône du Vide</string>
-	<string name="void_funnel.description">Canalise un cône frontal de magie du vide. Accorde la Malédiction des Ombres lors du lancement. La durée augmente avec le niveau de compétence.</string>
+	<string name="soul_vortex.name">Vortex d'Âmes</string>
+	<string name="soul_vortex.description">Canalise un cône frontal de magie du vide. Accorde la Malédiction des Ombres lors du lancement. La durée augmente avec le niveau de compétence.</string>
 	
 	<string name="cursed.name">Maudit</string>
 	<string name="cursed.description">Gagnez de la Force et de la Vitalité basées sur vos charges de Malédiction des Ombres.</string>
@@ -56,8 +56,68 @@
 	<string name="bone_shield.reduction">Réduction des Dégâts</string>
 	<string name="bone_shield.stacks">Charges Maximales</string>
 	<string name="sickly.damage">Dégâts</string>
-	<string name="void_funnel.damage">Dégâts</string>
-	<string name="void_funnel.duration">Durée</string>
+	<string name="soul_vortex.damage">Dégâts</string>
+	<string name="soul_vortex.duration">Durée</string>
 	<string name="cursed.stat-gain">Multiplicateur</string>
 	<string name="unwavering_oath.duration">Durée</string>
+
+	<string name="bone_armor.name">Armure d'Os</string>
+	<string name="bone_armor.description">Les charges de Bouclier d'Os accordent une Armure supplémentaire.</string>
+	<string name="bone_armor.armor">Armure</string>
+	
+	<string name="serrated_marrow.name">Moelle Dentelée</string>
+	<string name="serrated_marrow.description">Les charges de Bouclier d'Os infligent des dégâts d'Épines aux attaquants.</string>
+	<string name="serrated_marrow.thorns">Dégâts d'Épines</string>
+	
+	<string name="thick_skulls.name">Crânes Épais</string>
+	<string name="thick_skulls.description">Les charges de Bouclier d'Os sont plus résistantes et nécessitent des coups supplémentaires pour se briser.</string>
+	<string name="thick_skulls.hits">Coups par Charge</string>
+	
+	<string name="contagious_grasp.name">Étreinte Contagieuse</string>
+	<string name="contagious_grasp.description">Étreinte Mortelle applique la Vulnérabilité aux ennemis touchés.</string>
+	<string name="contagious_grasp.vulnerability">Vulnérabilité</string>
+	
+	<string name="grasping_chains.name">Chaînes Agrippantes</string>
+	<string name="grasping_chains.description">Étreinte Mortelle inflige des dégâts physiques supplémentaires aux ennemis touchés.</string>
+	
+	<string name="soul_rend.name">Déchirure d'Âme</string>
+	<string name="soul_rend.description">Les chaînes d'Étreinte Mortelle ont une chance d'infliger Faiblesse aux ennemis.</string>
+	<string name="soul_rend.weakness">Chance de Faiblesse</string>
+	
+	<string name="volatile_remains.name">Restes Volatils</string>
+	<string name="volatile_remains.description">Lorsque vos serviteurs meurent, ils explosent en infligeant des dégâts basés sur votre Force.</string>
+	<string name="volatile_remains.radius">Rayon</string>
+	
+	<string name="undead_legion.name">Légion Morte-Vivante</string>
+	<string name="undead_legion.description">Chaque serviteur actif réduit les dégâts que vous subissez.</string>
+	<string name="undead_legion.reduction">Réduction des Dégâts par Serviteur</string>
+	
+	<string name="minion_mastery.name">Maîtrise des Serviteurs</string>
+	<string name="minion_mastery.description">Vos serviteurs infligent des dégâts accrus et ont une Santé maximale augmentée.</string>
+	<string name="minion_mastery.damage">Dégâts</string>
+	<string name="minion_mastery.health">Santé</string>
+	
+	<string name="plague_cloud.name">Nuage de Peste</string>
+	<string name="plague_cloud.description">Sous forme de Pestilence, vous appliquez du Poison aux ennemis que vous touchez.</string>
+	<string name="plague_cloud.poison">Charges de Poison</string>
+	
+	<string name="pestilent_strike.name">Frappe Pestilentielle</string>
+	<string name="pestilent_strike.description">Sous forme de Pestilence, subir des dégâts vous fait infliger des dégâts basés sur la Force aux ennemis proches.</string>
+	<string name="pestilent_strike.radius">Rayon</string>
+	
+	<string name="void_eruption.name">Éruption du Vide</string>
+	<string name="void_eruption.description">Les projectiles de Vortex d'Âmes explosent à l'impact, infligeant des dégâts supplémentaires basés sur la Force.</string>
+	<string name="void_eruption.radius">Rayon</string>
+	
+	<string name="soul_siphon.name">Siphon d'Âme</string>
+	<string name="soul_siphon.description">Vortex d'Âmes inflige des dégâts, restaurant une partie de votre Mana maximum.</string>
+	<string name="soul_siphon.mana-restore">Restauration de Mana</string>
+	
+	<string name="eternal_undeath.name">Mort-Vivant Éternel</string>
+	<string name="eternal_undeath.description">La durée de Serment Inébranlable est augmentée et vous infligez plus de dégâts pendant la transformation.</string>
+	<string name="eternal_undeath.duration">Durée</string>
+	
+	<string name="zombie_rage.name">Rage Zombie</string>
+	<string name="zombie_rage.description">Pendant la transformation par Serment Inébranlable, tuer des ennemis prolonge la durée de la transformation.</string>
+	<string name="zombie_rage.duration">Durée par Meurtre</string>
 </dict>

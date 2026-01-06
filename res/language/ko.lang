@@ -24,10 +24,10 @@
 	<string name="pestilence.description">빠르게 움직이는 역병 구름으로 변신합니다.</string>
 	
 	<string name="sickly.name">쇠약</string>
-	<string name="sickly.description">공격 시 대상에게 중첩되는 질병을 부여합니다. 힘과 스킬 레벨에 비례하여 위력이 증가합니다.</string>
+	<string name="sickly.description">근접 공격 시 적에게 출혈과 취약성을 부여합니다. 힘과 스킬 레벨에 비례하여 위력이 증가합니다.</string>
 	
-	<string name="void_funnel.name">공허의 숨결</string>
-	<string name="void_funnel.description">전방에 공허 마법의 숨결을 내뿜습니다. 시전 시 그림자 저주를 부여합니다. 지속 시간은 스킬 레벨에 따라 증가합니다.</string>
+	<string name="soul_vortex.name">영혼의 소용돌이</string>
+	<string name="soul_vortex.description">전방에 공허 마법의 숨결을 내뿜습니다. 시전 시 그림자 저주를 부여합니다. 지속 시간은 스킬 레벨에 따라 증가합니다.</string>
 	
 	<string name="cursed.name">저주</string>
 	<string name="cursed.description">그림자 저주 스택에 따라 힘과 활력을 얻습니다.</string>
@@ -56,8 +56,68 @@
 	<string name="bone_shield.reduction">피해 감소</string>
 	<string name="bone_shield.stacks">최대 스택</string>
 	<string name="sickly.damage">피해량</string>
-	<string name="void_funnel.damage">피해량</string>
-	<string name="void_funnel.duration">지속 시간</string>
+	<string name="soul_vortex.damage">피해량</string>
+	<string name="soul_vortex.duration">지속 시간</string>
 	<string name="cursed.stat-gain">배율</string>
 	<string name="unwavering_oath.duration">지속 시간</string>
+
+	<string name="bone_armor.name">뼈 갑옷</string>
+	<string name="bone_armor.description">뼈 방패 스택이 추가 방어력을 부여합니다.</string>
+	<string name="bone_armor.armor">방어력</string>
+	
+	<string name="serrated_marrow.name">톱니 골수</string>
+	<string name="serrated_marrow.description">뼈 방패 스택이 공격자에게 가시 피해를 줍니다.</string>
+	<string name="serrated_marrow.thorns">가시 피해</string>
+	
+	<string name="thick_skulls.name">두꺼운 두개골</string>
+	<string name="thick_skulls.description">뼈 방패 스택이 더 단단해져서 파괴되기 위해 추가 타격이 필요합니다.</string>
+	<string name="thick_skulls.hits">스택 당 타격 수</string>
+	
+	<string name="contagious_grasp.name">전염성 손아귀</string>
+	<string name="contagious_grasp.description">죽음의 손아귀가 적중한 적에게 취약성을 부여합니다.</string>
+	<string name="contagious_grasp.vulnerability">취약성</string>
+	
+	<string name="grasping_chains.name">움켜쥐는 사슬</string>
+	<string name="grasping_chains.description">죽음의 손아귀가 적중한 적에게 추가 물리 피해를 입힙니다.</string>
+	
+	<string name="soul_rend.name">영혼 찢기</string>
+	<string name="soul_rend.description">죽음의 손아귀 사슬이 일정 확률로 적에게 약화를 부여합니다.</string>
+	<string name="soul_rend.weakness">약화 확률</string>
+	
+	<string name="volatile_remains.name">폭발성 유해</string>
+	<string name="volatile_remains.description">하수인이 사망 시 폭발하여 힘에 비례한 피해를 입힙니다.</string>
+	<string name="volatile_remains.radius">반경</string>
+	
+	<string name="undead_legion.name">언데드 군단</string>
+	<string name="undead_legion.description">활성화된 하수인 하나당 받는 피해가 감소합니다.</string>
+	<string name="undead_legion.reduction">하수인 당 피해 감소</string>
+	
+	<string name="minion_mastery.name">하수인 숙련</string>
+	<string name="minion_mastery.description">하수인의 공격력과 최대 체력이 증가합니다.</string>
+	<string name="minion_mastery.damage">피해량</string>
+	<string name="minion_mastery.health">체력</string>
+	
+	<string name="plague_cloud.name">역병 구름</string>
+	<string name="plague_cloud.description">역병 형태일 때 접촉한 적에게 독을 부여합니다.</string>
+	<string name="plague_cloud.poison">독 스택</string>
+	
+	<string name="pestilent_strike.name">역병의 일격</string>
+	<string name="pestilent_strike.description">역병 형태일 때 피해를 입으면 주변 적에게 힘에 비례한 피해를 입힙니다.</string>
+	<string name="pestilent_strike.radius">반경</string>
+	
+	<string name="void_eruption.name">공허의 분출</string>
+	<string name="void_eruption.description">영혼의 소용돌이 투사체가 충돌 시 폭발하여 추가로 힘에 비례한 피해를 입힙니다.</string>
+	<string name="void_eruption.radius">반경</string>
+	
+	<string name="soul_siphon.name">영혼 착취</string>
+	<string name="soul_siphon.description">영혼의 소용돌이가 피해를 입히고 최대 마나의 일부를 회복합니다.</string>
+	<string name="soul_siphon.mana-restore">마나 회복</string>
+	
+	<string name="eternal_undeath.name">영원한 불사</string>
+	<string name="eternal_undeath.description">불굴의 맹세 지속 시간이 증가하고 변신 중 피해량이 증가합니다.</string>
+	<string name="eternal_undeath.duration">지속 시간</string>
+	
+	<string name="zombie_rage.name">좀비의 분노</string>
+	<string name="zombie_rage.description">불굴의 맹세로 변신 중 적을 처치하면 지속 시간이 연장됩니다.</string>
+	<string name="zombie_rage.duration">처치 당 지속 시간</string>
 </dict>

@@ -24,10 +24,10 @@
 	<string name="pestilence.description">Перетворює вас на швидку чумну хмару.</string>
 	
 	<string name="sickly.name">Хвороба</string>
-	<string name="sickly.description">Атаки накладають на ціль хворобу, що накопичується. Масштабується від Сили та Рівня Навички.</string>
+	<string name="sickly.description">Атаки ближнього бою накладають на ворогів Кровотечу та Вразливість. Масштабується від Сили та Рівня Навички.</string>
 	
-	<string name="void_funnel.name">Подих Порожнечі</string>
-	<string name="void_funnel.description">Випускає фронтальний конус магії порожнечі. Надає Прокляття Тіней при застосуванні. Тривалість збільшується з рівнем навички.</string>
+	<string name="soul_vortex.name">Вихор Душ</string>
+	<string name="soul_vortex.description">Випускає фронтальний конус магії порожнечі. Надає Прокляття Тіней при застосуванні. Тривалість збільшується з рівнем навички.</string>
 	
 	<string name="cursed.name">Проклятий</string>
 	<string name="cursed.description">Отримуйте Силу та Живучість залежно від кількості зарядів Прокляття Тіней.</string>
@@ -56,8 +56,68 @@
 	<string name="bone_shield.reduction">Зменшення Шкоди</string>
 	<string name="bone_shield.stacks">Макс. Зарядів</string>
 	<string name="sickly.damage">Шкода</string>
-	<string name="void_funnel.damage">Шкода</string>
-	<string name="void_funnel.duration">Тривалість</string>
+	<string name="soul_vortex.damage">Шкода</string>
+	<string name="soul_vortex.duration">Тривалість</string>
 	<string name="cursed.stat-gain">Множник</string>
 	<string name="unwavering_oath.duration">Тривалість</string>
+
+	<string name="bone_armor.name">Кісткова Броня</string>
+	<string name="bone_armor.description">Заряди Кісткового Щита дають додаткову Броню.</string>
+	<string name="bone_armor.armor">Броня</string>
+	
+	<string name="serrated_marrow.name">Зубчастий Мозок</string>
+	<string name="serrated_marrow.description">Заряди Кісткового Щита завдають шкоди від Шипів нападникам.</string>
+	<string name="serrated_marrow.thorns">Шкода від Шипів</string>
+	
+	<string name="thick_skulls.name">Товсті Черепи</string>
+	<string name="thick_skulls.description">Заряди Кісткового Щита міцніші й вимагають додаткових ударів для руйнування.</string>
+	<string name="thick_skulls.hits">Ударів на Заряд</string>
+	
+	<string name="contagious_grasp.name">Заразна Хватка</string>
+	<string name="contagious_grasp.description">Смертельна Хватка накладає Вразливість на уражених ворогів.</string>
+	<string name="contagious_grasp.vulnerability">Вразливість</string>
+	
+	<string name="grasping_chains.name">Ланцюги Захоплення</string>
+	<string name="grasping_chains.description">Смертельна Хватка завдає додаткової фізичної шкоди ураженим ворогам.</string>
+	
+	<string name="soul_rend.name">Розрив Душі</string>
+	<string name="soul_rend.description">Ланцюги Смертельної Хватки мають шанс накласти Слабкість на ворогів.</string>
+	<string name="soul_rend.weakness">Шанс Слабкості</string>
+	
+	<string name="volatile_remains.name">Нестабільні Рештки</string>
+	<string name="volatile_remains.description">Коли ваші прислужники помирають, вони вибухають, завдаючи шкоди залежно від вашої Сили.</string>
+	<string name="volatile_remains.radius">Радіус</string>
+	
+	<string name="undead_legion.name">Легіон Нежиті</string>
+	<string name="undead_legion.description">Кожен активний прислужник зменшує отриману вами шкоду.</string>
+	<string name="undead_legion.reduction">Зменшення Шкоди за Прислужника</string>
+	
+	<string name="minion_mastery.name">Майстерність Прислужників</string>
+	<string name="minion_mastery.description">Ваші прислужники завдають більше шкоди та мають більше максимального здоров'я.</string>
+	<string name="minion_mastery.damage">Шкода</string>
+	<string name="minion_mastery.health">Здоров'я</string>
+	
+	<string name="plague_cloud.name">Чумна Хмара</string>
+	<string name="plague_cloud.description">У формі Чуми ви накладаєте Отруту на ворогів, яких торкаєтесь.</string>
+	<string name="plague_cloud.poison">Заряди Отрути</string>
+	
+	<string name="pestilent_strike.name">Чумний Удар</string>
+	<string name="pestilent_strike.description">У формі Чуми отримання шкоди змушує вас завдавати шкоди на основі Сили ворогам поблизу.</string>
+	<string name="pestilent_strike.radius">Радіус</string>
+	
+	<string name="void_eruption.name">Виверження Порожнечі</string>
+	<string name="void_eruption.description">Снаряди Вихору Душ вибухають при зіткненні, завдаючи додаткової шкоди на основі Сили.</string>
+	<string name="void_eruption.radius">Радіус</string>
+	
+	<string name="soul_siphon.name">Сифон Душі</string>
+	<string name="soul_siphon.description">Вихор Душ завдає шкоди, відновлюючи частину вашої максимальної Мани.</string>
+	<string name="soul_siphon.mana-restore">Відновлення Мани</string>
+	
+	<string name="eternal_undeath.name">Вічне Нежиття</string>
+	<string name="eternal_undeath.description">Тривалість Непохитної Клятви збільшена, і ви завдаєте більше шкоди під час трансформації.</string>
+	<string name="eternal_undeath.duration">Тривалість</string>
+	
+	<string name="zombie_rage.name">Лють Зомбі</string>
+	<string name="zombie_rage.description">Під час трансформації Непохитною Клятвою вбивство ворогів подовжує тривалість трансформації.</string>
+	<string name="zombie_rage.duration">Тривалість за Вбивство</string>
 </dict>

@@ -24,10 +24,10 @@
 	<string name="pestilence.description">Verwandle dich in eine sich schnell bewegende Pestwolke.</string>
 	
 	<string name="sickly.name">Krankhaft</string>
-	<string name="sickly.description">Angriffe fügen dem Ziel einen stapelnden Krankheitseffekt zu. Skaliert mit Stärke und Fähigkeitslevel.</string>
+	<string name="sickly.description">Nahkampfangriffe fügen Feinden Bluten und Verwundbarkeit zu. Skaliert mit Stärke und Fähigkeitslevel.</string>
 	
-	<string name="void_funnel.name">Leeren-Trichter</string>
-	<string name="void_funnel.description">Kanalisiere einen frontalen Kegel aus Leerenmagie. Gewährt Schattenfluch beim Wirken. Die Dauer erhöht sich mit dem Fähigkeitslevel.</string>
+	<string name="soul_vortex.name">Seelenwirbel</string>
+	<string name="soul_vortex.description">Kanalisiere einen frontalen Kegel aus Leerenmagie. Gewährt Schattenfluch beim Wirken. Die Dauer erhöht sich mit dem Fähigkeitslevel.</string>
 	
 	<string name="cursed.name">Verflucht</string>
 	<string name="cursed.description">Erhalte Stärke und Vitalität basierend auf deinen Schattenfluch-Stapeln.</string>
@@ -56,8 +56,68 @@
 	<string name="bone_shield.reduction">Schadensreduzierung</string>
 	<string name="bone_shield.stacks">Maximale Stapel</string>
 	<string name="sickly.damage">Schaden</string>
-	<string name="void_funnel.damage">Schaden</string>
-	<string name="void_funnel.duration">Dauer</string>
+	<string name="soul_vortex.damage">Schaden</string>
+	<string name="soul_vortex.duration">Dauer</string>
 	<string name="cursed.stat-gain">Multiplikator</string>
 	<string name="unwavering_oath.duration">Dauer</string>
+
+	<string name="bone_armor.name">Knochenrüstung</string>
+	<string name="bone_armor.description">Knochenschild-Stapel gewähren zusätzliche Rüstung.</string>
+	<string name="bone_armor.armor">Rüstung</string>
+	
+	<string name="serrated_marrow.name">Gezacktes Mark</string>
+	<string name="serrated_marrow.description">Knochenschild-Stapel verursachen Dornenschaden an Angreifern.</string>
+	<string name="serrated_marrow.thorns">Dornenschaden</string>
+	
+	<string name="thick_skulls.name">Dicke Schädel</string>
+	<string name="thick_skulls.description">Knochenschild-Stapel sind widerstandsfähiger und benötigen zusätzliche Treffer, um zu brechen.</string>
+	<string name="thick_skulls.hits">Treffer pro Stapel</string>
+	
+	<string name="contagious_grasp.name">Ansteckender Griff</string>
+	<string name="contagious_grasp.description">Todesgriff wendet Verwundbarkeit auf getroffene Feinde an.</string>
+	<string name="contagious_grasp.vulnerability">Verwundbarkeit</string>
+	
+	<string name="grasping_chains.name">Greifende Ketten</string>
+	<string name="grasping_chains.description">Todesgriff verursacht zusätzlichen physischen Schaden an getroffenen Feinden.</string>
+	
+	<string name="soul_rend.name">Seelenriss</string>
+	<string name="soul_rend.description">Ketten des Todesgriffs haben eine Chance, Schwäche auf Feinde anzuwenden.</string>
+	<string name="soul_rend.weakness">Schwäche-Chance</string>
+	
+	<string name="volatile_remains.name">Flüchtige Überreste</string>
+	<string name="volatile_remains.description">Wenn deine Diener sterben, explodieren sie und verursachen Schaden basierend auf deiner Stärke.</string>
+	<string name="volatile_remains.radius">Radius</string>
+	
+	<string name="undead_legion.name">Untote Legion</string>
+	<string name="undead_legion.description">Jeder aktive Diener reduziert den erlittenen Schaden.</string>
+	<string name="undead_legion.reduction">Schadensreduzierung pro Diener</string>
+	
+	<string name="minion_mastery.name">Diener-Meisterschaft</string>
+	<string name="minion_mastery.description">Deine Diener verursachen erhöhten Schaden und haben erhöhtes maximales Leben.</string>
+	<string name="minion_mastery.damage">Schaden</string>
+	<string name="minion_mastery.health">Leben</string>
+	
+	<string name="plague_cloud.name">Pestwolke</string>
+	<string name="plague_cloud.description">Während der Pestilenz-Form wendest du Gift auf berührte Feinde an.</string>
+	<string name="plague_cloud.poison">Giftstapel</string>
+	
+	<string name="pestilent_strike.name">Pestschalg</string>
+	<string name="pestilent_strike.description">Während der Pestilenz-Form verursacht erlittener Schaden stärkebasierten Schaden an nahen Feinden.</string>
+	<string name="pestilent_strike.radius">Radius</string>
+	
+	<string name="void_eruption.name">Leeren-Eruption</string>
+	<string name="void_eruption.description">Seelenwirbel-Projektile explodieren beim Aufprall und verursachen zusätzlichen stärkebasierten Schaden.</string>
+	<string name="void_eruption.radius">Radius</string>
+	
+	<string name="soul_siphon.name">Seelensiphon</string>
+	<string name="soul_siphon.description">Seelenwirbel verursacht Schaden und stellt einen Teil deines maximalen Manas wieder her.</string>
+	<string name="soul_siphon.mana-restore">Mana-Wiederherstellung</string>
+	
+	<string name="eternal_undeath.name">Ewiger Untod</string>
+	<string name="eternal_undeath.description">Die Dauer des Unerschütterlichen Eids ist erhöht und du verursachst während der Verwandlung mehr Schaden.</string>
+	<string name="eternal_undeath.duration">Dauer</string>
+	
+	<string name="zombie_rage.name">Zombie-Wut</string>
+	<string name="zombie_rage.description">Während der Verwandlung durch Unerschütterlicher Eid verlängert das Töten von Feinden die Dauer.</string>
+	<string name="zombie_rage.duration">Dauer pro Tötung</string>
 </dict>

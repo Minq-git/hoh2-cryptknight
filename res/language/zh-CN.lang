@@ -24,10 +24,10 @@
 	<string name="pestilence.description">化身为一团快速移动的瘟疫云。</string>
 	
 	<string name="sickly.name">衰弱</string>
-	<string name="sickly.description">攻击会对目标施加叠加的疾病效果。随力量和技能等级提升。</string>
+	<string name="sickly.description">近战攻击对敌人施加流血和易伤效果。随力量和技能等级提升。</string>
 	
-	<string name="void_funnel.name">虚空吐息</string>
-	<string name="void_funnel.description">向前方引导虚空魔法锥。施放时获得暗影诅咒。持续时间随技能等级增加。</string>
+	<string name="soul_vortex.name">灵魂漩涡</string>
+	<string name="soul_vortex.description">向前方引导虚空魔法锥。施放时获得暗影诅咒。持续时间随技能等级增加。</string>
 	
 	<string name="cursed.name">诅咒</string>
 	<string name="cursed.description">根据你的暗影诅咒层数获得力量和活力。</string>
@@ -56,8 +56,68 @@
 	<string name="bone_shield.reduction">伤害减免</string>
 	<string name="bone_shield.stacks">最大层数</string>
 	<string name="sickly.damage">伤害</string>
-	<string name="void_funnel.damage">伤害</string>
-	<string name="void_funnel.duration">持续时间</string>
+	<string name="soul_vortex.damage">伤害</string>
+	<string name="soul_vortex.duration">持续时间</string>
 	<string name="cursed.stat-gain">倍率</string>
 	<string name="unwavering_oath.duration">持续时间</string>
+
+	<string name="bone_armor.name">白骨护甲</string>
+	<string name="bone_armor.description">骨盾层数提供额外的护甲。</string>
+	<string name="bone_armor.armor">护甲</string>
+	
+	<string name="serrated_marrow.name">锯齿骨髓</string>
+	<string name="serrated_marrow.description">骨盾层数对攻击者造成荆棘伤害。</string>
+	<string name="serrated_marrow.thorns">荆棘伤害</string>
+	
+	<string name="thick_skulls.name">厚重头骨</string>
+	<string name="thick_skulls.description">骨盾层数更加坚固，需要额外的攻击次数才能破坏。</string>
+	<string name="thick_skulls.hits">每层承受次数</string>
+	
+	<string name="contagious_grasp.name">传染之握</string>
+	<string name="contagious_grasp.description">死亡之握对击中的敌人施加易伤效果。</string>
+	<string name="contagious_grasp.vulnerability">易伤</string>
+	
+	<string name="grasping_chains.name">紧缚锁链</string>
+	<string name="grasping_chains.description">死亡之握对击中的敌人造成额外的物理伤害。</string>
+	
+	<string name="soul_rend.name">灵魂撕裂</string>
+	<string name="soul_rend.description">死亡之握的锁链有几率对敌人施加虚弱效果。</string>
+	<string name="soul_rend.weakness">虚弱几率</string>
+	
+	<string name="volatile_remains.name">挥发残骸</string>
+	<string name="volatile_remains.description">当你的仆从死亡时，它们会爆炸，造成基于你力量的伤害。</string>
+	<string name="volatile_remains.radius">半径</string>
+	
+	<string name="undead_legion.name">亡灵军团</string>
+	<string name="undead_legion.description">每个活跃的仆从都会减少你受到的伤害。</string>
+	<string name="undead_legion.reduction">每个仆从伤害减免</string>
+	
+	<string name="minion_mastery.name">仆从精通</string>
+	<string name="minion_mastery.description">你的仆从造成的伤害增加，并且拥有更高的最大生命值。</string>
+	<string name="minion_mastery.damage">伤害</string>
+	<string name="minion_mastery.health">生命值</string>
+	
+	<string name="plague_cloud.name">瘟疫之云</string>
+	<string name="plague_cloud.description">在瘟疫形态下，你触碰到的敌人会受到中毒效果。</string>
+	<string name="plague_cloud.poison">中毒层数</string>
+	
+	<string name="pestilent_strike.name">瘟疫打击</string>
+	<string name="pestilent_strike.description">在瘟疫形态下，受到伤害会使你对附近的敌人造成基于力量的伤害。</string>
+	<string name="pestilent_strike.radius">半径</string>
+	
+	<string name="void_eruption.name">虚空爆发</string>
+	<string name="void_eruption.description">灵魂漩涡的投射物在撞击时爆炸，造成额外的基于力量的伤害。</string>
+	<string name="void_eruption.radius">半径</string>
+	
+	<string name="soul_siphon.name">灵魂虹吸</string>
+	<string name="soul_siphon.description">灵魂漩涡造成伤害时，恢复你最大法力值的一部分。</string>
+	<string name="soul_siphon.mana-restore">法力回复</string>
+	
+	<string name="eternal_undeath.name">永恒不死</string>
+	<string name="eternal_undeath.description">增加不渝誓言的持续时间，并且在变身期间造成的伤害提高。</string>
+	<string name="eternal_undeath.duration">持续时间</string>
+	
+	<string name="zombie_rage.name">僵尸狂怒</string>
+	<string name="zombie_rage.description">在不渝誓言变身期间，杀死敌人会延长变身的持续时间。</string>
+	<string name="zombie_rage.duration">每次击杀延长时间</string>
 </dict>

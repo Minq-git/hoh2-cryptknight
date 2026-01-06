@@ -24,7 +24,7 @@
 	<string name="pestilence.description">Turn into a fast-moving plague cloud.</string>
 	
 	<string name="sickly.name">Sickly</string>
-	<string name="sickly.description">Attacks apply a stacking disease on the target. Scales with Strength and Skill Level.</string>
+	<string name="sickly.description">Melee attacks apply Bleeding and Vulnerability to enemies. Scales with Strength and Skill Level.</string>
 	
 	<string name="soul_vortex.name">Soul Vortex</string>
 	<string name="soul_vortex.description">Channel a frontal cone of void magic. Grants Shadow Curse on cast. Duration increases with skill level.</string>
@@ -60,4 +60,70 @@
 	<string name="soul_vortex.duration">Duration</string>
 	<string name="cursed.stat-gain">Multiplier</string>
 	<string name="unwavering_oath.duration">Duration</string>
+	
+	<!-- Bone Shield Skill Orbs -->
+	<string name="bone_armor.name">Bone Armor</string>
+	<string name="bone_armor.description">Bone Shield stacks grant additional Armor.</string>
+	<string name="bone_armor.armor">Armor</string>
+	
+	<string name="serrated_marrow.name">Serrated Marrow</string>
+	<string name="serrated_marrow.description">Bone Shield stacks deal Thorns damage to attackers.</string>
+	<string name="serrated_marrow.thorns">Thorns Damage</string>
+	
+	<string name="thick_skulls.name">Thick Skulls</string>
+	<string name="thick_skulls.description">Bone Shield stacks are hardier and require additional hits to break.</string>
+	<string name="thick_skulls.hits">Hits per Stack</string>
+	
+	<!-- Death Grip Skill Orbs -->
+	<string name="contagious_grasp.name">Contagious Grasp</string>
+	<string name="contagious_grasp.description">Death Grip applies Vulnerability to enemies it hits.</string>
+	<string name="contagious_grasp.vulnerability">Vulnerability</string>
+	
+	<string name="grasping_chains.name">Grasping Chains</string>
+	<string name="grasping_chains.description">Death Grip deals additional Physical damage to enemies it hits.</string>
+	
+	<string name="soul_rend.name">Soul Rend</string>
+	<string name="soul_rend.description">Death Grip chains have a chance to inflict Weakness on enemies.</string>
+	<string name="soul_rend.weakness">Weakness Chance</string>
+	
+	<!-- Raise Dead Skill Orbs -->
+	<string name="volatile_remains.name">Volatile Remains</string>
+	<string name="volatile_remains.description">When your minions die, they explode dealing damage based on your Strength.</string>
+	<string name="volatile_remains.radius">Radius</string>
+	
+	<string name="undead_legion.name">Undead Legion</string>
+	<string name="undead_legion.description">Each active minion reduces damage you take.</string>
+	<string name="undead_legion.reduction">Damage Reduction per Minion</string>
+	
+	<string name="minion_mastery.name">Minion Mastery</string>
+	<string name="minion_mastery.description">Your minions deal increased damage and have increased maximum Health.</string>
+	<string name="minion_mastery.damage">Damage</string>
+	<string name="minion_mastery.health">Health</string>
+	
+	<!-- Pestilence Skill Orbs -->
+	<string name="plague_cloud.name">Plague Cloud</string>
+	<string name="plague_cloud.description">While in Pestilence form, you apply Poison to enemies you touch.</string>
+	<string name="plague_cloud.poison">Poison Stacks</string>
+	
+	<string name="pestilent_strike.name">Pestilent Strike</string>
+	<string name="pestilent_strike.description">While in Pestilence form, taking damage causes you to deal Strength-based damage to nearby enemies.</string>
+	<string name="pestilent_strike.radius">Radius</string>
+	
+	<!-- Soul Vortex Skill Orbs -->
+	<string name="void_eruption.name">Void Eruption</string>
+	<string name="void_eruption.description">Soul Vortex projectiles explode on impact, dealing additional Strength-based damage.</string>
+	<string name="void_eruption.radius">Radius</string>
+	
+	<string name="soul_siphon.name">Soul Siphon</string>
+	<string name="soul_siphon.description">Soul Vortex deals damage, restoring a portion of your maximum Mana.</string>
+	<string name="soul_siphon.mana-restore">Mana Restore</string>
+	
+	<!-- Unwavering Oath Skill Orbs -->
+	<string name="eternal_undeath.name">Eternal Undeath</string>
+	<string name="eternal_undeath.description">Unwavering Oath duration is increased and you deal more damage while transformed.</string>
+	<string name="eternal_undeath.duration">Duration</string>
+	
+	<string name="zombie_rage.name">Zombie Rage</string>
+	<string name="zombie_rage.description">While transformed by Unwavering Oath, killing enemies extends the transformation duration.</string>
+	<string name="zombie_rage.duration">Duration per Kill</string>
 </dict>

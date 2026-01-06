@@ -24,10 +24,10 @@
 	<string name="pestilence.description">Conviértete en una nube de plaga de movimiento rápido.</string>
 	
 	<string name="sickly.name">Enfermizo</string>
-	<string name="sickly.description">Los ataques aplican una enfermedad acumulativa al objetivo. Escala con Fuerza y Nivel de Habilidad.</string>
+	<string name="sickly.description">Los ataques cuerpo a cuerpo aplican Sangrado y Vulnerabilidad a los enemigos. Escala con Fuerza y Nivel de Habilidad.</string>
 	
-	<string name="void_funnel.name">Embudo del Vacío</string>
-	<string name="void_funnel.description">Canaliza un cono frontal de magia del vacío. Otorga Maldición de las Sombras al lanzar. La duración aumenta con el nivel de habilidad.</string>
+	<string name="soul_vortex.name">Vórtice de Almas</string>
+	<string name="soul_vortex.description">Canaliza un cono frontal de magia del vacío. Otorga Maldición de las Sombras al lanzar. La duración aumenta con el nivel de habilidad.</string>
 	
 	<string name="cursed.name">Maldito</string>
 	<string name="cursed.description">Obtén Fuerza y Vitalidad basadas en tus acumulaciones de Maldición de las Sombras.</string>
@@ -56,8 +56,68 @@
 	<string name="bone_shield.reduction">Reducción de Daño</string>
 	<string name="bone_shield.stacks">Acumulaciones Máximas</string>
 	<string name="sickly.damage">Daño</string>
-	<string name="void_funnel.damage">Daño</string>
-	<string name="void_funnel.duration">Duración</string>
+	<string name="soul_vortex.damage">Daño</string>
+	<string name="soul_vortex.duration">Duración</string>
 	<string name="cursed.stat-gain">Multiplicador</string>
 	<string name="unwavering_oath.duration">Duración</string>
+
+	<string name="bone_armor.name">Armadura de Hueso</string>
+	<string name="bone_armor.description">Las acumulaciones de Escudo de Huesos otorgan Armadura adicional.</string>
+	<string name="bone_armor.armor">Armadura</string>
+	
+	<string name="serrated_marrow.name">Tuétano Dentado</string>
+	<string name="serrated_marrow.description">Las acumulaciones de Escudo de Huesos infligen daño de Espinas a los atacantes.</string>
+	<string name="serrated_marrow.thorns">Daño de Espinas</string>
+	
+	<string name="thick_skulls.name">Cráneos Gruesos</string>
+	<string name="thick_skulls.description">Las acumulaciones de Escudo de Huesos son más resistentes y requieren golpes adicionales para romperse.</string>
+	<string name="thick_skulls.hits">Golpes por Acumulación</string>
+	
+	<string name="contagious_grasp.name">Agarre Contagioso</string>
+	<string name="contagious_grasp.description">Agarre Mortal aplica Vulnerabilidad a los enemigos golpeados.</string>
+	<string name="contagious_grasp.vulnerability">Vulnerabilidad</string>
+	
+	<string name="grasping_chains.name">Cadenas de Agarre</string>
+	<string name="grasping_chains.description">Agarre Mortal inflige daño físico adicional a los enemigos golpeados.</string>
+	
+	<string name="soul_rend.name">Desgarro de Alma</string>
+	<string name="soul_rend.description">Las cadenas de Agarre Mortal tienen probabilidad de infligir Debilidad a los enemigos.</string>
+	<string name="soul_rend.weakness">Probabilidad de Debilidad</string>
+	
+	<string name="volatile_remains.name">Restos Volátiles</string>
+	<string name="volatile_remains.description">Cuando tus esbirros mueren, explotan infligiendo daño basado en tu Fuerza.</string>
+	<string name="volatile_remains.radius">Radio</string>
+	
+	<string name="undead_legion.name">Legión No Muerta</string>
+	<string name="undead_legion.description">Cada esbirro activo reduce el daño que recibes.</string>
+	<string name="undead_legion.reduction">Reducción de Daño por Esbirro</string>
+	
+	<string name="minion_mastery.name">Maestría de Esbirros</string>
+	<string name="minion_mastery.description">Tus esbirros infligen más daño y tienen más Salud máxima.</string>
+	<string name="minion_mastery.damage">Daño</string>
+	<string name="minion_mastery.health">Salud</string>
+	
+	<string name="plague_cloud.name">Nube de Plaga</string>
+	<string name="plague_cloud.description">Mientras estás en forma de Pestilencia, aplicas Veneno a los enemigos que tocas.</string>
+	<string name="plague_cloud.poison">Acumulaciones de Veneno</string>
+	
+	<string name="pestilent_strike.name">Golpe Pestilente</string>
+	<string name="pestilent_strike.description">Mientras estás en forma de Pestilencia, recibir daño hace que inflijas daño basado en la Fuerza a los enemigos cercanos.</string>
+	<string name="pestilent_strike.radius">Radio</string>
+	
+	<string name="void_eruption.name">Erupción del Vacío</string>
+	<string name="void_eruption.description">Los proyectiles de Vórtice de Almas explotan al impactar, infligiendo daño adicional basado en la Fuerza.</string>
+	<string name="void_eruption.radius">Radio</string>
+	
+	<string name="soul_siphon.name">Sifón de Alma</string>
+	<string name="soul_siphon.description">Vórtice de Almas inflige daño, restaurando una parte de tu Maná máximo.</string>
+	<string name="soul_siphon.mana-restore">Restauración de Maná</string>
+	
+	<string name="eternal_undeath.name">No Muerte Eterna</string>
+	<string name="eternal_undeath.description">La duración de Juramento Inquebrantable aumenta y infliges más daño mientras estás transformado.</string>
+	<string name="eternal_undeath.duration">Duración</string>
+	
+	<string name="zombie_rage.name">Furia Zombi</string>
+	<string name="zombie_rage.description">Mientras estás transformado por Juramento Inquebrantable, matar enemigos extiende la duración de la transformación.</string>
+	<string name="zombie_rage.duration">Duración por Muerte</string>
 </dict>

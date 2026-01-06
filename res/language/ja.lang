@@ -24,10 +24,10 @@
 	<string name="pestilence.description">高速移動するペストの雲に変身する。</string>
 	
 	<string name="sickly.name">衰弱</string>
-	<string name="sickly.description">攻撃対象にスタックする病気を付与する。筋力とスキルレベルに応じて威力が増加する。</string>
+	<string name="sickly.description">近接攻撃が敵に出血と脆弱性を付与する。筋力とスキルレベルに応じて威力が増加する。</string>
 	
-	<string name="void_funnel.name">ヴォイドブレス</string>
-	<string name="void_funnel.description">前方にヴォイド魔法のブレスを吐く。使用時にシャドウカースを付与する。持続時間はスキルレベルに応じて増加する。</string>
+	<string name="soul_vortex.name">ソウルヴォルテックス</string>
+	<string name="soul_vortex.description">前方にヴォイド魔法のブレスを吐く。使用時にシャドウカースを付与する。持続時間はスキルレベルに応じて増加する。</string>
 	
 	<string name="cursed.name">呪い</string>
 	<string name="cursed.description">シャドウカースのスタック数に基づいて筋力と活力を得る。</string>
@@ -56,8 +56,68 @@
 	<string name="bone_shield.reduction">ダメージ軽減</string>
 	<string name="bone_shield.stacks">最大スタック</string>
 	<string name="sickly.damage">ダメージ</string>
-	<string name="void_funnel.damage">ダメージ</string>
-	<string name="void_funnel.duration">持続時間</string>
+	<string name="soul_vortex.damage">ダメージ</string>
+	<string name="soul_vortex.duration">持続時間</string>
 	<string name="cursed.stat-gain">倍率</string>
 	<string name="unwavering_oath.duration">持続時間</string>
+
+	<string name="bone_armor.name">ボーンアーマー</string>
+	<string name="bone_armor.description">ボーンシールドのスタックが追加のアーマーを付与する。</string>
+	<string name="bone_armor.armor">アーマー</string>
+	
+	<string name="serrated_marrow.name">鋸状の骨髄</string>
+	<string name="serrated_marrow.description">ボーンシールドのスタックが攻撃者に棘ダメージを与える。</string>
+	<string name="serrated_marrow.thorns">棘ダメージ</string>
+	
+	<string name="thick_skulls.name">厚い頭蓋骨</string>
+	<string name="thick_skulls.description">ボーンシールドのスタックが強固になり、破壊されるのに追加の攻撃が必要になる。</string>
+	<string name="thick_skulls.hits">スタック毎の被弾数</string>
+	
+	<string name="contagious_grasp.name">伝染する掌握</string>
+	<string name="contagious_grasp.description">デスグリップが命中した敵に脆弱性を付与する。</string>
+	<string name="contagious_grasp.vulnerability">脆弱性</string>
+	
+	<string name="grasping_chains.name">捕縛の鎖</string>
+	<string name="grasping_chains.description">デスグリップが命中した敵に追加の物理ダメージを与える。</string>
+	
+	<string name="soul_rend.name">魂裂き</string>
+	<string name="soul_rend.description">デスグリップの鎖が一定確率で敵に衰弱を付与する。</string>
+	<string name="soul_rend.weakness">衰弱確率</string>
+	
+	<string name="volatile_remains.name">不安定な死体</string>
+	<string name="volatile_remains.description">ミニオンが死亡時に爆発し、筋力に応じたダメージを与える。</string>
+	<string name="volatile_remains.radius">範囲</string>
+	
+	<string name="undead_legion.name">アンデッド軍団</string>
+	<string name="undead_legion.description">アクティブなミニオン1体につき、受けるダメージが減少する。</string>
+	<string name="undead_legion.reduction">ミニオン毎の軽減率</string>
+	
+	<string name="minion_mastery.name">ミニオンマスタリー</string>
+	<string name="minion_mastery.description">ミニオンの与えるダメージが増加し、最大HPが増加する。</string>
+	<string name="minion_mastery.damage">ダメージ</string>
+	<string name="minion_mastery.health">HP</string>
+	
+	<string name="plague_cloud.name">疫病の雲</string>
+	<string name="plague_cloud.description">ペスティレンス形態中、接触した敵に毒を付与する。</string>
+	<string name="plague_cloud.poison">毒スタック</string>
+	
+	<string name="pestilent_strike.name">ペストストライク</string>
+	<string name="pestilent_strike.description">ペスティレンス形態中、ダメージを受けると近くの敵に筋力ベースのダメージを与える。</string>
+	<string name="pestilent_strike.radius">範囲</string>
+	
+	<string name="void_eruption.name">ヴォイドイラプション</string>
+	<string name="void_eruption.description">ソウルヴォルテックスの投射物が着弾時に爆発し、追加の筋力ベースダメージを与える。</string>
+	<string name="void_eruption.radius">範囲</string>
+	
+	<string name="soul_siphon.name">ソウルサイフォン</string>
+	<string name="soul_siphon.description">ソウルヴォルテックスがダメージを与え、最大マナの一部を回復する。</string>
+	<string name="soul_siphon.mana-restore">マナ回復量</string>
+	
+	<string name="eternal_undeath.name">永遠の不死</string>
+	<string name="eternal_undeath.description">揺るぎない誓いの持続時間が増加し、変身中のダメージが増加する。</string>
+	<string name="eternal_undeath.duration">持続時間</string>
+	
+	<string name="zombie_rage.name">ゾンビレイジ</string>
+	<string name="zombie_rage.description">揺るぎない誓いによる変身中、敵を倒すと変身時間が延長される。</string>
+	<string name="zombie_rage.duration">撃破毎の延長時間</string>
 </dict>

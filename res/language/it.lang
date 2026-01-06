@@ -24,10 +24,10 @@
 	<string name="pestilence.description">Trasformati in una nuvola di peste in rapido movimento.</string>
 	
 	<string name="sickly.name">Malaticcio</string>
-	<string name="sickly.description">Gli attacchi applicano una malattia accumulabile al bersaglio. Scala con Forza e Livello Abilità.</string>
+	<string name="sickly.description">Gli attacchi in mischia applicano Sanguinamento e Vulnerabilità ai nemici. Scala con Forza e Livello Abilità.</string>
 	
-	<string name="void_funnel.name">Vortice del Vuoto</string>
-	<string name="void_funnel.description">Incanala un cono frontale di magia del vuoto. Concede Maledizione delle Ombre quando lanciato. La durata aumenta con il livello dell'abilità.</string>
+	<string name="soul_vortex.name">Vortice d'Anime</string>
+	<string name="soul_vortex.description">Incanala un cono frontale di magia del vuoto. Concede Maledizione delle Ombre quando lanciato. La durata aumenta con il livello dell'abilità.</string>
 	
 	<string name="cursed.name">Maledetto</string>
 	<string name="cursed.description">Ottieni Forza e Vitalità basate sui tuoi accumuli di Maledizione delle Ombre.</string>
@@ -56,8 +56,68 @@
 	<string name="bone_shield.reduction">Riduzione Danno</string>
 	<string name="bone_shield.stacks">Accumuli Massimi</string>
 	<string name="sickly.damage">Danno</string>
-	<string name="void_funnel.damage">Danno</string>
-	<string name="void_funnel.duration">Durata</string>
+	<string name="soul_vortex.damage">Danno</string>
+	<string name="soul_vortex.duration">Durata</string>
 	<string name="cursed.stat-gain">Moltiplicatore</string>
 	<string name="unwavering_oath.duration">Durata</string>
+
+	<string name="bone_armor.name">Armatura d'Ossa</string>
+	<string name="bone_armor.description">Gli accumuli di Scudo d'Ossa forniscono Armatura aggiuntiva.</string>
+	<string name="bone_armor.armor">Armatura</string>
+	
+	<string name="serrated_marrow.name">Midollo Seghettato</string>
+	<string name="serrated_marrow.description">Gli accumuli di Scudo d'Ossa infliggono danni da Spine agli attaccanti.</string>
+	<string name="serrated_marrow.thorns">Danni da Spine</string>
+	
+	<string name="thick_skulls.name">Teschi Spessi</string>
+	<string name="thick_skulls.description">Gli accumuli di Scudo d'Ossa sono più resistenti e richiedono colpi aggiuntivi per rompersi.</string>
+	<string name="thick_skulls.hits">Colpi per Accumulo</string>
+	
+	<string name="contagious_grasp.name">Presa Contagiosa</string>
+	<string name="contagious_grasp.description">Presa della Morte applica Vulnerabilità ai nemici colpiti.</string>
+	<string name="contagious_grasp.vulnerability">Vulnerabilità</string>
+	
+	<string name="grasping_chains.name">Catene Avvinghianti</string>
+	<string name="grasping_chains.description">Presa della Morte infligge danni fisici aggiuntivi ai nemici colpiti.</string>
+	
+	<string name="soul_rend.name">Squarcio dell'Anima</string>
+	<string name="soul_rend.description">Le catene di Presa della Morte hanno una probabilità di infliggere Debolezza ai nemici.</string>
+	<string name="soul_rend.weakness">Probabilità Debolezza</string>
+	
+	<string name="volatile_remains.name">Resti Volatili</string>
+	<string name="volatile_remains.description">Quando i tuoi servitori muoiono, esplodono infliggendo danni basati sulla tua Forza.</string>
+	<string name="volatile_remains.radius">Raggio</string>
+	
+	<string name="undead_legion.name">Legione Non Morta</string>
+	<string name="undead_legion.description">Ogni servitore attivo riduce i danni che subisci.</string>
+	<string name="undead_legion.reduction">Riduzione Danni per Servitore</string>
+	
+	<string name="minion_mastery.name">Maestria dei Servitori</string>
+	<string name="minion_mastery.description">I tuoi servitori infliggono danni aumentati e hanno Salute massima aumentata.</string>
+	<string name="minion_mastery.damage">Danni</string>
+	<string name="minion_mastery.health">Salute</string>
+	
+	<string name="plague_cloud.name">Nuvola di Peste</string>
+	<string name="plague_cloud.description">Mentre sei in forma di Pestilenza, applichi Veleno ai nemici che tocchi.</string>
+	<string name="plague_cloud.poison">Accumuli di Veleno</string>
+	
+	<string name="pestilent_strike.name">Colpo Pestilente</string>
+	<string name="pestilent_strike.description">Mentre sei in forma di Pestilenza, subire danni ti fa infliggere danni basati sulla Forza ai nemici vicini.</string>
+	<string name="pestilent_strike.radius">Raggio</string>
+	
+	<string name="void_eruption.name">Eruzione del Vuoto</string>
+	<string name="void_eruption.description">I proiettili di Vortice d'Anime esplodono all'impatto, infliggendo danni aggiuntivi basati sulla Forza.</string>
+	<string name="void_eruption.radius">Raggio</string>
+	
+	<string name="soul_siphon.name">Sifone dell'Anima</string>
+	<string name="soul_siphon.description">Vortice d'Anime infligge danni, ripristinando una parte del tuo Mana massimo.</string>
+	<string name="soul_siphon.mana-restore">Ripristino Mana</string>
+	
+	<string name="eternal_undeath.name">Non Morte Eterna</string>
+	<string name="eternal_undeath.description">La durata di Giuramento Incrollabile è aumentata e infliggi più danni mentre sei trasformato.</string>
+	<string name="eternal_undeath.duration">Durata</string>
+	
+	<string name="zombie_rage.name">Rabbia Zombie</string>
+	<string name="zombie_rage.description">Mentre sei trasformato da Giuramento Incrollabile, uccidere nemici estende la durata della trasformazione.</string>
+	<string name="zombie_rage.duration">Durata per Uccisione</string>
 </dict>
