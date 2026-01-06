@@ -2,6 +2,8 @@
 
 An undead knight class raised to serve again. Master of death, decay, and shadow magic with three unique specializations.
 
+![Crypt Knight Class Logo](logos.png)
+
 ## Overview
 
 The Crypt Knight is a tanky melee class that combines defensive capabilities with undead minion summoning. With high Strength and Vitality, the Crypt Knight excels at close-quarters combat while commanding an army of undead minions to fight alongside them.
@@ -110,7 +112,7 @@ Pulls all nearby monsters towards you with chains, dealing Physical damage.
 
 ## Installation
 
-1. Download the latest release from the [Releases](https://github.com/Minq-git/hoh2-cryptknight/releases) page
+1. Download the latest release from the [Releases](https://github.com/Minq-git/hoh2-cryptknight/releases) or [Steam Workshop](https://tbd) page
 2. Extract the mod folder to your Heroes of Hammerwatch 2 mods directory:
    - **Steam**: `Steam/steamapps/common/Heroes of Hammerwatch 2/mods/`
    - **Standalone**: `Documents/My Games/Heroes of Hammerwatch 2/mods/`
@@ -175,4 +177,5 @@ This mod is provided as-is for use with Heroes of Hammerwatch 2. All game assets
 - 15 skill orbs across all skills
 - Full multiplayer support
 - Complete localization support
+- Custom Artwork
 
