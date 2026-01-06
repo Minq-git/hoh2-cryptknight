@@ -29,6 +29,10 @@ namespace Modifiers
 		ModDynamism HasModifyPlayerSummons() override { return ModDynamism::Dynamic; }
 		void ModifyPlayerSummons(PlayerBase@ player, float intensity) override
 		{
+			// Validate player is valid
+			if (player is null || player.m_record is null)
+				return;
+			
 			int count = 0;
 			auto@ summons = player.m_record.summons;
 			
@@ -48,7 +52,9 @@ namespace Modifiers
 				{
 					for (uint k = 0; k < summons[i].m_units.length(); k++)
 					{
-						if (summons[i].m_units[k] !is null && !summons[i].m_units[k].GetUnit().IsDestroyed())
+						auto unit = summons[i].m_units[k];
+						// player.m_record.summons is already per-player, so all units here belong to this player
+						if (unit !is null && !unit.GetUnit().IsDestroyed())
 							count++;
 					}
 				}
