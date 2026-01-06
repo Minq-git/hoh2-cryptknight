@@ -59,5 +59,149 @@
 			<int name="skill-cost">SKILLCOSTLEVEL_5</int>
 		</dict>
 	</array>
+
+	<array name="modifier-skills">
+		<dict>
+			<string name="name">Plague Cloud</string>
+			<string name="description">While in Pestilence form, you apply Poison to enemies you touch.</string>
+
+			<array name="description-params">
+				<array><s>poison</s><s>Poison Stacks</s><s>1</s><s>2</s><s>3</s></array>
+			</array>
+
+			<array name="icon">
+				<string>players/cryptknight/icons_skills.png</string>
+				<int>100</int><vec4>0 0 24 24</vec4>
+			</array>
+
+			<string name="id">plague_cloud</string>
+			<array name="tags"><s>orb</s><s>mobility</s></array>
+			<string name="quality">uncommon</string>
+			<int name="starting-level">0</int>
+
+			<dict name="skill">
+				<dict name="binds">
+					<int name="poison-stacks">1</int>
+				</dict>
+
+				<array name="modifiers">
+					<dict>
+						<array name="conditionals">
+							<array>
+								<s>buff</s><s>has</s><a><s>pestilence_buff</s></a>
+							</array>
+						</array>
+						<string name="class">Modifiers::SkillTriggerEffect</string>
+						<string name="trigger">contact</string>
+						<bool name="target-self">false</bool>
+						<float name="chance">1.0</float>
+						<array name="effects">
+							<dict>
+								<string name="class">AddStacks</string>
+								<string name="buff">tweak/buffs/status_effects.sval:poison</string>
+								<string name="stacks-bind">poison-stacks</string>
+							</dict>
+						</array>
+					</dict>
+				</array>
+			</dict>
+
+			<array name="upgrades">
+				<dict>
+					<string name="quality">uncommon</string>
+					<dict name="binds">
+						<int name="poison-stacks">2</int>
+					</dict>
+				</dict>
+				<dict>
+					<string name="quality">rare</string>
+					<dict name="binds">
+						<int name="poison-stacks">3</int>
+					</dict>
+				</dict>
+			</array>
+		</dict>
+
+		<dict>
+			<string name="name">Pestilent Strike</string>
+			<string name="description">While in Pestilence form, taking damage causes you to deal Strength-based damage to nearby enemies.</string>
+
+			<array name="description-params">
+				<array><s>damage</s><s>.skills.desc.params.damage</s><s>100% Str</s><s>150% Str</s><s>200% Str</s></array>
+				<array><s>radius</s><s>Radius</s><s>48</s><s>64</s><s>80</s></array>
+			</array>
+
+			<array name="icon">
+				<string>players/cryptknight/icons_skills.png</string>
+				<int>100</int><vec4>0 0 24 24</vec4>
+			</array>
+
+			<string name="id">pestilent_strike</string>
+			<array name="tags"><s>orb</s><s>mobility</s></array>
+			<string name="quality">uncommon</string>
+			<int name="starting-level">0</int>
+
+			<dict name="skill">
+				<dict name="binds">
+					<float name="strike-dmg-mul">1.0</float>
+					<int name="strike-radius">48</int>
+				</dict>
+
+				<array name="modifiers">
+					<dict>
+						<array name="conditionals">
+							<array>
+								<s>buff</s><s>has</s><a><s>pestilence_buff</s></a>
+							</array>
+						</array>
+						<string name="class">Modifiers::TriggerEffect</string>
+						<string name="trigger">hurt</string>
+						<bool name="target-self">true</bool>
+						<float name="chance">1.0</float>
+						<int name="timeout">0</int>
+						<array name="effects">
+							<dict>
+								<string name="class">Explode</string>
+								<string name="radius-bind">strike-radius</string>
+								<string name="min-radius-bind">strike-radius</string>
+								<bool name="hit-self">false</bool>
+								<bool name="hit-same-team">false</bool>
+								<bool name="hit-different-team">true</bool>
+								<array name="effects">
+									<dict>
+										<string name="class">StatBasedDamage</string>
+										<string name="stat">str</string>
+										<string name="mul-bind">strike-dmg-mul</string>
+										<bool name="true-strike">true</bool>
+									</dict>
+									<dict>
+										<string name="class">SpawnEffect</string>
+										<string name="effect">effects/generic/impacts/arcane_impact_2.effect?radius=14</string>
+									</dict>
+								</array>
+							</dict>
+						</array>
+					</dict>
+				</array>
+			</dict>
+
+			<array name="upgrades">
+				<dict>
+					<string name="quality">uncommon</string>
+					<dict name="binds">
+						<float name="strike-dmg-mul">1.5</float>
+						<int name="strike-radius">64</int>
+					</dict>
+				</dict>
+				<dict>
+					<string name="quality">rare</string>
+					<dict name="binds">
+						<float name="strike-dmg-mul">2.0</float>
+						<int name="strike-radius">80</int>
+					</dict>
+				</dict>
+			</array>
+		</dict>
+	</array>
 </dict>
 

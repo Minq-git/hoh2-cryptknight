@@ -261,13 +261,15 @@ class SpawnRaiseDeadMinion : IAction
 				}
 				
 				// Ensure the cap is set correctly immediately after registration
-				// This prevents the base game from destroying the unit before modifiers apply
+				// This prevents the base game from destroying the unit before modifiers apply in multiplayer
+				// We only set a minimum of 1 - modifiers (like undead_legion) can increase it beyond 1
 				for (uint i = 0; i < summons.length(); i++)
 				{
 					if (summons[i].m_prod is prod)
 					{
-						// Set cap to 1 (base) + 0 (from modifier) = 1
-						// This matches what ModifySummons with add-max-num: 0 should do
+						// Only set minimum to 1 if it's less than 1
+						// This ensures the unit isn't immediately destroyed, but doesn't override modifiers
+						// that have already increased the cap (e.g., undead_legion)
 						if (summons[i].m_maxSummons < 1)
 							summons[i].m_maxSummons = 1;
 						break;

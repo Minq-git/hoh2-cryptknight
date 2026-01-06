@@ -31,7 +31,9 @@
 		<int name="mana-cost">50</int>
 		
 		<dict name="binds">
-			<!-- No longer using spawner unit, using custom spawn action -->
+			<!-- Default explosion values (0 = no explosion unless orb is equipped) -->
+			<float name="explosion-dmg-mul">0.0</float>
+			<int name="explosion-radius">64</int>
 		</dict>
 
 		<dict name="actions">
@@ -115,6 +117,225 @@
 			<int name="skill-cost">SKILLCOSTLEVEL_5</int>
 			<int name="mana-cost">30</int>
 			<int name="cooldown">3000</int>
+		</dict>
+	</array>
+
+	<array name="modifier-skills">
+		<dict>
+			<string name="name">Volatile Remains</string>
+			<string name="description">When your minions die, they explode dealing damage based on your Strength.</string>
+
+			<array name="description-params">
+				<array><s>damage</s><s>.skills.desc.params.damage</s><s>100% Str</s><s>150% Str</s><s>200% Str</s></array>
+				<array><s>radius</s><s>Radius</s><s>64</s><s>80</s><s>96</s></array>
+			</array>
+
+			<array name="icon">
+				<string>players/cryptknight/icons_skills.png</string>
+				<int>100</int><vec4>96 24 24 24</vec4>
+			</array>
+
+			<string name="id">volatile_remains</string>
+			<array name="tags"><s>orb</s><s>summon</s></array>
+			<string name="quality">uncommon</string>
+			<int name="starting-level">0</int>
+
+			<dict name="skill">
+				<dict name="binds">
+					<float name="explosion-dmg-mul">1.0</float>
+					<int name="explosion-radius">64</int>
+				</dict>
+				
+				<array name="modifiers">
+					<!-- HUD Tracker - ensure buff tracking works with this skill orb -->
+					<dict>
+						<string name="class">Modifiers::CountSummons</string>
+						<string name="buff">players/cryptknight/stacks_cryptknight_minions.sval:minion_count</string>
+						<array name="units">
+							<string>players/cryptknight/units/minion_defender.unit</string>
+							<string>players/cryptknight/units/minion_sentry.unit</string>
+							<string>players/cryptknight/units/minion_footman.unit</string>
+							<string>players/cryptknight/units/minion_mage.unit</string>
+							<string>players/cryptknight/units/minion_knight.unit</string>
+						</array>
+					</dict>
+				</array>
+				
+				<!-- Note: The death explosion is handled by CompositeActorTriggeredSkill in the unit files -->
+				<!-- The bind values (explosion-dmg-mul, explosion-radius) are set here and fetched by the units -->
+				<!-- Units will fetch these values from the owner's skill data when they die -->
+			</dict>
+
+			<array name="upgrades">
+				<dict>
+					<string name="quality">uncommon</string>
+					<dict name="binds">
+						<float name="explosion-dmg-mul">1.5</float>
+						<int name="explosion-radius">80</int>
+					</dict>
+				</dict>
+				<dict>
+					<string name="quality">rare</string>
+					<dict name="binds">
+						<float name="explosion-dmg-mul">2.0</float>
+						<int name="explosion-radius">96</int>
+					</dict>
+				</dict>
+			</array>
+		</dict>
+
+		<dict>
+			<string name="name">Undead Legion</string>
+			<string name="description">Each active minion reduces damage you take.</string>
+
+			<array name="description-params">
+				<array><s>reduction</s><s>Damage Reduction per Minion</s><s>2%</s><s>3%</s><s>4%</s></array>
+			</array>
+
+			<array name="icon">
+				<string>players/cryptknight/icons_skills.png</string>
+				<int>100</int><vec4>96 24 24 24</vec4>
+			</array>
+
+			<string name="id">undead_legion</string>
+			<array name="tags"><s>orb</s><s>summon</s></array>
+			<string name="quality">uncommon</string>
+			<int name="starting-level">0</int>
+
+			<dict name="skill">
+				<dict name="binds">
+					<float name="reduction-per-minion">0.98</float>
+				</dict>
+				
+				<array name="modifiers">
+					<!-- HUD Tracker - ensure buff tracking works with this skill orb -->
+					<dict>
+						<string name="class">Modifiers::CountSummons</string>
+						<string name="buff">players/cryptknight/stacks_cryptknight_minions.sval:minion_count</string>
+						<array name="units">
+							<string>players/cryptknight/units/minion_defender.unit</string>
+							<string>players/cryptknight/units/minion_sentry.unit</string>
+							<string>players/cryptknight/units/minion_footman.unit</string>
+							<string>players/cryptknight/units/minion_mage.unit</string>
+							<string>players/cryptknight/units/minion_knight.unit</string>
+						</array>
+					</dict>
+					<dict>
+						<string name="class">Modifiers::InjectModifiersIntoStack</string>
+						<string name="buff">players/cryptknight/stacks_cryptknight_minions.sval:minion_count</string>
+						<array name="modifiers">
+							<dict>
+								<string name="class">Modifiers::Armor</string>
+								<string name="dmg-taken-mul-bind">reduction-per-minion</string>
+							</dict>
+						</array>
+					</dict>
+				</array>
+			</dict>
+
+			<array name="upgrades">
+				<dict>
+					<string name="quality">uncommon</string>
+					<dict name="binds">
+						<float name="reduction-per-minion">0.97</float>
+					</dict>
+				</dict>
+				<dict>
+					<string name="quality">rare</string>
+					<dict name="binds">
+						<float name="reduction-per-minion">0.96</float>
+					</dict>
+				</dict>
+			</array>
+		</dict>
+
+		<dict>
+			<string name="name">Minion Mastery</string>
+			<string name="description">Your minions deal increased damage and have increased maximum Health.</string>
+
+			<array name="description-params">
+				<array><s>damage</s><s>Damage</s><s>+25%</s><s>+50%</s><s>+75%</s></array>
+				<array><s>health</s><s>Health</s><s>+25%</s><s>+50%</s><s>+75%</s></array>
+			</array>
+
+			<array name="icon">
+				<string>players/cryptknight/icons_skills.png</string>
+				<int>100</int><vec4>96 24 24 24</vec4>
+			</array>
+
+			<string name="id">minion_mastery</string>
+			<array name="tags"><s>orb</s><s>summon</s></array>
+			<string name="quality">uncommon</string>
+			<int name="starting-level">0</int>
+
+			<dict name="skill">
+				<dict name="binds">
+					<float name="minion-dmg-mul">1.25</float>
+					<float name="minion-hp-mul">1.25</float>
+				</dict>
+				
+				<array name="modifiers">
+					<!-- HUD Tracker - ensure buff tracking works with this skill orb -->
+					<dict>
+						<string name="class">Modifiers::CountSummons</string>
+						<string name="buff">players/cryptknight/stacks_cryptknight_minions.sval:minion_count</string>
+						<array name="units">
+							<string>players/cryptknight/units/minion_defender.unit</string>
+							<string>players/cryptknight/units/minion_sentry.unit</string>
+							<string>players/cryptknight/units/minion_footman.unit</string>
+							<string>players/cryptknight/units/minion_mage.unit</string>
+							<string>players/cryptknight/units/minion_knight.unit</string>
+						</array>
+					</dict>
+					<dict>
+						<string name="class">Modifiers::ModifySummons</string>
+						<string name="unit">players/cryptknight/units/minion_defender.unit</string>
+						<string name="hp-mul-bind">minion-hp-mul</string>
+						<string name="dmg-mul-bind">minion-dmg-mul</string>
+					</dict>
+					<dict>
+						<string name="class">Modifiers::ModifySummons</string>
+						<string name="unit">players/cryptknight/units/minion_footman.unit</string>
+						<string name="hp-mul-bind">minion-hp-mul</string>
+						<string name="dmg-mul-bind">minion-dmg-mul</string>
+					</dict>
+					<dict>
+						<string name="class">Modifiers::ModifySummons</string>
+						<string name="unit">players/cryptknight/units/minion_sentry.unit</string>
+						<string name="hp-mul-bind">minion-hp-mul</string>
+						<string name="dmg-mul-bind">minion-dmg-mul</string>
+					</dict>
+					<dict>
+						<string name="class">Modifiers::ModifySummons</string>
+						<string name="unit">players/cryptknight/units/minion_mage.unit</string>
+						<string name="hp-mul-bind">minion-hp-mul</string>
+						<string name="dmg-mul-bind">minion-dmg-mul</string>
+					</dict>
+					<dict>
+						<string name="class">Modifiers::ModifySummons</string>
+						<string name="unit">players/cryptknight/units/minion_knight.unit</string>
+						<string name="hp-mul-bind">minion-hp-mul</string>
+						<string name="dmg-mul-bind">minion-dmg-mul</string>
+					</dict>
+				</array>
+			</dict>
+
+			<array name="upgrades">
+				<dict>
+					<string name="quality">uncommon</string>
+					<dict name="binds">
+						<float name="minion-dmg-mul">1.5</float>
+						<float name="minion-hp-mul">1.5</float>
+					</dict>
+				</dict>
+				<dict>
+					<string name="quality">rare</string>
+					<dict name="binds">
+						<float name="minion-dmg-mul">1.75</float>
+						<float name="minion-hp-mul">1.75</float>
+					</dict>
+				</dict>
+			</array>
 		</dict>
 	</array>
 </dict>
