@@ -1,0 +1,75 @@
+%include "players/skills_cost.inc"
+<dict>
+	<string name="name">Orb of Undead Legion</string>
+	<string name="type-name">.skills.type.orb</string>
+	<string name="description">Increases the maximum number of minions you can have.</string>
+
+	<array name="description-params">
+		<array><s>minions</s><s>Max Minions</s><s>+1</s><s>+2</s><s>+3</s></array>
+	</array>
+
+	<array name="icon">
+		<string>players/cryptknight/icons_skills.png</string>
+		<int>100</int><vec4>96 24 24 24</vec4>
+	</array>
+
+	<string name="id">orb_undead_legion</string>
+	<string name="type">orb</string>
+	<array name="tags"><s>orb</s><s>summon</s></array>
+	<string name="quality">uncommon</string>
+	<int name="starting-level">0</int>
+
+	<dict name="skill">
+		<int name="skill-cost">0</int>
+		<string name="class">Skills::PassiveSkill</string>
+		
+		<dict name="binds">
+			<int name="max-minions-add">1</int>
+		</dict>
+		
+		<array name="modifiers">
+			<!-- Increase max summons for all minion types -->
+			<dict>
+				<string name="class">Modifiers::ModifySummons</string>
+				<string name="unit">players/cryptknight/units/minion_defender.unit</string>
+				<string name="add-max-num-bind">max-minions-add</string>
+			</dict>
+			<dict>
+				<string name="class">Modifiers::ModifySummons</string>
+				<string name="unit">players/cryptknight/units/minion_footman.unit</string>
+				<string name="add-max-num-bind">max-minions-add</string>
+			</dict>
+			<dict>
+				<string name="class">Modifiers::ModifySummons</string>
+				<string name="unit">players/cryptknight/units/minion_sentry.unit</string>
+				<string name="add-max-num-bind">max-minions-add</string>
+			</dict>
+			<dict>
+				<string name="class">Modifiers::ModifySummons</string>
+				<string name="unit">players/cryptknight/units/minion_mage.unit</string>
+				<string name="add-max-num-bind">max-minions-add</string>
+			</dict>
+			<dict>
+				<string name="class">Modifiers::ModifySummons</string>
+				<string name="unit">players/cryptknight/units/minion_knight.unit</string>
+				<string name="add-max-num-bind">max-minions-add</string>
+			</dict>
+		</array>
+	</dict>
+
+	<array name="upgrades">
+		<dict>
+			<string name="quality">uncommon</string>
+			<dict name="binds">
+				<int name="max-minions-add">2</int>
+			</dict>
+		</dict>
+		<dict>
+			<string name="quality">rare</string>
+			<dict name="binds">
+				<int name="max-minions-add">3</int>
+			</dict>
+		</dict>
+	</array>
+</dict>
+

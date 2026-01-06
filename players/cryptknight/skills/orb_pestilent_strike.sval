@@ -1,0 +1,70 @@
+%include "players/skills_cost.inc"
+<dict>
+	<string name="name">Orb of Pestilent Strike</string>
+	<string name="type-name">.skills.type.orb</string>
+	<string name="description">Pestilence deals damage to enemies you pass through.</string>
+
+	<array name="description-params">
+		<array><s>damage</s><s>.skills.desc.params.damage</s><s>100% Str</s><s>150% Str</s><s>200% Str</s></array>
+	</array>
+
+	<array name="icon">
+		<string>players/cryptknight/icons_skills.png</string>
+		<int>100</int><vec4>0 0 24 24</vec4>
+	</array>
+
+	<string name="id">orb_pestilent_strike</string>
+	<string name="type">orb</string>
+	<array name="tags"><s>orb</s><s>mobility</s></array>
+	<string name="quality">uncommon</string>
+	<int name="starting-level">0</int>
+
+	<dict name="skill">
+		<int name="skill-cost">0</int>
+		<string name="class">Skills::PassiveSkill</string>
+		
+		<dict name="binds">
+			<float name="contact-dmg-mul">1.0</float>
+		</dict>
+		
+		<array name="modifiers">
+			<!-- Deal damage when you take damage during Pestilence -->
+			<dict>
+				<array name="conditionals">
+					<array>
+						<s>buff</s><s>has</s><a><s>pestilence_buff</s></a>
+					</array>
+				</array>
+				<string name="class">Modifiers::TriggerEffect</string>
+				<string name="trigger">hurt</string>
+				<bool name="target-self">false</bool>
+				<float name="chance">1.0</float>
+				<int name="timeout">100</int>
+				<array name="effects">
+					<dict>
+						<string name="class">StatBasedDamage</string>
+						<string name="stat">str</string>
+						<string name="mul-bind">contact-dmg-mul</string>
+						<bool name="true-strike">true</bool>
+					</dict>
+				</array>
+			</dict>
+		</array>
+	</dict>
+
+	<array name="upgrades">
+		<dict>
+			<string name="quality">uncommon</string>
+			<dict name="binds">
+				<float name="contact-dmg-mul">1.5</float>
+			</dict>
+		</dict>
+		<dict>
+			<string name="quality">rare</string>
+			<dict name="binds">
+				<float name="contact-dmg-mul">2.0</float>
+			</dict>
+		</dict>
+	</array>
+</dict>
+

@@ -1,21 +1,21 @@
 %include "players/skills_cost.inc"
 <dict>
-	<string name="name">Orb of Contagious Grasp</string>
+	<string name="name">Orb of Plague Cloud</string>
 	<string name="type-name">.skills.type.orb</string>
-	<string name="description">Death Grip applies Vulnerability to enemies it hits.</string>
+	<string name="description">Pestilence leaves a trail of poison that damages enemies.</string>
 
 	<array name="description-params">
-		<array><s>vulnerability</s><s>Vulnerability</s><s>20%</s><s>30%</s><s>40%</s></array>
+		<array><s>poison</s><s>Poison Applied</s><s>Yes</s></array>
 	</array>
 
 	<array name="icon">
 		<string>players/cryptknight/icons_skills.png</string>
-		<int>100</int><vec4>95 0 24 24</vec4>
+		<int>100</int><vec4>0 0 24 24</vec4>
 	</array>
 
-	<string name="id">orb_contagious_grasp</string>
+	<string name="id">orb_plague_cloud</string>
 	<string name="type">orb</string>
-	<array name="tags"><s>orb</s><s>spell</s></array>
+	<array name="tags"><s>orb</s><s>mobility</s></array>
 	<string name="quality">uncommon</string>
 	<int name="starting-level">0</int>
 
@@ -24,22 +24,20 @@
 		<string name="class">Skills::PassiveSkill</string>
 		
 		<dict name="binds">
-			<string name="vulnerability-buff">tweak/buffs/status_effects.sval:vulnerability</string>
 		</dict>
 		
 		<array name="modifiers">
-			<!-- Trigger on death_grip hits -->
+			<!-- Apply poison damage over time during Pestilence -->
 			<dict>
 				<string name="class">Modifiers::SkillTriggerEffect</string>
-				<string name="trigger">hit</string>
-				<array name="skill-tags"><s>spell</s></array>
-				<string name="skill-id">death_grip</string>
+				<string name="skill-id">pestilence</string>
+				<string name="trigger">castspell</string>
 				<bool name="target-self">false</bool>
 				<float name="chance">1.0</float>
 				<array name="effects">
 					<dict>
 						<string name="class">ApplyBuff</string>
-						<string name="buff-bind">vulnerability-buff</string>
+						<string name="buff">tweak/buffs/status_effects.sval:poison</string>
 					</dict>
 				</array>
 			</dict>
@@ -49,15 +47,9 @@
 	<array name="upgrades">
 		<dict>
 			<string name="quality">uncommon</string>
-			<dict name="binds">
-				<string name="vulnerability-buff">tweak/buffs/status_effects.sval:vulnerability_greater</string>
-			</dict>
 		</dict>
 		<dict>
 			<string name="quality">rare</string>
-			<dict name="binds">
-				<string name="vulnerability-buff">tweak/buffs/status_effects.sval:vulnerability_greater</string>
-			</dict>
 		</dict>
 	</array>
 </dict>

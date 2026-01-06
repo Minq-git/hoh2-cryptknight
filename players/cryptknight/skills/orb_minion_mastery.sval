@@ -1,0 +1,84 @@
+%include "players/skills_cost.inc"
+<dict>
+	<string name="name">Orb of Minion Mastery</string>
+	<string name="type-name">.skills.type.orb</string>
+	<string name="description">Your minions deal increased damage and have increased health.</string>
+
+	<array name="description-params">
+		<array><s>damage</s><s>Damage</s><s>+25%</s><s>+50%</s><s>+75%</s></array>
+		<array><s>health</s><s>Health</s><s>+25%</s><s>+50%</s><s>+75%</s></array>
+	</array>
+
+	<array name="icon">
+		<string>players/cryptknight/icons_skills.png</string>
+		<int>100</int><vec4>96 24 24 24</vec4>
+	</array>
+
+	<string name="id">orb_minion_mastery</string>
+	<string name="type">orb</string>
+	<array name="tags"><s>orb</s><s>summon</s></array>
+	<string name="quality">uncommon</string>
+	<int name="starting-level">0</int>
+
+	<dict name="skill">
+		<int name="skill-cost">0</int>
+		<string name="class">Skills::PassiveSkill</string>
+		
+		<dict name="binds">
+			<float name="minion-dmg-mul">1.25</float>
+			<float name="minion-hp-mul">1.25</float>
+		</dict>
+		
+		<array name="modifiers">
+			<!-- Boost all minion stats -->
+			<dict>
+				<string name="class">Modifiers::ModifySummons</string>
+				<string name="unit">players/cryptknight/units/minion_defender.unit</string>
+				<string name="hp-mul-bind">minion-hp-mul</string>
+				<string name="dmg-mul-bind">minion-dmg-mul</string>
+			</dict>
+			<dict>
+				<string name="class">Modifiers::ModifySummons</string>
+				<string name="unit">players/cryptknight/units/minion_footman.unit</string>
+				<string name="hp-mul-bind">minion-hp-mul</string>
+				<string name="dmg-mul-bind">minion-dmg-mul</string>
+			</dict>
+			<dict>
+				<string name="class">Modifiers::ModifySummons</string>
+				<string name="unit">players/cryptknight/units/minion_sentry.unit</string>
+				<string name="hp-mul-bind">minion-hp-mul</string>
+				<string name="dmg-mul-bind">minion-dmg-mul</string>
+			</dict>
+			<dict>
+				<string name="class">Modifiers::ModifySummons</string>
+				<string name="unit">players/cryptknight/units/minion_mage.unit</string>
+				<string name="hp-mul-bind">minion-hp-mul</string>
+				<string name="dmg-mul-bind">minion-dmg-mul</string>
+			</dict>
+			<dict>
+				<string name="class">Modifiers::ModifySummons</string>
+				<string name="unit">players/cryptknight/units/minion_knight.unit</string>
+				<string name="hp-mul-bind">minion-hp-mul</string>
+				<string name="dmg-mul-bind">minion-dmg-mul</string>
+			</dict>
+		</array>
+	</dict>
+
+	<array name="upgrades">
+		<dict>
+			<string name="quality">uncommon</string>
+			<dict name="binds">
+				<float name="minion-dmg-mul">1.5</float>
+				<float name="minion-hp-mul">1.5</float>
+			</dict>
+		</dict>
+		<dict>
+			<string name="quality">rare</string>
+			<dict name="binds">
+				<float name="minion-dmg-mul">1.75</float>
+				<float name="minion-hp-mul">1.75</float>
+			</dict>
+		</dict>
+	</array>
+</dict>
+

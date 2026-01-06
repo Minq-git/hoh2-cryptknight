@@ -5,7 +5,8 @@
 	<string name="description">When your minions die, they explode dealing damage based on your Strength.</string>
 
 	<array name="description-params">
-		<array><s>damage</s><s>.skills.desc.params.damage</s><s>100% Str</s></array>
+		<array><s>damage</s><s>.skills.desc.params.damage</s><s>100% Str</s><s>150% Str</s><s>200% Str</s></array>
+		<array><s>radius</s><s>Radius</s><s>64</s><s>80</s><s>96</s></array>
 	</array>
 
 	<array name="icon">
@@ -16,11 +17,17 @@
 	<string name="id">orb_volatile_remains</string>
 	<string name="type">orb</string>
 	<array name="tags"><s>orb</s><s>summon</s></array>
+	<string name="quality">uncommon</string>
 	<int name="starting-level">0</int>
 
 	<dict name="skill">
 		<int name="skill-cost">0</int>
 		<string name="class">Skills::PassiveSkill</string>
+		
+		<dict name="binds">
+			<float name="explosion-dmg-mul">1.0</float>
+			<int name="explosion-radius">64</int>
+		</dict>
 		
 		<array name="modifiers">
 			<!-- Apply explosion on death to all minion types -->
@@ -33,16 +40,16 @@
 						<string name="trigger">death</string>
 						<bool name="target-self">false</bool>
 						<int name="timeout">0</int>
-						<array name="effects">
+								<array name="effects">
 							<dict>
 								<string name="class">Explode</string>
-								<int name="radius">64</int>
-								<int name="min-radius">64</int>
+								<string name="radius-bind">explosion-radius</string>
+								<string name="min-radius-bind">explosion-radius</string>
 								<array name="effects">
 									<dict>
 										<string name="class">StatBasedDamage</string>
 										<string name="stat">str</string>
-										<float name="mul">1.0</float>
+										<string name="mul-bind">explosion-dmg-mul</string>
 										<bool name="true-strike">true</bool>
 									</dict>
 									<dict>
@@ -68,16 +75,16 @@
 						<string name="trigger">death</string>
 						<bool name="target-self">false</bool>
 						<int name="timeout">0</int>
-						<array name="effects">
+								<array name="effects">
 							<dict>
 								<string name="class">Explode</string>
-								<int name="radius">64</int>
-								<int name="min-radius">64</int>
+								<string name="radius-bind">explosion-radius</string>
+								<string name="min-radius-bind">explosion-radius</string>
 								<array name="effects">
 									<dict>
 										<string name="class">StatBasedDamage</string>
 										<string name="stat">str</string>
-										<float name="mul">1.0</float>
+										<string name="mul-bind">explosion-dmg-mul</string>
 										<bool name="true-strike">true</bool>
 									</dict>
 									<dict>
@@ -103,16 +110,16 @@
 						<string name="trigger">death</string>
 						<bool name="target-self">false</bool>
 						<int name="timeout">0</int>
-						<array name="effects">
+								<array name="effects">
 							<dict>
 								<string name="class">Explode</string>
-								<int name="radius">64</int>
-								<int name="min-radius">64</int>
+								<string name="radius-bind">explosion-radius</string>
+								<string name="min-radius-bind">explosion-radius</string>
 								<array name="effects">
 									<dict>
 										<string name="class">StatBasedDamage</string>
 										<string name="stat">str</string>
-										<float name="mul">1.0</float>
+										<string name="mul-bind">explosion-dmg-mul</string>
 										<bool name="true-strike">true</bool>
 									</dict>
 									<dict>
@@ -138,16 +145,16 @@
 						<string name="trigger">death</string>
 						<bool name="target-self">false</bool>
 						<int name="timeout">0</int>
-						<array name="effects">
+								<array name="effects">
 							<dict>
 								<string name="class">Explode</string>
-								<int name="radius">64</int>
-								<int name="min-radius">64</int>
+								<string name="radius-bind">explosion-radius</string>
+								<string name="min-radius-bind">explosion-radius</string>
 								<array name="effects">
 									<dict>
 										<string name="class">StatBasedDamage</string>
 										<string name="stat">str</string>
-										<float name="mul">1.0</float>
+										<string name="mul-bind">explosion-dmg-mul</string>
 										<bool name="true-strike">true</bool>
 									</dict>
 									<dict>
@@ -173,16 +180,16 @@
 						<string name="trigger">death</string>
 						<bool name="target-self">false</bool>
 						<int name="timeout">0</int>
-						<array name="effects">
+								<array name="effects">
 							<dict>
 								<string name="class">Explode</string>
-								<int name="radius">64</int>
-								<int name="min-radius">64</int>
+								<string name="radius-bind">explosion-radius</string>
+								<string name="min-radius-bind">explosion-radius</string>
 								<array name="effects">
 									<dict>
 										<string name="class">StatBasedDamage</string>
 										<string name="stat">str</string>
-										<float name="mul">1.0</float>
+										<string name="mul-bind">explosion-dmg-mul</string>
 										<bool name="true-strike">true</bool>
 									</dict>
 									<dict>
@@ -201,5 +208,22 @@
 			</dict>
 		</array>
 	</dict>
+
+	<array name="upgrades">
+		<dict>
+			<string name="quality">uncommon</string>
+			<dict name="binds">
+				<float name="explosion-dmg-mul">1.5</float>
+				<int name="explosion-radius">80</int>
+			</dict>
+		</dict>
+		<dict>
+			<string name="quality">rare</string>
+			<dict name="binds">
+				<float name="explosion-dmg-mul">2.0</float>
+				<int name="explosion-radius">96</int>
+			</dict>
+		</dict>
+	</array>
 </dict>
 

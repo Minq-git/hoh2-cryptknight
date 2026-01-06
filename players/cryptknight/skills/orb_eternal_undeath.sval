@@ -1,0 +1,69 @@
+%include "players/skills_cost.inc"
+<dict>
+	<string name="name">Orb of Eternal Undeath</string>
+	<string name="type-name">.skills.type.orb</string>
+	<string name="description">Unwavering Oath duration is increased and you deal more damage while transformed.</string>
+
+	<array name="description-params">
+		<array><s>duration</s><s>Duration</s><s>+10s</s><s>+15s</s><s>+20s</s></array>
+		<array><s>damage</s><s>Damage</s><s>+25%</s><s>+50%</s><s>+75%</s></array>
+	</array>
+
+	<array name="icon">
+		<string>players/cryptknight/icons_skills.png</string>
+		<int>100</int><vec4>48 0 24 24</vec4>
+	</array>
+
+	<string name="id">orb_eternal_undeath</string>
+	<string name="type">orb</string>
+	<array name="tags"><s>orb</s><s>defense</s></array>
+	<string name="quality">uncommon</string>
+	<int name="starting-level">0</int>
+
+	<dict name="skill">
+		<int name="skill-cost">0</int>
+		<string name="class">Skills::PassiveSkill</string>
+		
+		<dict name="binds">
+			<int name="duration-add">10000</int>
+			<float name="dmg-mul">1.25</float>
+		</dict>
+		
+		<array name="modifiers">
+			<!-- Modify zombie transformation buff -->
+			<dict>
+				<string name="class">Modifiers::InjectModifiersIntoStack</string>
+				<string name="buff">players/cryptknight/buffs/skills_buffs.sval:zombie_transformation_1</string>
+				<array name="modifiers">
+					<dict>
+						<string name="class">Modifiers::Damage</string>
+						<string name="mul-bind">dmg-mul</string>
+					</dict>
+					<dict>
+						<string name="class">Modifiers::ModifyStack</string>
+						<string name="buff">players/cryptknight/buffs/skills_buffs.sval:zombie_transformation_1</string>
+						<string name="add-time-bind">duration-add</string>
+					</dict>
+				</array>
+			</dict>
+		</array>
+	</dict>
+
+	<array name="upgrades">
+		<dict>
+			<string name="quality">uncommon</string>
+			<dict name="binds">
+				<int name="duration-add">15000</int>
+				<float name="dmg-mul">1.5</float>
+			</dict>
+		</dict>
+		<dict>
+			<string name="quality">rare</string>
+			<dict name="binds">
+				<int name="duration-add">20000</int>
+				<float name="dmg-mul">1.75</float>
+			</dict>
+		</dict>
+	</array>
+</dict>
+

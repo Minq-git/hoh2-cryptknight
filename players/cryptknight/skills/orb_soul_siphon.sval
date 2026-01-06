@@ -1,0 +1,65 @@
+%include "players/skills_cost.inc"
+<dict>
+	<string name="name">Orb of Soul Siphon</string>
+	<string name="type-name">.skills.type.orb</string>
+	<string name="description">Soul Vortex restores Mana based on damage dealt.</string>
+
+	<array name="description-params">
+		<array><s>mana</s><s>Mana Restored</s><s>10%</s><s>20%</s><s>30%</s></array>
+	</array>
+
+	<array name="icon">
+		<string>players/cryptknight/icons_skills.png</string>
+		<int>100</int><vec4>24 24 24 24</vec4>
+	</array>
+
+	<string name="id">orb_soul_siphon</string>
+	<string name="type">orb</string>
+	<array name="tags"><s>orb</s><s>void</s></array>
+	<string name="quality">uncommon</string>
+	<int name="starting-level">0</int>
+
+	<dict name="skill">
+		<int name="skill-cost">0</int>
+		<string name="class">Skills::PassiveSkill</string>
+		
+		<dict name="binds">
+			<float name="mana-restore-mul">0.1</float>
+		</dict>
+		
+		<array name="modifiers">
+			<!-- Restore mana on Soul Vortex hits -->
+			<dict>
+				<string name="class">Modifiers::SkillTriggerEffect</string>
+				<string name="skill-id">soul_vortex</string>
+				<string name="trigger">spellhit</string>
+				<bool name="target-self">true</bool>
+				<float name="chance">1.0</float>
+				<int name="timeout">100</int>
+				<array name="effects">
+					<dict>
+						<string name="class">GivePercentageMana</string>
+						<string name="mana-bind">mana-restore-mul</string>
+						<bool name="curr-mana">false</bool>
+					</dict>
+				</array>
+			</dict>
+		</array>
+	</dict>
+
+	<array name="upgrades">
+		<dict>
+			<string name="quality">uncommon</string>
+			<dict name="binds">
+				<float name="mana-restore-mul">0.2</float>
+			</dict>
+		</dict>
+		<dict>
+			<string name="quality">rare</string>
+			<dict name="binds">
+				<float name="mana-restore-mul">0.3</float>
+			</dict>
+		</dict>
+	</array>
+</dict>
+
