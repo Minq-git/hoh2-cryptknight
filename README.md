@@ -112,7 +112,7 @@ Pulls all nearby monsters towards you with chains, dealing Physical damage.
 
 ## Installation
 
-1. Download the latest release from the [Releases](https://github.com/Minq-git/hoh2-cryptknight/releases) or [Steam Workshop](https://tbd) page
+1. Download the latest release from the [Releases](https://github.com/Minq-git/hoh2-cryptknight/releases) or [Steam Workshop]([https://tbd](https://steamcommunity.com/sharedfiles/filedetails/?id=3641558094)) page
 2. Extract the mod folder to your Heroes of Hammerwatch 2 mods directory:
    - **Steam**: `Steam/steamapps/common/Heroes of Hammerwatch 2/mods/`
    - **Standalone**: `Documents/My Games/Heroes of Hammerwatch 2/mods/`
